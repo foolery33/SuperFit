@@ -8,5 +8,8 @@
 import Foundation
 
 final class AuthorizationViewModel {
+    
     weak var coordinator: AuthCoordinator?
+    var userName = ""
+    
 }
