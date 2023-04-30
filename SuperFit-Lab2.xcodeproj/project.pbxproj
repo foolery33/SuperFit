@@ -7,15 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 84C83E6829FE1E3900BC027D /* RswiftLibrary */; };
+		84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E6E29FE22F400BC027D /* Coordinator.swift */; };
+		84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E7729FE237C00BC027D /* AppCoordinator.swift */; };
+		84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E7929FE242800BC027D /* AuthCoordinator.swift */; };
+		84C83E7D29FE24D700BC027D /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 84C83E7C29FE24D700BC027D /* NeedleFoundation */; };
+		84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E7F29FE250B00BC027D /* AuthorizationComponent.swift */; };
+		84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8229FE256F00BC027D /* AuthorizationViewModel.swift */; };
+		84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */; };
+		84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8629FE293E00BC027D /* MainComponent.swift */; };
+		84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */; };
 		84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF989B29F9840700E04115 /* AppDelegate.swift */; };
 		84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF989D29F9840700E04115 /* SceneDelegate.swift */; };
 		84CF98A029F9840700E04115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF989F29F9840700E04115 /* ViewController.swift */; };
-		84CF98A329F9840700E04115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98A129F9840700E04115 /* Main.storyboard */; };
 		84CF98A529F9840800E04115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98A429F9840800E04115 /* Assets.xcassets */; };
 		84CF98A829F9840800E04115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98A629F9840800E04115 /* LaunchScreen.storyboard */; };
 		84CF98B329F9840900E04115 /* SuperFit_Lab2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98B229F9840900E04115 /* SuperFit_Lab2Tests.swift */; };
 		84CF98BD29F9840900E04115 /* SuperFit_Lab2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BC29F9840900E04115 /* SuperFit_Lab2UITests.swift */; };
 		84CF98BF29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */; };
+		84CF98E529F987DE00E04115 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98D329F987DD00E04115 /* Montserrat-Medium.ttf */; };
+		84CF98E629F987DE00E04115 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98D429F987DD00E04115 /* Montserrat-Regular.ttf */; };
+		84CF98EF29F987DE00E04115 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DD29F987DE00E04115 /* Montserrat-Thin.ttf */; };
+		84CF98F029F987DE00E04115 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DE29F987DE00E04115 /* Montserrat-Bold.ttf */; };
+		84CF98F129F987DE00E04115 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */; };
+		84CF98F429F987DE00E04115 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */; };
+		84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */; };
+		84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */; };
+		84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694329FE3C34005E83C3 /* ComponentFactory.swift */; };
+		84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */; };
+		84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F4694A29FE3F77005E83C3 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +56,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84C83E6E29FE22F400BC027D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		84C83E7729FE237C00BC027D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		84C83E7929FE242800BC027D /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		84C83E7F29FE250B00BC027D /* AuthorizationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationComponent.swift; sourceTree = "<group>"; };
+		84C83E8229FE256F00BC027D /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		84C83E8629FE293E00BC027D /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
+		84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		84CF989829F9840700E04115 /* SuperFit-Lab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperFit-Lab2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CF989B29F9840700E04115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CF989D29F9840700E04115 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84CF989F29F9840700E04115 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84CF98A229F9840700E04115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84CF98A429F9840800E04115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CF98A729F9840800E04115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CF98A929F9840800E04115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +76,17 @@
 		84CF98B829F9840900E04115 /* SuperFit-Lab2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SuperFit-Lab2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CF98BC29F9840900E04115 /* SuperFit_Lab2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2UITests.swift; sourceTree = "<group>"; };
 		84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84CF98D329F987DD00E04115 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		84CF98D429F987DD00E04115 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		84CF98DD29F987DE00E04115 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Thin.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		84CF98DE29F987DE00E04115 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		84CF98FD29F989DE00E04115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
+		84CF98FF29F989F400E04115 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
+		84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
+		84F4694329FE3C34005E83C3 /* ComponentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
+		84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */,
+				84C83E7D29FE24D700BC027D /* NeedleFoundation in Frameworks */,
+				84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +117,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84C83E6D29FE22D300BC027D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E7529FE236B00BC027D /* Protocols */,
+				84C83E7729FE237C00BC027D /* AppCoordinator.swift */,
+				84C83E7929FE242800BC027D /* AuthCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		84C83E7029FE231700BC027D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				84F4694529FE3E5E005E83C3 /* ViewExtensions */,
+				84C83E7129FE233100BC027D /* AuthorizationScreen */,
+				84C83E8629FE293E00BC027D /* MainComponent.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		84C83E7129FE233100BC027D /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E8129FE255F00BC027D /* ViewModel */,
+				84C83E7E29FE24FD00BC027D /* Component */,
+				84C83E7229FE233F00BC027D /* ViewController */,
+			);
+			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
+		84C83E7229FE233F00BC027D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84C83E7529FE236B00BC027D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E6E29FE22F400BC027D /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		84C83E7E29FE24FD00BC027D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E7F29FE250B00BC027D /* AuthorizationComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		84C83E8129FE255F00BC027D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E8229FE256F00BC027D /* AuthorizationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		84CF988F29F9840700E04115 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +202,14 @@
 		84CF989A29F9840700E04115 /* SuperFit-Lab2 */ = {
 			isa = PBXGroup;
 			children = (
+				84F4694129FE3C20005E83C3 /* Factories */,
+				84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */,
+				84C83E7029FE231700BC027D /* Screen */,
+				84C83E6D29FE22D300BC027D /* Coordinator */,
+				84CF98D029F987C400E04115 /* Resources */,
 				84CF989B29F9840700E04115 /* AppDelegate.swift */,
 				84CF989D29F9840700E04115 /* SceneDelegate.swift */,
 				84CF989F29F9840700E04115 /* ViewController.swift */,
-				84CF98A129F9840700E04115 /* Main.storyboard */,
 				84CF98A429F9840800E04115 /* Assets.xcassets */,
 				84CF98A629F9840800E04115 /* LaunchScreen.storyboard */,
 				84CF98A929F9840800E04115 /* Info.plist */,
@@ -127,6 +234,61 @@
 			path = "SuperFit-Lab2UITests";
 			sourceTree = "<group>";
 		};
+		84CF98D029F987C400E04115 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84CF98F829F9898200E04115 /* Localization */,
+				84CF98D129F987CA00E04115 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84CF98D129F987CA00E04115 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84CF98DE29F987DE00E04115 /* Montserrat-Bold.ttf */,
+				84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */,
+				84CF98D329F987DD00E04115 /* Montserrat-Medium.ttf */,
+				84CF98D429F987DD00E04115 /* Montserrat-Regular.ttf */,
+				84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */,
+				84CF98DD29F987DE00E04115 /* Montserrat-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		84CF98F829F9898200E04115 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				84CF98F929F9899000E04115 /* LoginScreen */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		84CF98F929F9899000E04115 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		84F4694129FE3C20005E83C3 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */,
+				84F4694329FE3C34005E83C3 /* ComponentFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		84F4694529FE3E5E005E83C3 /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */,
+			);
+			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84CF98C229F9840900E04115 /* Build configuration list for PBXNativeTarget "SuperFit-Lab2" */;
 			buildPhases = (
+				84C83E8B29FE2E6B00BC027D /* ShellScript */,
 				84CF989429F9840700E04115 /* Sources */,
 				84CF989529F9840700E04115 /* Frameworks */,
 				84CF989629F9840700E04115 /* Resources */,
@@ -141,8 +304,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				84C83E6B29FE1E3E00BC027D /* PBXTargetDependency */,
 			);
 			name = "SuperFit-Lab2";
+			packageProductDependencies = (
+				84C83E6829FE1E3900BC027D /* RswiftLibrary */,
+				84C83E7C29FE24D700BC027D /* NeedleFoundation */,
+				84F4694A29FE3F77005E83C3 /* SnapKit */,
+			);
 			productName = "SuperFit-Lab2";
 			productReference = 84CF989829F9840700E04115 /* SuperFit-Lab2.app */;
 			productType = "com.apple.product-type.application";
@@ -213,8 +382,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 84CF988F29F9840700E04115;
+			packageReferences = (
+				84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */,
+				84C83E7B29FE24D700BC027D /* XCRemoteSwiftPackageReference "needle" */,
+				84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 84CF989929F9840700E04115 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +407,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CF98A829F9840800E04115 /* LaunchScreen.storyboard in Resources */,
+				84CF98F129F987DE00E04115 /* Montserrat-Light.ttf in Resources */,
+				84CF98F029F987DE00E04115 /* Montserrat-Bold.ttf in Resources */,
+				84CF98EF29F987DE00E04115 /* Montserrat-Thin.ttf in Resources */,
+				84CF98F429F987DE00E04115 /* Montserrat-SemiBold.ttf in Resources */,
+				84CF98E529F987DE00E04115 /* Montserrat-Medium.ttf in Resources */,
+				84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */,
+				84CF98E629F987DE00E04115 /* Montserrat-Regular.ttf in Resources */,
 				84CF98A529F9840800E04115 /* Assets.xcassets in Resources */,
-				84CF98A329F9840700E04115 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,13 +434,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84C83E8B29FE2E6B00BC027D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which needle; then\n    SOURCEKIT_LOGGING=0 && needle generate SuperFit-Lab2/NeedleGenerated.swift SuperFit-Lab2/\nelse\n  echo \"warning: Needle not installed, download from https://github.com/uber/needle using Homebrew\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84CF989429F9840700E04115 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */,
+				84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */,
 				84CF98A029F9840700E04115 /* ViewController.swift in Sources */,
+				84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */,
 				84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */,
+				84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */,
+				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,
+				84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */,
+				84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */,
+				84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */,
+				84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */,
+				84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */,
+				84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */,
 				84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +496,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		84C83E6B29FE1E3E00BC027D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 84C83E6A29FE1E3E00BC027D /* RswiftGenerateInternalResources */;
+		};
 		84CF98B029F9840900E04115 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84CF989729F9840700E04115 /* SuperFit-Lab2 */;
@@ -297,20 +513,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84CF98A129F9840700E04115 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84CF98A229F9840700E04115 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84CF98A629F9840800E04115 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				84CF98A729F9840800E04115 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84CF98FD29F989DE00E04115 /* en */,
+				84CF98FF29F989F400E04115 /* ru */,
+			);
+			name = LoginScreenStrings.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -320,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -366,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -420,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -441,9 +660,9 @@
 				INFOPLIST_FILE = "SuperFit-Lab2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,9 +687,9 @@
 				INFOPLIST_FILE = "SuperFit-Lab2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,6 +815,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		84C83E7B29FE24D700BC027D /* XCRemoteSwiftPackageReference "needle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/needle.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84C83E6829FE1E3900BC027D /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		84C83E6A29FE1E3E00BC027D /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		84C83E7C29FE24D700BC027D /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C83E7B29FE24D700BC027D /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
+		};
+		84F4694A29FE3F77005E83C3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84CF989029F9840700E04115 /* Project object */;
 }
