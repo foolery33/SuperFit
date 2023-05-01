@@ -29,7 +29,7 @@ extension UIView {
 
     @objc func viewPressed() {
         self.alpha = 1
-        UIView.animate(withDuration: 0.1, animations: {
+        UIView.animate(withDuration: 0.0, animations: {
             self.alpha = 0.5
         }, completion: { _ in
             UIView.animate(withDuration: 0.1, animations: {

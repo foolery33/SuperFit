@@ -15,18 +15,28 @@ class AuthCoordinator: Coordinator {
     
     private let componentFactory = ComponentFactory()
     
+    private let authorizationComponent = ComponentFactory().getAuthorizationComponent()
+    private let authorizationPinPanelComponent = ComponentFactory().getAuthorizationPinPanelComponent()
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        goToLoginScreen()
+        goToAuthorizationScreen()
     }
     
-    func goToLoginScreen() {
-        let component = self.componentFactory.getAuthorizationComponent()
+    func goToAuthorizationScreen() {
+        let component = self.authorizationComponent
         component.authorizationViewModel.coordinator = self
         navigationController.pushViewController(component.authorizationViewController, animated: true)
+    }
+    
+    func goToAuthorizationPinPanelScreen(userName: String) {
+        let component = self.authorizationPinPanelComponent
+        component.authorizationPinPanelViewModel.coordinator = self
+        component.authorizationPinPanelViewModel.userName = userName
+        navigationController.pushViewController(component.authorizationPinPanelViewController, animated: true)
     }
     
     func goToRegisterScreen() {

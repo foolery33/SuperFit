@@ -16,4 +16,10 @@ final class MainComponent: BootstrapComponent {
         }
     }
     
+    var authorizationPinPanelComponent: AuthorizationPinPanelComponent {
+        shared {
+            AuthorizationPinPanelComponent(parent: self)
+        }
+    }
+    
 }

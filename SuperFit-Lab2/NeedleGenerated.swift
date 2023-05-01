@@ -16,6 +16,17 @@ private func parent1(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
 
 #if !NEEDLE_DYNAMIC
 
+private class AuthorizationPinPanelComponentDependencyc9ab79be377ddba2eabeProvider: AuthorizationPinPanelComponentDependency {
+
+
+    init() {
+
+    }
+}
+/// ^->MainComponent->AuthorizationPinPanelComponent
+private func factory3d9df8e0a52c98f96a49e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return AuthorizationPinPanelComponentDependencyc9ab79be377ddba2eabeProvider()
+}
 private class AuthorizationComponentDependency01c300e9208281b9a593Provider: AuthorizationComponentDependency {
 
 
@@ -32,6 +43,11 @@ private func factory36d2db3a630304719354e3b0c44298fc1c149afb(_ component: Needle
 extension MainComponent: Registration {
     public func registerItems() {
 
+
+    }
+}
+extension AuthorizationPinPanelComponent: Registration {
+    public func registerItems() {
 
     }
 }
@@ -57,6 +73,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 
 @inline(never) private func register1() {
     registerProviderFactory("^->MainComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->MainComponent->AuthorizationPinPanelComponent", factory3d9df8e0a52c98f96a49e3b0c44298fc1c149afb)
     registerProviderFactory("^->MainComponent->AuthorizationComponent", factory36d2db3a630304719354e3b0c44298fc1c149afb)
 }
 #endif

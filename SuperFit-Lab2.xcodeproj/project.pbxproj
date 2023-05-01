@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2DAF829FECD7000AC4063 /* PinPanelView.swift */; };
 		84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 84C83E6829FE1E3900BC027D /* RswiftLibrary */; };
 		84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E6E29FE22F400BC027D /* Coordinator.swift */; };
 		84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E7729FE237C00BC027D /* AppCoordinator.swift */; };
@@ -31,6 +32,7 @@
 		84CF98F129F987DE00E04115 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */; };
 		84CF98F429F987DE00E04115 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */; };
 		84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */; };
+		84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D32E7D29FECA0B00F2937D /* PinDigitView.swift */; };
 		84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */; };
 		84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694329FE3C34005E83C3 /* ComponentFactory.swift */; };
 		84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */; };
@@ -39,6 +41,9 @@
 		84F4695229FE6E75005E83C3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4695129FE6E75005E83C3 /* UIViewExtensions.swift */; };
 		84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4695429FE6E98005E83C3 /* UIViewControllerExtensions.swift */; };
 		84F4695729FE7632005E83C3 /* ButtonWithArrowStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4695629FE7632005E83C3 /* ButtonWithArrowStackView.swift */; };
+		84F4695F29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4695E29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift */; };
+		84F4696129FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4696029FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift */; };
+		84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4696329FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84C2DAF829FECD7000AC4063 /* PinPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPanelView.swift; sourceTree = "<group>"; };
 		84C83E6E29FE22F400BC027D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		84C83E7729FE237C00BC027D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		84C83E7929FE242800BC027D /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		84CF98FD29F989DE00E04115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
 		84CF98FF29F989F400E04115 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
+		84D32E7D29FECA0B00F2937D /* PinDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDigitView.swift; sourceTree = "<group>"; };
 		84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		84F4694329FE3C34005E83C3 /* ComponentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
 		84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -93,6 +100,9 @@
 		84F4695129FE6E75005E83C3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		84F4695429FE6E98005E83C3 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		84F4695629FE7632005E83C3 /* ButtonWithArrowStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithArrowStackView.swift; sourceTree = "<group>"; };
+		84F4695E29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPinPanelViewModel.swift; sourceTree = "<group>"; };
+		84F4696029FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPinPanelComponent.swift; sourceTree = "<group>"; };
+		84F4696329FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPinPanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +146,9 @@
 		84C83E7029FE231700BC027D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				84F4694529FE3E5E005E83C3 /* ViewExtensions */,
+				84F4695929FE8DFC005E83C3 /* AuthorizationPinPanelScreen */,
 				84C83E7129FE233100BC027D /* AuthorizationScreen */,
+				84F4694529FE3E5E005E83C3 /* ViewExtensions */,
 				84C83E8629FE293E00BC027D /* MainComponent.swift */,
 			);
 			path = Screen;
@@ -306,6 +317,50 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84F4695929FE8DFC005E83C3 /* AuthorizationPinPanelScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84F4695D29FE8E2F005E83C3 /* View */,
+				84F4695C29FE8E2A005E83C3 /* ViewModel */,
+				84F4695B29FE8E10005E83C3 /* Component */,
+				84F4695A29FE8E0A005E83C3 /* ViewController */,
+			);
+			path = AuthorizationPinPanelScreen;
+			sourceTree = "<group>";
+		};
+		84F4695A29FE8E0A005E83C3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84F4696329FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84F4695B29FE8E10005E83C3 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				84F4696029FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		84F4695C29FE8E2A005E83C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F4695E29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84F4695D29FE8E2F005E83C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84D32E7D29FECA0B00F2937D /* PinDigitView.swift */,
+				84C2DAF829FECD7000AC4063 /* PinPanelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +509,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		84C83E8B29FE2E6B00BC027D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -477,12 +533,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */,
+				84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */,
 				84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */,
 				84F4695729FE7632005E83C3 /* ButtonWithArrowStackView.swift in Sources */,
+				84F4695F29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift in Sources */,
 				84F4695229FE6E75005E83C3 /* UIViewExtensions.swift in Sources */,
+				84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */,
 				84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */,
 				84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */,
+				84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */,
 				84F4695029FE6743005E83C3 /* UnderlinedTextField.swift in Sources */,
+				84F4696129FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift in Sources */,
 				84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */,
 				84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */,
 				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,

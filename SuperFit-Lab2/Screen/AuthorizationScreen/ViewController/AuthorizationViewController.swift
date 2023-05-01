@@ -84,7 +84,7 @@ class AuthorizationViewController: UIViewController {
     // MARK: - UnderlinedTextField setup
     private lazy var underlinedTextField: UnderlinedTextField = {
         let myTextField = UnderlinedTextField(currentText: self.viewModel.userName, placeholderText: "UserName", isSecured: false)
-        myTextField.addTarget(self, action: #selector(onNameTextFieldValueChanged(_:)), for: .valueChanged)
+        myTextField.addTarget(self, action: #selector(onNameTextFieldValueChanged(_:)), for: .editingChanged)
         return myTextField
     }()
     @objc private func onNameTextFieldValueChanged(_ textField: UITextField) {
@@ -102,7 +102,7 @@ class AuthorizationViewController: UIViewController {
         return myStackView
     }()
     private func onSignInButtonClicked() {
-        print("clicked")
+        self.viewModel.goToAuthorizationPinPanelScreen()
     }
     private func setupSignInButton() {
         signInStackView.addArrangedSubview(signInButton)
