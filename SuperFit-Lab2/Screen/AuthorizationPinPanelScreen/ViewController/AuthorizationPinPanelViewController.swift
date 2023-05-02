@@ -25,10 +25,6 @@ final class AuthorizationPinPanelViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
     }
-    
-    deinit {
-        print("deinited vc")
-    }
 
     private func setupSubviews() {
         setupBackgroundImageView()
@@ -81,7 +77,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
         setupUserNameLabel()
         setupPinPanelView()
         contentStackView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(24)
+            make.top.equalToSuperview().offset(68)
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-73)
         }
@@ -92,7 +88,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
         let myLabel = UILabel()
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratBold(size: 64)
-        myLabel.text = "SuperFit"
+        myLabel.text = R.string.generalStrings.app_name()
         return myLabel
     }()
     private func setupAppNameLabel() {
@@ -105,7 +101,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratRegular(size: 18)
         myLabel.textAlignment = .center
-        myLabel.text = self.viewModel.userName
+        myLabel.text = self.viewModel.email
         myLabel.numberOfLines = 1
         return myLabel
     }()
@@ -115,7 +111,9 @@ final class AuthorizationPinPanelViewController: UIViewController {
     
     // MARK: - PinPanelView setup
     private lazy var pinPanelView: PinPanelView = {
-        return PinPanelView()
+        let myPinPanelView = PinPanelView()
+        myPinPanelView.delegate = self
+        return myPinPanelView
     }()
     private func setupPinPanelView() {
         contentStackView.addArrangedSubview(pinPanelView)
@@ -125,4 +123,27 @@ final class AuthorizationPinPanelViewController: UIViewController {
         }
     }
     
+}
+
+extension AuthorizationPinPanelViewController: PinPanelDelegate {
+    var pinValue: String {
+        get {
+            viewModel.code
+        }
+    }
+    func onChangePinValue(newDigit: String) {
+        self.viewModel.updatePinPanel(with: newDigit)
+        if self.viewModel.code.count == 4 {
+            self.view.setupActivityIndicator()
+            self.viewModel.login { success in
+                self.view.stopActivityIndicator()
+                if success {
+                    
+                }
+                else {
+                    self.showAlert(title: R.string.loginScreenStrings.login_error(), message: self.viewModel.error)
+                }
+            }
+        }
+    }
 }

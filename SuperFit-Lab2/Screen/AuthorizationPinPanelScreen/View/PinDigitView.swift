@@ -12,9 +12,9 @@ final class PinDigitView: UIView {
 
     var digit: String
     var coordinates: (Int, Int)
-    var changePositions: () -> ()
+    var changePositions: (String) -> ()
     
-    init(digit: String, coordinates: (Int, Int), changePositions: @escaping () -> ()) {
+    init(digit: String, coordinates: (Int, Int), changePositions: @escaping (String) -> ()) {
         self.digit = digit
         self.coordinates = coordinates
         self.changePositions = changePositions
@@ -33,7 +33,7 @@ final class PinDigitView: UIView {
     }
     
     @objc private func onSquareClicked() {
-        changePositions()
+        changePositions(digit)
     }
     
     // MARK: - SquareView setup

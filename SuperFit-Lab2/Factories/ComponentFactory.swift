@@ -17,5 +17,8 @@ final class ComponentFactory {
     func getAuthorizationPinPanelComponent() -> AuthorizationPinPanelComponent {
         return mainComponent.authorizationPinPanelComponent
     }
+    func getRegistrationComponent() -> RegistrationComponent {
+        return mainComponent.registrationComponent
+    }
     
 }

@@ -1,0 +1,15 @@
+/* 
+  RegisterScreenStrings.strings
+  SuperFit-Lab2
+
+  Created by admin on 01.05.2023.
+  
+*/
+
+"sign_in" = "Войти";
+"sign_up" = "Регистрация";
+"register_error" = "Ошибка при регистрации";
+"username" = "ИмяПользователя";
+"email" = "Email";
+"code" = "Код";
+"repeat_code" = "ПовторитеКод";

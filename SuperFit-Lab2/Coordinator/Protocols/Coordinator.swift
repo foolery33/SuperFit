@@ -22,7 +22,6 @@ extension Coordinator {
         for (index, child) in children.enumerated() {
             if child as AnyObject === coordinator as AnyObject {
                 children.remove(at: index)
-                print("Found")
                 break
             }
         }

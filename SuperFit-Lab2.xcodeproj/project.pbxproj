@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84608B1829FFB87800F06A8B /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1729FFB87800F06A8B /* AuthRepository.swift */; };
+		84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */; };
+		84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */; };
+		84608B1F29FFB91F00F06A8B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84608B1E29FFB91F00F06A8B /* Alamofire */; };
+		84608B2429FFBB3F00F06A8B /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B2329FFBB3F00F06A8B /* UserDataManager.swift */; };
+		84608B2729FFBB8400F06A8B /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 84608B2629FFBB8400F06A8B /* SwiftKeychainWrapper */; };
+		84608B2929FFBBED00F06A8B /* AuthResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B2829FFBBED00F06A8B /* AuthResponseModel.swift */; };
+		84608B2B29FFBD3B00F06A8B /* AccessTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B2A29FFBD3B00F06A8B /* AccessTokenModel.swift */; };
+		84608B3029FFC10A00F06A8B /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84608B3229FFC10A00F06A8B /* Errors.strings */; };
+		84608B3929FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B3829FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift */; };
+		84608B3D29FFCEB600F06A8B /* EmptyValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B3C29FFCEB600F06A8B /* EmptyValidationUseCase.swift */; };
+		84608B4029FFCF3B00F06A8B /* EmailValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B3F29FFCF3B00F06A8B /* EmailValidationUseCase.swift */; };
+		84608B4229FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B4129FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift */; };
+		84608B4429FFD0A500F06A8B /* CodeValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B4329FFD0A500F06A8B /* CodeValidationUseCase.swift */; };
+		84608B4629FFD10400F06A8B /* GetRegisterValidationErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B4529FFD10400F06A8B /* GetRegisterValidationErrorUseCase.swift */; };
+		84608B4C29FFED4600F06A8B /* RegisterScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84608B4E29FFED4600F06A8B /* RegisterScreenStrings.strings */; };
+		84608B5329FFEE0000F06A8B /* GeneralStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84608B5229FFEE0000F06A8B /* GeneralStrings.strings */; };
+		84608B5829FFF32E00F06A8B /* CodeValueChangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */; };
+		84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */; };
+		84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B682A001DE000F06A8B /* ActivityIndicator.swift */; };
 		84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2DAF829FECD7000AC4063 /* PinPanelView.swift */; };
 		84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 84C83E6829FE1E3900BC027D /* RswiftLibrary */; };
 		84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E6E29FE22F400BC027D /* Coordinator.swift */; };
@@ -18,6 +38,11 @@
 		84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */; };
 		84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8629FE293E00BC027D /* MainComponent.swift */; };
 		84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */; };
+		84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */; };
+		84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */; };
+		84CC9FF929FF85D700B81E65 /* RegistrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */; };
+		84CC9FFC29FF871600B81E65 /* UserInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FFB29FF871600B81E65 /* UserInfoStackView.swift */; };
+		84CCA00729FFB73400B81E65 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCA00629FFB73400B81E65 /* AppError.swift */; };
 		84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF989B29F9840700E04115 /* AppDelegate.swift */; };
 		84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF989D29F9840700E04115 /* SceneDelegate.swift */; };
 		84CF98A529F9840800E04115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98A429F9840800E04115 /* Assets.xcassets */; };
@@ -64,6 +89,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84608B1729FFB87800F06A8B /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImplementation.swift; sourceTree = "<group>"; };
+		84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRequestInterceptor.swift; sourceTree = "<group>"; };
+		84608B2329FFBB3F00F06A8B /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		84608B2829FFBBED00F06A8B /* AuthResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseModel.swift; sourceTree = "<group>"; };
+		84608B2A29FFBD3B00F06A8B /* AccessTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenModel.swift; sourceTree = "<group>"; };
+		84608B3129FFC10A00F06A8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
+		84608B3329FFC11000F06A8B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Errors.strings; sourceTree = "<group>"; };
+		84608B3829FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRefreshTokenUseCase.swift; sourceTree = "<group>"; };
+		84608B3C29FFCEB600F06A8B /* EmptyValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyValidationUseCase.swift; sourceTree = "<group>"; };
+		84608B3F29FFCF3B00F06A8B /* EmailValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidationUseCase.swift; sourceTree = "<group>"; };
+		84608B4129FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodesEqualityValidationUseCase.swift; sourceTree = "<group>"; };
+		84608B4329FFD0A500F06A8B /* CodeValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValidationUseCase.swift; sourceTree = "<group>"; };
+		84608B4529FFD10400F06A8B /* GetRegisterValidationErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRegisterValidationErrorUseCase.swift; sourceTree = "<group>"; };
+		84608B4D29FFED4600F06A8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RegisterScreenStrings.strings; sourceTree = "<group>"; };
+		84608B4F29FFED4900F06A8B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RegisterScreenStrings.strings; sourceTree = "<group>"; };
+		84608B5229FFEE0000F06A8B /* GeneralStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = GeneralStrings.strings; sourceTree = "<group>"; };
+		84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValueChangeUseCase.swift; sourceTree = "<group>"; };
+		84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserEmailUseCase.swift; sourceTree = "<group>"; };
+		84608B682A001DE000F06A8B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		84C2DAF829FECD7000AC4063 /* PinPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPanelView.swift; sourceTree = "<group>"; };
 		84C83E6E29FE22F400BC027D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		84C83E7729FE237C00BC027D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -73,6 +118,11 @@
 		84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		84C83E8629FE293E00BC027D /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationComponent.swift; sourceTree = "<group>"; };
+		84CC9FFB29FF871600B81E65 /* UserInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStackView.swift; sourceTree = "<group>"; };
+		84CCA00629FFB73400B81E65 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		84CF989829F9840700E04115 /* SuperFit-Lab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperFit-Lab2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CF989B29F9840700E04115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CF989D29F9840700E04115 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */,
+				84608B1F29FFB91F00F06A8B /* Alamofire in Frameworks */,
+				84608B2729FFBB8400F06A8B /* SwiftKeychainWrapper in Frameworks */,
 				84C83E7D29FE24D700BC027D /* NeedleFoundation in Frameworks */,
 				84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */,
 			);
@@ -133,6 +185,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84608B1629FFB80300F06A8B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				84608B2129FFB97C00F06A8B /* Model */,
+				84608B1729FFB87800F06A8B /* AuthRepository.swift */,
+				84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		84608B2129FFB97C00F06A8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84608B2829FFBBED00F06A8B /* AuthResponseModel.swift */,
+				84608B2A29FFBD3B00F06A8B /* AccessTokenModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84608B2C29FFC0B800F06A8B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				84608B3229FFC10A00F06A8B /* Errors.strings */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		84608B3629FFC67900F06A8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84608B5429FFF30700F06A8B /* UseCase */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84608B3B29FFCEA300F06A8B /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				84608B3C29FFCEB600F06A8B /* EmptyValidationUseCase.swift */,
+				84608B3F29FFCF3B00F06A8B /* EmailValidationUseCase.swift */,
+				84608B4129FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift */,
+				84608B4329FFD0A500F06A8B /* CodeValidationUseCase.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		84608B4829FFECBC00F06A8B /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84608B4E29FFED4600F06A8B /* RegisterScreenStrings.strings */,
+			);
+			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		84608B5029FFEDF300F06A8B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				84608B5229FFEE0000F06A8B /* GeneralStrings.strings */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		84608B5429FFF30700F06A8B /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				84608B5629FFF31600F06A8B /* Helpers */,
+				84608B3B29FFCEA300F06A8B /* Validation */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		84608B5629FFF31600F06A8B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				84608B3829FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift */,
+				84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */,
+				84608B4529FFD10400F06A8B /* GetRegisterValidationErrorUseCase.swift */,
+				84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		84C83E6D29FE22D300BC027D /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +280,12 @@
 		84C83E7029FE231700BC027D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				84CC9FEF29FF84A900B81E65 /* RegistrationScreen */,
 				84F4695929FE8DFC005E83C3 /* AuthorizationPinPanelScreen */,
 				84C83E7129FE233100BC027D /* AuthorizationScreen */,
 				84F4694529FE3E5E005E83C3 /* ViewExtensions */,
 				84C83E8629FE293E00BC027D /* MainComponent.swift */,
+				84608B682A001DE000F06A8B /* ActivityIndicator.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -197,6 +333,60 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84CC9FEF29FF84A900B81E65 /* RegistrationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84608B3629FFC67900F06A8B /* Model */,
+				84CC9FF329FF84CA00B81E65 /* View */,
+				84CC9FF229FF84C500B81E65 /* ViewModel */,
+				84CC9FF129FF84BB00B81E65 /* Component */,
+				84CC9FF029FF84B500B81E65 /* ViewController */,
+			);
+			path = RegistrationScreen;
+			sourceTree = "<group>";
+		};
+		84CC9FF029FF84B500B81E65 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84CC9FF129FF84BB00B81E65 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		84CC9FF229FF84C500B81E65 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84CC9FF329FF84CA00B81E65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CC9FFB29FF871600B81E65 /* UserInfoStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84CCA00529FFB72000B81E65 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				84608B1629FFB80300F06A8B /* Auth */,
+				84CCA00629FFB73400B81E65 /* AppError.swift */,
+				84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		84CF988F29F9840700E04115 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +410,7 @@
 		84CF989A29F9840700E04115 /* SuperFit-Lab2 */ = {
 			isa = PBXGroup;
 			children = (
+				84CCA00529FFB72000B81E65 /* Network */,
 				84F4694129FE3C20005E83C3 /* Factories */,
 				84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */,
 				84C83E7029FE231700BC027D /* Screen */,
@@ -230,6 +421,7 @@
 				84CF98A429F9840800E04115 /* Assets.xcassets */,
 				84CF98A629F9840800E04115 /* LaunchScreen.storyboard */,
 				84CF98A929F9840800E04115 /* Info.plist */,
+				84608B2329FFBB3F00F06A8B /* UserDataManager.swift */,
 			);
 			path = "SuperFit-Lab2";
 			sourceTree = "<group>";
@@ -276,7 +468,10 @@
 		84CF98F829F9898200E04115 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				84608B4829FFECBC00F06A8B /* RegisterScreen */,
 				84CF98F929F9899000E04115 /* LoginScreen */,
+				84608B5029FFEDF300F06A8B /* General */,
+				84608B2C29FFC0B800F06A8B /* Errors */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -383,6 +578,8 @@
 				84C83E6829FE1E3900BC027D /* RswiftLibrary */,
 				84C83E7C29FE24D700BC027D /* NeedleFoundation */,
 				84F4694A29FE3F77005E83C3 /* SnapKit */,
+				84608B1E29FFB91F00F06A8B /* Alamofire */,
+				84608B2629FFBB8400F06A8B /* SwiftKeychainWrapper */,
 			);
 			productName = "SuperFit-Lab2";
 			productReference = 84CF989829F9840700E04115 /* SuperFit-Lab2.app */;
@@ -461,6 +658,8 @@
 				84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */,
 				84C83E7B29FE24D700BC027D /* XCRemoteSwiftPackageReference "needle" */,
 				84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				84608B1D29FFB91F00F06A8B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				84608B2529FFBB8400F06A8B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 84CF989929F9840700E04115 /* Products */;
 			projectDirPath = "";
@@ -479,9 +678,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CF98A829F9840800E04115 /* LaunchScreen.storyboard in Resources */,
+				84608B4C29FFED4600F06A8B /* RegisterScreenStrings.strings in Resources */,
 				84CF98F129F987DE00E04115 /* Montserrat-Light.ttf in Resources */,
+				84608B3029FFC10A00F06A8B /* Errors.strings in Resources */,
 				84CF98F029F987DE00E04115 /* Montserrat-Bold.ttf in Resources */,
 				84CF98EF29F987DE00E04115 /* Montserrat-Thin.ttf in Resources */,
+				84608B5329FFEE0000F06A8B /* GeneralStrings.strings in Resources */,
 				84CF98F429F987DE00E04115 /* Montserrat-SemiBold.ttf in Resources */,
 				84CF98E529F987DE00E04115 /* Montserrat-Medium.ttf in Resources */,
 				84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */,
@@ -532,27 +734,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */,
 				84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */,
 				84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */,
 				84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */,
+				84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */,
+				84608B2929FFBBED00F06A8B /* AuthResponseModel.swift in Sources */,
+				84608B4229FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift in Sources */,
 				84F4695729FE7632005E83C3 /* ButtonWithArrowStackView.swift in Sources */,
 				84F4695F29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift in Sources */,
 				84F4695229FE6E75005E83C3 /* UIViewExtensions.swift in Sources */,
+				84CC9FF929FF85D700B81E65 /* RegistrationComponent.swift in Sources */,
 				84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */,
+				84608B4629FFD10400F06A8B /* GetRegisterValidationErrorUseCase.swift in Sources */,
 				84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */,
+				84608B2B29FFBD3B00F06A8B /* AccessTokenModel.swift in Sources */,
 				84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */,
 				84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */,
+				84608B4429FFD0A500F06A8B /* CodeValidationUseCase.swift in Sources */,
+				84608B2429FFBB3F00F06A8B /* UserDataManager.swift in Sources */,
 				84F4695029FE6743005E83C3 /* UnderlinedTextField.swift in Sources */,
 				84F4696129FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift in Sources */,
 				84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */,
+				84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */,
+				84608B5829FFF32E00F06A8B /* CodeValueChangeUseCase.swift in Sources */,
 				84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */,
 				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,
 				84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */,
+				84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */,
 				84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */,
+				84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */,
 				84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */,
 				84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */,
+				84608B4029FFCF3B00F06A8B /* EmailValidationUseCase.swift in Sources */,
+				84CC9FFC29FF871600B81E65 /* UserInfoStackView.swift in Sources */,
+				84608B3D29FFCEB600F06A8B /* EmptyValidationUseCase.swift in Sources */,
 				84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */,
 				84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */,
+				84608B1829FFB87800F06A8B /* AuthRepository.swift in Sources */,
+				84CCA00729FFB73400B81E65 /* AppError.swift in Sources */,
+				84608B3929FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift in Sources */,
+				84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */,
 				84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +816,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		84608B3229FFC10A00F06A8B /* Errors.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84608B3129FFC10A00F06A8B /* en */,
+				84608B3329FFC11000F06A8B /* ru */,
+			);
+			name = Errors.strings;
+			sourceTree = "<group>";
+		};
+		84608B4E29FFED4600F06A8B /* RegisterScreenStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84608B4D29FFED4600F06A8B /* en */,
+				84608B4F29FFED4900F06A8B /* ru */,
+			);
+			name = RegisterScreenStrings.strings;
+			sourceTree = "<group>";
+		};
 		84CF98A629F9840800E04115 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -898,6 +1138,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		84608B1D29FFB91F00F06A8B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		84608B2529FFBB8400F06A8B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
@@ -925,6 +1181,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		84608B1E29FFB91F00F06A8B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84608B1D29FFB91F00F06A8B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		84608B2629FFBB8400F06A8B /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84608B2529FFBB8400F06A8B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
 		84C83E6829FE1E3900BC027D /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */;

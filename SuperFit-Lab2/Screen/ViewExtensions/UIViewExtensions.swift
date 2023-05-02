@@ -38,3 +38,19 @@ extension UIView {
         })
     }
 }
+
+extension UIView {
+    func setupActivityIndicator(withBackground: Bool = true) {
+        let activityIndicator = ActivityIndicator(withBackground: withBackground)
+        self.addSubview(activityIndicator)
+        activityIndicator.setupAnimation()
+    }
+    func stopActivityIndicator() {
+        for subview in self.subviews {
+            if subview is ActivityIndicator {
+                let activityIndicator = subview as! ActivityIndicator
+                activityIndicator.stopAnimation()
+            }
+        }
+    }
+}

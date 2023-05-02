@@ -9,13 +9,19 @@ import NeedleFoundation
 import UIKit
 
 protocol AuthorizationPinPanelComponentDependency: Dependency {
-
+    var authRepository: AuthRepository { get }
+    var saveRefreshTokenUseCase: SaveRefreshTokenUseCase { get }
+    var saveUserEmailUseCase: SaveUserEmailUseCase { get }
 }
 
 final class AuthorizationPinPanelComponent: Component<AuthorizationPinPanelComponentDependency> {
     var authorizationPinPanelViewModel: AuthorizationPinPanelViewModel {
         shared {
-            AuthorizationPinPanelViewModel()
+            AuthorizationPinPanelViewModel(
+                authRepository: dependency.authRepository,
+                saveRefreshTokenUseCase: dependency.saveRefreshTokenUseCase,
+                saveUserEmailUseCase: dependency.saveUserEmailUseCase
+            )
         }
     }
     

@@ -53,13 +53,13 @@ class AuthorizationViewController: UIViewController {
         let myLabel = UILabel()
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratBold(size: 64)
-        myLabel.text = "SuperFit"
+        myLabel.text = R.string.generalStrings.app_name()
         return myLabel
     }()
     private func setupAppNameLabel() {
         view.addSubview(appNameLabel)
         appNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(24)
+            make.top.equalToSuperview().offset(68)
             make.centerX.equalToSuperview()
         }
     }
@@ -83,12 +83,12 @@ class AuthorizationViewController: UIViewController {
     
     // MARK: - UnderlinedTextField setup
     private lazy var underlinedTextField: UnderlinedTextField = {
-        let myTextField = UnderlinedTextField(currentText: self.viewModel.userName, placeholderText: "UserName", isSecured: false)
-        myTextField.addTarget(self, action: #selector(onNameTextFieldValueChanged(_:)), for: .editingChanged)
+        let myTextField = UnderlinedTextField(currentText: self.viewModel.email, placeholderText: R.string.loginScreenStrings.username(), isSecured: false)
+        myTextField.addTarget(self, action: #selector(onEmailTextFieldValueChanged(_:)), for: .editingChanged)
         return myTextField
     }()
-    @objc private func onNameTextFieldValueChanged(_ textField: UITextField) {
-        self.viewModel.userName = textField.text ?? ""
+    @objc private func onEmailTextFieldValueChanged(_ textField: UITextField) {
+        self.viewModel.email = textField.text ?? ""
     }
     private func setupUnderlinedTextField() {
         signInStackView.addArrangedSubview(underlinedTextField)
@@ -96,13 +96,20 @@ class AuthorizationViewController: UIViewController {
     
     // MARK: - SignInButton setup
     private lazy var signInButton: ButtonWithArrowStackView = {
-        let myStackView = ButtonWithArrowStackView(labelText: "Sign In", arrowImage: R.image.forwardArrow()!, action: onSignInButtonClicked)
+        let myStackView = ButtonWithArrowStackView(labelText: R.string.loginScreenStrings.sign_in(), arrowImage: R.image.forwardArrow()!, action: onSignInButtonClicked)
         myStackView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         myStackView.isLayoutMarginsRelativeArrangement = true
         return myStackView
     }()
     private func onSignInButtonClicked() {
-        self.viewModel.goToAuthorizationPinPanelScreen()
+        self.viewModel.onSignInButtonClicked { success in
+            if success {
+                self.viewModel.goToAuthorizationPinPanelScreen()
+            }
+            else {
+                self.showAlert(title: R.string.loginScreenStrings.login_error(), message: self.viewModel.error)
+            }
+        }
     }
     private func setupSignInButton() {
         signInStackView.addArrangedSubview(signInButton)
@@ -110,13 +117,13 @@ class AuthorizationViewController: UIViewController {
     
     // MARK: - SignUpButton setup
     private lazy var signUpButton: ButtonWithArrowStackView = {
-        let myStackView = ButtonWithArrowStackView(labelText: "Sign Up", arrowImage: R.image.forwardArrow()!, action: onSignUpButtonClicked)
+        let myStackView = ButtonWithArrowStackView(labelText: R.string.loginScreenStrings.sign_up(), arrowImage: R.image.forwardArrow()!, action: onSignUpButtonClicked)
         myStackView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         myStackView.isLayoutMarginsRelativeArrangement = true
         return myStackView
     }()
     private func onSignUpButtonClicked() {
-        print("clicked")
+        self.viewModel.goToRegistrationScreen()
     }
     private func setupSignUpButton() {
         view.addSubview(signUpButton)

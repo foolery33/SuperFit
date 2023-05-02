@@ -15,8 +15,8 @@ class UnderlinedTextField: UITextField {
     }
     private enum Paddings {
         static let offset = 16.0
-        static let securedTextField = UIEdgeInsets(top: 13.0, left: 10.0, bottom: 13.0, right: 30.0)
-        static let textField = UIEdgeInsets(top: 13.0, left: 10.0, bottom: 13.0, right: 10.0)
+        static let securedTextField = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 13.0, right: 40.0)
+        static let textField = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 13.0, right: 10.0)
     }
     
     private enum Scales {
@@ -56,7 +56,7 @@ class UnderlinedTextField: UITextField {
         let width  = Int(Scales.passwordEyeSize)
         let height = width
         let x = Int(Int(bounds.width) - Int(width) - Int(offset))
-        let y = Int(self.bounds.height / 2 - Scales.passwordEyeSize / 2)
+        let y = Int(self.textInputView.bounds.height / 2 - Scales.passwordEyeSize / 2)
         let rightViewBounds = CGRect(x: x, y: y, width: width, height: height)
         return rightViewBounds
     }
@@ -70,10 +70,6 @@ class UnderlinedTextField: UITextField {
         self.isSecureTextEntry = self.isSecured
         
         self.attributedPlaceholder = NSAttributedString(string: self.placeholderText, attributes: [NSAttributedString.Key.foregroundColor: R.color.white()!])
-        
-//        self.layer.borderColor = R.color.softGray()?.cgColor
-//        self.layer.borderWidth = Scales.borderWidth
-//        self.layer.cornerRadius = Scales.cornerRadius
         
         if(self.isSecured) {
             self.rightView = passwordEye

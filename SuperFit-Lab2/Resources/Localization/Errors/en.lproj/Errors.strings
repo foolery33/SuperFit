@@ -1,0 +1,18 @@
+/* 
+  ErrorString.strings
+  SuperFit-Lab2
+
+  Created by admin on 01.05.2023.
+  
+*/
+
+"invalid_credentials" = "Either your email or password are incorrect. Please try again";
+"server_error" = "Some server error occured. Please try again later";
+"model_error" = "Internal application error. Please contact developer";
+"empty_username" = "Please enter username to continue";
+"empty_email" = "Please enter e-mail to continue";
+"empty_code" = "Please enter code to continue";
+"empty_repeat_code" = "Please confirm code to continue";
+"invalid_email" = "Your email does not conform to default email pattern";
+"different_codes" = "You've provided different codes. Make sure they are equal";
+"invalid_code" = "The code is too weak, try another one";

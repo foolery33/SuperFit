@@ -10,6 +10,58 @@ import UIKit
 
 final class MainComponent: BootstrapComponent {
     
+    var authRepository: AuthRepository {
+        shared {
+            AuthRepositoryImplementation()
+        }
+    }
+    
+    var saveUserEmailUseCase: SaveUserEmailUseCase {
+        shared {
+            SaveUserEmailUseCase()
+        }
+    }
+    var saveRefreshTokenUseCase: SaveRefreshTokenUseCase {
+        shared {
+            SaveRefreshTokenUseCase()
+        }
+    }
+    var emptyValidationUseCase: EmptyValidationUseCase {
+        shared {
+            EmptyValidationUseCase()
+        }
+    }
+    var emailValidationUseCase: EmailValidationUseCase {
+        shared {
+            EmailValidationUseCase()
+        }
+    }
+    var codesEqualityValidationUseCase: CodesEqualityValidationUseCase {
+        shared {
+            CodesEqualityValidationUseCase()
+        }
+    }
+    var codeValidationUseCase: CodeValidationUseCase {
+        shared {
+            CodeValidationUseCase()
+        }
+    }
+    var getRegisterValidationErrorUseCase: GetRegisterValidationErrorUseCase {
+        shared {
+            GetRegisterValidationErrorUseCase(
+                emptyValidationUseCase: emptyValidationUseCase,
+                emailValidationUseCase: emailValidationUseCase,
+                codesEqualityValidationUseCase: codesEqualityValidationUseCase,
+                codeValidationUseCase: codeValidationUseCase
+            )
+        }
+    }
+    var codeValueChangeUseCase: CodeValueChangeUseCase {
+        shared {
+            CodeValueChangeUseCase()
+        }
+    }
+    
     var authorizationComponent: AuthorizationComponent {
         shared {
             AuthorizationComponent(parent: self)
@@ -19,6 +71,12 @@ final class MainComponent: BootstrapComponent {
     var authorizationPinPanelComponent: AuthorizationPinPanelComponent {
         shared {
             AuthorizationPinPanelComponent(parent: self)
+        }
+    }
+    
+    var registrationComponent: RegistrationComponent {
+        shared {
+            RegistrationComponent(parent: self)
         }
     }
     

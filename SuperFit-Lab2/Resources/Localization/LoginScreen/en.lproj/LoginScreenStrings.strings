@@ -7,3 +7,7 @@
 */
 
 "ok" = "OK";
+"username" = "UserName";
+"sign_in" = "Sign In";
+"sign_up" = "Sign Up";
+"login_error" = "Login error";
