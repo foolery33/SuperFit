@@ -95,5 +95,10 @@ final class MainComponent: BootstrapComponent {
             MainScreenComponent(parent: self)
         }
     }
+    var exercisesComponent: ExercisesComponent {
+        shared {
+            ExercisesComponent(parent: self)
+        }
+    }
     
 }

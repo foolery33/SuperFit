@@ -29,4 +29,11 @@ final class MainCoordinator: Coordinator {
         navigationController.pushViewController(component.mainViewController, animated: true)
     }
     
+    func goToExercisesScreen() {
+        let exercisesCoordinator = CoordinatorFactory().createExercisesCoordinator(navigationController: self.navigationController)
+        exercisesCoordinator.parentCoordinator = self
+        children.append(exercisesCoordinator)
+        exercisesCoordinator.start()
+    }
+    
 }

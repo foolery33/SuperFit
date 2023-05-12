@@ -18,7 +18,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        if UserDataManager().fetchRefreshToken().isEmpty == false {
+        if UserDataManager().fetchRefreshToken().isEmpty == true {
             goToAuth()
         }
         else {

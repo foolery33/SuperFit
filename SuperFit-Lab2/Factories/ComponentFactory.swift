@@ -23,5 +23,8 @@ final class ComponentFactory {
     func getMainScreenComponent() -> MainScreenComponent {
         return mainComponent.mainScreenComponent
     }
+    func getExercisesComponent() -> ExercisesComponent {
+        return mainComponent.exercisesComponent
+    }
     
 }

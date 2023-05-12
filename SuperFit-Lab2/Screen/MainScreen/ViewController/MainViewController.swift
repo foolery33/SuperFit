@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
     private lazy var topImageView: UIImageView = {
         let myImageView = UIImageView()
         myImageView.image = R.image.superFitImage()
+        myImageView.clipsToBounds = true
         return myImageView
     }()
     private func setupTopImageView() {
@@ -43,6 +44,7 @@ class MainViewController: UIViewController {
         setupAppNameLabel()
         topImageView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalToSuperview()
+            make.height.equalTo(168)
         }
     }
     
@@ -170,8 +172,12 @@ class MainViewController: UIViewController {
         myButton.setTitle(R.string.mainScreenStrings.see_all(), for: .normal)
         myButton.setTitleColor(R.color.mediumGray(), for: .normal)
         myButton.titleLabel?.font = R.font.montserratRegular(size: 12)
+        myButton.addTarget(self, action: #selector(onSeeAllButtonTapped), for: .touchUpInside)
         return myButton
     }()
+    @objc private func onSeeAllButtonTapped() {
+        viewModel.goToExercisesScreen()
+    }
     private func setupSeeAllButton() {
         contentView.addSubview(seeAllButton)
         seeAllButton.snp.makeConstraints { make in

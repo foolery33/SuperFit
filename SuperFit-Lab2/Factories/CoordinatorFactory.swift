@@ -17,4 +17,7 @@ final class CoordinatorFactory {
     func createMainCoordinator(navigationController: UINavigationController) -> MainCoordinator {
         return MainCoordinator(navigationController: navigationController)
     }
+    func createExercisesCoordinator(navigationController: UINavigationController) -> ExercisesCoordinator {
+        return ExercisesCoordinator(navigationController: navigationController)
+    }
 }

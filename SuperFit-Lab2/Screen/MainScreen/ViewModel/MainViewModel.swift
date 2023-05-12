@@ -34,6 +34,10 @@ final class MainViewModel {
         self.getTrainingInfoModelByTrainingTypeModelUseCase.getTrainingInfo(trainingTypeModel)
     }
     
+    func goToExercisesScreen() {
+        coordinator?.goToExercisesScreen()
+    }
+    
     func getLastExercises(completion: @escaping (Bool) -> Void) {
         trainingRepository.getTrainingList { [weak self] result in
             switch result {

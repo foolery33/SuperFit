@@ -16,6 +16,17 @@ private func parent1(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
 
 #if !NEEDLE_DYNAMIC
 
+private class ExercisesComponentDependency87121689354ac322309eProvider: ExercisesComponentDependency {
+
+
+    init() {
+
+    }
+}
+/// ^->MainComponent->ExercisesComponent
+private func factory898ce2b97f4454014ac8e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return ExercisesComponentDependency87121689354ac322309eProvider()
+}
 private class MainScreenComponentDependencyf7fb8b48e001394384acProvider: MainScreenComponentDependency {
     var trainingRepository: TrainingRepository {
         return mainComponent.trainingRepository
@@ -91,6 +102,11 @@ private func factory36d2db3a6303047193540ae93e637f014511a119(_ component: Needle
 }
 
 #else
+extension ExercisesComponent: Registration {
+    public func registerItems() {
+
+    }
+}
 extension MainScreenComponent: Registration {
     public func registerItems() {
         keyPathToName[\MainScreenComponentDependency.trainingRepository] = "trainingRepository-TrainingRepository"
@@ -140,6 +156,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 #if !NEEDLE_DYNAMIC
 
 @inline(never) private func register1() {
+    registerProviderFactory("^->MainComponent->ExercisesComponent", factory898ce2b97f4454014ac8e3b0c44298fc1c149afb)
     registerProviderFactory("^->MainComponent->MainScreenComponent", factoryd2e546a960c33ef2225f0ae93e637f014511a119)
     registerProviderFactory("^->MainComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->MainComponent->RegistrationComponent", factorybf509de48c6e5261a8800ae93e637f014511a119)

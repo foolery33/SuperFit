@@ -1,17 +1,17 @@
 //
-//  LastExercisesTableView.swift
+//  ExercisesTableView.swift
 //  SuperFit-Lab2
 //
-//  Created by admin on 03.05.2023.
+//  Created by admin on 12.05.2023.
 //
 
 import UIKit
 
-class LastExercisesTableView: UITableView {
+class ExercisesTableView: UITableView {
 
-    var viewModel: MainViewModel
+    var viewModel: ExercisesViewModel
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: ExercisesViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero, style: .plain)
         showsVerticalScrollIndicator = false
@@ -29,7 +29,7 @@ class LastExercisesTableView: UITableView {
 
 }
 
-extension LastExercisesTableView: UITableViewDataSource {
+extension ExercisesTableView: UITableViewDataSource {
     
 //    // MARK: - SkeletonCollectionViewDataSource
 //
@@ -41,14 +41,14 @@ extension LastExercisesTableView: UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.lastExercises.count
+        return viewModel.exercises.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LastExercisesTableViewCell.identifier, for: indexPath) as! LastExercisesTableViewCell
         cell.selectionStyle = .none
         
-        let trainingInfoModel = self.viewModel.getTrainingInfoModel(from: viewModel.lastExercises[indexPath.row].exercise)
-        cell.setup(with: trainingInfoModel)
+        let exercise = viewModel.exercises[indexPath.row]
+        cell.setup(with: exercise)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,14 +56,14 @@ extension LastExercisesTableView: UITableViewDataSource {
     }
 }
 
-extension LastExercisesTableView: UITableViewDelegate {
+extension ExercisesTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 114 + 16
     }
 }
 
-extension LastExercisesTableView {
+extension ExercisesTableView {
     func calculateHeight() -> CGFloat {
-        return CGFloat(self.viewModel.lastExercises.count * (114 + 16))
+        return CGFloat(self.viewModel.exercises.count * (114 + 16))
     }
 }
