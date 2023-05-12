@@ -14,4 +14,7 @@ final class CoordinatorFactory {
     func createAuthCoordinator(navigationController: UINavigationController) -> AuthCoordinator {
         return AuthCoordinator(navigationController: navigationController)
     }
+    func createMainCoordinator(navigationController: UINavigationController) -> MainCoordinator {
+        return MainCoordinator(navigationController: navigationController)
+    }
 }

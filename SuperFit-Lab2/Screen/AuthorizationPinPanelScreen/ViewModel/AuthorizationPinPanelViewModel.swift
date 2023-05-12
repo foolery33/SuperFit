@@ -24,6 +24,9 @@ final class AuthorizationPinPanelViewModel {
         self.saveUserEmailUseCase = saveUserEmailUseCase
     }
     
+    func goToMainScreen() {
+        self.coordinator?.goToMainScreen()
+    }
     func goBackToAuthorizationScreen() {
         self.coordinator?.navigationController.popViewController(animated: true)
     }

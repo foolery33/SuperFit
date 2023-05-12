@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841147452A0E446500E2C7D3 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147422A0E444600E2C7D3 /* Montserrat-Medium.ttf */; };
+		841147462A0E446800E2C7D3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147412A0E444600E2C7D3 /* Montserrat-Bold.ttf */; };
+		841147472A0E446A00E2C7D3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147402A0E444600E2C7D3 /* Montserrat-Regular.ttf */; };
+		841147482A0E446C00E2C7D3 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147432A0E444600E2C7D3 /* Montserrat-SemiBold.ttf */; };
+		8411474B2A0E448300E2C7D3 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8411474A2A0E448300E2C7D3 /* Montserrat-Light.ttf */; };
 		84608B1829FFB87800F06A8B /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1729FFB87800F06A8B /* AuthRepository.swift */; };
 		84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */; };
 		84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */; };
@@ -27,8 +32,10 @@
 		84608B5829FFF32E00F06A8B /* CodeValueChangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */; };
 		84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */; };
 		84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B682A001DE000F06A8B /* ActivityIndicator.swift */; };
+		84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */; };
+		84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */; };
+		84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84BC22872A0212CD004C3272 /* MainScreenStrings.strings */; };
 		84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2DAF829FECD7000AC4063 /* PinPanelView.swift */; };
-		84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 84C83E6829FE1E3900BC027D /* RswiftLibrary */; };
 		84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E6E29FE22F400BC027D /* Coordinator.swift */; };
 		84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E7729FE237C00BC027D /* AppCoordinator.swift */; };
 		84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E7929FE242800BC027D /* AuthCoordinator.swift */; };
@@ -38,6 +45,23 @@
 		84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */; };
 		84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8629FE293E00BC027D /* MainComponent.swift */; };
 		84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */; };
+		84CBC9332A0129B20071F1FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9322A0129B20071F1FB /* MainViewController.swift */; };
+		84CBC9352A0129E50071F1FB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9342A0129E50071F1FB /* MainViewModel.swift */; };
+		84CBC9382A0132A10071F1FB /* MainScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9372A0132A10071F1FB /* MainScreenComponent.swift */; };
+		84CBC93C2A0135F20071F1FB /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC93B2A0135F20071F1FB /* ExerciseModel.swift */; };
+		84CBC9442A0136C30071F1FB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84CBC9432A0136C30071F1FB /* RealmSwift */; };
+		84CBC9472A0136E10071F1FB /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 84CBC9462A0136E10071F1FB /* RswiftLibrary */; };
+		84CBC94A2A0137600071F1FB /* ExercisesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9492A0137600071F1FB /* ExercisesDatabase.swift */; };
+		84CBC94E2A013D200071F1FB /* TrainingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC94D2A013D200071F1FB /* TrainingRepository.swift */; };
+		84CBC9522A013D530071F1FB /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9512A013D530071F1FB /* TrainingModel.swift */; };
+		84CBC9542A013DC20071F1FB /* TrainingTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9532A013DC20071F1FB /* TrainingTypeModel.swift */; };
+		84CBC9562A013F500071F1FB /* TrainingRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9552A013F500071F1FB /* TrainingRepositoryImplementation.swift */; };
+		84CBC9592A0144BC0071F1FB /* TrainingParametersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9582A0144BC0071F1FB /* TrainingParametersModel.swift */; };
+		84CBC95C2A0148E80071F1FB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC95B2A0148E80071F1FB /* MainCoordinator.swift */; };
+		84CBC95F2A01738A0071F1FB /* MyBodyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC95E2A01738A0071F1FB /* MyBodyCardView.swift */; };
+		84CBC9632A0179B60071F1FB /* LastExercisesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9622A0179B60071F1FB /* LastExercisesTableView.swift */; };
+		84CBC9662A017A9F0071F1FB /* LastExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9652A017A9F0071F1FB /* LastExercisesTableViewCell.swift */; };
+		84CBC9682A01869E0071F1FB /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9672A01869E0071F1FB /* MainModel.swift */; };
 		84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */; };
 		84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */; };
 		84CC9FF929FF85D700B81E65 /* RegistrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */; };
@@ -50,12 +74,6 @@
 		84CF98B329F9840900E04115 /* SuperFit_Lab2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98B229F9840900E04115 /* SuperFit_Lab2Tests.swift */; };
 		84CF98BD29F9840900E04115 /* SuperFit_Lab2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BC29F9840900E04115 /* SuperFit_Lab2UITests.swift */; };
 		84CF98BF29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */; };
-		84CF98E529F987DE00E04115 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98D329F987DD00E04115 /* Montserrat-Medium.ttf */; };
-		84CF98E629F987DE00E04115 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98D429F987DD00E04115 /* Montserrat-Regular.ttf */; };
-		84CF98EF29F987DE00E04115 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DD29F987DE00E04115 /* Montserrat-Thin.ttf */; };
-		84CF98F029F987DE00E04115 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DE29F987DE00E04115 /* Montserrat-Bold.ttf */; };
-		84CF98F129F987DE00E04115 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */; };
-		84CF98F429F987DE00E04115 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */; };
 		84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */; };
 		84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D32E7D29FECA0B00F2937D /* PinDigitView.swift */; };
 		84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */; };
@@ -89,6 +107,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841147402A0E444600E2C7D3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		841147412A0E444600E2C7D3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		841147422A0E444600E2C7D3 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		841147432A0E444600E2C7D3 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		8411474A2A0E448300E2C7D3 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		84608B1729FFB87800F06A8B /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImplementation.swift; sourceTree = "<group>"; };
 		84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -109,6 +132,10 @@
 		84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValueChangeUseCase.swift; sourceTree = "<group>"; };
 		84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserEmailUseCase.swift; sourceTree = "<group>"; };
 		84608B682A001DE000F06A8B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainingInfoModelByTrainingTypeModelUseCase.swift; sourceTree = "<group>"; };
+		84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingInfoModel.swift; sourceTree = "<group>"; };
+		84BC22862A0212CD004C3272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainScreenStrings.strings; sourceTree = "<group>"; };
+		84BC22882A0212D0004C3272 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainScreenStrings.strings; sourceTree = "<group>"; };
 		84C2DAF829FECD7000AC4063 /* PinPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPanelView.swift; sourceTree = "<group>"; };
 		84C83E6E29FE22F400BC027D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		84C83E7729FE237C00BC027D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -118,6 +145,21 @@
 		84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		84C83E8629FE293E00BC027D /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		84CBC9322A0129B20071F1FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		84CBC9342A0129E50071F1FB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		84CBC9372A0132A10071F1FB /* MainScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComponent.swift; sourceTree = "<group>"; };
+		84CBC93B2A0135F20071F1FB /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		84CBC9492A0137600071F1FB /* ExercisesDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesDatabase.swift; sourceTree = "<group>"; };
+		84CBC94D2A013D200071F1FB /* TrainingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingRepository.swift; sourceTree = "<group>"; };
+		84CBC9512A013D530071F1FB /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
+		84CBC9532A013DC20071F1FB /* TrainingTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTypeModel.swift; sourceTree = "<group>"; };
+		84CBC9552A013F500071F1FB /* TrainingRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingRepositoryImplementation.swift; sourceTree = "<group>"; };
+		84CBC9582A0144BC0071F1FB /* TrainingParametersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingParametersModel.swift; sourceTree = "<group>"; };
+		84CBC95B2A0148E80071F1FB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		84CBC95E2A01738A0071F1FB /* MyBodyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyCardView.swift; sourceTree = "<group>"; };
+		84CBC9622A0179B60071F1FB /* LastExercisesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExercisesTableView.swift; sourceTree = "<group>"; };
+		84CBC9652A017A9F0071F1FB /* LastExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExercisesTableViewCell.swift; sourceTree = "<group>"; };
+		84CBC9672A01869E0071F1FB /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationComponent.swift; sourceTree = "<group>"; };
@@ -134,12 +176,6 @@
 		84CF98B829F9840900E04115 /* SuperFit-Lab2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SuperFit-Lab2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CF98BC29F9840900E04115 /* SuperFit_Lab2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2UITests.swift; sourceTree = "<group>"; };
 		84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		84CF98D329F987DD00E04115 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		84CF98D429F987DD00E04115 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		84CF98DD29F987DE00E04115 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Thin.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
-		84CF98DE29F987DE00E04115 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-Light.ttf"; sourceTree = "<group>"; };
-		84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../../Downloads/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		84CF98FD29F989DE00E04115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
 		84CF98FF29F989F400E04115 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
 		84D32E7D29FECA0B00F2937D /* PinDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDigitView.swift; sourceTree = "<group>"; };
@@ -163,8 +199,9 @@
 				84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */,
 				84608B1F29FFB91F00F06A8B /* Alamofire in Frameworks */,
 				84608B2729FFBB8400F06A8B /* SwiftKeychainWrapper in Frameworks */,
+				84CBC9442A0136C30071F1FB /* RealmSwift in Frameworks */,
 				84C83E7D29FE24D700BC027D /* NeedleFoundation in Frameworks */,
-				84C83E6929FE1E3900BC027D /* RswiftLibrary in Frameworks */,
+				84CBC9472A0136E10071F1FB /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,12 +304,29 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		84BC22812A0211B8004C3272 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		84BC22822A021257004C3272 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84BC22872A0212CD004C3272 /* MainScreenStrings.strings */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		84C83E6D29FE22D300BC027D /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				84C83E7529FE236B00BC027D /* Protocols */,
-				84C83E7729FE237C00BC027D /* AppCoordinator.swift */,
+				84CBC95B2A0148E80071F1FB /* MainCoordinator.swift */,
 				84C83E7929FE242800BC027D /* AuthCoordinator.swift */,
+				84C83E7729FE237C00BC027D /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -280,6 +334,7 @@
 		84C83E7029FE231700BC027D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				84CBC92C2A0128DE0071F1FB /* MainScreen */,
 				84CC9FEF29FF84A900B81E65 /* RegistrationScreen */,
 				84F4695929FE8DFC005E83C3 /* AuthorizationPinPanelScreen */,
 				84C83E7129FE233100BC027D /* AuthorizationScreen */,
@@ -333,6 +388,106 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84CBC92C2A0128DE0071F1FB /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9312A0129080071F1FB /* Model */,
+				84CBC9302A0129040071F1FB /* View */,
+				84CBC92F2A0128FF0071F1FB /* ViewModel */,
+				84CBC92E2A0128F90071F1FB /* Component */,
+				84CBC92D2A0128F20071F1FB /* ViewController */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		84CBC92D2A0128F20071F1FB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9322A0129B20071F1FB /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84CBC92E2A0128F90071F1FB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9372A0132A10071F1FB /* MainScreenComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		84CBC92F2A0128FF0071F1FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9342A0129E50071F1FB /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84CBC9302A0129040071F1FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9612A0178FF0071F1FB /* LastExercisesTableView */,
+				84CBC95E2A01738A0071F1FB /* MyBodyCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84CBC9312A0129080071F1FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84BC22812A0211B8004C3272 /* UseCase */,
+				84CBC9672A01869E0071F1FB /* MainModel.swift */,
+				84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84CBC93A2A0135C70071F1FB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC93B2A0135F20071F1FB /* ExerciseModel.swift */,
+				84CBC9492A0137600071F1FB /* ExercisesDatabase.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		84CBC9452A0136E10071F1FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84CBC94C2A013CE10071F1FB /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9502A013D490071F1FB /* Model */,
+				84CBC94D2A013D200071F1FB /* TrainingRepository.swift */,
+				84CBC9552A013F500071F1FB /* TrainingRepositoryImplementation.swift */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
+		84CBC9502A013D490071F1FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9512A013D530071F1FB /* TrainingModel.swift */,
+				84CBC9532A013DC20071F1FB /* TrainingTypeModel.swift */,
+				84CBC9582A0144BC0071F1FB /* TrainingParametersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84CBC9612A0178FF0071F1FB /* LastExercisesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC9622A0179B60071F1FB /* LastExercisesTableView.swift */,
+				84CBC9652A017A9F0071F1FB /* LastExercisesTableViewCell.swift */,
+			);
+			path = LastExercisesTableView;
+			sourceTree = "<group>";
+		};
 		84CC9FEF29FF84A900B81E65 /* RegistrationScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +535,7 @@
 		84CCA00529FFB72000B81E65 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				84CBC94C2A013CE10071F1FB /* Training */,
 				84608B1629FFB80300F06A8B /* Auth */,
 				84CCA00629FFB73400B81E65 /* AppError.swift */,
 				84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */,
@@ -394,6 +550,7 @@
 				84CF98B129F9840900E04115 /* SuperFit-Lab2Tests */,
 				84CF98BB29F9840900E04115 /* SuperFit-Lab2UITests */,
 				84CF989929F9840700E04115 /* Products */,
+				84CBC9452A0136E10071F1FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -410,6 +567,7 @@
 		84CF989A29F9840700E04115 /* SuperFit-Lab2 */ = {
 			isa = PBXGroup;
 			children = (
+				84CBC93A2A0135C70071F1FB /* Database */,
 				84CCA00529FFB72000B81E65 /* Network */,
 				84F4694129FE3C20005E83C3 /* Factories */,
 				84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */,
@@ -455,12 +613,11 @@
 		84CF98D129F987CA00E04115 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				84CF98DE29F987DE00E04115 /* Montserrat-Bold.ttf */,
-				84CF98DF29F987DE00E04115 /* Montserrat-Light.ttf */,
-				84CF98D329F987DD00E04115 /* Montserrat-Medium.ttf */,
-				84CF98D429F987DD00E04115 /* Montserrat-Regular.ttf */,
-				84CF98E229F987DE00E04115 /* Montserrat-SemiBold.ttf */,
-				84CF98DD29F987DE00E04115 /* Montserrat-Thin.ttf */,
+				8411474A2A0E448300E2C7D3 /* Montserrat-Light.ttf */,
+				841147412A0E444600E2C7D3 /* Montserrat-Bold.ttf */,
+				841147422A0E444600E2C7D3 /* Montserrat-Medium.ttf */,
+				841147402A0E444600E2C7D3 /* Montserrat-Regular.ttf */,
+				841147432A0E444600E2C7D3 /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -468,6 +625,7 @@
 		84CF98F829F9898200E04115 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				84BC22822A021257004C3272 /* MainScreen */,
 				84608B4829FFECBC00F06A8B /* RegisterScreen */,
 				84CF98F929F9899000E04115 /* LoginScreen */,
 				84608B5029FFEDF300F06A8B /* General */,
@@ -563,7 +721,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84CF98C229F9840900E04115 /* Build configuration list for PBXNativeTarget "SuperFit-Lab2" */;
 			buildPhases = (
-				84C83E8B29FE2E6B00BC027D /* ShellScript */,
+				84C83E8B29FE2E6B00BC027D /* Run Script */,
 				84CF989429F9840700E04115 /* Sources */,
 				84CF989529F9840700E04115 /* Frameworks */,
 				84CF989629F9840700E04115 /* Resources */,
@@ -575,11 +733,12 @@
 			);
 			name = "SuperFit-Lab2";
 			packageProductDependencies = (
-				84C83E6829FE1E3900BC027D /* RswiftLibrary */,
 				84C83E7C29FE24D700BC027D /* NeedleFoundation */,
 				84F4694A29FE3F77005E83C3 /* SnapKit */,
 				84608B1E29FFB91F00F06A8B /* Alamofire */,
 				84608B2629FFBB8400F06A8B /* SwiftKeychainWrapper */,
+				84CBC9432A0136C30071F1FB /* RealmSwift */,
+				84CBC9462A0136E10071F1FB /* RswiftLibrary */,
 			);
 			productName = "SuperFit-Lab2";
 			productReference = 84CF989829F9840700E04115 /* SuperFit-Lab2.app */;
@@ -660,6 +819,7 @@
 				84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				84608B1D29FFB91F00F06A8B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				84608B2529FFBB8400F06A8B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				84CBC9422A0136C30071F1FB /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 84CF989929F9840700E04115 /* Products */;
 			projectDirPath = "";
@@ -677,17 +837,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8411474B2A0E448300E2C7D3 /* Montserrat-Light.ttf in Resources */,
 				84CF98A829F9840800E04115 /* LaunchScreen.storyboard in Resources */,
+				841147482A0E446C00E2C7D3 /* Montserrat-SemiBold.ttf in Resources */,
 				84608B4C29FFED4600F06A8B /* RegisterScreenStrings.strings in Resources */,
-				84CF98F129F987DE00E04115 /* Montserrat-Light.ttf in Resources */,
 				84608B3029FFC10A00F06A8B /* Errors.strings in Resources */,
-				84CF98F029F987DE00E04115 /* Montserrat-Bold.ttf in Resources */,
-				84CF98EF29F987DE00E04115 /* Montserrat-Thin.ttf in Resources */,
 				84608B5329FFEE0000F06A8B /* GeneralStrings.strings in Resources */,
-				84CF98F429F987DE00E04115 /* Montserrat-SemiBold.ttf in Resources */,
-				84CF98E529F987DE00E04115 /* Montserrat-Medium.ttf in Resources */,
+				84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */,
+				841147462A0E446800E2C7D3 /* Montserrat-Bold.ttf in Resources */,
 				84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */,
-				84CF98E629F987DE00E04115 /* Montserrat-Regular.ttf in Resources */,
+				841147452A0E446500E2C7D3 /* Montserrat-Medium.ttf in Resources */,
+				841147472A0E446A00E2C7D3 /* Montserrat-Regular.ttf in Resources */,
 				84CF98A529F9840800E04115 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,7 +869,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84C83E8B29FE2E6B00BC027D /* ShellScript */ = {
+		84C83E8B29FE2E6B00BC027D /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -719,6 +879,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -735,9 +896,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */,
+				84CBC9592A0144BC0071F1FB /* TrainingParametersModel.swift in Sources */,
+				84CBC95C2A0148E80071F1FB /* MainCoordinator.swift in Sources */,
 				84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */,
+				84CBC9632A0179B60071F1FB /* LastExercisesTableView.swift in Sources */,
 				84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */,
+				84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */,
 				84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */,
+				84CBC94A2A0137600071F1FB /* ExercisesDatabase.swift in Sources */,
+				84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */,
 				84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */,
 				84608B2929FFBBED00F06A8B /* AuthResponseModel.swift in Sources */,
 				84608B4229FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift in Sources */,
@@ -745,6 +912,10 @@
 				84F4695F29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift in Sources */,
 				84F4695229FE6E75005E83C3 /* UIViewExtensions.swift in Sources */,
 				84CC9FF929FF85D700B81E65 /* RegistrationComponent.swift in Sources */,
+				84CBC95F2A01738A0071F1FB /* MyBodyCardView.swift in Sources */,
+				84CBC93C2A0135F20071F1FB /* ExerciseModel.swift in Sources */,
+				84CBC9332A0129B20071F1FB /* MainViewController.swift in Sources */,
+				84CBC9662A017A9F0071F1FB /* LastExercisesTableViewCell.swift in Sources */,
 				84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */,
 				84608B4629FFD10400F06A8B /* GetRegisterValidationErrorUseCase.swift in Sources */,
 				84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */,
@@ -753,21 +924,27 @@
 				84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */,
 				84608B4429FFD0A500F06A8B /* CodeValidationUseCase.swift in Sources */,
 				84608B2429FFBB3F00F06A8B /* UserDataManager.swift in Sources */,
+				84CBC9522A013D530071F1FB /* TrainingModel.swift in Sources */,
 				84F4695029FE6743005E83C3 /* UnderlinedTextField.swift in Sources */,
 				84F4696129FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift in Sources */,
 				84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */,
 				84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */,
 				84608B5829FFF32E00F06A8B /* CodeValueChangeUseCase.swift in Sources */,
 				84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */,
+				84CBC9542A013DC20071F1FB /* TrainingTypeModel.swift in Sources */,
+				84CBC9562A013F500071F1FB /* TrainingRepositoryImplementation.swift in Sources */,
 				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,
 				84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */,
 				84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */,
+				84CBC94E2A013D200071F1FB /* TrainingRepository.swift in Sources */,
 				84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */,
+				84CBC9682A01869E0071F1FB /* MainModel.swift in Sources */,
 				84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */,
 				84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */,
 				84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */,
 				84608B4029FFCF3B00F06A8B /* EmailValidationUseCase.swift in Sources */,
 				84CC9FFC29FF871600B81E65 /* UserInfoStackView.swift in Sources */,
+				84CBC9382A0132A10071F1FB /* MainScreenComponent.swift in Sources */,
 				84608B3D29FFCEB600F06A8B /* EmptyValidationUseCase.swift in Sources */,
 				84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */,
 				84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */,
@@ -776,6 +953,7 @@
 				84608B3929FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift in Sources */,
 				84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */,
 				84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */,
+				84CBC9352A0129E50071F1FB /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +1010,15 @@
 				84608B4F29FFED4900F06A8B /* ru */,
 			);
 			name = RegisterScreenStrings.strings;
+			sourceTree = "<group>";
+		};
+		84BC22872A0212CD004C3272 /* MainScreenStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BC22862A0212CD004C3272 /* en */,
+				84BC22882A0212D0004C3272 /* ru */,
+			);
+			name = MainScreenStrings.strings;
 			sourceTree = "<group>";
 		};
 		84CF98A629F9840800E04115 /* LaunchScreen.storyboard */ = {
@@ -981,6 +1168,7 @@
 				INFOPLIST_FILE = "SuperFit-Lab2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1008,6 +1196,7 @@
 				INFOPLIST_FILE = "SuperFit-Lab2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1170,6 +1359,14 @@
 				kind = branch;
 			};
 		};
+		84CBC9422A0136C30071F1FB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1191,11 +1388,6 @@
 			package = 84608B2529FFBB8400F06A8B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
 		};
-		84C83E6829FE1E3900BC027D /* RswiftLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */;
-			productName = RswiftLibrary;
-		};
 		84C83E6A29FE1E3E00BC027D /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
@@ -1204,6 +1396,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84C83E7B29FE24D700BC027D /* XCRemoteSwiftPackageReference "needle" */;
 			productName = NeedleFoundation;
+		};
+		84CBC9432A0136C30071F1FB /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84CBC9422A0136C30071F1FB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		84CBC9462A0136E10071F1FB /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
 		};
 		84F4694A29FE3F77005E83C3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

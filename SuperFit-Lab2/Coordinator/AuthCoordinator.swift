@@ -43,7 +43,10 @@ class AuthCoordinator: Coordinator {
     }
     
     func goToMainScreen() {
-        
+        if let appCoordinator = parentCoordinator as? AppCoordinator {
+            appCoordinator.goToMain()
+            parentCoordinator?.childDidFinish(self)
+        }
     }
     
 }

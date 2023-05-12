@@ -7,6 +7,7 @@
 
 import UIKit
 import NeedleFoundation
+import RealmSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -27,7 +28,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = appCoordinator?.navigationController
         window?.makeKeyAndVisible()
     }
-
+    
+    func setupRealm() -> Realm {
+        do {
+            return try Realm()
+        } catch let error {
+            fatalError("Failed to create Realm: \(error.localizedDescription)")
+        }
+    }
 
 }
 

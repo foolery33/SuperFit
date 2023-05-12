@@ -20,5 +20,8 @@ final class ComponentFactory {
     func getRegistrationComponent() -> RegistrationComponent {
         return mainComponent.registrationComponent
     }
+    func getMainScreenComponent() -> MainScreenComponent {
+        return mainComponent.mainScreenComponent
+    }
     
 }

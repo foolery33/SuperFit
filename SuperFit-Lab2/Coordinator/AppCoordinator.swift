@@ -18,13 +18,12 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        goToAuth()
-//        if TokenManager.shared.fetchAccessToken().isEmpty {
-//            goToAuth()
-//        }
-//        else {
-//            goToMain()
-//        }
+        if UserDataManager().fetchRefreshToken().isEmpty == false {
+            goToAuth()
+        }
+        else {
+            goToMain()
+        }
     }
     
     func goToAuth() {
@@ -35,7 +34,10 @@ final class AppCoordinator: Coordinator {
     }
     
     func goToMain() {
-        
+        let mainCoordinator = CoordinatorFactory().createMainCoordinator(navigationController: self.navigationController)
+        mainCoordinator.parentCoordinator = self
+        children.append(mainCoordinator)
+        mainCoordinator.start()
     }
     
 }

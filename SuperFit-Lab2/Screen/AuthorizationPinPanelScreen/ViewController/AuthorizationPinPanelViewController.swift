@@ -138,7 +138,7 @@ extension AuthorizationPinPanelViewController: PinPanelDelegate {
             self.viewModel.login { success in
                 self.view.stopActivityIndicator()
                 if success {
-                    
+                    self.viewModel.goToMainScreen()
                 }
                 else {
                     self.showAlert(title: R.string.loginScreenStrings.login_error(), message: self.viewModel.error)

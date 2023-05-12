@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="tkB-9z-Zo5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-fq-fhN">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tkB-9z-Zo5" secondAttribute="bottom" id="55v-ir-t7C"/>
-                            <constraint firstItem="tkB-9z-Zo5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Gb-FO-Rlv"/>
-                            <constraint firstItem="tkB-9z-Zo5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JXt-uh-bBS"/>
-                            <constraint firstItem="tkB-9z-Zo5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCM-Ai-Dzm"/>
+                            <constraint firstItem="ayE-fq-fhN" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ChL-Wc-jlN"/>
+                            <constraint firstItem="ayE-fq-fhN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="doD-kw-OJ3"/>
+                            <constraint firstAttribute="bottom" secondItem="ayE-fq-fhN" secondAttribute="bottom" id="jT1-QW-846"/>
+                            <constraint firstAttribute="trailing" secondItem="ayE-fq-fhN" secondAttribute="trailing" id="sWv-hc-kr5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackgroundImage" width="375" height="766"/>
+        <image name="LaunchScreenImage" width="375" height="766"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

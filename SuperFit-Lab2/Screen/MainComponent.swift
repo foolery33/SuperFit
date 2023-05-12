@@ -10,12 +10,19 @@ import UIKit
 
 final class MainComponent: BootstrapComponent {
     
+    // MARK: - Repositories
     var authRepository: AuthRepository {
         shared {
             AuthRepositoryImplementation()
         }
     }
+    var trainingRepository: TrainingRepository {
+        shared {
+            TrainingRepositoryImplementation()
+        }
+    }
     
+    // MARK: - UseCases
     var saveUserEmailUseCase: SaveUserEmailUseCase {
         shared {
             SaveUserEmailUseCase()
@@ -61,22 +68,31 @@ final class MainComponent: BootstrapComponent {
             CodeValueChangeUseCase()
         }
     }
+    var getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase {
+        shared {
+            GetTrainingInfoModelByTrainingTypeModelUseCase()
+        }
+    }
     
+    // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
         shared {
             AuthorizationComponent(parent: self)
         }
     }
-    
     var authorizationPinPanelComponent: AuthorizationPinPanelComponent {
         shared {
             AuthorizationPinPanelComponent(parent: self)
         }
     }
-    
     var registrationComponent: RegistrationComponent {
         shared {
             RegistrationComponent(parent: self)
+        }
+    }
+    var mainScreenComponent: MainScreenComponent {
+        shared {
+            MainScreenComponent(parent: self)
         }
     }
     

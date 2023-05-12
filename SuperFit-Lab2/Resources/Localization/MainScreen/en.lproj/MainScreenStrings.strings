@@ -1,0 +1,28 @@
+/* 
+  MainScreenStrings.strings
+  SuperFit-Lab2
+
+  Created by admin on 03.05.2023.
+  
+*/
+
+"push_ups" = "Push-Ups";
+"push_ups_description" = "Push-ups exercise the pectoral muscles, triceps, and anterior deltoids.";
+
+"plank" = "Plank";
+"plank_description" = "The plank strengthens the abdominals, back and shoulders.";
+
+"squats" = "Squats";
+"squats_description" = "Сonsidered a vital exercise for increasing the strength and size of the lower body.";
+
+"crunch" = "Crunch";
+"crunch_description" = "It involves the entire abs, but primarily it works the rectus abdominis muscle.";
+
+"running" = "Running";
+"running_description" = "It develops endurance, strengthens the legs and the cardiovascular system.";
+
+"my_body" = "My body";
+"last_exercises" = "Last exercises";
+"details" = "Details";
+"sign_out" = "Sign Out";
+"see_all" = "See all";
