@@ -18,6 +18,11 @@
 		8411475B2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411475A2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift */; };
 		8457C47D2A0E52E700BA4F18 /* ExercisesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C47C2A0E52E700BA4F18 /* ExercisesTableView.swift */; };
 		8457C4812A0E55A600BA4F18 /* ExercisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C4802A0E55A600BA4F18 /* ExercisesModel.swift */; };
+		8457C4892A0E6A5100BA4F18 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C4882A0E6A5100BA4F18 /* ExerciseViewController.swift */; };
+		8457C48B2A0E6BA400BA4F18 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C48A2A0E6BA400BA4F18 /* ExerciseViewModel.swift */; };
+		8457C48D2A0E6BCE00BA4F18 /* ExerciseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C48C2A0E6BCE00BA4F18 /* ExerciseComponent.swift */; };
+		8457C4912A0E750600BA4F18 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C4902A0E750600BA4F18 /* FilledButton.swift */; };
+		8457C4982A0E7B9900BA4F18 /* GetTrainingTypeByTrainingInfoModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C4972A0E7B9900BA4F18 /* GetTrainingTypeByTrainingInfoModelUseCase.swift */; };
 		84608B1829FFB87800F06A8B /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1729FFB87800F06A8B /* AuthRepository.swift */; };
 		84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */; };
 		84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */; };
@@ -124,6 +129,11 @@
 		8411475A2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesCoordinator.swift; sourceTree = "<group>"; };
 		8457C47C2A0E52E700BA4F18 /* ExercisesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableView.swift; sourceTree = "<group>"; };
 		8457C4802A0E55A600BA4F18 /* ExercisesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesModel.swift; sourceTree = "<group>"; };
+		8457C4882A0E6A5100BA4F18 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		8457C48A2A0E6BA400BA4F18 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		8457C48C2A0E6BCE00BA4F18 /* ExerciseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseComponent.swift; sourceTree = "<group>"; };
+		8457C4902A0E750600BA4F18 /* FilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
+		8457C4972A0E7B9900BA4F18 /* GetTrainingTypeByTrainingInfoModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainingTypeByTrainingInfoModelUseCase.swift; sourceTree = "<group>"; };
 		84608B1729FFB87800F06A8B /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		84608B1929FFB8CA00F06A8B /* AuthRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImplementation.swift; sourceTree = "<group>"; };
 		84608B1B29FFB90900F06A8B /* CustomRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -294,6 +304,66 @@
 			path = EcercisesTableView;
 			sourceTree = "<group>";
 		};
+		8457C4832A0E699000BA4F18 /* ExerciseScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8457C4952A0E7B8C00BA4F18 /* Model */,
+				8457C48F2A0E74EA00BA4F18 /* View */,
+				8457C4872A0E6A1900BA4F18 /* ViewModel */,
+				8457C4862A0E6A1400BA4F18 /* Component */,
+				8457C4842A0E6A0600BA4F18 /* ViewController */,
+			);
+			path = ExerciseScreen;
+			sourceTree = "<group>";
+		};
+		8457C4842A0E6A0600BA4F18 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8457C4882A0E6A5100BA4F18 /* ExerciseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8457C4862A0E6A1400BA4F18 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				8457C48C2A0E6BCE00BA4F18 /* ExerciseComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		8457C4872A0E6A1900BA4F18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8457C48A2A0E6BA400BA4F18 /* ExerciseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8457C48F2A0E74EA00BA4F18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8457C4902A0E750600BA4F18 /* FilledButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8457C4952A0E7B8C00BA4F18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8457C4962A0E7B9200BA4F18 /* UseCase */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8457C4962A0E7B9200BA4F18 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				8457C4972A0E7B9900BA4F18 /* GetTrainingTypeByTrainingInfoModelUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		84608B1629FFB80300F06A8B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +477,7 @@
 		84C83E7029FE231700BC027D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				8457C4832A0E699000BA4F18 /* ExerciseScreen */,
 				8411474D2A0E4B9D00E2C7D3 /* ExercisesScreen */,
 				84CBC92C2A0128DE0071F1FB /* MainScreen */,
 				84CC9FEF29FF84A900B81E65 /* RegistrationScreen */,
@@ -973,6 +1044,7 @@
 				84CBC9592A0144BC0071F1FB /* TrainingParametersModel.swift in Sources */,
 				84CBC95C2A0148E80071F1FB /* MainCoordinator.swift in Sources */,
 				84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */,
+				8457C48B2A0E6BA400BA4F18 /* ExerciseViewModel.swift in Sources */,
 				84CBC9632A0179B60071F1FB /* LastExercisesTableView.swift in Sources */,
 				84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */,
 				84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */,
@@ -981,6 +1053,7 @@
 				84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */,
 				841147582A0E4D2100E2C7D3 /* ExercisesViewModel.swift in Sources */,
 				84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */,
+				8457C48D2A0E6BCE00BA4F18 /* ExerciseComponent.swift in Sources */,
 				84608B2929FFBBED00F06A8B /* AuthResponseModel.swift in Sources */,
 				84608B4229FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift in Sources */,
 				84F4695729FE7632005E83C3 /* ButtonWithArrowStackView.swift in Sources */,
@@ -988,6 +1061,7 @@
 				84F4695F29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift in Sources */,
 				84F4695229FE6E75005E83C3 /* UIViewExtensions.swift in Sources */,
 				84CC9FF929FF85D700B81E65 /* RegistrationComponent.swift in Sources */,
+				8457C4892A0E6A5100BA4F18 /* ExerciseViewController.swift in Sources */,
 				84CBC95F2A01738A0071F1FB /* MyBodyCardView.swift in Sources */,
 				84CBC93C2A0135F20071F1FB /* ExerciseModel.swift in Sources */,
 				84CBC9332A0129B20071F1FB /* MainViewController.swift in Sources */,
@@ -1013,6 +1087,7 @@
 				84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */,
 				84CBC9542A013DC20071F1FB /* TrainingTypeModel.swift in Sources */,
 				84CBC9562A013F500071F1FB /* TrainingRepositoryImplementation.swift in Sources */,
+				8457C4912A0E750600BA4F18 /* FilledButton.swift in Sources */,
 				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,
 				84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */,
 				84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */,
@@ -1022,6 +1097,7 @@
 				84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */,
 				84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */,
 				84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */,
+				8457C4982A0E7B9900BA4F18 /* GetTrainingTypeByTrainingInfoModelUseCase.swift in Sources */,
 				84608B4029FFCF3B00F06A8B /* EmailValidationUseCase.swift in Sources */,
 				84CC9FFC29FF871600B81E65 /* UserInfoStackView.swift in Sources */,
 				84CBC9382A0132A10071F1FB /* MainScreenComponent.swift in Sources */,

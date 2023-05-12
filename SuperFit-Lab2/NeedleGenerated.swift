@@ -68,6 +68,19 @@ private class RegistrationComponentDependency45ce06ac0365c929bb6bProvider: Regis
 private func factorybf509de48c6e5261a8800ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
     return RegistrationComponentDependency45ce06ac0365c929bb6bProvider(mainComponent: parent1(component) as! MainComponent)
 }
+private class ExerciseComponentDependency46503fb7e86011a17493Provider: ExerciseComponentDependency {
+    var getTrainingTypeByTrainingInfoModelUseCase: GetTrainingTypeByTrainingInfoModelUseCase {
+        return mainComponent.getTrainingTypeByTrainingInfoModelUseCase
+    }
+    private let mainComponent: MainComponent
+    init(mainComponent: MainComponent) {
+        self.mainComponent = mainComponent
+    }
+}
+/// ^->MainComponent->ExerciseComponent
+private func factory3422b72b04c9baa072ea0ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return ExerciseComponentDependency46503fb7e86011a17493Provider(mainComponent: parent1(component) as! MainComponent)
+}
 private class AuthorizationPinPanelComponentDependencyc9ab79be377ddba2eabeProvider: AuthorizationPinPanelComponentDependency {
     var authRepository: AuthRepository {
         return mainComponent.authRepository
@@ -128,6 +141,11 @@ extension RegistrationComponent: Registration {
         keyPathToName[\RegistrationComponentDependency.codeValueChangeUseCase] = "codeValueChangeUseCase-CodeValueChangeUseCase"
     }
 }
+extension ExerciseComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\ExerciseComponentDependency.getTrainingTypeByTrainingInfoModelUseCase] = "getTrainingTypeByTrainingInfoModelUseCase-GetTrainingTypeByTrainingInfoModelUseCase"
+    }
+}
 extension AuthorizationPinPanelComponent: Registration {
     public func registerItems() {
         keyPathToName[\AuthorizationPinPanelComponentDependency.authRepository] = "authRepository-AuthRepository"
@@ -160,6 +178,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->MainComponent->MainScreenComponent", factoryd2e546a960c33ef2225f0ae93e637f014511a119)
     registerProviderFactory("^->MainComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->MainComponent->RegistrationComponent", factorybf509de48c6e5261a8800ae93e637f014511a119)
+    registerProviderFactory("^->MainComponent->ExerciseComponent", factory3422b72b04c9baa072ea0ae93e637f014511a119)
     registerProviderFactory("^->MainComponent->AuthorizationPinPanelComponent", factory3d9df8e0a52c98f96a490ae93e637f014511a119)
     registerProviderFactory("^->MainComponent->AuthorizationComponent", factory36d2db3a6303047193540ae93e637f014511a119)
 }

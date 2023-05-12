@@ -52,7 +52,7 @@ extension ExercisesTableView: UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewModel.goToExerciseScreen(exercise: viewModel.exercises[indexPath.row])
     }
 }
 

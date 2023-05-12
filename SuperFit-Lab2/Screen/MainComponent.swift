@@ -73,6 +73,11 @@ final class MainComponent: BootstrapComponent {
             GetTrainingInfoModelByTrainingTypeModelUseCase()
         }
     }
+    var getTrainingTypeByTrainingInfoModelUseCase: GetTrainingTypeByTrainingInfoModelUseCase {
+        shared {
+            GetTrainingTypeByTrainingInfoModelUseCase()
+        }
+    }
     
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
@@ -98,6 +103,11 @@ final class MainComponent: BootstrapComponent {
     var exercisesComponent: ExercisesComponent {
         shared {
             ExercisesComponent(parent: self)
+        }
+    }
+    var exerciseComponent: ExerciseComponent {
+        shared {
+            ExerciseComponent(parent: self)
         }
     }
     

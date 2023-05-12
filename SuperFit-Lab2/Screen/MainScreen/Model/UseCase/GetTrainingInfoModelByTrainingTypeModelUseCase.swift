@@ -10,7 +10,7 @@ import Foundation
 final class GetTrainingInfoModelByTrainingTypeModelUseCase {
     func getTrainingInfo(_ trainingModel: TrainingTypeModel) -> TrainingInfoModel {
         switch trainingModel {
-        case .pushUp:
+        case .pushUps:
             return TrainingInfoModel(name: R.string.mainScreenStrings.push_ups(), description: R.string.mainScreenStrings.push_ups_description(), image: R.image.pushUps()!)
         case .plank:
             return TrainingInfoModel(name: R.string.mainScreenStrings.plank(), description: R.string.mainScreenStrings.plank_description(), image: R.image.plank()!)

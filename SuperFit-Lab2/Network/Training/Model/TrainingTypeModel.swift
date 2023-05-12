@@ -10,7 +10,7 @@ import Foundation
 enum TrainingTypeModel: String, Decodable {
     case crunch = "CRUNCH"
     case squats = "SQUATS"
-    case pushUp = "PUSH_UP"
+    case pushUps = "PUSH_UP"
     case plank = "PLANK"
     case running = "RUNNING"
 
@@ -23,8 +23,8 @@ enum TrainingTypeModel: String, Decodable {
             self = .crunch
         case TrainingTypeModel.squats.rawValue:
             self = .squats
-        case TrainingTypeModel.pushUp.rawValue:
-            self = .pushUp
+        case TrainingTypeModel.pushUps.rawValue:
+            self = .pushUps
         case TrainingTypeModel.plank.rawValue:
             self = .plank
         case TrainingTypeModel.running.rawValue:
