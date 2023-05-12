@@ -151,13 +151,13 @@ class ExerciseViewController: UIViewController {
         return myButton
     }()
     @objc private func onFinishButtonTapped() {
-        
+        viewModel.goToExerciseResultScreen()
     }
     private func setupFinishButton() {
         view.addSubview(finishButton)
         finishButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.horizontalEdges.equalToSuperview().inset(20)
+            make.horizontalEdges.equalToSuperview().inset(25)
         }
     }
     

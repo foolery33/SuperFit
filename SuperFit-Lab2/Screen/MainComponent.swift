@@ -110,5 +110,10 @@ final class MainComponent: BootstrapComponent {
             ExerciseComponent(parent: self)
         }
     }
+    var exerciseResultComponent: ExerciseResultComponent {
+        shared {
+            ExerciseResultComponent(parent: self)
+        }
+    }
     
 }

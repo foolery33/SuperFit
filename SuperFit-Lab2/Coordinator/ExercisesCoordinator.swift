@@ -35,5 +35,13 @@ final class ExercisesCoordinator: Coordinator {
         component.exerciseViewModel.exercise = exercise
         navigationController.pushViewController(component.exerciseViewController, animated: true)
     }
+    
+    func goToExerciseResultScreen(exercise: TrainingInfoModel) {
+        let component = componentFactory.getExerciseResultComponent()
+        component.exerciseResultViewModel.coordinator = self
+        component.exerciseResultViewModel.exercise = exercise
+        component.exerciseResultViewModel.exerciseResult = .failure
+        navigationController.pushViewController(component.exerciseResultViewController, animated: true)
+    }
      
 }

@@ -29,5 +29,8 @@ final class ComponentFactory {
     func getExerciseComponent() -> ExerciseComponent {
         return mainComponent.exerciseComponent
     }
+    func getExerciseResultComponent() -> ExerciseResultComponent {
+        return mainComponent.exerciseResultComponent
+    }
     
 }

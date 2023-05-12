@@ -27,4 +27,8 @@ final class ExerciseViewModel {
         coordinator?.navigationController.popViewController(animated: true)
     }
     
+    func goToExerciseResultScreen() {
+        coordinator?.goToExerciseResultScreen(exercise: exercise ?? TrainingInfoModel(name: "", description: "", image: UIImage()))
+    }
+    
 }
