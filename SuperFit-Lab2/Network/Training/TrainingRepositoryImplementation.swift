@@ -13,12 +13,29 @@ final class TrainingRepositoryImplementation: TrainingRepository {
     let baseURL = "http://fitness.wsmob.xyz:22169/"
     let interceptor = CustomRequestInterceptor()
     
+    func getTrainingList() async throws -> [TrainingModel] {
+        let url = baseURL + "api/trainings"
+        let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([TrainingModel].self)
+        do {
+            return try await dataTask.value
+        } catch {
+            let requestStatusCode = await dataTask.response.response?.statusCode
+            switch requestStatusCode {
+            case 200:
+                throw AppError.trainingError(.modelError)
+            case 400:
+                throw AppError.trainingError(.problemWithExecuting)
+            case 401:
+                throw AppError.trainingError(.unauthorized)
+            default:
+                throw AppError.trainingError(.modelError)
+            }
+        }
+    }
+    
     func getTrainingList(completion: @escaping (Result<[TrainingModel], AppError>) -> Void) {
         let url = baseURL + "api/trainings"
         AF.request(url, interceptor: self.interceptor).validate().responseData { response in
-            if let requestStatusCode = response.response?.statusCode {
-                print("Get trainings status code:", requestStatusCode)
-            }
             switch response.result {
             case .success(let data):
                 do {

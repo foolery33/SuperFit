@@ -12,6 +12,8 @@ class MyBodyCardView: UIView {
     var weight: String
     var height: String
     
+    var goToMyBodyScreen: (() -> ())?
+    
     init(weight: String, height: String) {
         self.weight = weight
         self.height = height
@@ -183,10 +185,15 @@ class MyBodyCardView: UIView {
     // MARK: - DetailsButtonStackView setup
     private lazy var detailsButtonStackView: UIStackView = {
         let myStackView = UIStackView()
+        myStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onDetailsButtonStackView)))
+        myStackView.isUserInteractionEnabled = true
         myStackView.axis = .horizontal
         myStackView.spacing = 3
         return myStackView
     }()
+    @objc private func onDetailsButtonStackView() {
+        goToMyBodyScreen?()
+    }
     private func setupDetailsButtonStackView() {
         cardDescriptionView.addSubview(detailsButtonStackView)
         setupDetailsLabel()

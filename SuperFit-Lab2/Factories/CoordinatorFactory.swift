@@ -20,4 +20,7 @@ final class CoordinatorFactory {
     func createExercisesCoordinator(navigationController: UINavigationController) -> ExercisesCoordinator {
         return ExercisesCoordinator(navigationController: navigationController)
     }
+    func createMyBodyCoordinator(navigationController: UINavigationController) -> MyBodyCoordinator {
+        return MyBodyCoordinator(navigationController: navigationController)
+    }
 }

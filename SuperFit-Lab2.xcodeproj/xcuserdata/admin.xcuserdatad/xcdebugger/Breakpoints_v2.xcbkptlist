@@ -398,10 +398,104 @@
             filePath = "SuperFit-Lab2/Screen/MainScreen/ViewController/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "onSeeAllButtonTapped()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE725F51-A8A5-44B8-858B-BBDAC3740DDD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MainScreen/View/MyBodyCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "onDetailsButtonStackView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05E0C9ED-BB0B-482F-9686-530811D39F5D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "getProfilePhotos()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "05E0C9ED-BB0B-482F-9686-530811D39F5D - ccb4a278f473941b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SuperFit_Lab2.MyBodyViewModel.getProfilePhotos() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "05E0C9ED-BB0B-482F-9686-530811D39F5D - 7d4ca458f81047b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for SuperFit_Lab2.MyBodyViewModel.getProfilePhotos() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "05E0C9ED-BB0B-482F-9686-530811D39F5D - 84a1ec3e2f98b005"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for SuperFit_Lab2.MyBodyViewModel.getProfilePhotos() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "05E0C9ED-BB0B-482F-9686-530811D39F5D - 7cdd1ef469a14c07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for SuperFit_Lab2.MyBodyViewModel.getProfilePhotos() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -26,3 +26,4 @@
 "details" = "Детали";
 "sign_out" = "Выйти";
 "see_all" = "Посмотреть все";
+"last_exercises_loading_error" = "Ошибка загрузки последних упражнений";

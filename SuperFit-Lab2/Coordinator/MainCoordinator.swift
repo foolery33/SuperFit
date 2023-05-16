@@ -30,10 +30,17 @@ final class MainCoordinator: Coordinator {
     }
     
     func goToExercisesScreen() {
-        let exercisesCoordinator = CoordinatorFactory().createExercisesCoordinator(navigationController: self.navigationController)
+        let exercisesCoordinator = CoordinatorFactory().createExercisesCoordinator(navigationController: navigationController)
         exercisesCoordinator.parentCoordinator = self
         children.append(exercisesCoordinator)
         exercisesCoordinator.start()
+    }
+    
+    func goToMyBodyScreen() {
+        let myBodyCoordinator = CoordinatorFactory().createMyBodyCoordinator(navigationController: navigationController)
+        myBodyCoordinator.parentCoordinator = self
+        children.append(myBodyCoordinator)
+        myBodyCoordinator.start()
     }
     
 }

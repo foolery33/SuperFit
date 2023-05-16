@@ -131,8 +131,12 @@ class MainViewController: UIViewController {
     // MARK: - MyBodyCardView setup
     private lazy var myBodyCardView: MyBodyCardView = {
         let myBodyCardView = MyBodyCardView(weight: "Undefined", height: "Undefined")
+        myBodyCardView.goToMyBodyScreen = goToMyBodyScreen
         return myBodyCardView
     }()
+    private func goToMyBodyScreen() {
+        viewModel.goToMyBodyScreen()
+    }
     private func setupMyBodyCardView() {
         myBodyStackView.addArrangedSubview(myBodyCardView)
     }
@@ -246,14 +250,29 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
+    
+    
     func loadLastExercises() {
-        self.viewModel.getLastExercises { success in
-            if success {
+        Task {
+            if await self.viewModel.getLastExercises() {
                 self.reloadLastExercisesTableView()
             }
             else {
-                self.showAlert(title: "Last exercises loading error", message: self.viewModel.error)
+                self.showAlert(
+                    title: R.string.mainScreenStrings.last_exercises_loading_error(),
+                    message: self.viewModel.error
+                )
             }
         }
+        
+        
+//        self.viewModel.getLastExercises { success in
+//            if success {
+//                self.reloadLastExercisesTableView()
+//            }
+//            else {
+//                self.showAlert(title: "Last exercises loading error", message: self.viewModel.error)
+//            }
+//        }
     }
 }

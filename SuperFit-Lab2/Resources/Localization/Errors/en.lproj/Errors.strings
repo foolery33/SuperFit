@@ -18,3 +18,4 @@
 "invalid_code" = "The code is too weak, try another one";
 "unauthorized" = "Your authentication token is expired. Please login again";
 "problem_with_executing" = "Some problem occured while executing the request. Try again later";
+"photo_not_found" = "An image with provided id was not found. Please contact developer";

@@ -21,6 +21,16 @@ final class MainComponent: BootstrapComponent {
             TrainingRepositoryImplementation()
         }
     }
+    var profileRepository: ProfileRepository {
+        shared {
+            ProfileRepositoryImplementation()
+        }
+    }
+    var userBodyParametersRepository: UserBodyParametersRepository {
+        shared {
+            UserBodyParametersRepositoryImplementation()
+        }
+    }
     
     // MARK: - UseCases
     var saveUserEmailUseCase: SaveUserEmailUseCase {
@@ -78,6 +88,21 @@ final class MainComponent: BootstrapComponent {
             GetTrainingTypeByTrainingInfoModelUseCase()
         }
     }
+    var getMostRecentPhotoUseCase: GetMostRecentPhotoUseCase {
+        shared {
+            GetMostRecentPhotoUseCase()
+        }
+    }
+    var getLastestPhotoUseCase: GetLatestPhotoUseCase {
+        shared {
+            GetLatestPhotoUseCase()
+        }
+    }
+    var getLastBodyParametersUseCase: GetLastBodyParametersUseCase {
+        shared {
+            GetLastBodyParametersUseCase()
+        }
+    }
     
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
@@ -113,6 +138,11 @@ final class MainComponent: BootstrapComponent {
     var exerciseResultComponent: ExerciseResultComponent {
         shared {
             ExerciseResultComponent(parent: self)
+        }
+    }
+    var myBodyComponent: MyBodyComponent {
+        shared {
+            MyBodyComponent(parent: self)
         }
     }
     

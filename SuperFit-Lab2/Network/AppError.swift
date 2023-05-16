@@ -11,6 +11,7 @@ enum AppError: Error, LocalizedError, Identifiable, Equatable {
     
     case authError(AuthRepositoryImplementation.AuthError)
     case trainingError(TrainingRepositoryImplementation.TrainingError)
+    case profileError(ProfileRepositoryImplementation.ProfileError)
     
     var id: String {
         self.errorDescription
@@ -20,6 +21,8 @@ enum AppError: Error, LocalizedError, Identifiable, Equatable {
         case .authError(let error):
             return error.errorDescription
         case .trainingError(let error):
+            return error.errorDescription
+        case .profileError(let error):
             return error.errorDescription
         }
     }
