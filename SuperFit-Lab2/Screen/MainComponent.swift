@@ -104,6 +104,46 @@ final class MainComponent: BootstrapComponent {
         }
     }
     
+    var getEmptyBodyParametersErrorUseCase: GetEmptyBodyParametersErrorUseCase {
+        shared {
+            GetEmptyBodyParametersErrorUseCase()
+        }
+    }
+    
+    var getWeightValidationErrorUseCase: GetWeightValidationErrorUseCase {
+        shared {
+            GetWeightValidationErrorUseCase()
+        }
+    }
+    
+    var getHeightValidationErrorUseCase: GetHeightValidationErrorUseCase {
+        shared {
+            GetHeightValidationErrorUseCase()
+        }
+    }
+    
+    var getBodyParametersValidationErrorUseCase: GetBodyParametersValidationErrorUseCase {
+        shared {
+            GetBodyParametersValidationErrorUseCase(
+                getEmptyBodyParametersErrorUseCase: getEmptyBodyParametersErrorUseCase,
+                getWeightValidationErrorUseCase: getWeightValidationErrorUseCase,
+                getHeightValidationErrorUseCase: getHeightValidationErrorUseCase
+            )
+        }
+    }
+    
+    var convertDateToYyyyMmDdUseCase: ConvertDateToYyyyMmDdUseCase {
+        shared {
+            ConvertDateToYyyyMmDdUseCase()
+        }
+    }
+    
+    var convertTimestampToDdMmYyyyUseCase: ConvertTimestampToDdMmYyyyUseCase {
+        shared {
+            ConvertTimestampToDdMmYyyyUseCase()
+        }
+    }
+    
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
         shared {

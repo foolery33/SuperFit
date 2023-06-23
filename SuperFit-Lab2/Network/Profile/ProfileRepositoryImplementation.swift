@@ -37,6 +37,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         let url = baseURL + "api/profile/params"
         let dataTask = AF.request(url, method: .post, parameters: newParameters, encoder: JSONParameterEncoder.default, interceptor: interceptor).serializingDecodable(SimpleMessageModel.self)
         do {
+            print("Update user parameters status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -57,6 +58,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         let url = baseURL + "api/profile/photos"
         let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([ProfilePhotoModel].self)
         do {
+            print("Get profile photos status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -75,6 +77,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         let url = baseURL + "api/profile/photos/\(photoId)"
         let dataTask = AF.request(url, interceptor: interceptor).serializingData()
         do {
+            print("Download user photo status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -93,9 +96,14 @@ final class ProfileRepositoryImplementation: ProfileRepository {
     
     func uploadPhoto(imageData: Data, completion: @escaping (Result<Bool, AppError>) -> Void) {
         let url = baseURL + "api/profile/photos"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(UserDataManager().fetchAccessToken())",
+            "Content-type": "multipart/form-data"
+        ]
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData, withName: "fileset", fileName: "file.jpg", mimeType: "image/jpg")
-        }, to: url, interceptor: interceptor).validate().responseData { response in
+            multipartFormData.append(imageData, withName: "fileset", fileName: "file.jpeg", mimeType: "image/jpeg")
+        }, to: url, method: .post, headers: headers).validate().response { response in
+            print("Upload photo status code:", response.response?.statusCode ?? 0)
             switch response.result {
             case .success:
                 completion(.success(true))
@@ -139,4 +147,22 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         }
     }
     
+}
+
+struct ErrorModel: Decodable {
+    enum CodingKeys: String, CodingKey {
+//        case status = "status"
+//        case statusCode = "status_code"
+        case message = "message"
+//        case timestamp = "timestamp"
+    }
+    
+    init(message: String) {
+        self.message = message
+    }
+    
+//    var status: String
+//    var statusCode: Int
+    var message: String
+//    var timestamp: TimeInterval
 }

@@ -13,11 +13,13 @@ class MyBodyViewController: UIViewController {
     var viewModel: MyBodyViewModel
     
     private let galleryButtonScale: CGFloat = 30.0
+    private let betweenImagesSpacing: CGFloat = 4.0
     
     init(viewModel: MyBodyViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
+        viewModel.errorHandlingDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -70,7 +72,7 @@ class MyBodyViewController: UIViewController {
         let myLabel = UILabel()
         myLabel.font = R.font.montserratBold(size: 24)
         myLabel.textColor = R.color.white()
-        myLabel.text = "My body"
+        myLabel.text = R.string.myBodyScreenStrings.my_body()
         return myLabel
     }()
     private func setupMyBodyLabel() {
@@ -90,7 +92,7 @@ class MyBodyViewController: UIViewController {
         return myButton
     }()
     @objc private func onBackArrowButtonTapped() {
-        
+        viewModel.goToPreviousScreen()
     }
     private func setupBackArrowButton() {
         contentView.addSubview(backArrowButton)
@@ -105,6 +107,7 @@ class MyBodyViewController: UIViewController {
         let myStackView = UIStackView()
         myStackView.axis = .horizontal
         myStackView.spacing = 50
+//        myStackView.distribution = .equalCentering
         return myStackView
     }()
     private func setupBodyParametersStackView() {
@@ -119,13 +122,22 @@ class MyBodyViewController: UIViewController {
     
     // MARK: - WeightStackView setup
     private lazy var weightStackView: BodyParameterStackView = {
-        let myStackView = BodyParameterStackView(parameterText: "Undefined")
+        let myStackView = BodyParameterStackView(parameterText: "N/A \(R.string.myBodyScreenStrings.kg())")
         myStackView.isUserInteractionEnabled = true
         myStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChangeWeightAlert)))
         return myStackView
     }()
     @objc private func showChangeWeightAlert() {
-        showTextFieldAlert(title: "Change your weight")
+        showTextFieldAlert(title: R.string.myBodyScreenStrings.change_your_weight(), onChangeButtonTapped: changeWeightValue(_:))
+    }
+    private func changeWeightValue(_ weight: String) {
+        viewModel.updateWeight(with: weight)
+        Task {
+            if await viewModel.updateUserParameters() {
+                weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
+                heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
+            }
+        }
     }
     private func setupWeightStackView() {
         bodyParametersStackView.addArrangedSubview(weightStackView)
@@ -133,13 +145,22 @@ class MyBodyViewController: UIViewController {
     
     // MARK: - HeightStackView setup
     private lazy var heightStackView: BodyParameterStackView = {
-        let myStackView = BodyParameterStackView(parameterText: "Undefined")
+        let myStackView = BodyParameterStackView(parameterText: "N/A \(R.string.myBodyScreenStrings.cm())")
         myStackView.isUserInteractionEnabled = true
         myStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChangeHeightAlert)))
         return myStackView
     }()
     @objc private func showChangeHeightAlert() {
-        showTextFieldAlert(title: "Change your height")
+        showTextFieldAlert(title: R.string.myBodyScreenStrings.change_your_height(), onChangeButtonTapped: changeHeightValue(_:))
+    }
+    private func changeHeightValue(_ height: String) {
+        viewModel.updateHeight(with: height)
+        Task {
+            if await viewModel.updateUserParameters() {
+                weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
+                heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
+            }
+        }
     }
     private func setupHeightStackView() {
         bodyParametersStackView.addArrangedSubview(heightStackView)
@@ -167,7 +188,7 @@ class MyBodyViewController: UIViewController {
     // MARK: - MyProgressLabel setup
     private lazy var myProgressLabel: UILabel = {
         let myLabel = UILabel()
-        myLabel.text = "My Progress"
+        myLabel.text = R.string.myBodyScreenStrings.my_progress()
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratBold(size: 24)
         return myLabel
@@ -200,7 +221,7 @@ class MyBodyViewController: UIViewController {
     private lazy var myProgressImagesStackView: UIStackView = {
         let myStackView = UIStackView()
         myStackView.axis = .horizontal
-        myStackView.spacing = 4
+        myStackView.spacing = betweenImagesSpacing
         myStackView.backgroundColor = R.color.white()
         myStackView.layer.cornerRadius = 8
         myStackView.clipsToBounds = true
@@ -227,7 +248,7 @@ class MyBodyViewController: UIViewController {
         myProgressImagesStackView.addArrangedSubview(beforeImageView)
         setupBeforeDateView()
         beforeImageView.snp.makeConstraints { make in
-            make.width.equalTo(UIScreen.main.bounds.width / 2 - 16 - 2)
+            make.width.equalTo(UIScreen.main.bounds.width / 2 - 16 - betweenImagesSpacing / 2)
         }
     }
     
@@ -248,6 +269,7 @@ class MyBodyViewController: UIViewController {
         let myImageView = UIImageView()
         myImageView.image = R.image.myProgress2()
         myImageView.contentMode = .scaleAspectFill
+        myImageView.isUserInteractionEnabled = true
         return myImageView
     }()
     private func setupAfterImageView() {
@@ -275,6 +297,7 @@ class MyBodyViewController: UIViewController {
         myButton.backgroundColor = R.color.white()
         myButton.layer.cornerRadius = galleryButtonScale / 2
         myButton.clipsToBounds = true
+        myButton.addTarget(self, action: #selector(showImagePicker), for: .touchUpInside)
         return myButton
     }()
     private func setupAddPhotoButton() {
@@ -284,6 +307,17 @@ class MyBodyViewController: UIViewController {
             make.centerY.equalTo(afterDateView.snp.centerY)
             make.width.height.equalTo(galleryButtonScale)
         }
+    }
+    
+    // MARK: - ImagePicker setup
+    private lazy var imagePicker: UIImagePickerController = {
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        return vc
+    }()
+    @objc private func showImagePicker() {
+        showAlertWithChoice()
     }
     
     // ButtonsStackView setup
@@ -306,7 +340,7 @@ class MyBodyViewController: UIViewController {
     
     // MARK: - TrainProgressButton setup
     private lazy var trainProgressButton: ButtonWithArrowStackView = {
-        let myButton = ButtonWithArrowStackView(labelText: "Train progress", arrowImage: R.image.forwardArrow()!, action: onTrainProgressButtonTapped)
+        let myButton = ButtonWithArrowStackView(labelText: R.string.myBodyScreenStrings.train_progress(), arrowImage: R.image.forwardArrow()!, action: onTrainProgressButtonTapped)
         return myButton
     }()
     private func onTrainProgressButtonTapped() {
@@ -318,7 +352,7 @@ class MyBodyViewController: UIViewController {
     
     // MARK: - StatisticsButton setup
     private lazy var statisticsButton: ButtonWithArrowStackView = {
-        let myButton = ButtonWithArrowStackView(labelText: "Statistics", arrowImage: R.image.forwardArrow()!, action: onStatisticsButtonTapped)
+        let myButton = ButtonWithArrowStackView(labelText: R.string.myBodyScreenStrings.statistics(), arrowImage: R.image.forwardArrow()!, action: onStatisticsButtonTapped)
         return myButton
     }()
     private func onStatisticsButtonTapped() {
@@ -335,36 +369,101 @@ extension MyBodyViewController {
     private func sendRequests() {
         Task {
             await getBodyParameters()
-            if viewModel.lastBodyParameters != nil {
-                weightStackView.configureBodyParameter(set: "\(viewModel.lastBodyParameters!.weight) kg")
-                heightStackView.configureBodyParameter(set: "\(viewModel.lastBodyParameters!.height) cm")
-            }
         }
         Task {
             await getUserPhotos()
             if viewModel.beforePhotoData != nil {
                 beforeImageView.image = UIImage(data: viewModel.beforePhotoData!)
+                beforeDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded)
             }
             if viewModel.afterPhotoData != nil {
                 afterImageView.image = UIImage(data: viewModel.afterPhotoData!)
+                afterDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded)
             }
         }
     }
     
     private func getBodyParameters() async {
         if await viewModel.getUserParameters() {
-        }
-        else {
-            showAlert(title: "Body parameters loading error", message: viewModel.error)
+            weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
+            heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
         }
     }
     
     private func getUserPhotos() async {
         if await viewModel.getProfilePhotos() {
         }
-        else {
-            showAlert(title: "Profile photos loading error", message: viewModel.error)
+    }
+    
+    func uploadPhoto(imageData: Data, image: UIImage) {
+        viewModel.uploadPhoto(imageData: imageData) { success in
+            if(success) {
+                self.afterImageView.image = image
+            }
         }
+    }
+    
+}
+
+// MARK: - ErrorHandlingDelegate
+extension MyBodyViewController: ErrorHandlingDelegate {
+    func handleErrorMessage(_ errorMessage: String) {
+        DispatchQueue.main.async {
+            if errorMessage == R.string.errors.unauthorized() {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage) {
+                    self.reauthorizeUser()
+                }
+            }
+            else {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage)
+            }
+        }
+    }
+    
+    func reauthorizeUser() {
+        viewModel.reauthenticateUser()
+    }
+}
+
+extension MyBodyViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
+        }
+        
+        if let imageData = image.jpegData(compressionQuality: 0.1) {
+            print(imageData)
+            if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+                self.uploadPhoto(imageData: imageData, image: image)
+            }
+            else {
+                self.showAlert(title: R.string.errors.avatar_setting_error(), message: R.string.errors.corrupted_file())
+            }
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func showAlertWithChoice() {
+        let alert = UIAlertController(title: R.string.myBodyScreenStrings.choose_image_source(), message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: R.string.myBodyScreenStrings.camera(), style: .default, handler: { _ in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: R.string.myBodyScreenStrings.photo(), style: .default, handler: { _ in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: R.string.myBodyScreenStrings.cancel(), style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }

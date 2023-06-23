@@ -43,4 +43,15 @@ final class MainCoordinator: Coordinator {
         myBodyCoordinator.start()
     }
     
+    func goToAuthorizationScreen() {
+        UserDataManager().clearAllData()
+        let appCoordinator = parentCoordinator as! AppCoordinator
+        appCoordinator.goToAuth()
+        parentCoordinator?.childDidFinish(self)
+    }
+    
+    func reauthenticateUser() {
+        goToAuthorizationScreen()
+    }
+    
 }

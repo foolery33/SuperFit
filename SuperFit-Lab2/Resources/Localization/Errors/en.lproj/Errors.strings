@@ -19,3 +19,16 @@
 "unauthorized" = "Your authentication token is expired. Please login again";
 "problem_with_executing" = "Some problem occured while executing the request. Try again later";
 "photo_not_found" = "An image with provided id was not found. Please contact developer";
+"updating_body_parameter_error" = "Updating body parameter error";
+"body_parameters_loading_error" = "Body parameters loading error";
+"profile_photos_loading_error" = "Profile photos loading error";
+"token_expired" = "Token is expired";
+"error" = "Error";
+"empty_weight" = "Enter weight information to save it on a server";
+"empty_height" = "Enter height information to save it on a server";
+
+"height_validation_error" = "Height should be a number from 10 to 300";
+"weight_validation_error" = "Weight should be a number from 10 to 300";
+
+"avatar_setting_error" = "Avatar setting failed";
+"corrupted_file" = "Your file is corrupted";

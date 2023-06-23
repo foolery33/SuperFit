@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8410B3B22A17D2B000123DD5 /* MyBodyScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8410B3B42A17D2B000123DD5 /* MyBodyScreenStrings.strings */; };
 		841147452A0E446500E2C7D3 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147422A0E444600E2C7D3 /* Montserrat-Medium.ttf */; };
 		841147462A0E446800E2C7D3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147412A0E444600E2C7D3 /* Montserrat-Bold.ttf */; };
 		841147472A0E446A00E2C7D3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841147402A0E444600E2C7D3 /* Montserrat-Regular.ttf */; };
@@ -16,6 +17,12 @@
 		841147562A0E4C1000E2C7D3 /* ExercisesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841147552A0E4C1000E2C7D3 /* ExercisesComponent.swift */; };
 		841147582A0E4D2100E2C7D3 /* ExercisesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841147572A0E4D2100E2C7D3 /* ExercisesViewModel.swift */; };
 		8411475B2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411475A2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift */; };
+		8415F0152A45A0D7004DA2DF /* GetWeightValidationErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415F0142A45A0D7004DA2DF /* GetWeightValidationErrorUseCase.swift */; };
+		8415F0182A45A11E004DA2DF /* GetHeightValidationErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415F0172A45A11E004DA2DF /* GetHeightValidationErrorUseCase.swift */; };
+		8415F01B2A45A2A0004DA2DF /* GetEmptyBodyParametersErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415F01A2A45A2A0004DA2DF /* GetEmptyBodyParametersErrorUseCase.swift */; };
+		8415F0202A45A7BD004DA2DF /* GetBodyParametersValidationErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415F01F2A45A7BD004DA2DF /* GetBodyParametersValidationErrorUseCase.swift */; };
+		8415F0222A45AAD4004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415F0212A45AAD3004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift */; };
+		8415F0262A45BAD7004DA2DF /* ConvertTimestampToDdMmYyyyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415F0252A45BAD7004DA2DF /* ConvertTimestampToDdMmYyyyUseCase.swift */; };
 		843CB2662A13C75300642940 /* GetMostRecentPhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CB2652A13C75300642940 /* GetMostRecentPhotoUseCase.swift */; };
 		843CB2682A13C78000642940 /* GetLatestPhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CB2672A13C78000642940 /* GetLatestPhotoUseCase.swift */; };
 		843CB26A2A13DBCE00642940 /* GetLastBodyParametersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CB2692A13DBCE00642940 /* GetLastBodyParametersUseCase.swift */; };
@@ -138,6 +145,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8410B3B32A17D2B000123DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyBodyScreenStrings.strings; sourceTree = "<group>"; };
+		8410B3B52A17D2B200123DD5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MyBodyScreenStrings.strings; sourceTree = "<group>"; };
 		841147402A0E444600E2C7D3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		841147412A0E444600E2C7D3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		841147422A0E444600E2C7D3 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -147,6 +156,12 @@
 		841147552A0E4C1000E2C7D3 /* ExercisesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesComponent.swift; sourceTree = "<group>"; };
 		841147572A0E4D2100E2C7D3 /* ExercisesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewModel.swift; sourceTree = "<group>"; };
 		8411475A2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesCoordinator.swift; sourceTree = "<group>"; };
+		8415F0142A45A0D7004DA2DF /* GetWeightValidationErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeightValidationErrorUseCase.swift; sourceTree = "<group>"; };
+		8415F0172A45A11E004DA2DF /* GetHeightValidationErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeightValidationErrorUseCase.swift; sourceTree = "<group>"; };
+		8415F01A2A45A2A0004DA2DF /* GetEmptyBodyParametersErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmptyBodyParametersErrorUseCase.swift; sourceTree = "<group>"; };
+		8415F01F2A45A7BD004DA2DF /* GetBodyParametersValidationErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBodyParametersValidationErrorUseCase.swift; sourceTree = "<group>"; };
+		8415F0212A45AAD3004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDateToYyyyMmDdUseCase.swift; sourceTree = "<group>"; };
+		8415F0252A45BAD7004DA2DF /* ConvertTimestampToDdMmYyyyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTimestampToDdMmYyyyUseCase.swift; sourceTree = "<group>"; };
 		843CB2652A13C75300642940 /* GetMostRecentPhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMostRecentPhotoUseCase.swift; sourceTree = "<group>"; };
 		843CB2672A13C78000642940 /* GetLatestPhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLatestPhotoUseCase.swift; sourceTree = "<group>"; };
 		843CB2692A13DBCE00642940 /* GetLastBodyParametersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLastBodyParametersUseCase.swift; sourceTree = "<group>"; };
@@ -284,6 +299,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8410B3AE2A17D19F00123DD5 /* MyBodyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8410B3B42A17D2B000123DD5 /* MyBodyScreenStrings.strings */,
+			);
+			path = MyBodyScreen;
+			sourceTree = "<group>";
+		};
 		8411474D2A0E4B9D00E2C7D3 /* ExercisesScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +365,12 @@
 				843CB2652A13C75300642940 /* GetMostRecentPhotoUseCase.swift */,
 				843CB2672A13C78000642940 /* GetLatestPhotoUseCase.swift */,
 				843CB2692A13DBCE00642940 /* GetLastBodyParametersUseCase.swift */,
+				8415F0142A45A0D7004DA2DF /* GetWeightValidationErrorUseCase.swift */,
+				8415F0172A45A11E004DA2DF /* GetHeightValidationErrorUseCase.swift */,
+				8415F01A2A45A2A0004DA2DF /* GetEmptyBodyParametersErrorUseCase.swift */,
+				8415F01F2A45A7BD004DA2DF /* GetBodyParametersValidationErrorUseCase.swift */,
+				8415F0212A45AAD3004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift */,
+				8415F0252A45BAD7004DA2DF /* ConvertTimestampToDdMmYyyyUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -950,6 +979,7 @@
 		84CF98F829F9898200E04115 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				8410B3AE2A17D19F00123DD5 /* MyBodyScreen */,
 				84BC22822A021257004C3272 /* MainScreen */,
 				84608B4829FFECBC00F06A8B /* RegisterScreen */,
 				84CF98F929F9899000E04115 /* LoginScreen */,
@@ -1170,6 +1200,7 @@
 				84608B5329FFEE0000F06A8B /* GeneralStrings.strings in Resources */,
 				84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */,
 				841147462A0E446800E2C7D3 /* Montserrat-Bold.ttf in Resources */,
+				8410B3B22A17D2B000123DD5 /* MyBodyScreenStrings.strings in Resources */,
 				84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */,
 				841147452A0E446500E2C7D3 /* Montserrat-Medium.ttf in Resources */,
 				841147472A0E446A00E2C7D3 /* Montserrat-Regular.ttf in Resources */,
@@ -1223,14 +1254,17 @@
 				84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */,
 				84CBC9592A0144BC0071F1FB /* TrainingParametersModel.swift in Sources */,
 				84CBC95C2A0148E80071F1FB /* MainCoordinator.swift in Sources */,
+				8415F01B2A45A2A0004DA2DF /* GetEmptyBodyParametersErrorUseCase.swift in Sources */,
 				84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */,
 				8457C48B2A0E6BA400BA4F18 /* ExerciseViewModel.swift in Sources */,
 				84CBC9632A0179B60071F1FB /* LastExercisesTableView.swift in Sources */,
 				84C2DAF929FECD7000AC4063 /* PinPanelView.swift in Sources */,
 				84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */,
+				8415F0262A45BAD7004DA2DF /* ConvertTimestampToDdMmYyyyUseCase.swift in Sources */,
 				84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */,
 				84CBC94A2A0137600071F1FB /* ExercisesDatabase.swift in Sources */,
 				8457C4AF2A0E9E1B00BA4F18 /* MyBodyCoordinator.swift in Sources */,
+				8415F0182A45A11E004DA2DF /* GetHeightValidationErrorUseCase.swift in Sources */,
 				84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */,
 				841147582A0E4D2100E2C7D3 /* ExercisesViewModel.swift in Sources */,
 				8457C4AD2A0E9DC500BA4F18 /* MyBodyViewModel.swift in Sources */,
@@ -1275,6 +1309,7 @@
 				843CB26A2A13DBCE00642940 /* GetLastBodyParametersUseCase.swift in Sources */,
 				84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */,
 				8457C4812A0E55A600BA4F18 /* ExercisesModel.swift in Sources */,
+				8415F0222A45AAD4004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift in Sources */,
 				8457C4A22A0E8D1700BA4F18 /* ExerciseResultViewModel.swift in Sources */,
 				843CB2792A13F01700642940 /* UserBodyParametersRepository.swift in Sources */,
 				841147562A0E4C1000E2C7D3 /* ExercisesComponent.swift in Sources */,
@@ -1283,6 +1318,7 @@
 				84C83E8329FE256F00BC027D /* AuthorizationViewModel.swift in Sources */,
 				84CBC9542A013DC20071F1FB /* TrainingTypeModel.swift in Sources */,
 				84CBC9562A013F500071F1FB /* TrainingRepositoryImplementation.swift in Sources */,
+				8415F0152A45A0D7004DA2DF /* GetWeightValidationErrorUseCase.swift in Sources */,
 				843CB2682A13C78000642940 /* GetLatestPhotoUseCase.swift in Sources */,
 				8457C4912A0E750600BA4F18 /* FilledButton.swift in Sources */,
 				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,
@@ -1308,6 +1344,7 @@
 				84CCA00729FFB73400B81E65 /* AppError.swift in Sources */,
 				84608B3929FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift in Sources */,
 				84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */,
+				8415F0202A45A7BD004DA2DF /* GetBodyParametersValidationErrorUseCase.swift in Sources */,
 				84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */,
 				84CBC9352A0129E50071F1FB /* MainViewModel.swift in Sources */,
 			);
@@ -1350,6 +1387,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8410B3B42A17D2B000123DD5 /* MyBodyScreenStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8410B3B32A17D2B000123DD5 /* en */,
+				8410B3B52A17D2B200123DD5 /* ru */,
+			);
+			name = MyBodyScreenStrings.strings;
+			sourceTree = "<group>";
+		};
 		84608B3229FFC10A00F06A8B /* Errors.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

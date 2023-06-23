@@ -8,7 +8,7 @@
 import UIKit
 
 class AuthCoordinator: Coordinator {
-    
+
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
@@ -47,6 +47,10 @@ class AuthCoordinator: Coordinator {
             appCoordinator.goToMain()
             parentCoordinator?.childDidFinish(self)
         }
+    }
+    
+    func reauthenticateUser() {
+        
     }
     
 }

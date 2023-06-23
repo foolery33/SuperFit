@@ -89,6 +89,7 @@ final class TrainingRepositoryImplementation: TrainingRepository {
         case problemWithExecuting
         case serverError
         case modelError
+        
         var id: String {
             self.errorDescription
         }

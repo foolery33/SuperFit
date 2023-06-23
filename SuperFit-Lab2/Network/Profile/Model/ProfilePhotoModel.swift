@@ -13,12 +13,12 @@ struct ProfilePhotoModel: Decodable {
         case uploaded = "uploaded"
     }
     
-    init(id: UUID, uploaded: Int) {
+    init(id: UUID, uploaded: TimeInterval) {
         self.id = id
         self.uploaded = uploaded
     }
     
     var id: UUID
-    var uploaded: Int
+    var uploaded: TimeInterval
     
 }

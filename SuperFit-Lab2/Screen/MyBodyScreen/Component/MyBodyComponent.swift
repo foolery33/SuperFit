@@ -14,6 +14,9 @@ protocol MyBodyComponentDependency: Dependency {
     var getMostRecentPhotoUseCase: GetMostRecentPhotoUseCase { get }
     var getLastestPhotoUseCase: GetLatestPhotoUseCase { get }
     var getLastBodyParametersUseCase: GetLastBodyParametersUseCase { get }
+    var getBodyParametersValidationErrorUseCase: GetBodyParametersValidationErrorUseCase { get }
+    var convertDateToYyyyMmDdUseCase: ConvertDateToYyyyMmDdUseCase { get }
+    var convertTimestampToDdMmYyyyUseCase: ConvertTimestampToDdMmYyyyUseCase { get }
 }
 
 final class MyBodyComponent: Component<MyBodyComponentDependency> {
@@ -24,7 +27,10 @@ final class MyBodyComponent: Component<MyBodyComponentDependency> {
                 userBodyParametersRepository: dependency.userBodyParametersRepository,
                 getMostRecentPhotoUseCase: dependency.getMostRecentPhotoUseCase,
                 getLatestPhotoUseCase: dependency.getLastestPhotoUseCase,
-                getLastBodyParametersUseCase: dependency.getLastBodyParametersUseCase
+                getLastBodyParametersUseCase: dependency.getLastBodyParametersUseCase,
+                getBodyParametersValidationErrorUseCase: dependency.getBodyParametersValidationErrorUseCase,
+                convertDateToYyyyMmDdUseCase: dependency.convertDateToYyyyMmDdUseCase,
+                convertTimestampToDdMmYyyyUseCase: dependency.convertTimestampToDdMmYyyyUseCase
             )
         }
     }

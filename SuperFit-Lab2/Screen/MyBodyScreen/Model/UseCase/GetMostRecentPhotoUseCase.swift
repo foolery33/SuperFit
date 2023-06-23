@@ -10,7 +10,7 @@ import Foundation
 final class GetMostRecentPhotoUseCase {
     
     func getPhoto(from photos: [ProfilePhotoModel]) -> ProfilePhotoModel? {
-        return photos.sorted { $0.uploaded > $1.uploaded }.first
+        return photos.sorted { $0.uploaded < $1.uploaded }.first
     }
     
 }

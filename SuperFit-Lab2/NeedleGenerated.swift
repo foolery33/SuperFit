@@ -32,6 +32,15 @@ private class MyBodyComponentDependencyfdb26a7106a090fd9b66Provider: MyBodyCompo
     var getLastBodyParametersUseCase: GetLastBodyParametersUseCase {
         return mainComponent.getLastBodyParametersUseCase
     }
+    var getBodyParametersValidationErrorUseCase: GetBodyParametersValidationErrorUseCase {
+        return mainComponent.getBodyParametersValidationErrorUseCase
+    }
+    var convertDateToYyyyMmDdUseCase: ConvertDateToYyyyMmDdUseCase {
+        return mainComponent.convertDateToYyyyMmDdUseCase
+    }
+    var convertTimestampToDdMmYyyyUseCase: ConvertTimestampToDdMmYyyyUseCase {
+        return mainComponent.convertTimestampToDdMmYyyyUseCase
+    }
     private let mainComponent: MainComponent
     init(mainComponent: MainComponent) {
         self.mainComponent = mainComponent
@@ -160,6 +169,9 @@ extension MyBodyComponent: Registration {
         keyPathToName[\MyBodyComponentDependency.getMostRecentPhotoUseCase] = "getMostRecentPhotoUseCase-GetMostRecentPhotoUseCase"
         keyPathToName[\MyBodyComponentDependency.getLastestPhotoUseCase] = "getLastestPhotoUseCase-GetLatestPhotoUseCase"
         keyPathToName[\MyBodyComponentDependency.getLastBodyParametersUseCase] = "getLastBodyParametersUseCase-GetLastBodyParametersUseCase"
+        keyPathToName[\MyBodyComponentDependency.getBodyParametersValidationErrorUseCase] = "getBodyParametersValidationErrorUseCase-GetBodyParametersValidationErrorUseCase"
+        keyPathToName[\MyBodyComponentDependency.convertDateToYyyyMmDdUseCase] = "convertDateToYyyyMmDdUseCase-ConvertDateToYyyyMmDdUseCase"
+        keyPathToName[\MyBodyComponentDependency.convertTimestampToDdMmYyyyUseCase] = "convertTimestampToDdMmYyyyUseCase-ConvertTimestampToDdMmYyyyUseCase"
     }
 }
 extension ExercisesComponent: Registration {

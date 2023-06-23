@@ -1,0 +1,20 @@
+/* 
+  MyBodyScreenStrings.strings
+  SuperFit-Lab2
+
+  Created by admin on 19.05.2023.
+  
+*/
+
+"change_your_height" = "Измените ваш рост";
+"change_your_weight" = "Измените ваш вес";
+"my_body" = "Моё тело";
+"my_progress" = "Мой прогресс";
+"train_progress" = "Прогресс";
+"statistics" = "Статистика";
+"kg" = "Кг";
+"cm" = "См";
+"choose_image_source" = "Выберите источник изображения";
+"camera" = "Камера";
+"photo" = "Фото";
+"cancel" = "Закрыть";

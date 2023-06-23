@@ -43,5 +43,12 @@ final class ExercisesCoordinator: Coordinator {
         component.exerciseResultViewModel.exerciseResult = .failure
         navigationController.pushViewController(component.exerciseResultViewController, animated: true)
     }
+    
+    func reauthenticateUser() {
+        UserDataManager().clearAllData()
+        parentCoordinator?.childDidFinish(self)
+        let authorizationComponent = componentFactory.getAuthorizationComponent()
+        navigationController.pushViewController(authorizationComponent.authorizationViewController, animated: false)
+    }
      
 }

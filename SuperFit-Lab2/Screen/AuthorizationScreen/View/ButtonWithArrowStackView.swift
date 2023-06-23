@@ -73,6 +73,7 @@ class ButtonWithArrowStackView: UIStackView {
         let myImageView = UIImageView()
         myImageView.image = self.arrowImage
         myImageView.contentMode = .scaleAspectFit
+        myImageView.tintColor = R.color.white()
         return myImageView
     }()
     

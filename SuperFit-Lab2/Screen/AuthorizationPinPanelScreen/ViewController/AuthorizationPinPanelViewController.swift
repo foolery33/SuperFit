@@ -48,7 +48,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
     
     // MARK: - BackArrowButton setup
     private lazy var backArrowButton: UIButton = {
-        let myButton = UIButton()
+        let myButton = UIButton(type: .custom)
         myButton.setImage(R.image.backwardArrow(), for: .normal)
         myButton.addTarget(self, action: #selector(goBackToAuthorizationScreen), for: .touchUpInside)
         return myButton
@@ -87,12 +87,15 @@ final class AuthorizationPinPanelViewController: UIViewController {
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
         myLabel.textColor = R.color.white()
-        myLabel.font = R.font.montserratBold(size: 64)
+        myLabel.font = R.font.montserratBold(size: 60)
         myLabel.text = R.string.generalStrings.app_name()
         return myLabel
     }()
     private func setupAppNameLabel() {
         contentStackView.addArrangedSubview(appNameLabel)
+        appNameLabel.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+        }
     }
     
     // MARK: - UserNameLabel setup

@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
         loadLastExercises()
+        viewModel.errorHandlingDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -210,8 +211,12 @@ class MainViewController: UIViewController {
         let myStackView = UIStackView()
         myStackView.axis = .horizontal
         myStackView.spacing = 9
+        myStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logoutUser)))
         return myStackView
     }()
+    @objc private func logoutUser() {
+        viewModel.goToAuthorizationScreen()
+    }
     private func setupSignOutStackView() {
         contentView.addSubview(signOutStackView)
         setupSignOutArrowImageView()
@@ -247,6 +252,10 @@ class MainViewController: UIViewController {
         signOutStackView.addArrangedSubview(signOutLabel)
     }
     
+    deinit {
+        print("main deinited")
+    }
+    
 }
 
 extension MainViewController {
@@ -256,12 +265,6 @@ extension MainViewController {
         Task {
             if await self.viewModel.getLastExercises() {
                 self.reloadLastExercisesTableView()
-            }
-            else {
-                self.showAlert(
-                    title: R.string.mainScreenStrings.last_exercises_loading_error(),
-                    message: self.viewModel.error
-                )
             }
         }
         
@@ -274,5 +277,22 @@ extension MainViewController {
 //                self.showAlert(title: "Last exercises loading error", message: self.viewModel.error)
 //            }
 //        }
+    }
+}
+
+// MARK: - ErrorHandlingDelegate
+extension MainViewController: ErrorHandlingDelegate {
+    func handleErrorMessage(_ errorMessage: String) {
+        DispatchQueue.main.async {
+            if errorMessage == R.string.errors.unauthorized() {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage) {
+                    self.reauthorizeUser()
+                }
+            }
+        }
+    }
+    
+    func reauthorizeUser() {
+        viewModel.reauthenticateUser()
     }
 }

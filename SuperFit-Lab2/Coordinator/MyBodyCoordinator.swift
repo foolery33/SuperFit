@@ -29,5 +29,12 @@ final class MyBodyCoordinator: Coordinator {
         navigationController.pushViewController(component.myBodyViewController, animated: true)
     }
     
+    func reauthenticateUser() {
+        UserDataManager().clearAllData()
+        parentCoordinator?.childDidFinish(self)
+        let authorizationComponent = componentFactory.getAuthorizationComponent()
+        navigationController.pushViewController(authorizationComponent.authorizationViewController, animated: false)
+    }
+    
     
 }

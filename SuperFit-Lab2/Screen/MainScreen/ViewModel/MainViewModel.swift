@@ -7,9 +7,15 @@
 
 import Foundation
 
+protocol ErrorHandlingDelegate: AnyObject {
+    func handleErrorMessage(_ errorMessage: String)
+    func reauthorizeUser()
+}
+
 final class MainViewModel {
     
     weak var coordinator: MainCoordinator?
+    weak var errorHandlingDelegate: ErrorHandlingDelegate?
     private var model = MainModel()
     private var trainingRepository: TrainingRepository
     private var getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase
@@ -28,8 +34,6 @@ final class MainViewModel {
         }
     }
     
-    var error: String = ""
-    
     func getTrainingInfoModel(from trainingTypeModel: TrainingTypeModel) -> TrainingInfoModel {
         self.getTrainingInfoModelByTrainingTypeModelUseCase.getTrainingInfo(trainingTypeModel)
     }
@@ -47,15 +51,23 @@ final class MainViewModel {
             self.lastExercises = try await trainingRepository.getTrainingList()
             return true
         } catch(let error) {
-            if let appErrpr = error as? AppError {
-                self.error = appErrpr.errorDescription
+            if let appError = error as? AppError {
+                errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
             }
             else {
-                self.error = error.localizedDescription
+                errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
             return false
         }
         
+    }
+    
+    func goToAuthorizationScreen() {
+        coordinator?.goToAuthorizationScreen()
+    }
+    
+    func reauthenticateUser() {
+        coordinator?.reauthenticateUser()
     }
     
 //    func getLastExercises(completion: @escaping (Bool) -> Void) {

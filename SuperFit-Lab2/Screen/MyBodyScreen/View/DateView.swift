@@ -9,7 +9,11 @@ import UIKit
 
 class DateView: UIStackView {
 
-    private let date: String
+    var date: String {
+        willSet {
+            beforeDateLabel.text = newValue
+        }
+    }
     
     init(date: String) {
         self.date = date
