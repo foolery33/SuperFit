@@ -144,6 +144,18 @@ final class MainComponent: BootstrapComponent {
         }
     }
     
+    var groupPhotosByMonthUseCase: GroupPhotosByMonthUseCase {
+        shared {
+            GroupPhotosByMonthUseCase()
+        }
+    }
+    
+    var getMonthAndYearByTimeIntervalUseCase: GetMonthAndYearByTimeIntervalUseCase {
+        shared {
+            GetMonthAndYearByTimeIntervalUseCase()
+        }
+    }
+    
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
         shared {
@@ -183,6 +195,16 @@ final class MainComponent: BootstrapComponent {
     var myBodyComponent: MyBodyComponent {
         shared {
             MyBodyComponent(parent: self)
+        }
+    }
+    var imageListComponent: ImageListComponent {
+        shared {
+            ImageListComponent(parent: self)
+        }
+    }
+    var imageComponent: ImageComponent {
+        shared {
+            ImageComponent(parent: self)
         }
     }
     

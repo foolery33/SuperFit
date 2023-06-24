@@ -84,6 +84,10 @@ extension MyBodyViewModel {
     func goToPreviousScreen() {
         coordinator?.navigationController.popViewController(animated: true)
     }
+    
+    func goToImageListScreen() {
+        coordinator?.goToImageListScreen(profilePhotos: profilePhotos)
+    }
 }
 
 // MARK: - Network requests
@@ -173,7 +177,8 @@ extension MyBodyViewModel {
     func uploadPhoto(imageData: Data, completion: @escaping (Bool) -> Void) {
         profileRepository.uploadPhoto(imageData: imageData) { [weak self] result in
             switch result {
-            case .success:
+            case .success(let data):
+                self?.profilePhotos.append(data)
                 completion(true)
             case .failure(let error):
                 self?.errorHandlingDelegate?.handleErrorMessage(error.errorDescription)

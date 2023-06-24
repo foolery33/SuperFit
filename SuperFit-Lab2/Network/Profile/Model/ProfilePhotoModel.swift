@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProfilePhotoModel: Decodable {
+struct ProfilePhotoModel: Decodable, Equatable {
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case uploaded = "uploaded"

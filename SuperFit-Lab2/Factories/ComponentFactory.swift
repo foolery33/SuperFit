@@ -35,5 +35,11 @@ final class ComponentFactory {
     func getMyBodyComponent() -> MyBodyComponent {
         return mainComponent.myBodyComponent
     }
+    func getImageListComponent() -> ImageListComponent {
+        return mainComponent.imageListComponent
+    }
+    func getImageComponent() -> ImageComponent {
+        return mainComponent.imageComponent
+    }
     
 }

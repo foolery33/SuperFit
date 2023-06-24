@@ -94,19 +94,27 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         }
     }
     
-    func uploadPhoto(imageData: Data, completion: @escaping (Result<Bool, AppError>) -> Void) {
+    func uploadPhoto(imageData: Data, completion: @escaping (Result<ProfilePhotoModel, AppError>) -> Void) {
         let url = baseURL + "api/profile/photos"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(UserDataManager().fetchAccessToken())",
-            "Content-type": "multipart/form-data"
+            "Content-type": "multipart/form-data",
+            "Accept": "application/json"
         ]
+        interceptor.withHeaders = false
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData, withName: "fileset", fileName: "file.jpeg", mimeType: "image/jpeg")
-        }, to: url, method: .post, headers: headers).validate().response { response in
+            multipartFormData.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "image/jpeg")
+        }, to: url, method: .post, headers: headers, interceptor: interceptor).validate().response { response in
             print("Upload photo status code:", response.response?.statusCode ?? 0)
+            self.interceptor.withHeaders = true
             switch response.result {
-            case .success:
-                completion(.success(true))
+            case .success(let data):
+                do {
+                    let decodedData = try JSONDecoder().decode(ProfilePhotoModel.self, from: data ?? Data())
+                    completion(.success(decodedData))
+                } catch {
+                    completion(.failure(.profileError(.modelError)))
+                }
             case .failure(_):
                 if let requestStatusCode = response.response?.statusCode {
                     switch requestStatusCode {
@@ -147,22 +155,4 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         }
     }
     
-}
-
-struct ErrorModel: Decodable {
-    enum CodingKeys: String, CodingKey {
-//        case status = "status"
-//        case statusCode = "status_code"
-        case message = "message"
-//        case timestamp = "timestamp"
-    }
-    
-    init(message: String) {
-        self.message = message
-    }
-    
-//    var status: String
-//    var statusCode: Int
-    var message: String
-//    var timestamp: TimeInterval
 }

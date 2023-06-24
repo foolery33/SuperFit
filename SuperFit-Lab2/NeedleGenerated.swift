@@ -115,6 +115,25 @@ private class ExerciseComponentDependency46503fb7e86011a17493Provider: ExerciseC
 private func factory3422b72b04c9baa072ea0ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
     return ExerciseComponentDependency46503fb7e86011a17493Provider(mainComponent: parent1(component) as! MainComponent)
 }
+private class ImageListComponentDependencya92a62da873e101d3d0dProvider: ImageListComponentDependency {
+    var profileRepository: ProfileRepository {
+        return mainComponent.profileRepository
+    }
+    var groupPhotosByMonthUseCase: GroupPhotosByMonthUseCase {
+        return mainComponent.groupPhotosByMonthUseCase
+    }
+    var getMonthAndYearByTimeIntervalUseCase: GetMonthAndYearByTimeIntervalUseCase {
+        return mainComponent.getMonthAndYearByTimeIntervalUseCase
+    }
+    private let mainComponent: MainComponent
+    init(mainComponent: MainComponent) {
+        self.mainComponent = mainComponent
+    }
+}
+/// ^->MainComponent->ImageListComponent
+private func factory59a0ba5befcc3327d7c80ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return ImageListComponentDependencya92a62da873e101d3d0dProvider(mainComponent: parent1(component) as! MainComponent)
+}
 private class ExerciseComponentDependency4f7585123a20166ea66eProvider: ExerciseComponentDependency {
     var getTrainingTypeByTrainingInfoModelUseCase: GetTrainingTypeByTrainingInfoModelUseCase {
         return mainComponent.getTrainingTypeByTrainingInfoModelUseCase
@@ -127,6 +146,17 @@ private class ExerciseComponentDependency4f7585123a20166ea66eProvider: ExerciseC
 /// ^->MainComponent->ExerciseResultComponent
 private func factoryc1b47e3b96c2ebb2d1540ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
     return ExerciseComponentDependency4f7585123a20166ea66eProvider(mainComponent: parent1(component) as! MainComponent)
+}
+private class ImageComponentDependency9c9b522294a5a4ecba10Provider: ImageComponentDependency {
+
+
+    init() {
+
+    }
+}
+/// ^->MainComponent->ImageComponent
+private func factory10dba4ff650751a88113e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return ImageComponentDependency9c9b522294a5a4ecba10Provider()
 }
 private class AuthorizationPinPanelComponentDependencyc9ab79be377ddba2eabeProvider: AuthorizationPinPanelComponentDependency {
     var authRepository: AuthRepository {
@@ -205,9 +235,21 @@ extension ExerciseComponent: Registration {
         keyPathToName[\ExerciseComponentDependency.getTrainingTypeByTrainingInfoModelUseCase] = "getTrainingTypeByTrainingInfoModelUseCase-GetTrainingTypeByTrainingInfoModelUseCase"
     }
 }
+extension ImageListComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\ImageListComponentDependency.profileRepository] = "profileRepository-ProfileRepository"
+        keyPathToName[\ImageListComponentDependency.groupPhotosByMonthUseCase] = "groupPhotosByMonthUseCase-GroupPhotosByMonthUseCase"
+        keyPathToName[\ImageListComponentDependency.getMonthAndYearByTimeIntervalUseCase] = "getMonthAndYearByTimeIntervalUseCase-GetMonthAndYearByTimeIntervalUseCase"
+    }
+}
 extension ExerciseResultComponent: Registration {
     public func registerItems() {
         keyPathToName[\ExerciseComponentDependency.getTrainingTypeByTrainingInfoModelUseCase] = "getTrainingTypeByTrainingInfoModelUseCase-GetTrainingTypeByTrainingInfoModelUseCase"
+    }
+}
+extension ImageComponent: Registration {
+    public func registerItems() {
+
     }
 }
 extension AuthorizationPinPanelComponent: Registration {
@@ -244,7 +286,9 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->MainComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->MainComponent->RegistrationComponent", factorybf509de48c6e5261a8800ae93e637f014511a119)
     registerProviderFactory("^->MainComponent->ExerciseComponent", factory3422b72b04c9baa072ea0ae93e637f014511a119)
+    registerProviderFactory("^->MainComponent->ImageListComponent", factory59a0ba5befcc3327d7c80ae93e637f014511a119)
     registerProviderFactory("^->MainComponent->ExerciseResultComponent", factoryc1b47e3b96c2ebb2d1540ae93e637f014511a119)
+    registerProviderFactory("^->MainComponent->ImageComponent", factory10dba4ff650751a88113e3b0c44298fc1c149afb)
     registerProviderFactory("^->MainComponent->AuthorizationPinPanelComponent", factory3d9df8e0a52c98f96a490ae93e637f014511a119)
     registerProviderFactory("^->MainComponent->AuthorizationComponent", factory36d2db3a6303047193540ae93e637f014511a119)
 }

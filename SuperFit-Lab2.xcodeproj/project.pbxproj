@@ -62,6 +62,11 @@
 		84608B5829FFF32E00F06A8B /* CodeValueChangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */; };
 		84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */; };
 		84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84608B682A001DE000F06A8B /* ActivityIndicator.swift */; };
+		8467A1022A461EA80093A227 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A1012A461EA80093A227 /* ImageListViewController.swift */; };
+		8467A1042A461F030093A227 /* ImageListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A1032A461F030093A227 /* ImageListComponent.swift */; };
+		8467A1062A461F250093A227 /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A1052A461F250093A227 /* ImageListViewModel.swift */; };
+		8467A1082A461F900093A227 /* MonthImagesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A1072A461F900093A227 /* MonthImagesCollectionView.swift */; };
+		8467A10B2A461FB30093A227 /* MonthImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A10A2A461FB30093A227 /* MonthImagesCollectionViewCell.swift */; };
 		846810842A0E9EDF003C0BB7 /* MyBodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846810832A0E9EDF003C0BB7 /* MyBodyComponent.swift */; };
 		846810892A0EA128003C0BB7 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846810882A0EA128003C0BB7 /* ProfileRepository.swift */; };
 		8468108D2A0EA187003C0BB7 /* BodyParametersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468108C2A0EA187003C0BB7 /* BodyParametersModel.swift */; };
@@ -70,6 +75,12 @@
 		8468109A2A0EB4D3003C0BB7 /* BodyParameterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846810992A0EB4D3003C0BB7 /* BodyParameterStackView.swift */; };
 		8468109C2A0EC51D003C0BB7 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468109B2A0EC51D003C0BB7 /* DateView.swift */; };
 		846810A02A0EC848003C0BB7 /* MyBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468109F2A0EC848003C0BB7 /* MyBodyModel.swift */; };
+		84B47A442A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */; };
+		84B47A492A46E67100069C95 /* MonthImagesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A482A46E67100069C95 /* MonthImagesStackView.swift */; };
+		84B47A4B2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */; };
+		84B47A4F2A46FBA600069C95 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A4E2A46FBA600069C95 /* ImageViewController.swift */; };
+		84B47A542A47069200069C95 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A532A47069200069C95 /* ImageViewModel.swift */; };
+		84B47A572A4706C700069C95 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A562A4706C700069C95 /* ImageComponent.swift */; };
 		84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */; };
 		84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */; };
 		84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84BC22872A0212CD004C3272 /* MainScreenStrings.strings */; };
@@ -201,6 +212,11 @@
 		84608B5729FFF32E00F06A8B /* CodeValueChangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValueChangeUseCase.swift; sourceTree = "<group>"; };
 		84608B602A00003200F06A8B /* SaveUserEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserEmailUseCase.swift; sourceTree = "<group>"; };
 		84608B682A001DE000F06A8B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		8467A1012A461EA80093A227 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		8467A1032A461F030093A227 /* ImageListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListComponent.swift; sourceTree = "<group>"; };
+		8467A1052A461F250093A227 /* ImageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
+		8467A1072A461F900093A227 /* MonthImagesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesCollectionView.swift; sourceTree = "<group>"; };
+		8467A10A2A461FB30093A227 /* MonthImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		846810832A0E9EDF003C0BB7 /* MyBodyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyComponent.swift; sourceTree = "<group>"; };
 		846810882A0EA128003C0BB7 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		8468108C2A0EA187003C0BB7 /* BodyParametersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParametersModel.swift; sourceTree = "<group>"; };
@@ -209,6 +225,12 @@
 		846810992A0EB4D3003C0BB7 /* BodyParameterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParameterStackView.swift; sourceTree = "<group>"; };
 		8468109B2A0EC51D003C0BB7 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		8468109F2A0EC848003C0BB7 /* MyBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyModel.swift; sourceTree = "<group>"; };
+		84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPhotosByMonthUseCase.swift; sourceTree = "<group>"; };
+		84B47A482A46E67100069C95 /* MonthImagesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesStackView.swift; sourceTree = "<group>"; };
+		84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthAndYearByTimeIntervalUseCase.swift; sourceTree = "<group>"; };
+		84B47A4E2A46FBA600069C95 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		84B47A532A47069200069C95 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		84B47A562A4706C700069C95 /* ImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
 		84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainingInfoModelByTrainingTypeModelUseCase.swift; sourceTree = "<group>"; };
 		84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingInfoModel.swift; sourceTree = "<group>"; };
 		84BC22862A0212CD004C3272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainScreenStrings.strings; sourceTree = "<group>"; };
@@ -612,6 +634,51 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8467A0F92A461DF60093A227 /* ImageListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A412A46CE5E00069C95 /* Model */,
+				8467A0FD2A461E0C0093A227 /* View */,
+				8467A0FC2A461E070093A227 /* ViewModel */,
+				8467A0FB2A461E020093A227 /* Component */,
+				8467A0FA2A461DFD0093A227 /* ViewController */,
+			);
+			path = ImageListScreen;
+			sourceTree = "<group>";
+		};
+		8467A0FA2A461DFD0093A227 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8467A1012A461EA80093A227 /* ImageListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8467A0FB2A461E020093A227 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				8467A1032A461F030093A227 /* ImageListComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		8467A0FC2A461E070093A227 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8467A1052A461F250093A227 /* ImageListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8467A0FD2A461E0C0093A227 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A462A46E64200069C95 /* MonthImagesCollectionView */,
+				84B47A482A46E67100069C95 /* MonthImagesStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		846810872A0EA116003C0BB7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +718,66 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84B47A412A46CE5E00069C95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A422A46CE6300069C95 /* UseCase */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84B47A422A46CE6300069C95 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */,
+				84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		84B47A462A46E64200069C95 /* MonthImagesCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8467A1072A461F900093A227 /* MonthImagesCollectionView.swift */,
+				8467A10A2A461FB30093A227 /* MonthImagesCollectionViewCell.swift */,
+			);
+			path = MonthImagesCollectionView;
+			sourceTree = "<group>";
+		};
+		84B47A4C2A46FB9200069C95 /* ImageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A522A47068600069C95 /* ViewModel */,
+				84B47A512A47068100069C95 /* Component */,
+				84B47A4D2A46FB9A00069C95 /* ViewController */,
+			);
+			path = ImageScreen;
+			sourceTree = "<group>";
+		};
+		84B47A4D2A46FB9A00069C95 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A4E2A46FBA600069C95 /* ImageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84B47A512A47068100069C95 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A562A4706C700069C95 /* ImageComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		84B47A522A47068600069C95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A532A47069200069C95 /* ImageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		84BC22812A0211B8004C3272 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +810,8 @@
 		84C83E7029FE231700BC027D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				84B47A4C2A46FB9200069C95 /* ImageScreen */,
+				8467A0F92A461DF60093A227 /* ImageListScreen */,
 				8457C4A62A0E9D3300BA4F18 /* MyBodyScreen */,
 				8457C49A2A0E8B5D00BA4F18 /* ExerciseResultScreen */,
 				8457C4832A0E699000BA4F18 /* ExerciseScreen */,
@@ -1283,6 +1412,7 @@
 				84CBC93C2A0135F20071F1FB /* ExerciseModel.swift in Sources */,
 				84CBC9332A0129B20071F1FB /* MainViewController.swift in Sources */,
 				84CBC9662A017A9F0071F1FB /* LastExercisesTableViewCell.swift in Sources */,
+				8467A1022A461EA80093A227 /* ImageListViewController.swift in Sources */,
 				843CB2662A13C75300642940 /* GetMostRecentPhotoUseCase.swift in Sources */,
 				8468109C2A0EC51D003C0BB7 /* DateView.swift in Sources */,
 				84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */,
@@ -1291,25 +1421,32 @@
 				846810A02A0EC848003C0BB7 /* MyBodyModel.swift in Sources */,
 				8411475B2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift in Sources */,
 				84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */,
+				8467A1082A461F900093A227 /* MonthImagesCollectionView.swift in Sources */,
 				84608B2B29FFBD3B00F06A8B /* AccessTokenModel.swift in Sources */,
 				84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */,
 				84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */,
 				8468109A2A0EB4D3003C0BB7 /* BodyParameterStackView.swift in Sources */,
+				8467A1062A461F250093A227 /* ImageListViewModel.swift in Sources */,
+				84B47A4B2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift in Sources */,
 				84608B4429FFD0A500F06A8B /* CodeValidationUseCase.swift in Sources */,
 				8457C4AB2A0E9DB500BA4F18 /* MyBodyViewController.swift in Sources */,
 				846810842A0E9EDF003C0BB7 /* MyBodyComponent.swift in Sources */,
 				84608B2429FFBB3F00F06A8B /* UserDataManager.swift in Sources */,
+				84B47A4F2A46FBA600069C95 /* ImageViewController.swift in Sources */,
 				84CBC9522A013D530071F1FB /* TrainingModel.swift in Sources */,
 				8457C47D2A0E52E700BA4F18 /* ExercisesTableView.swift in Sources */,
+				84B47A572A4706C700069C95 /* ImageComponent.swift in Sources */,
 				84F4695029FE6743005E83C3 /* UnderlinedTextField.swift in Sources */,
 				84F4696129FEBBFE005E83C3 /* AuthorizationPinPanelComponent.swift in Sources */,
 				84CF989C29F9840700E04115 /* AppDelegate.swift in Sources */,
 				846810902A0EA2B0003C0BB7 /* ProfilePhotoModel.swift in Sources */,
 				843CB2752A13EE6800642940 /* UserBodyParametersRepositoryImplementation.swift in Sources */,
+				84B47A542A47069200069C95 /* ImageViewModel.swift in Sources */,
 				843CB26A2A13DBCE00642940 /* GetLastBodyParametersUseCase.swift in Sources */,
 				84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */,
 				8457C4812A0E55A600BA4F18 /* ExercisesModel.swift in Sources */,
 				8415F0222A45AAD4004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift in Sources */,
+				8467A10B2A461FB30093A227 /* MonthImagesCollectionViewCell.swift in Sources */,
 				8457C4A22A0E8D1700BA4F18 /* ExerciseResultViewModel.swift in Sources */,
 				843CB2792A13F01700642940 /* UserBodyParametersRepository.swift in Sources */,
 				841147562A0E4C1000E2C7D3 /* ExercisesComponent.swift in Sources */,
@@ -1331,6 +1468,7 @@
 				846810962A0EA414003C0BB7 /* ProfileRepositoryImplementation.swift in Sources */,
 				84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */,
 				84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */,
+				84B47A492A46E67100069C95 /* MonthImagesStackView.swift in Sources */,
 				84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */,
 				8457C4982A0E7B9900BA4F18 /* GetTrainingTypeByTrainingInfoModelUseCase.swift in Sources */,
 				843CB26E2A13E27C00642940 /* SimpleMessageModel.swift in Sources */,
@@ -1343,6 +1481,8 @@
 				84608B1829FFB87800F06A8B /* AuthRepository.swift in Sources */,
 				84CCA00729FFB73400B81E65 /* AppError.swift in Sources */,
 				84608B3929FFC68B00F06A8B /* SaveRefreshTokenUseCase.swift in Sources */,
+				84B47A442A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift in Sources */,
+				8467A1042A461F030093A227 /* ImageListComponent.swift in Sources */,
 				84608B612A00003200F06A8B /* SaveUserEmailUseCase.swift in Sources */,
 				8415F0202A45A7BD004DA2DF /* GetBodyParametersValidationErrorUseCase.swift in Sources */,
 				84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */,
@@ -1566,6 +1706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H29F6RLPN8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SuperFit-Lab2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1594,6 +1735,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H29F6RLPN8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SuperFit-Lab2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

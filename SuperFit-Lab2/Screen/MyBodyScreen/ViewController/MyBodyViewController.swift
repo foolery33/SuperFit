@@ -207,7 +207,7 @@ class MyBodyViewController: UIViewController {
         return myButton
     }()
     @objc private func onSeeAllButtonTapped() {
-        
+        viewModel.goToImageListScreen()
     }
     private func setupSeeAllButton() {
         contentView.addSubview(seeAllButton)
@@ -242,6 +242,7 @@ class MyBodyViewController: UIViewController {
         let myImageView = UIImageView()
         myImageView.image = R.image.myProgress1()
         myImageView.contentMode = .scaleAspectFill
+        myImageView.clipsToBounds = true
         return myImageView
     }()
     private func setupBeforeImageView() {
@@ -270,6 +271,7 @@ class MyBodyViewController: UIViewController {
         myImageView.image = R.image.myProgress2()
         myImageView.contentMode = .scaleAspectFill
         myImageView.isUserInteractionEnabled = true
+        myImageView.clipsToBounds = true
         return myImageView
     }()
     private func setupAfterImageView() {

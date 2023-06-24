@@ -11,15 +11,18 @@ import Alamofire
 class CustomRequestInterceptor: RequestInterceptor {
     private let retryLimit = 2
     private let retryDelay: TimeInterval = 1
+    var withHeaders: Bool = true
     
     func adapt(_ urlRequest: URLRequest,
                for session: Session,
                completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
-        if !UserDataManager().fetchAccessToken().isEmpty {
-            urlRequest.setValue("Bearer \(UserDataManager().fetchAccessToken())", forHTTPHeaderField: "Authorization")
+        if withHeaders {
+            if !UserDataManager().fetchAccessToken().isEmpty {
+                urlRequest.setValue("Bearer \(UserDataManager().fetchAccessToken())", forHTTPHeaderField: "Authorization")
+            }
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         completion(.success(urlRequest))
     }
     

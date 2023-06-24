@@ -31,10 +31,25 @@ final class MyBodyCoordinator: Coordinator {
     
     func reauthenticateUser() {
         UserDataManager().clearAllData()
+        if let mainCoordinator = parentCoordinator as? MainCoordinator {
+            mainCoordinator.reauthenticateUser()
+        }
         parentCoordinator?.childDidFinish(self)
-        let authorizationComponent = componentFactory.getAuthorizationComponent()
-        navigationController.pushViewController(authorizationComponent.authorizationViewController, animated: false)
     }
     
+    func goToImageListScreen(profilePhotos: [ProfilePhotoModel]) {
+        let imageListComponent = componentFactory.getImageListComponent()
+        imageListComponent.imageListViewModel.coordinator = self
+        imageListComponent.imageListViewModel.setProfilePhotos(profilePhotos)
+        imageListComponent.imageListViewModel.profilePhotos = profilePhotos
+        navigationController.pushViewController(imageListComponent.imageListViewController, animated: true)
+    }
+    
+    func goToImageScreen(imageData: Data) {
+        let imageComponent = componentFactory.getImageComponent()
+        imageComponent.imageViewModel.coordinator = self
+        imageComponent.imageViewModel.imageData = imageData
+        navigationController.pushViewController(imageComponent.imageViewController, animated: false)
+    }
     
 }
