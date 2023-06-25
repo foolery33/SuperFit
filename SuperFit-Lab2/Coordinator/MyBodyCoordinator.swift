@@ -52,4 +52,10 @@ final class MyBodyCoordinator: Coordinator {
         navigationController.pushViewController(imageComponent.imageViewController, animated: false)
     }
     
+    func goToTrainProgressScreen() {
+        let trainProgressComponent = componentFactory.getTrainProgressComponent()
+        trainProgressComponent.trainProgressViewModel.coordinator = self
+        navigationController.pushViewController(trainProgressComponent.trainProgressViewController, animated: true)
+    }
+    
 }

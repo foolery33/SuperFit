@@ -346,7 +346,7 @@ class MyBodyViewController: UIViewController {
         return myButton
     }()
     private func onTrainProgressButtonTapped() {
-        
+        viewModel.goToTrainProgressScreen()
     }
     private func setupTrainProgressButton() {
         buttonsStackView.addArrangedSubview(trainProgressButton)

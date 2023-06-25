@@ -487,6 +487,86 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "16E6F53E-DF94-4F14-910E-16A87CB55E73"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "changeWeightValue(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "16E6F53E-DF94-4F14-910E-16A87CB55E73 - 6b425626387975a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperFit_Lab2.MyBodyViewController.changeWeightValue(Swift.String) -&gt; ()"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "16E6F53E-DF94-4F14-910E-16A87CB55E73 - aca94b4d7c86606a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in SuperFit_Lab2.MyBodyViewController.changeWeightValue(Swift.String) -&gt; ()"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD422382-0A22-4059-BF9F-C2937E01490B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "downloadUserPhoto(photoId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD77174A-5F9D-4130-A5C3-F57CFED57FA7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "updateUserParameters()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "E492C618-F664-4F98-A342-D248ECB8C308"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -519,6 +599,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "40AF8103-7778-45C3-9FCC-DA2679586FAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "changeWeightValue(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "3B690BB5-0A6F-4982-A294-44893E501525"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -530,6 +626,149 @@
             endingLineNumber = "25"
             landmarkName = "configureBodyParameter(set:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "482E6F1D-BED5-4B67-A327-F4BE4656C265"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "sendRequests()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A7B3C22-8F6F-4398-B76F-788899ED719E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "imagePicker"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71122378-B4EC-4DF4-8B35-1BE94076F68D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "changeWeightValue(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71122378-B4EC-4DF4-8B35-1BE94076F68D - 4c1cfb3800c534f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SuperFit_Lab2.MyBodyViewController.changeWeightValue(Swift.String) -&gt; ()"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "71122378-B4EC-4DF4-8B35-1BE94076F68D - e9f13dd543868bb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in SuperFit_Lab2.MyBodyViewController.changeWeightValue(Swift.String) -&gt; ()"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "71122378-B4EC-4DF4-8B35-1BE94076F68D - 1266ebbaeb3c68fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SuperFit_Lab2.MyBodyViewController.changeWeightValue(Swift.String) -&gt; ()"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0EA5A647-09DF-46B7-BCFF-43E54F21219A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewModel/MyBodyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getWeight()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F998E50-0096-4F31-9C2B-C6DAF6DCE63A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Coordinator/MyBodyCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "reauthenticateUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA52DFB3-DB5E-4ACF-8B90-6E8CBFC36E3D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/MyBodyScreen/ViewController/MyBodyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
+            landmarkName = "MyBodyViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -551,364 +790,174 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7066ABEF-F82D-420C-9972-F37A85F963B5"
+            uuid = "A3995103-892E-4E6A-8118-C00548B15386"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/ViewController/ImageListViewController.swift"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/TrainProgressViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "init(viewModel:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "setupSquatsProgressInfo()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1DEB140D-0CAE-4480-A189-C85F71A04D66"
+            uuid = "A5C2C330-BC1E-40C1-A0AB-8E829E665465"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView.swift"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/ViewModel/TrainProgressViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getTrainingList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A5C2C330-BC1E-40C1-A0AB-8E829E665465 - 850132d4541dfa97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SuperFit_Lab2.TrainProgressViewModel.getTrainingList() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/TrainProgressScreen/ViewModel/TrainProgressViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "A5C2C330-BC1E-40C1-A0AB-8E829E665465 - 227b22d0b31109b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for SuperFit_Lab2.TrainProgressViewModel.getTrainingList() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/TrainProgressScreen/ViewModel/TrainProgressViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "A5C2C330-BC1E-40C1-A0AB-8E829E665465 - ac2aad96aeea8669"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SuperFit_Lab2.TrainProgressViewModel.getTrainingList() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/TrainProgressScreen/ViewModel/TrainProgressViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "A5C2C330-BC1E-40C1-A0AB-8E829E665465 - a3bf5a31c5d3e468"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for SuperFit_Lab2.TrainProgressViewModel.getTrainingList() async -&gt; Swift.Bool"
+                  moduleName = "SuperFit-Lab2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/TrainProgressScreen/ViewModel/TrainProgressViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EFB5EEF-0127-4523-B56A-03D186B76789"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/TrainProgressViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "getTrainingList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6BCA6418-4D4D-4C3C-85D5-99EF1256C889"
+            uuid = "12ED1B93-EA4F-4DFA-9874-679A5F4A967C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "65AE4F9C-16D7-4444-BEEA-6BADC0BC3F78"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "countHeight()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F15B1769-7AFD-4FC2-B043-46D771BB7AA6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "countHeight()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FBA65B80-EDC7-4758-A814-AE25C4FD5E42"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesStackView.swift"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/View/ProgressInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "reloadMonthImagesCollectionView()"
+            landmarkName = "configure(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D3A69C7E-E13B-4E1A-B93D-6DAEB31EAE62"
+            uuid = "B2D31136-0E17-4DE7-9087-826F31E8D7DC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/Model/UseCase/GroupPhotosByMonthUseCase.swift"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/Model/UseCase/GetTrainProgressByTrainingTypeModelUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "group(_:)"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "calculateTrainingProgress(trainingType:trainingList:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E6E8C6BC-8A5D-4927-A24B-E2C1BB60EB8C"
+            uuid = "794B4304-94BA-4D36-90F2-0B6BF7DB4360"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/ViewController/ImageListViewController.swift"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/View/ProgressInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "loadProfileImages()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E6E8C6BC-8A5D-4927-A24B-E2C1BB60EB8C - 40a8feb7842969c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SuperFit_Lab2.ImageListViewController.loadProfileImages() -&gt; ()"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/ViewController/ImageListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "156">
-               </Location>
-               <Location
-                  uuid = "E6E8C6BC-8A5D-4927-A24B-E2C1BB60EB8C - fbfecc4a8f40a5dd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SuperFit_Lab2.ImageListViewController.loadProfileImages() -&gt; ()"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/ViewController/ImageListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "1504">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "MonthImagesCollectionView"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E - 7c237bca37ed8609"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperFit_Lab2.MonthImagesCollectionView.profilePhotosData.getter : Swift.Optional&lt;Swift.Array&lt;Foundation.Data&gt;&gt;"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E - edc02624334d761d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperFit_Lab2.MonthImagesCollectionView.profilePhotosData.setter : Swift.Optional&lt;Swift.Array&lt;Foundation.Data&gt;&gt;"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E - badd4b5c5f20720e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperFit_Lab2.MonthImagesCollectionView.profilePhotosData.modify : Swift.Optional&lt;Swift.Array&lt;Foundation.Data&gt;&gt;"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E - 3d61af3aa11194b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperFit_Lab2.MonthImagesCollectionView.profilePhotosData.modify : Swift.Optional&lt;Swift.Array&lt;Foundation.Data&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E - 81301153f36f6149"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperFit_Lab2.MonthImagesCollectionView.init(frame: __C.CGRect, collectionViewLayout: __C.UICollectionViewLayout) -&gt; SuperFit_Lab2.MonthImagesCollectionView"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "156">
-               </Location>
-               <Location
-                  uuid = "80415AB5-E2CA-4E87-A150-129FD85C4A6E - 17dd528405da0936"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperFit_Lab2.MonthImagesCollectionView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SuperFit_Lab2.MonthImagesCollectionView&gt;"
-                  moduleName = "SuperFit-Lab2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/iOS%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/SuperFit-Lab2/SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "96">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6A80805-666E-4E7F-8BA2-423B4AE308FA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "configure(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9C6F6283-9F70-4A23-9944-5F600F6D5320"
+            uuid = "435A1DF1-3A64-467E-A8D7-35E7A96E6D86"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/View/MonthImagesCollectionView/MonthImagesCollectionView.swift"
+            filePath = "SuperFit-Lab2/Screen/TrainProgressScreen/View/ProgressInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D324BA28-16F0-41C2-B0BC-877676AE7394"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageListScreen/ViewController/ImageListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "loadProfileImages()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D24F3B2A-29FA-4D4F-9A6C-1A80ED4A6857"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageScreen/ViewController/ImageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "handleDoubleTap(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1F3B504-D92A-4D9B-9593-5B49173C2D98"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Screen/ImageScreen/ViewController/ImageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "onBackArrowButtonTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8DB5F3E9-99CF-4CCC-8949-F010FEA2F887"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperFit-Lab2/Network/Profile/ProfileRepositoryImplementation.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "uploadPhoto(imageData:completion:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "configure(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

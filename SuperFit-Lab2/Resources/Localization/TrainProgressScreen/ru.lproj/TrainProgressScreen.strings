@@ -1,0 +1,22 @@
+/* 
+  TrainProgressScreen.strings
+  SuperFit-Lab2
+
+  Created by Nikita Usov on 25.06.2023.
+  
+*/
+
+"train_progress" = "Тренировочный прогресс";
+
+"push_ups" = "Отжимания";
+"plank" = "Планка";
+"crunch" = "Пресс";
+"squats" = "Приседания";
+"running" = "Бег";
+
+"last_train" = "Предыдущая тренировка:";
+"progress" = "Прогресс:";
+
+"times" = "раз";
+"seconds" = "секунд";
+"meters" = "метров";

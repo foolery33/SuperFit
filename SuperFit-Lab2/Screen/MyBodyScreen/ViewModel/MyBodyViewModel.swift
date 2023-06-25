@@ -88,6 +88,10 @@ extension MyBodyViewModel {
     func goToImageListScreen() {
         coordinator?.goToImageListScreen(profilePhotos: profilePhotos)
     }
+    
+    func goToTrainProgressScreen() {
+        coordinator?.goToTrainProgressScreen()
+    }
 }
 
 // MARK: - Network requests

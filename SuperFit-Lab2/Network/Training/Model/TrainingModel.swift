@@ -14,6 +14,12 @@ struct TrainingModel: Decodable {
         case repeatCount = "repeatCount"
     }
     
+    init(date: String, exercise: TrainingTypeModel, repeatCount: Int) {
+        self.date = date
+        self.exercise = exercise
+        self.repeatCount = repeatCount
+    }
+    
     var date: String
     var exercise: TrainingTypeModel
     var repeatCount: Int

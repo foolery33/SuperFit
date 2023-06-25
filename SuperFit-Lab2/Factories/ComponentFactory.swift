@@ -41,5 +41,8 @@ final class ComponentFactory {
     func getImageComponent() -> ImageComponent {
         return mainComponent.imageComponent
     }
+    func getTrainProgressComponent() -> TrainProgressComponent {
+        return mainComponent.trainProgressComponent
+    }
     
 }

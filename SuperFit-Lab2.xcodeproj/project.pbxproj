@@ -67,6 +67,10 @@
 		8467A1062A461F250093A227 /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A1052A461F250093A227 /* ImageListViewModel.swift */; };
 		8467A1082A461F900093A227 /* MonthImagesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A1072A461F900093A227 /* MonthImagesCollectionView.swift */; };
 		8467A10B2A461FB30093A227 /* MonthImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A10A2A461FB30093A227 /* MonthImagesCollectionViewCell.swift */; };
+		8467AA5B2A4807A100E6EEA0 /* ProgressInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467AA5A2A4807A100E6EEA0 /* ProgressInfoView.swift */; };
+		8467AA632A482EC900E6EEA0 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467AA622A482EC900E6EEA0 /* NeedleGenerated.swift */; };
+		8467AA692A482F9F00E6EEA0 /* GetTrainProgressByTrainingTypeModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467AA682A482F9F00E6EEA0 /* GetTrainProgressByTrainingTypeModelUseCase.swift */; };
+		8467AA6C2A48300500E6EEA0 /* TrainingProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467AA6B2A48300500E6EEA0 /* TrainingProgressModel.swift */; };
 		846810842A0E9EDF003C0BB7 /* MyBodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846810832A0E9EDF003C0BB7 /* MyBodyComponent.swift */; };
 		846810892A0EA128003C0BB7 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846810882A0EA128003C0BB7 /* ProfileRepository.swift */; };
 		8468108D2A0EA187003C0BB7 /* BodyParametersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468108C2A0EA187003C0BB7 /* BodyParametersModel.swift */; };
@@ -75,12 +79,16 @@
 		8468109A2A0EB4D3003C0BB7 /* BodyParameterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846810992A0EB4D3003C0BB7 /* BodyParameterStackView.swift */; };
 		8468109C2A0EC51D003C0BB7 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468109B2A0EC51D003C0BB7 /* DateView.swift */; };
 		846810A02A0EC848003C0BB7 /* MyBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468109F2A0EC848003C0BB7 /* MyBodyModel.swift */; };
+		848576A72A4775920057F868 /* TrainProgressScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 848576A92A4775920057F868 /* TrainProgressScreen.strings */; };
 		84B47A442A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */; };
 		84B47A492A46E67100069C95 /* MonthImagesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A482A46E67100069C95 /* MonthImagesStackView.swift */; };
 		84B47A4B2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */; };
 		84B47A4F2A46FBA600069C95 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A4E2A46FBA600069C95 /* ImageViewController.swift */; };
 		84B47A542A47069200069C95 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A532A47069200069C95 /* ImageViewModel.swift */; };
 		84B47A572A4706C700069C95 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A562A4706C700069C95 /* ImageComponent.swift */; };
+		84B47A612A47725F00069C95 /* TrainProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A602A47725F00069C95 /* TrainProgressViewController.swift */; };
+		84B47A652A4772AF00069C95 /* TrainProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A642A4772AF00069C95 /* TrainProgressComponent.swift */; };
+		84B47A672A4772C700069C95 /* TrainProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A662A4772C700069C95 /* TrainProgressViewModel.swift */; };
 		84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */; };
 		84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */; };
 		84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84BC22872A0212CD004C3272 /* MainScreenStrings.strings */; };
@@ -125,7 +133,6 @@
 		84CF98BF29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */; };
 		84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */; };
 		84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D32E7D29FECA0B00F2937D /* PinDigitView.swift */; };
-		84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */; };
 		84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694329FE3C34005E83C3 /* ComponentFactory.swift */; };
 		84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */; };
 		84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F4694A29FE3F77005E83C3 /* SnapKit */; };
@@ -217,6 +224,10 @@
 		8467A1052A461F250093A227 /* ImageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
 		8467A1072A461F900093A227 /* MonthImagesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesCollectionView.swift; sourceTree = "<group>"; };
 		8467A10A2A461FB30093A227 /* MonthImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		8467AA5A2A4807A100E6EEA0 /* ProgressInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressInfoView.swift; sourceTree = "<group>"; };
+		8467AA622A482EC900E6EEA0 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
+		8467AA682A482F9F00E6EEA0 /* GetTrainProgressByTrainingTypeModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainProgressByTrainingTypeModelUseCase.swift; sourceTree = "<group>"; };
+		8467AA6B2A48300500E6EEA0 /* TrainingProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProgressModel.swift; sourceTree = "<group>"; };
 		846810832A0E9EDF003C0BB7 /* MyBodyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyComponent.swift; sourceTree = "<group>"; };
 		846810882A0EA128003C0BB7 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		8468108C2A0EA187003C0BB7 /* BodyParametersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParametersModel.swift; sourceTree = "<group>"; };
@@ -225,12 +236,17 @@
 		846810992A0EB4D3003C0BB7 /* BodyParameterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParameterStackView.swift; sourceTree = "<group>"; };
 		8468109B2A0EC51D003C0BB7 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		8468109F2A0EC848003C0BB7 /* MyBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyModel.swift; sourceTree = "<group>"; };
+		848576A82A4775920057F868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TrainProgressScreen.strings; sourceTree = "<group>"; };
+		848576AA2A4775950057F868 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/TrainProgressScreen.strings; sourceTree = "<group>"; };
 		84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPhotosByMonthUseCase.swift; sourceTree = "<group>"; };
 		84B47A482A46E67100069C95 /* MonthImagesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesStackView.swift; sourceTree = "<group>"; };
 		84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthAndYearByTimeIntervalUseCase.swift; sourceTree = "<group>"; };
 		84B47A4E2A46FBA600069C95 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		84B47A532A47069200069C95 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		84B47A562A4706C700069C95 /* ImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
+		84B47A602A47725F00069C95 /* TrainProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProgressViewController.swift; sourceTree = "<group>"; };
+		84B47A642A4772AF00069C95 /* TrainProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProgressComponent.swift; sourceTree = "<group>"; };
+		84B47A662A4772C700069C95 /* TrainProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProgressViewModel.swift; sourceTree = "<group>"; };
 		84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainingInfoModelByTrainingTypeModelUseCase.swift; sourceTree = "<group>"; };
 		84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingInfoModel.swift; sourceTree = "<group>"; };
 		84BC22862A0212CD004C3272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainScreenStrings.strings; sourceTree = "<group>"; };
@@ -278,7 +294,6 @@
 		84CF98FD29F989DE00E04115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
 		84CF98FF29F989F400E04115 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoginScreenStrings.strings; sourceTree = "<group>"; };
 		84D32E7D29FECA0B00F2937D /* PinDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDigitView.swift; sourceTree = "<group>"; };
-		84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		84F4694329FE3C34005E83C3 /* ComponentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
 		84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		84F4694F29FE6743005E83C3 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
@@ -679,6 +694,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8467AA592A48077300E6EEA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8467AA5A2A4807A100E6EEA0 /* ProgressInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8467AA652A482F4B00E6EEA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8467AA6A2A482FFD00E6EEA0 /* Entities */,
+				8467AA662A482F4E00E6EEA0 /* UseCase */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8467AA662A482F4E00E6EEA0 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				8467AA682A482F9F00E6EEA0 /* GetTrainProgressByTrainingTypeModelUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		8467AA6A2A482FFD00E6EEA0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8467AA6B2A48300500E6EEA0 /* TrainingProgressModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		846810872A0EA116003C0BB7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +826,50 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84B47A5E2A47718F00069C95 /* TrainProgressScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8467AA652A482F4B00E6EEA0 /* Model */,
+				8467AA592A48077300E6EEA0 /* View */,
+				84B47A632A47729A00069C95 /* ViewModel */,
+				84B47A622A47728D00069C95 /* Component */,
+				84B47A5F2A4771EE00069C95 /* ViewController */,
+				84B47A602A47725F00069C95 /* TrainProgressViewController.swift */,
+			);
+			path = TrainProgressScreen;
+			sourceTree = "<group>";
+		};
+		84B47A5F2A4771EE00069C95 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84B47A622A47728D00069C95 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A642A4772AF00069C95 /* TrainProgressComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		84B47A632A47729A00069C95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B47A662A4772C700069C95 /* TrainProgressViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84B47A682A4774CA00069C95 /* TrainProgressScreen */ = {
+			isa = PBXGroup;
+			children = (
+				848576A92A4775920057F868 /* TrainProgressScreen.strings */,
+			);
+			path = TrainProgressScreen;
+			sourceTree = "<group>";
+		};
 		84BC22812A0211B8004C3272 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -810,6 +902,7 @@
 		84C83E7029FE231700BC027D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				84B47A5E2A47718F00069C95 /* TrainProgressScreen */,
 				84B47A4C2A46FB9200069C95 /* ImageScreen */,
 				8467A0F92A461DF60093A227 /* ImageListScreen */,
 				8457C4A62A0E9D3300BA4F18 /* MyBodyScreen */,
@@ -1050,10 +1143,10 @@
 		84CF989A29F9840700E04115 /* SuperFit-Lab2 */ = {
 			isa = PBXGroup;
 			children = (
+				8467AA622A482EC900E6EEA0 /* NeedleGenerated.swift */,
 				84CBC93A2A0135C70071F1FB /* Database */,
 				84CCA00529FFB72000B81E65 /* Network */,
 				84F4694129FE3C20005E83C3 /* Factories */,
-				84F4693E29FE3B18005E83C3 /* NeedleGenerated.swift */,
 				84C83E7029FE231700BC027D /* Screen */,
 				84C83E6D29FE22D300BC027D /* Coordinator */,
 				84CF98D029F987C400E04115 /* Resources */,
@@ -1108,6 +1201,7 @@
 		84CF98F829F9898200E04115 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				84B47A682A4774CA00069C95 /* TrainProgressScreen */,
 				8410B3AE2A17D19F00123DD5 /* MyBodyScreen */,
 				84BC22822A021257004C3272 /* MainScreen */,
 				84608B4829FFECBC00F06A8B /* RegisterScreen */,
@@ -1321,6 +1415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848576A72A4775920057F868 /* TrainProgressScreen.strings in Resources */,
 				8411474B2A0E448300E2C7D3 /* Montserrat-Light.ttf in Resources */,
 				84CF98A829F9840800E04115 /* LaunchScreen.storyboard in Resources */,
 				841147482A0E446C00E2C7D3 /* Montserrat-SemiBold.ttf in Resources */,
@@ -1382,6 +1477,7 @@
 			files = (
 				84608B1C29FFB90900F06A8B /* CustomRequestInterceptor.swift in Sources */,
 				84CBC9592A0144BC0071F1FB /* TrainingParametersModel.swift in Sources */,
+				84B47A672A4772C700069C95 /* TrainProgressViewModel.swift in Sources */,
 				84CBC95C2A0148E80071F1FB /* MainCoordinator.swift in Sources */,
 				8415F01B2A45A2A0004DA2DF /* GetEmptyBodyParametersErrorUseCase.swift in Sources */,
 				84F4695529FE6E98005E83C3 /* UIViewControllerExtensions.swift in Sources */,
@@ -1394,6 +1490,7 @@
 				84CBC94A2A0137600071F1FB /* ExercisesDatabase.swift in Sources */,
 				8457C4AF2A0E9E1B00BA4F18 /* MyBodyCoordinator.swift in Sources */,
 				8415F0182A45A11E004DA2DF /* GetHeightValidationErrorUseCase.swift in Sources */,
+				84B47A612A47725F00069C95 /* TrainProgressViewController.swift in Sources */,
 				84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */,
 				841147582A0E4D2100E2C7D3 /* ExercisesViewModel.swift in Sources */,
 				8457C4AD2A0E9DC500BA4F18 /* MyBodyViewModel.swift in Sources */,
@@ -1427,10 +1524,12 @@
 				84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */,
 				8468109A2A0EB4D3003C0BB7 /* BodyParameterStackView.swift in Sources */,
 				8467A1062A461F250093A227 /* ImageListViewModel.swift in Sources */,
+				8467AA692A482F9F00E6EEA0 /* GetTrainProgressByTrainingTypeModelUseCase.swift in Sources */,
 				84B47A4B2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift in Sources */,
 				84608B4429FFD0A500F06A8B /* CodeValidationUseCase.swift in Sources */,
 				8457C4AB2A0E9DB500BA4F18 /* MyBodyViewController.swift in Sources */,
 				846810842A0E9EDF003C0BB7 /* MyBodyComponent.swift in Sources */,
+				8467AA6C2A48300500E6EEA0 /* TrainingProgressModel.swift in Sources */,
 				84608B2429FFBB3F00F06A8B /* UserDataManager.swift in Sources */,
 				84B47A4F2A46FBA600069C95 /* ImageViewController.swift in Sources */,
 				84CBC9522A013D530071F1FB /* TrainingModel.swift in Sources */,
@@ -1449,6 +1548,7 @@
 				8467A10B2A461FB30093A227 /* MonthImagesCollectionViewCell.swift in Sources */,
 				8457C4A22A0E8D1700BA4F18 /* ExerciseResultViewModel.swift in Sources */,
 				843CB2792A13F01700642940 /* UserBodyParametersRepository.swift in Sources */,
+				8467AA632A482EC900E6EEA0 /* NeedleGenerated.swift in Sources */,
 				841147562A0E4C1000E2C7D3 /* ExercisesComponent.swift in Sources */,
 				84608B5829FFF32E00F06A8B /* CodeValueChangeUseCase.swift in Sources */,
 				846810892A0EA128003C0BB7 /* ProfileRepository.swift in Sources */,
@@ -1458,12 +1558,12 @@
 				8415F0152A45A0D7004DA2DF /* GetWeightValidationErrorUseCase.swift in Sources */,
 				843CB2682A13C78000642940 /* GetLatestPhotoUseCase.swift in Sources */,
 				8457C4912A0E750600BA4F18 /* FilledButton.swift in Sources */,
+				84B47A652A4772AF00069C95 /* TrainProgressComponent.swift in Sources */,
 				84C83E7A29FE242800BC027D /* AuthCoordinator.swift in Sources */,
 				8468108D2A0EA187003C0BB7 /* BodyParametersModel.swift in Sources */,
 				84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */,
 				84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */,
 				84CBC94E2A013D200071F1FB /* TrainingRepository.swift in Sources */,
-				84F4693F29FE3B18005E83C3 /* NeedleGenerated.swift in Sources */,
 				84CBC9682A01869E0071F1FB /* MainModel.swift in Sources */,
 				846810962A0EA414003C0BB7 /* ProfileRepositoryImplementation.swift in Sources */,
 				84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */,
@@ -1475,6 +1575,7 @@
 				84608B4029FFCF3B00F06A8B /* EmailValidationUseCase.swift in Sources */,
 				84CC9FFC29FF871600B81E65 /* UserInfoStackView.swift in Sources */,
 				84CBC9382A0132A10071F1FB /* MainScreenComponent.swift in Sources */,
+				8467AA5B2A4807A100E6EEA0 /* ProgressInfoView.swift in Sources */,
 				84608B3D29FFCEB600F06A8B /* EmptyValidationUseCase.swift in Sources */,
 				84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */,
 				84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */,
@@ -1552,6 +1653,15 @@
 				84608B4F29FFED4900F06A8B /* ru */,
 			);
 			name = RegisterScreenStrings.strings;
+			sourceTree = "<group>";
+		};
+		848576A92A4775920057F868 /* TrainProgressScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				848576A82A4775920057F868 /* en */,
+				848576AA2A4775950057F868 /* ru */,
+			);
+			name = TrainProgressScreen.strings;
 			sourceTree = "<group>";
 		};
 		84BC22872A0212CD004C3272 /* MainScreenStrings.strings */ = {

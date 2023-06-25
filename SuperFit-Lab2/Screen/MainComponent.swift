@@ -156,6 +156,12 @@ final class MainComponent: BootstrapComponent {
         }
     }
     
+    var getTrainProgressByTrainingTypeModelUseCase: GetTrainProgressByTrainingTypeModelUseCase {
+        shared {
+            GetTrainProgressByTrainingTypeModelUseCase()
+        }
+    }
+    
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
         shared {
@@ -205,6 +211,11 @@ final class MainComponent: BootstrapComponent {
     var imageComponent: ImageComponent {
         shared {
             ImageComponent(parent: self)
+        }
+    }
+    var trainProgressComponent: TrainProgressComponent {
+        shared {
+            TrainProgressComponent(parent: self)
         }
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrainingParametersModel: Encodable {
+struct TrainingParametersModel: Codable {
     let date: String
     let exercise: String
     let repeatCount: Int
