@@ -28,7 +28,7 @@ final class MyBodyViewModel {
     var weight: Int?
     var height: Int?
     
-    var bodyParameters: [BodyParametersModel] = []
+//    var bodyParameters: [BodyParametersModel] = []
     var profilePhotos: [ProfilePhotoModel] = []
     
     init(profileRepository: ProfileRepository,
@@ -96,20 +96,20 @@ extension MyBodyViewModel {
 
 // MARK: - Network requests
 extension MyBodyViewModel {
-    func getUserParameters() async -> Bool {
-        do {
-            bodyParameters = try await profileRepository.getUserParameters()
-            return true
-        } catch(let error) {
-            if let appError = error as? AppError {
-                errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
-                errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
-            }
-            return false
-        }
-    }
+//    func getUserParameters() async -> Bool {
+//        do {
+//            bodyParameters = try await profileRepository.getUserParameters()
+//            return true
+//        } catch(let error) {
+//            if let appError = error as? AppError {
+//                errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
+//            }
+//            else {
+//                errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
+//            }
+//            return false
+//        }
+//    }
 
     func getProfilePhotos() async -> Bool {
         do {

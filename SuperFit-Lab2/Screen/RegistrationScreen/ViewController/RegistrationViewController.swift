@@ -22,6 +22,7 @@ class RegistrationViewController: UIViewController {
     init(viewModel: RegistrationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.errorHandlingDelegate = self
         setupSubviews()
         view.addKeyboardDismiss()
     }
@@ -115,16 +116,7 @@ class RegistrationViewController: UIViewController {
         return myButton
     }()
     @objc private func onSignUpButtonClicked() {
-        self.view.setupActivityIndicator()
-        self.viewModel.register { success in
-            self.view.stopActivityIndicator()
-            if success {
-                
-            }
-            else {
-                self.showAlert(title: R.string.registerScreenStrings.register_error(), message: self.viewModel.error)
-            }
-        }
+        register()
     }
     private func setupSignUpButton() {
         view.addSubview(signUpButton)
@@ -152,6 +144,7 @@ class RegistrationViewController: UIViewController {
 
 }
 
+// MARK: - RegistrationTextFieldsChangeProtocol
 extension RegistrationViewController: RegistrationTextFieldsChangeProtocol {
     func onUserNameValueChanged(_ textField: UITextField) {
         self.viewModel.updateUserName(with: textField.text ?? "")
@@ -171,5 +164,40 @@ extension RegistrationViewController: RegistrationTextFieldsChangeProtocol {
     func onRepeatCodeValueChanged(_ textField: UITextField) {
         self.viewModel.updateRepeatCode(with: textField.text ?? "")
         textField.text = self.viewModel.repeatCode
+    }
+}
+
+// MARK: - ErrorHandlingDelegate
+extension RegistrationViewController: ErrorHandlingDelegate {
+    func handleErrorMessage(_ errorMessage: String) {
+        DispatchQueue.main.async {
+            if errorMessage == R.string.errors.unauthorized() {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage) {
+                    self.reauthorizeUser()
+                }
+            }
+            else {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage)
+            }
+        }
+    }
+    
+    func reauthorizeUser() {
+        
+    }
+}
+
+// MARK: - Network requests
+extension RegistrationViewController {
+    func register() {
+        view.setupActivityIndicator()
+        Task {
+            if await viewModel.register() {
+                if await viewModel.login() {
+                    viewModel.goToMainScreen()
+                }
+            }
+            view.stopActivityIndicator()
+        }
     }
 }

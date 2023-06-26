@@ -10,13 +10,14 @@ import Foundation
 final class AuthorizationPinPanelViewModel {
     
     weak var coordinator: AuthCoordinator?
-    private var authRepository: AuthRepository
-    private var saveRefreshTokenUseCase: SaveRefreshTokenUseCase
-    private var saveUserEmailUseCase: SaveUserEmailUseCase
+    weak var errorHandlingDelegate: ErrorHandlingDelegate?
+    
+    private let authRepository: AuthRepository
+    private let saveRefreshTokenUseCase: SaveRefreshTokenUseCase
+    private let saveUserEmailUseCase: SaveUserEmailUseCase
+    
     var email: String = ""
     var code: String = ""
-    
-    var error: String = ""
     
     init(authRepository: AuthRepository, saveRefreshTokenUseCase: SaveRefreshTokenUseCase, saveUserEmailUseCase: SaveUserEmailUseCase) {
         self.authRepository = authRepository
@@ -35,19 +36,20 @@ final class AuthorizationPinPanelViewModel {
         self.code += digit
     }
     
-    func login(completion: @escaping (Bool) -> Void) {
-        authRepository.login(login: self.email, password: self.code) { [weak self] result in
-            switch result {
-            case .success(let token):
-                self?.saveRefreshTokenUseCase.save(token.refreshToken)
-                self?.saveUserEmailUseCase.save(self?.email ?? "")
-                completion(true)
-                break
-            case .failure(let error):
-                self?.error = error.errorDescription
-                self?.code = ""
-                completion(false)
+    func login() async -> Bool {
+        do {
+            let token = try await authRepository.login(login: email, password: code)
+            saveRefreshTokenUseCase.save(token.refreshToken)
+            saveUserEmailUseCase.save(email)
+            return true
+        } catch(let error) {
+            if let appError = error as? AppError {
+                errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
             }
+            else {
+                errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
+            }
+            return false
         }
     }
     

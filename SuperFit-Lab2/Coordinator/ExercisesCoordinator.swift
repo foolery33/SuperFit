@@ -36,11 +36,12 @@ final class ExercisesCoordinator: Coordinator {
         navigationController.pushViewController(component.exerciseViewController, animated: true)
     }
     
-    func goToExerciseResultScreen(exercise: TrainingInfoModel) {
+    func goToExerciseResultScreen(exercise: TrainingInfoModel, result: ExerciseResult, repsLeft: Int? = nil) {
         let component = componentFactory.getExerciseResultComponent()
         component.exerciseResultViewModel.coordinator = self
         component.exerciseResultViewModel.exercise = exercise
-        component.exerciseResultViewModel.exerciseResult = .failure
+        component.exerciseResultViewModel.exerciseResult = result
+        component.exerciseResultViewModel.repsLeft = repsLeft
         navigationController.pushViewController(component.exerciseResultViewController, animated: true)
     }
     

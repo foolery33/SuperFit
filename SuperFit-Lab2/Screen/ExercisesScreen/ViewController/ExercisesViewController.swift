@@ -30,7 +30,7 @@ class ExercisesViewController: UIViewController {
         setupTopImageView()
         setupAppNameLabel()
         setupBackArrowButton()
-        setupContentView()
+        setupScrollView()
     }
 
     // MARK: - TopImageView setup
@@ -83,21 +83,35 @@ class ExercisesViewController: UIViewController {
         }
     }
     
+    // MARK: - ScrollView setup
+    private lazy var scrollView: UIScrollView = {
+        let myScrollView = UIScrollView()
+        myScrollView.backgroundColor = R.color.white()
+        myScrollView.showsVerticalScrollIndicator = false
+        myScrollView.layer.cornerRadius = 24
+        myScrollView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        return myScrollView
+    }()
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+        setupContentView()
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(topImageView.snp.bottom).offset(-24)
+            make.bottom.horizontalEdges.equalToSuperview()
+        }
+    }
+    
     // MARK: - ContentView setup
     private lazy var contentView: UIView = {
         let myView = UIView()
-        myView.backgroundColor = R.color.white()
-        myView.layer.cornerRadius = 24
-        myView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         return myView
     }()
     private func setupContentView() {
-        view.addSubview(contentView)
+        scrollView.addSubview(contentView)
         setupExercisesStackView()
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(topImageView.snp.bottom).offset(-24)
-            make.horizontalEdges.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
         }
     }
     
@@ -115,6 +129,7 @@ class ExercisesViewController: UIViewController {
         exercisesStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24)
             make.horizontalEdges.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview()
         }
     }
     

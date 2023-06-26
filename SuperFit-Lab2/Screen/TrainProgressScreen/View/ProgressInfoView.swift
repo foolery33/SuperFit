@@ -60,7 +60,7 @@ final class ProgressInfoView: UIView {
             lastTrainLabel.adjustsFontSizeToFitWidth = true
             lastTrainLabel.sizeToFit()
             
-            let progressLabelAttributedString = NSMutableAttributedString(string: "\(R.string.trainProgressScreen.last_train()) ", attributes: [NSAttributedString.Key.foregroundColor: R.color.white()!, NSAttributedString.Key.font: R.font.montserratRegular(size: 12)!])
+            let progressLabelAttributedString = NSMutableAttributedString(string: "\(R.string.trainProgressScreen.progress()) ", attributes: [NSAttributedString.Key.foregroundColor: R.color.white()!, NSAttributedString.Key.font: R.font.montserratRegular(size: 12)!])
             progressLabelAttributedString.append(NSAttributedString(string: (trainingProgress!.progress.count > 0) ? trainingProgress!.progress : "N/A%", attributes: [NSAttributedString.Key.foregroundColor: R.color.white()!, NSAttributedString.Key.font: R.font.montserratBold(size: 12)!]))
             progressLabel.attributedText = progressLabelAttributedString
             progressLabel.adjustsFontSizeToFitWidth = true
@@ -130,13 +130,13 @@ final class ProgressInfoView: UIView {
 extension ProgressInfoView {
     var circlePoint: CGPoint {
         if startPoint.y < middlePoint.y {
-            return CGPoint(x: startPoint.x - circleSize + 2, y: startPoint.y - circleSize / 2)
+            return CGPoint(x: startPoint.x - circleSize + 1, y: startPoint.y - circleSize / 2)
         }
         else if startPoint.y == middlePoint.y {
-            return CGPoint(x: startPoint.x - circleSize + 2, y: startPoint.y - circleSize / 2)
+            return CGPoint(x: startPoint.x - circleSize + 1, y: startPoint.y - circleSize / 2)
         }
         else {
-            return CGPoint(x: startPoint.x - circleSize + 2, y: startPoint.y - circleSize / 2)
+            return CGPoint(x: startPoint.x - circleSize + 1, y: startPoint.y - circleSize / 2)
         }
     }
 }

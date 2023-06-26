@@ -1,0 +1,13 @@
+/* 
+  ExerciseResultScreen.strings
+  SuperFit-Lab2
+
+  Created by Nikita Usov on 26.06.2023.
+  
+*/
+
+"go_home" = "Домой";
+"unsuccess_phrase" = "осталось. Вы можете лучше!";
+"times" = "раз";
+"meters" = "метров";
+"seconds" = "секунд";

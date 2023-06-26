@@ -122,7 +122,8 @@ class MyBodyViewController: UIViewController {
     
     // MARK: - WeightStackView setup
     private lazy var weightStackView: BodyParameterStackView = {
-        let myStackView = BodyParameterStackView(parameterText: "N/A \(R.string.myBodyScreenStrings.kg())")
+        let weightValue = (viewModel.getWeight() == "-1") ? "N/A" : viewModel.getWeight()
+        let myStackView = BodyParameterStackView(parameterText: "\(weightValue) \(R.string.myBodyScreenStrings.kg())")
         myStackView.isUserInteractionEnabled = true
         myStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChangeWeightAlert)))
         return myStackView
@@ -145,7 +146,8 @@ class MyBodyViewController: UIViewController {
     
     // MARK: - HeightStackView setup
     private lazy var heightStackView: BodyParameterStackView = {
-        let myStackView = BodyParameterStackView(parameterText: "N/A \(R.string.myBodyScreenStrings.cm())")
+        let heightValue = (viewModel.getHeight() == "-1") ? "N/A" : viewModel.getHeight()
+        let myStackView = BodyParameterStackView(parameterText: "\(heightValue) \(R.string.myBodyScreenStrings.cm())")
         myStackView.isUserInteractionEnabled = true
         myStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChangeHeightAlert)))
         return myStackView
@@ -369,9 +371,9 @@ class MyBodyViewController: UIViewController {
 extension MyBodyViewController {
     
     private func sendRequests() {
-        Task {
-            await getBodyParameters()
-        }
+//        Task {
+//            await getBodyParameters()
+//        }
         Task {
             await getUserPhotos()
             if viewModel.beforePhotoData != nil {
@@ -385,12 +387,10 @@ extension MyBodyViewController {
         }
     }
     
-    private func getBodyParameters() async {
-        if await viewModel.getUserParameters() {
-            weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
-            heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
-        }
-    }
+//    private func getBodyParameters() async {
+//        weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
+//        heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
+//    }
     
     private func getUserPhotos() async {
         if await viewModel.getProfilePhotos() {

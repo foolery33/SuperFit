@@ -18,6 +18,7 @@
 "invalid_code" = "The code is too weak, try another one";
 "unauthorized" = "Your authentication token is expired. Please login again";
 "problem_with_executing" = "Some problem occured while executing the request. Try again later";
+"unexpected_error" = "Some unexpected error occured. Please contact developer";
 "photo_not_found" = "An image with provided id was not found. Please contact developer";
 "updating_body_parameter_error" = "Updating body parameter error";
 "body_parameters_loading_error" = "Body parameters loading error";

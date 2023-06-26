@@ -10,13 +10,6 @@ import Foundation
 final class GetMonthAndYearByTimeIntervalUseCase {
     
     func getString(_ interval: TimeInterval) -> String {
-//        let date = Date(timeIntervalSince1970: interval)
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MMMM, yyyy"
-//        dateFormatter.locale = Locale.current
-//
-//        return dateFormatter.string(from: date)
         let date = Date(timeIntervalSince1970: interval)
         
         let dateFormatter = DateFormatter()

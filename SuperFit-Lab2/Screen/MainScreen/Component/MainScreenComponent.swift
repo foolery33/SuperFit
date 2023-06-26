@@ -9,16 +9,26 @@ import UIKit
 import NeedleFoundation
 
 protocol MainScreenComponentDependency: Dependency {
+    var profileRepository: ProfileRepository { get }
+    var userBodyParametersRepository: UserBodyParametersRepository { get }
     var trainingRepository: TrainingRepository { get }
+    var lastExercisesRepository: LastExercisesRepository { get }
     var getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase { get }
+    var getTwoLastExercisesUseCase: GetTwoLastExercisesUseCase { get }
+    var getLastBodyParametersUseCase: GetLastBodyParametersUseCase { get }
 }
 
 final class MainScreenComponent: Component<MainScreenComponentDependency> {
     var mainViewModel: MainViewModel {
         shared {
             MainViewModel(
+                profileRepository: dependency.profileRepository,
+                userBodyParametersRepository: dependency.userBodyParametersRepository,
                 trainingRepository: dependency.trainingRepository,
-                getTrainingInfoModelByTrainingTypeModelUseCase: dependency.getTrainingInfoModelByTrainingTypeModelUseCase
+                lastExercisesRepository: dependency.lastExercisesRepository,
+                getTrainingInfoModelByTrainingTypeModelUseCase: dependency.getTrainingInfoModelByTrainingTypeModelUseCase,
+                getTwoLastExercisesUseCase: dependency.getTwoLastExercisesUseCase,
+                getLastBodyParametersUseCase: dependency.getLastBodyParametersUseCase
             )
         }
     }

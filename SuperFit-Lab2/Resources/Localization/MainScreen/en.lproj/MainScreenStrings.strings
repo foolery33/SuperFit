@@ -27,3 +27,7 @@
 "sign_out" = "Sign Out";
 "see_all" = "See all";
 "last_exercises_loading_error" = "Last exercises loading error";
+
+"kg" = "kg";
+"cm" = "cm";
+"undefined" = "Undefined";

@@ -46,4 +46,21 @@ extension UIViewController {
         
     }
     
+    func showPlankAlert(seconds: Int, onLaterButtonTapped: @escaping (() -> ()), onGoButtonTapped: @escaping (() -> ())) {
+        let alert = UIAlertController(title: R.string.exerciseScreen.start_the_training_question(), message: R.string.exerciseScreen.you_need_to_repeat_the_exercise() + " \(seconds) " + R.string.exerciseScreen.seconds() + ". " + R.string.exerciseScreen.are_you_ready_question(), preferredStyle: .alert)
+        
+        alert.setValue(NSAttributedString(string: alert.title!, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold), NSAttributedString.Key.foregroundColor : R.color.white()!]), forKey: "attributedTitle")
+        alert.setValue(NSAttributedString(string: alert.message!, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.regular), NSAttributedString.Key.foregroundColor : R.color.white()!]), forKey: "attributedMessage")
+        
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = R.color.uiAlertBackground()
+        alert.view.tintColor = R.color.uiAlertButton()
+        alert.addAction(UIAlertAction(title: R.string.exerciseScreen.later(), style: .cancel, handler: { _ in
+            onLaterButtonTapped()
+        }))
+        alert.addAction(UIAlertAction(title: R.string.exerciseScreen.go(), style: .default, handler: { _ in
+            onGoButtonTapped()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

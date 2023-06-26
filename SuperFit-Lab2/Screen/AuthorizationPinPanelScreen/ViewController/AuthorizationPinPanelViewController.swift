@@ -15,6 +15,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
     init(viewModel: AuthorizationPinPanelViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.errorHandlingDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -128,6 +129,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
     
 }
 
+// MARK: - PinPanelDelegate
 extension AuthorizationPinPanelViewController: PinPanelDelegate {
     var pinValue: String {
         get {
@@ -135,18 +137,35 @@ extension AuthorizationPinPanelViewController: PinPanelDelegate {
         }
     }
     func onChangePinValue(newDigit: String) {
-        self.viewModel.updatePinPanel(with: newDigit)
-        if self.viewModel.code.count == 4 {
-            self.view.setupActivityIndicator()
-            self.viewModel.login { success in
-                self.view.stopActivityIndicator()
-                if success {
-                    self.viewModel.goToMainScreen()
+        viewModel.updatePinPanel(with: newDigit)
+        if viewModel.code.count == 4 {
+            view.setupActivityIndicator()
+            Task {
+                if await viewModel.login() {
+                    viewModel.goToMainScreen()
                 }
-                else {
-                    self.showAlert(title: R.string.loginScreenStrings.login_error(), message: self.viewModel.error)
-                }
+                view.stopActivityIndicator()
             }
         }
+    }
+}
+
+// MARK: - ErrorHandlingDelegate
+extension AuthorizationPinPanelViewController: ErrorHandlingDelegate {
+    func handleErrorMessage(_ errorMessage: String) {
+        DispatchQueue.main.async {
+            if errorMessage == R.string.errors.unauthorized() {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage) {
+                    self.reauthorizeUser()
+                }
+            }
+            else {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage)
+            }
+        }
+    }
+    
+    func reauthorizeUser() {
+        
     }
 }

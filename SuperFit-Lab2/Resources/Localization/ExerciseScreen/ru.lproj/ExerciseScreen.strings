@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  SuperFit-Lab2
+
+  Created by Nikita Usov on 26.06.2023.
+  
+*/
+
+"crunch" = "Пресс";
+"squats" = "Приседания";
+"push_ups" = "Отжимания";
+"plank" = "Планка";
+"running" = "Бег";
+"need_to_do" = "НУЖНО СДЕЛАТЬ";
+"times_left" = "РАЗ ОСТАЛОСЬ";
+"seconds_left" = "СЕКУНД ОСТАЛОСЬ";
+"meters_passed" = "МЕТРОВ ОСТАЛОСЬ";
+"finish" = "Завершить";
+"start_the_training_question" = "Начать тренировку?";
+"you_need_to_repeat_the_exercise" = "Вам необходимо простоять в планке";
+"seconds" = "секунд";
+"are_you_ready_question" = "Вы готовы?";
+"go" = "Вперёд!";
+"later" = "Позже";

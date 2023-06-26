@@ -8,7 +8,6 @@
 import Foundation
 
 protocol AuthRepository {
-    func register(login: String, password: String, completion: @escaping (Result<Void, AppError>) -> Void)
-//    func getAccessToken(login: String, password: String, completion: @escaping (Result<AccessTokenModel, AppError>) -> Void)
-    func login(login: String, password: String, completion: @escaping (Result<AuthResponseModel, AppError>) -> Void)
+    func register(login: String, password: String) async throws -> SimpleMessageModel
+    func login(login: String, password: String) async throws -> AuthResponseModel
 }

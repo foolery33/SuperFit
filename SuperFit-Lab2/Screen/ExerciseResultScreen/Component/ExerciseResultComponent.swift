@@ -9,13 +9,17 @@ import UIKit
 import NeedleFoundation
 
 protocol ExerciseResultComponentDependency: Dependency {
-    
+    var getTrainingTypeByTrainingInfoModelUseCase: GetTrainingTypeByTrainingInfoModelUseCase { get }
+    var getFailurePhraseUseCase: GetFailurePhraseUseCase { get }
 }
 
-final class ExerciseResultComponent: Component<ExerciseComponentDependency> {
+final class ExerciseResultComponent: Component<ExerciseResultComponentDependency> {
     var exerciseResultViewModel: ExerciseResultViewModel {
         shared {
-            ExerciseResultViewModel()
+            ExerciseResultViewModel(
+                getTrainingTypeByTrainingInfoModelUseCase: dependency.getTrainingTypeByTrainingInfoModelUseCase,
+                getFailurePhraseUseCase: dependency.getFailurePhraseUseCase
+            )
         }
     }
     

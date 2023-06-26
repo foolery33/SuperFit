@@ -117,7 +117,7 @@ class MyBodyCardView: UIView {
         let myLabel = UILabel()
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratBold(size: 14)
-        myLabel.text = "\(self.weight) kg"
+        myLabel.text = "\(self.weight) \(R.string.mainScreenStrings.kg())"
         myLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return myLabel
     }()
@@ -174,7 +174,7 @@ class MyBodyCardView: UIView {
         let myLabel = UILabel()
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratBold(size: 14)
-        myLabel.text = "\(self.height) cm"
+        myLabel.text = "\(self.height) \(R.string.mainScreenStrings.cm())"
         myLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return myLabel
     }()
@@ -224,6 +224,15 @@ class MyBodyCardView: UIView {
     }()
     private func setupDetailsArrowImageView() {
         detailsButtonStackView.addArrangedSubview(detailsArrowImageView)
+    }
+    
+    func configure(weight: Int?, height: Int?) {
+        if weight != nil {
+            weightLabel.text = "\(weight!) \(R.string.mainScreenStrings.kg())"
+        }
+        if height != nil {
+            heightLabel.text = "\(height!) \(R.string.mainScreenStrings.cm())"
+        }
     }
     
 }

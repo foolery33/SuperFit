@@ -47,7 +47,7 @@ extension LastExercisesTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: LastExercisesTableViewCell.identifier, for: indexPath) as! LastExercisesTableViewCell
         cell.selectionStyle = .none
         
-        let trainingInfoModel = self.viewModel.getTrainingInfoModel(from: viewModel.lastExercises[indexPath.row].exercise)
+        let trainingInfoModel = self.viewModel.getTrainingInfoModel(from: viewModel.lastExercises[indexPath.row])
         cell.setup(with: trainingInfoModel)
         return cell
     }

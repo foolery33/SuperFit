@@ -15,9 +15,8 @@ class MainViewController: UIViewController {
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        setupSubviews()
-        loadLastExercises()
         viewModel.errorHandlingDelegate = self
+        setupSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -26,6 +25,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadLastExercises()
+        getUserParameters()
     }
     
     private func setupSubviews() {
@@ -120,7 +125,7 @@ class MainViewController: UIViewController {
     // MARK: - MyBodyLabel setup
     private lazy var myBodyLabel: UILabel = {
         let myLabel = UILabel()
-        myLabel.text = "My body"
+        myLabel.text = R.string.mainScreenStrings.my_body()
         myLabel.textColor = R.color.black()
         myLabel.font = R.font.montserratBold(size: 24)
         return myLabel
@@ -131,7 +136,7 @@ class MainViewController: UIViewController {
     
     // MARK: - MyBodyCardView setup
     private lazy var myBodyCardView: MyBodyCardView = {
-        let myBodyCardView = MyBodyCardView(weight: "Undefined", height: "Undefined")
+        let myBodyCardView = MyBodyCardView(weight: R.string.mainScreenStrings.undefined(), height: R.string.mainScreenStrings.undefined())
         myBodyCardView.goToMyBodyScreen = goToMyBodyScreen
         return myBodyCardView
     }()
@@ -152,7 +157,6 @@ class MainViewController: UIViewController {
     private func setupLastExercisesStackView() {
         contentView.addSubview(lastExercisesStackView)
         setupLastExercisesLabel()
-        setupLastExercisesTableView()
         lastExercisesStackView.snp.makeConstraints { make in
             make.top.equalTo(myBodyCardView.snp.bottom).offset(24)
             make.horizontalEdges.equalToSuperview().inset(16)
@@ -164,7 +168,7 @@ class MainViewController: UIViewController {
         let myLabel = UILabel()
         myLabel.font = R.font.montserratBold(size: 24)
         myLabel.textColor = R.color.black()
-        myLabel.text = "Last exercises"
+        myLabel.text = R.string.mainScreenStrings.last_exercises()
         return myLabel
     }()
     private func setupLastExercisesLabel() {
@@ -191,18 +195,29 @@ class MainViewController: UIViewController {
         }
     }
     
-    // MARK: - LastExercisesTableView setup
-    private lazy var lastExercisesTableView: LastExercisesTableView = {
-        let myTableView = LastExercisesTableView(viewModel: self.viewModel)
-        return myTableView
+    // MARK: - LastExerciseView setup
+    private lazy var lastExerciseView: LastExerciseView = {
+        let myView = LastExerciseView()
+        return myView
     }()
-    private func setupLastExercisesTableView() {
-        lastExercisesStackView.addArrangedSubview(lastExercisesTableView)
+    private func setupLastExerciseView(with trainingType: TrainingTypeModel) {
+        lastExercisesStackView.addArrangedSubview(lastExerciseView)
+        lastExerciseView.setup(with: viewModel.getTrainingInfoModel(from: trainingType))
+        lastExerciseView.snp.makeConstraints { make in
+            make.height.equalTo(114)
+        }
     }
-    private func reloadLastExercisesTableView() {
-        self.lastExercisesTableView.reloadData()
-        self.lastExercisesTableView.snp.remakeConstraints { make in
-            make.height.equalTo(self.lastExercisesTableView.calculateHeight())
+    
+    // MARK: - PreLastExerciseView setup
+    private lazy var preLastExerciseView: LastExerciseView = {
+        let myView = LastExerciseView()
+        return myView
+    }()
+    private func setupPreLastExerciseView(with trainingType: TrainingTypeModel) {
+        lastExercisesStackView.addArrangedSubview(preLastExerciseView)
+        preLastExerciseView.setup(with: viewModel.getTrainingInfoModel(from: trainingType))
+        preLastExerciseView.snp.makeConstraints { make in
+            make.height.equalTo(114)
         }
     }
     
@@ -252,31 +267,24 @@ class MainViewController: UIViewController {
         signOutStackView.addArrangedSubview(signOutLabel)
     }
     
-    deinit {
-        print("main deinited")
-    }
-    
 }
 
 extension MainViewController {
-    
-    
     func loadLastExercises() {
         Task {
             if await self.viewModel.getLastExercises() {
-                self.reloadLastExercisesTableView()
+                if viewModel.lastExercises.count >= 1 { setupLastExerciseView(with: viewModel.lastExercises[0]) }
+                if viewModel.lastExercises.count >= 2 { setupPreLastExerciseView(with: viewModel.lastExercises[1]) }
+                view.setNeedsLayout()
             }
         }
-        
-        
-//        self.viewModel.getLastExercises { success in
-//            if success {
-//                self.reloadLastExercisesTableView()
-//            }
-//            else {
-//                self.showAlert(title: "Last exercises loading error", message: self.viewModel.error)
-//            }
-//        }
+    }
+    func getUserParameters() {
+        Task {
+            if await viewModel.getUserParameters() {
+                myBodyCardView.configure(weight: viewModel.getWeight(), height: viewModel.getHeight())
+            }
+        }
     }
 }
 

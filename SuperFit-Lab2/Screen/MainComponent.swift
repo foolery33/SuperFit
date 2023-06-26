@@ -31,6 +31,18 @@ final class MainComponent: BootstrapComponent {
             UserBodyParametersRepositoryImplementation()
         }
     }
+    var exerciseManagerRepository: ExerciseRepository {
+        shared {
+            ExerciseRepositoryImplementation()
+        }
+    }
+    var lastExercisesRepository: LastExercisesRepository {
+        shared {
+            LastExercisesRepositoryImplementation(
+                getTrainingTypeModelByTrainingNameUseCase: getTrainingTypeModelByTrainingNameUseCase
+            )
+        }
+    }
     
     // MARK: - UseCases
     var saveUserEmailUseCase: SaveUserEmailUseCase {
@@ -103,25 +115,21 @@ final class MainComponent: BootstrapComponent {
             GetLastBodyParametersUseCase()
         }
     }
-    
     var getEmptyBodyParametersErrorUseCase: GetEmptyBodyParametersErrorUseCase {
         shared {
             GetEmptyBodyParametersErrorUseCase()
         }
     }
-    
     var getWeightValidationErrorUseCase: GetWeightValidationErrorUseCase {
         shared {
             GetWeightValidationErrorUseCase()
         }
     }
-    
     var getHeightValidationErrorUseCase: GetHeightValidationErrorUseCase {
         shared {
             GetHeightValidationErrorUseCase()
         }
     }
-    
     var getBodyParametersValidationErrorUseCase: GetBodyParametersValidationErrorUseCase {
         shared {
             GetBodyParametersValidationErrorUseCase(
@@ -131,34 +139,44 @@ final class MainComponent: BootstrapComponent {
             )
         }
     }
-    
     var convertDateToYyyyMmDdUseCase: ConvertDateToYyyyMmDdUseCase {
         shared {
             ConvertDateToYyyyMmDdUseCase()
         }
     }
-    
     var convertTimestampToDdMmYyyyUseCase: ConvertTimestampToDdMmYyyyUseCase {
         shared {
             ConvertTimestampToDdMmYyyyUseCase()
         }
     }
-    
     var groupPhotosByMonthUseCase: GroupPhotosByMonthUseCase {
         shared {
             GroupPhotosByMonthUseCase()
         }
     }
-    
     var getMonthAndYearByTimeIntervalUseCase: GetMonthAndYearByTimeIntervalUseCase {
         shared {
             GetMonthAndYearByTimeIntervalUseCase()
         }
     }
-    
     var getTrainProgressByTrainingTypeModelUseCase: GetTrainProgressByTrainingTypeModelUseCase {
         shared {
             GetTrainProgressByTrainingTypeModelUseCase()
+        }
+    }
+    var getFailurePhraseUseCase: GetFailurePhraseUseCase {
+        shared {
+            GetFailurePhraseUseCase()
+        }
+    }
+    var getTwoLastExercisesUseCase: GetTwoLastExercisesUseCase {
+        shared {
+            GetTwoLastExercisesUseCase()
+        }
+    }
+    var getTrainingTypeModelByTrainingNameUseCase: GetTrainingTypeModelByTrainingNameUseCase {
+        shared {
+            GetTrainingTypeModelByTrainingNameUseCase()
         }
     }
     

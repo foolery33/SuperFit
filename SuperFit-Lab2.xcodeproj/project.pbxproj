@@ -30,7 +30,6 @@
 		843CB2752A13EE6800642940 /* UserBodyParametersRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CB2742A13EE6800642940 /* UserBodyParametersRepositoryImplementation.swift */; };
 		843CB2792A13F01700642940 /* UserBodyParametersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CB2782A13F01700642940 /* UserBodyParametersRepository.swift */; };
 		8457C47D2A0E52E700BA4F18 /* ExercisesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C47C2A0E52E700BA4F18 /* ExercisesTableView.swift */; };
-		8457C4812A0E55A600BA4F18 /* ExercisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C4802A0E55A600BA4F18 /* ExercisesModel.swift */; };
 		8457C4892A0E6A5100BA4F18 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C4882A0E6A5100BA4F18 /* ExerciseViewController.swift */; };
 		8457C48B2A0E6BA400BA4F18 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C48A2A0E6BA400BA4F18 /* ExerciseViewModel.swift */; };
 		8457C48D2A0E6BCE00BA4F18 /* ExerciseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C48C2A0E6BCE00BA4F18 /* ExerciseComponent.swift */; };
@@ -80,6 +79,7 @@
 		8468109C2A0EC51D003C0BB7 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468109B2A0EC51D003C0BB7 /* DateView.swift */; };
 		846810A02A0EC848003C0BB7 /* MyBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468109F2A0EC848003C0BB7 /* MyBodyModel.swift */; };
 		848576A72A4775920057F868 /* TrainProgressScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 848576A92A4775920057F868 /* TrainProgressScreen.strings */; };
+		8496CAC22A48D62000C95DE4 /* ExerciseScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8496CAC42A48D62000C95DE4 /* ExerciseScreen.strings */; };
 		84B47A442A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */; };
 		84B47A492A46E67100069C95 /* MonthImagesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A482A46E67100069C95 /* MonthImagesStackView.swift */; };
 		84B47A4B2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */; };
@@ -89,6 +89,15 @@
 		84B47A612A47725F00069C95 /* TrainProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A602A47725F00069C95 /* TrainProgressViewController.swift */; };
 		84B47A652A4772AF00069C95 /* TrainProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A642A4772AF00069C95 /* TrainProgressComponent.swift */; };
 		84B47A672A4772C700069C95 /* TrainProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B47A662A4772C700069C95 /* TrainProgressViewModel.swift */; };
+		84B520F52A49532D00335619 /* ExerciseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B520F42A49532D00335619 /* ExerciseRepository.swift */; };
+		84B520F72A49533B00335619 /* ExerciseRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B520F62A49533B00335619 /* ExerciseRepositoryImplementation.swift */; };
+		84B520FD2A496E9400335619 /* ExerciseResultScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B520FF2A496E9400335619 /* ExerciseResultScreen.strings */; };
+		84B521052A496EE400335619 /* GetFailurePhraseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B521042A496EE400335619 /* GetFailurePhraseUseCase.swift */; };
+		84B521072A49792E00335619 /* GetTwoLastExercisesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B521062A49792E00335619 /* GetTwoLastExercisesUseCase.swift */; };
+		84B5210C2A497E9E00335619 /* LastExercisesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5210B2A497E9E00335619 /* LastExercisesRepository.swift */; };
+		84B521102A497F4900335619 /* LastExercisesRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5210F2A497F4900335619 /* LastExercisesRepositoryImplementation.swift */; };
+		84B521132A4981DC00335619 /* GetTrainingTypeModelByTrainingNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B521122A4981DC00335619 /* GetTrainingTypeModelByTrainingNameUseCase.swift */; };
+		84B521182A498B1B00335619 /* LastExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B521172A498B1B00335619 /* LastExerciseView.swift */; };
 		84BC227D2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */; };
 		84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */; };
 		84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84BC22872A0212CD004C3272 /* MainScreenStrings.strings */; };
@@ -118,7 +127,6 @@
 		84CBC95F2A01738A0071F1FB /* MyBodyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC95E2A01738A0071F1FB /* MyBodyCardView.swift */; };
 		84CBC9632A0179B60071F1FB /* LastExercisesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9622A0179B60071F1FB /* LastExercisesTableView.swift */; };
 		84CBC9662A017A9F0071F1FB /* LastExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9652A017A9F0071F1FB /* LastExercisesTableViewCell.swift */; };
-		84CBC9682A01869E0071F1FB /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9672A01869E0071F1FB /* MainModel.swift */; };
 		84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */; };
 		84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */; };
 		84CC9FF929FF85D700B81E65 /* RegistrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */; };
@@ -187,7 +195,6 @@
 		843CB2742A13EE6800642940 /* UserBodyParametersRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBodyParametersRepositoryImplementation.swift; sourceTree = "<group>"; };
 		843CB2782A13F01700642940 /* UserBodyParametersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBodyParametersRepository.swift; sourceTree = "<group>"; };
 		8457C47C2A0E52E700BA4F18 /* ExercisesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableView.swift; sourceTree = "<group>"; };
-		8457C4802A0E55A600BA4F18 /* ExercisesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesModel.swift; sourceTree = "<group>"; };
 		8457C4882A0E6A5100BA4F18 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		8457C48A2A0E6BA400BA4F18 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		8457C48C2A0E6BCE00BA4F18 /* ExerciseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseComponent.swift; sourceTree = "<group>"; };
@@ -238,6 +245,8 @@
 		8468109F2A0EC848003C0BB7 /* MyBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyModel.swift; sourceTree = "<group>"; };
 		848576A82A4775920057F868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TrainProgressScreen.strings; sourceTree = "<group>"; };
 		848576AA2A4775950057F868 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/TrainProgressScreen.strings; sourceTree = "<group>"; };
+		8496CAC32A48D62000C95DE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ExerciseScreen.strings; sourceTree = "<group>"; };
+		8496CAC52A48D62100C95DE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ExerciseScreen.strings; sourceTree = "<group>"; };
 		84B47A432A46CE7500069C95 /* GroupPhotosByMonthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPhotosByMonthUseCase.swift; sourceTree = "<group>"; };
 		84B47A482A46E67100069C95 /* MonthImagesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthImagesStackView.swift; sourceTree = "<group>"; };
 		84B47A4A2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthAndYearByTimeIntervalUseCase.swift; sourceTree = "<group>"; };
@@ -247,6 +256,16 @@
 		84B47A602A47725F00069C95 /* TrainProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProgressViewController.swift; sourceTree = "<group>"; };
 		84B47A642A4772AF00069C95 /* TrainProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProgressComponent.swift; sourceTree = "<group>"; };
 		84B47A662A4772C700069C95 /* TrainProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProgressViewModel.swift; sourceTree = "<group>"; };
+		84B520F42A49532D00335619 /* ExerciseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRepository.swift; sourceTree = "<group>"; };
+		84B520F62A49533B00335619 /* ExerciseRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRepositoryImplementation.swift; sourceTree = "<group>"; };
+		84B520FE2A496E9400335619 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ExerciseResultScreen.strings; sourceTree = "<group>"; };
+		84B521002A496E9800335619 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ExerciseResultScreen.strings; sourceTree = "<group>"; };
+		84B521042A496EE400335619 /* GetFailurePhraseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFailurePhraseUseCase.swift; sourceTree = "<group>"; };
+		84B521062A49792E00335619 /* GetTwoLastExercisesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTwoLastExercisesUseCase.swift; sourceTree = "<group>"; };
+		84B5210B2A497E9E00335619 /* LastExercisesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExercisesRepository.swift; sourceTree = "<group>"; };
+		84B5210F2A497F4900335619 /* LastExercisesRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExercisesRepositoryImplementation.swift; sourceTree = "<group>"; };
+		84B521122A4981DC00335619 /* GetTrainingTypeModelByTrainingNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainingTypeModelByTrainingNameUseCase.swift; sourceTree = "<group>"; };
+		84B521172A498B1B00335619 /* LastExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExerciseView.swift; sourceTree = "<group>"; };
 		84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainingInfoModelByTrainingTypeModelUseCase.swift; sourceTree = "<group>"; };
 		84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingInfoModel.swift; sourceTree = "<group>"; };
 		84BC22862A0212CD004C3272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainScreenStrings.strings; sourceTree = "<group>"; };
@@ -274,7 +293,6 @@
 		84CBC95E2A01738A0071F1FB /* MyBodyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBodyCardView.swift; sourceTree = "<group>"; };
 		84CBC9622A0179B60071F1FB /* LastExercisesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExercisesTableView.swift; sourceTree = "<group>"; };
 		84CBC9652A017A9F0071F1FB /* LastExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExercisesTableViewCell.swift; sourceTree = "<group>"; };
-		84CBC9672A01869E0071F1FB /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		84CC9FF429FF84FC00B81E65 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		84CC9FF629FF852700B81E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		84CC9FF829FF85D700B81E65 /* RegistrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationComponent.swift; sourceTree = "<group>"; };
@@ -347,7 +365,6 @@
 		8411474D2A0E4B9D00E2C7D3 /* ExercisesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				841147522A0E4BC600E2C7D3 /* Model */,
 				841147512A0E4BC200E2C7D3 /* View */,
 				841147502A0E4BBC00E2C7D3 /* ViewModel */,
 				8411474F2A0E4BB400E2C7D3 /* Component */,
@@ -386,14 +403,6 @@
 				8457C47A2A0E52B900BA4F18 /* EcercisesTableView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		841147522A0E4BC600E2C7D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8457C4802A0E55A600BA4F18 /* ExercisesModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		843CB2632A13C74100642940 /* UseCase */ = {
@@ -440,6 +449,7 @@
 		8457C4832A0E699000BA4F18 /* ExerciseScreen */ = {
 			isa = PBXGroup;
 			children = (
+				84B520F22A49531900335619 /* ExerciseManager */,
 				8457C4952A0E7B8C00BA4F18 /* Model */,
 				8457C48F2A0E74EA00BA4F18 /* View */,
 				8457C4872A0E6A1900BA4F18 /* ViewModel */,
@@ -500,6 +510,7 @@
 		8457C49A2A0E8B5D00BA4F18 /* ExerciseResultScreen */ = {
 			isa = PBXGroup;
 			children = (
+				84B521022A496ECE00335619 /* Model */,
 				8457C49D2A0E8B7100BA4F18 /* ViewModel */,
 				8457C49C2A0E8B6B00BA4F18 /* Component */,
 				8457C49B2A0E8B6600BA4F18 /* ViewController */,
@@ -766,6 +777,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8496CABE2A48D32100C95DE4 /* ExerciseScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8496CAC42A48D62000C95DE4 /* ExerciseScreen.strings */,
+			);
+			path = ExerciseScreen;
+			sourceTree = "<group>";
+		};
 		84B47A412A46CE5E00069C95 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,10 +889,54 @@
 			path = TrainProgressScreen;
 			sourceTree = "<group>";
 		};
+		84B520F22A49531900335619 /* ExerciseManager */ = {
+			isa = PBXGroup;
+			children = (
+				84B520F42A49532D00335619 /* ExerciseRepository.swift */,
+				84B520F62A49533B00335619 /* ExerciseRepositoryImplementation.swift */,
+			);
+			path = ExerciseManager;
+			sourceTree = "<group>";
+		};
+		84B520F92A496CBC00335619 /* ExerciseResultScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84B520FF2A496E9400335619 /* ExerciseResultScreen.strings */,
+			);
+			path = ExerciseResultScreen;
+			sourceTree = "<group>";
+		};
+		84B521022A496ECE00335619 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84B521032A496ED200335619 /* UseCase */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84B521032A496ED200335619 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				84B521042A496EE400335619 /* GetFailurePhraseUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		84B521092A497E5200335619 /* LastExercisesManager */ = {
+			isa = PBXGroup;
+			children = (
+				84B5210B2A497E9E00335619 /* LastExercisesRepository.swift */,
+				84B5210F2A497F4900335619 /* LastExercisesRepositoryImplementation.swift */,
+			);
+			path = LastExercisesManager;
+			sourceTree = "<group>";
+		};
 		84BC22812A0211B8004C3272 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
 				84BC227C2A021075004C3272 /* GetTrainingInfoModelByTrainingTypeModelUseCase.swift */,
+				84B521062A49792E00335619 /* GetTwoLastExercisesUseCase.swift */,
+				84B521122A4981DC00335619 /* GetTrainingTypeModelByTrainingNameUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1004,6 +1067,7 @@
 			children = (
 				84CBC9612A0178FF0071F1FB /* LastExercisesTableView */,
 				84CBC95E2A01738A0071F1FB /* MyBodyCardView.swift */,
+				84B521172A498B1B00335619 /* LastExerciseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1011,8 +1075,8 @@
 		84CBC9312A0129080071F1FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84B521092A497E5200335619 /* LastExercisesManager */,
 				84BC22812A0211B8004C3272 /* UseCase */,
-				84CBC9672A01869E0071F1FB /* MainModel.swift */,
 				84BC227F2A02112E004C3272 /* TrainingInfoModel.swift */,
 			);
 			path = Model;
@@ -1201,6 +1265,8 @@
 		84CF98F829F9898200E04115 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				84B520F92A496CBC00335619 /* ExerciseResultScreen */,
+				8496CABE2A48D32100C95DE4 /* ExerciseScreen */,
 				84B47A682A4774CA00069C95 /* TrainProgressScreen */,
 				8410B3AE2A17D19F00123DD5 /* MyBodyScreen */,
 				84BC22822A021257004C3272 /* MainScreen */,
@@ -1425,6 +1491,8 @@
 				84BC22852A0212CD004C3272 /* MainScreenStrings.strings in Resources */,
 				841147462A0E446800E2C7D3 /* Montserrat-Bold.ttf in Resources */,
 				8410B3B22A17D2B000123DD5 /* MyBodyScreenStrings.strings in Resources */,
+				8496CAC22A48D62000C95DE4 /* ExerciseScreen.strings in Resources */,
+				84B520FD2A496E9400335619 /* ExerciseResultScreen.strings in Resources */,
 				84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */,
 				841147452A0E446500E2C7D3 /* Montserrat-Medium.ttf in Resources */,
 				841147472A0E446A00E2C7D3 /* Montserrat-Regular.ttf in Resources */,
@@ -1493,13 +1561,16 @@
 				84B47A612A47725F00069C95 /* TrainProgressViewController.swift in Sources */,
 				84BC22802A02112E004C3272 /* TrainingInfoModel.swift in Sources */,
 				841147582A0E4D2100E2C7D3 /* ExercisesViewModel.swift in Sources */,
+				84B520F72A49533B00335619 /* ExerciseRepositoryImplementation.swift in Sources */,
 				8457C4AD2A0E9DC500BA4F18 /* MyBodyViewModel.swift in Sources */,
 				84608B692A001DE000F06A8B /* ActivityIndicator.swift in Sources */,
 				8457C4A02A0E8B9A00BA4F18 /* ExerciseResultViewController.swift in Sources */,
+				84B521132A4981DC00335619 /* GetTrainingTypeModelByTrainingNameUseCase.swift in Sources */,
 				8457C48D2A0E6BCE00BA4F18 /* ExerciseComponent.swift in Sources */,
 				84608B2929FFBBED00F06A8B /* AuthResponseModel.swift in Sources */,
 				84608B4229FFCFB800F06A8B /* CodesEqualityValidationUseCase.swift in Sources */,
 				84F4695729FE7632005E83C3 /* ButtonWithArrowStackView.swift in Sources */,
+				84B520F52A49532D00335619 /* ExerciseRepository.swift in Sources */,
 				841147542A0E4BDD00E2C7D3 /* ExercisesViewController.swift in Sources */,
 				84F4695F29FEBBDC005E83C3 /* AuthorizationPinPanelViewModel.swift in Sources */,
 				84F4695229FE6E75005E83C3 /* UIViewExtensions.swift in Sources */,
@@ -1518,16 +1589,20 @@
 				846810A02A0EC848003C0BB7 /* MyBodyModel.swift in Sources */,
 				8411475B2A0E4E5100E2C7D3 /* ExercisesCoordinator.swift in Sources */,
 				84C83E6F29FE22F400BC027D /* Coordinator.swift in Sources */,
+				84B521182A498B1B00335619 /* LastExerciseView.swift in Sources */,
 				8467A1082A461F900093A227 /* MonthImagesCollectionView.swift in Sources */,
 				84608B2B29FFBD3B00F06A8B /* AccessTokenModel.swift in Sources */,
 				84C83E7829FE237C00BC027D /* AppCoordinator.swift in Sources */,
 				84F4696429FEBD2C005E83C3 /* AuthorizationPinPanelViewController.swift in Sources */,
 				8468109A2A0EB4D3003C0BB7 /* BodyParameterStackView.swift in Sources */,
+				84B521052A496EE400335619 /* GetFailurePhraseUseCase.swift in Sources */,
 				8467A1062A461F250093A227 /* ImageListViewModel.swift in Sources */,
 				8467AA692A482F9F00E6EEA0 /* GetTrainProgressByTrainingTypeModelUseCase.swift in Sources */,
 				84B47A4B2A46E8E800069C95 /* GetMonthAndYearByTimeIntervalUseCase.swift in Sources */,
+				84B521072A49792E00335619 /* GetTwoLastExercisesUseCase.swift in Sources */,
 				84608B4429FFD0A500F06A8B /* CodeValidationUseCase.swift in Sources */,
 				8457C4AB2A0E9DB500BA4F18 /* MyBodyViewController.swift in Sources */,
+				84B521102A497F4900335619 /* LastExercisesRepositoryImplementation.swift in Sources */,
 				846810842A0E9EDF003C0BB7 /* MyBodyComponent.swift in Sources */,
 				8467AA6C2A48300500E6EEA0 /* TrainingProgressModel.swift in Sources */,
 				84608B2429FFBB3F00F06A8B /* UserDataManager.swift in Sources */,
@@ -1543,7 +1618,6 @@
 				84B47A542A47069200069C95 /* ImageViewModel.swift in Sources */,
 				843CB26A2A13DBCE00642940 /* GetLastBodyParametersUseCase.swift in Sources */,
 				84CC9FF529FF84FC00B81E65 /* RegistrationViewModel.swift in Sources */,
-				8457C4812A0E55A600BA4F18 /* ExercisesModel.swift in Sources */,
 				8415F0222A45AAD4004DA2DF /* ConvertDateToYyyyMmDdUseCase.swift in Sources */,
 				8467A10B2A461FB30093A227 /* MonthImagesCollectionViewCell.swift in Sources */,
 				8457C4A22A0E8D1700BA4F18 /* ExerciseResultViewModel.swift in Sources */,
@@ -1564,7 +1638,6 @@
 				84C83E8029FE250B00BC027D /* AuthorizationComponent.swift in Sources */,
 				84608B1A29FFB8CA00F06A8B /* AuthRepositoryImplementation.swift in Sources */,
 				84CBC94E2A013D200071F1FB /* TrainingRepository.swift in Sources */,
-				84CBC9682A01869E0071F1FB /* MainModel.swift in Sources */,
 				846810962A0EA414003C0BB7 /* ProfileRepositoryImplementation.swift in Sources */,
 				84CC9FF729FF852700B81E65 /* RegistrationViewController.swift in Sources */,
 				84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */,
@@ -1575,6 +1648,7 @@
 				84608B4029FFCF3B00F06A8B /* EmailValidationUseCase.swift in Sources */,
 				84CC9FFC29FF871600B81E65 /* UserInfoStackView.swift in Sources */,
 				84CBC9382A0132A10071F1FB /* MainScreenComponent.swift in Sources */,
+				84B5210C2A497E9E00335619 /* LastExercisesRepository.swift in Sources */,
 				8467AA5B2A4807A100E6EEA0 /* ProgressInfoView.swift in Sources */,
 				84608B3D29FFCEB600F06A8B /* EmptyValidationUseCase.swift in Sources */,
 				84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */,
@@ -1662,6 +1736,24 @@
 				848576AA2A4775950057F868 /* ru */,
 			);
 			name = TrainProgressScreen.strings;
+			sourceTree = "<group>";
+		};
+		8496CAC42A48D62000C95DE4 /* ExerciseScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8496CAC32A48D62000C95DE4 /* en */,
+				8496CAC52A48D62100C95DE4 /* ru */,
+			);
+			name = ExerciseScreen.strings;
+			sourceTree = "<group>";
+		};
+		84B520FF2A496E9400335619 /* ExerciseResultScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B520FE2A496E9400335619 /* en */,
+				84B521002A496E9800335619 /* ru */,
+			);
+			name = ExerciseResultScreen.strings;
 			sourceTree = "<group>";
 		};
 		84BC22872A0212CD004C3272 /* MainScreenStrings.strings */ = {

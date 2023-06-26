@@ -13,7 +13,7 @@ final class AuthRepositoryImplementation: AuthRepository {
     let baseURL = "http://fitness.wsmob.xyz:22169/"
     let interceptor = CustomRequestInterceptor()
     
-    func register(login: String, password: String, completion: @escaping (Result<Void, AppError>) -> Void) {
+    func register(login: String, password: String) async throws -> SimpleMessageModel {
         let url = baseURL + "api/auth/register"
         let httpParameters = [
             "login": login,
@@ -22,27 +22,32 @@ final class AuthRepositoryImplementation: AuthRepository {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
-        AF.request(url, method: .post, parameters: httpParameters, encoder: JSONParameterEncoder.default, headers: headers).validate().responseData { response in
-            if let requestStatusCode = response.response?.statusCode {
-                print("Register status code:", requestStatusCode)
-            }
-            switch response.result {
-            case .success:
-                completion(.success(()))
-            case .failure(_):
-                if let requestStatusCode = response.response?.statusCode {
-                    switch requestStatusCode {
-                    case 400:
-                        completion(.failure(.authError(.invalidCredentials)))
-                    default:
-                        completion(.failure(.authError(.serverError)))
-                    }
-                }
+        let dataTask = AF.request(
+            url,
+            method: .post,
+            parameters: httpParameters,
+            encoder: JSONParameterEncoder.default,
+            headers: headers
+        ).serializingDecodable(SimpleMessageModel.self)
+        do {
+            print("Register status code:", await dataTask.response.response?.statusCode ?? 0)
+            return try await dataTask.value
+        } catch {
+            let requestStatusCode = await dataTask.response.response?.statusCode
+            switch requestStatusCode {
+            case 200:
+                throw AppError.authError(.modelError)
+            case 400:
+                throw AppError.authError(.invalidCredentials)
+            case 500:
+                throw AppError.authError(.serverError)
+            default:
+                throw AppError.authError(.unexpectedError)
             }
         }
     }
     
-    func login(login: String, password: String, completion: @escaping (Result<AuthResponseModel, AppError>) -> Void) {
+    func login(login: String, password: String) async throws -> AuthResponseModel {
         let url = baseURL + "api/auth/token"
         let httpParameters = [
             "login": login,
@@ -51,27 +56,27 @@ final class AuthRepositoryImplementation: AuthRepository {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
-        AF.request(url, method: .post, parameters: httpParameters, encoder: JSONParameterEncoder.default, headers: headers).validate().responseData { response in
-            if let requestStatusCode = response.response?.statusCode {
-                print("Get login status code:", requestStatusCode)
-            }
-            switch response.result {
-            case .success(let data):
-                do {
-                    let decodedData = try JSONDecoder().decode(AuthResponseModel.self, from: data)
-                    completion(.success(decodedData))
-                } catch {
-                    completion(.failure(.authError(.modelError)))
-                }
-            case .failure(_):
-                if let requestStatusCode = response.response?.statusCode {
-                    switch requestStatusCode {
-                    case 400, 404:
-                        completion(.failure(.authError(.invalidCredentials)))
-                    default:
-                        completion(.failure(.authError(.serverError)))
-                    }
-                }
+        let dataTask = AF.request(
+            url,
+            method: .post,
+            parameters: httpParameters,
+            encoder: JSONParameterEncoder.default,
+            headers: headers
+        ).serializingDecodable(AuthResponseModel.self)
+        do {
+            print("Login status code:", await dataTask.response.response?.statusCode ?? 0)
+            return try await dataTask.value
+        } catch {
+            let requestStatusCode = await dataTask.response.response?.statusCode
+            switch requestStatusCode {
+            case 200:
+                throw AppError.authError(.modelError)
+            case 400:
+                throw AppError.authError(.invalidCredentials)
+            case 500:
+                throw AppError.authError(.serverError)
+            default:
+                throw AppError.authError(.unexpectedError)
             }
         }
     }
@@ -80,6 +85,7 @@ final class AuthRepositoryImplementation: AuthRepository {
         case invalidCredentials
         case serverError
         case modelError
+        case unexpectedError
         var id: String {
             self.errorDescription
         }
@@ -91,6 +97,8 @@ final class AuthRepositoryImplementation: AuthRepository {
                 return R.string.errors.server_error()
             case .modelError:
                 return R.string.errors.model_error()
+            case .unexpectedError:
+                return R.string.errors.unexpected_error()
             }
         }
     }

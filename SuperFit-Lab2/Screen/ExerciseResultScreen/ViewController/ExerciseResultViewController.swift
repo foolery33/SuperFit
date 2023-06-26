@@ -16,7 +16,7 @@ class ExerciseResultViewController: UIViewController {
 
     var viewModel: ExerciseResultViewModel
     
-    private let circleScale: CGFloat = 216.0
+    private let circleScale: CGFloat = UIScreen.main.bounds.width - 2 * 72
     
     init(viewModel: ExerciseResultViewModel) {
         self.viewModel = viewModel
@@ -68,7 +68,6 @@ class ExerciseResultViewController: UIViewController {
     }()
     private func setupCircleView() {
         view.addSubview(circleView)
-//        setupExerciseRepeatInfoStackView()
         circleView.snp.makeConstraints { make in
             make.top.equalTo(exerciseLabel.snp.bottom).offset(100)
             make.centerX.equalToSuperview()
@@ -93,7 +92,7 @@ class ExerciseResultViewController: UIViewController {
     private lazy var failureLabel: UILabel = {
         let myLabel = UILabel()
         myLabel.numberOfLines = 5
-        myLabel.text = "20 times are missing. You can do it better!"
+        myLabel.text = viewModel.getFailurePhrase()
         myLabel.textAlignment = .center
         myLabel.textColor = R.color.white()
         myLabel.font = R.font.montserratBold(size: 24)
@@ -109,7 +108,8 @@ class ExerciseResultViewController: UIViewController {
     
     // MARK: - GoHomeButton setup
     private lazy var goHomeButton: FilledButton = {
-        let myButton = FilledButton(label: "Go home", backColor: R.color.purple()!, textColor: R.color.white()!)
+        let myButton = FilledButton(label: R.string.exerciseResultScreen.go_home(), backColor: R.color.purple()!, textColor: R.color.white()!)
+        myButton.addTarget(self, action: #selector(onGoHomeButtonTapped), for: .touchUpInside)
         return myButton
     }()
     private func setupGoHomeButton() {
@@ -118,6 +118,9 @@ class ExerciseResultViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.horizontalEdges.equalToSuperview().inset(25)
         }
+    }
+    @objc private func onGoHomeButtonTapped() {
+        viewModel.goToMainScreen()
     }
     
 }

@@ -9,14 +9,22 @@ import NeedleFoundation
 import UIKit
 
 protocol ExerciseComponentDependency: Dependency {
+    var trainingRepository: TrainingRepository { get }
+    var exerciseManagerRepository: ExerciseRepository { get }
+    var lastExercisesRepository: LastExercisesRepository { get }
     var getTrainingTypeByTrainingInfoModelUseCase: GetTrainingTypeByTrainingInfoModelUseCase { get }
+    var convertDateToYyyyMmDdUseCase: ConvertDateToYyyyMmDdUseCase { get }
 }
 
 final class ExerciseComponent: Component<ExerciseComponentDependency> {
     var exerciseViewModel: ExerciseViewModel {
         shared {
             ExerciseViewModel(
-                getTrainingTypeByTrainingInfoModelUseCase: dependency.getTrainingTypeByTrainingInfoModelUseCase
+                trainingRepository: dependency.trainingRepository,
+                exerciseManagerRepository: dependency.exerciseManagerRepository,
+                lastExercisesRepository: dependency.lastExercisesRepository,
+                getTrainingTypeByTrainingInfoModelUseCase: dependency.getTrainingTypeByTrainingInfoModelUseCase,
+                convertDateToYyyyMmDdUseCase: dependency.convertDateToYyyyMmDdUseCase
             )
         }
     }
