@@ -19,4 +19,6 @@ protocol LastExercisesRepository {
     
     func getLastExercises() -> [TrainingTypeModel]
     
+    func clearAllData()
+    
 }

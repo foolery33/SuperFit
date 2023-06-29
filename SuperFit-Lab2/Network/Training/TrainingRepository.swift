@@ -10,5 +10,4 @@ import Foundation
 protocol TrainingRepository {
     func getTrainingList() async throws -> [TrainingModel]
     func saveTraining(training: TrainingModel) async throws -> TrainingModel
-//    func saveTraining(training: TrainingModel, completion: @escaping (Result<Void, AppError>) -> Void)
 }

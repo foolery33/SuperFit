@@ -10,7 +10,7 @@ import Foundation
 final class SaveRefreshTokenUseCase {
     
     func save(_ refreshToken: String) {
-        UserDataManager().saveRefreshToken(refreshToken: refreshToken)
+        UserDataManagerRepositoryImplementation().saveRefreshToken(refreshToken: refreshToken)
     }
     
 }

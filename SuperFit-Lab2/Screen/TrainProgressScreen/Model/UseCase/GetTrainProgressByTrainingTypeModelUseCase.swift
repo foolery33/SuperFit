@@ -12,17 +12,19 @@ final class GetTrainProgressByTrainingTypeModelUseCase {
     func calculateTrainingProgress(trainingType: TrainingTypeModel, trainingList: [TrainingModel]) -> TrainingProgressModel? {
         guard let latestTraining = trainingList
             .filter({ $0.exercise == trainingType })
-            .sorted(by: { $0.date > $1.date })
+            .sorted(by: { $0.date >= $1.date && $0.repeatCount > $1.repeatCount })
             .first else {
             return nil
         }
-        
+        print(trainingList.sorted { $0.date >= $1.date && $0.repeatCount > $1.repeatCount })
         var progress: String = ""
         var lastTrain: String = "\(latestTraining.repeatCount) \(getUnit(for: trainingType) ?? "")"
         
-        if let secondLatestTraining = trainingList
+        let filteredTrainingList = trainingList.filter { $0.date != latestTraining.date }
+        
+        if let secondLatestTraining = filteredTrainingList
             .filter({ $0.exercise == trainingType })
-            .sorted(by: { $0.date > $1.date })
+            .sorted(by: { $0.date >= $1.date && $0.repeatCount > $1.repeatCount })
             .dropFirst()
             .first {
             let progressPercentage = calculateProgressPercentage(latestTraining.repeatCount, secondLatestTraining.repeatCount)

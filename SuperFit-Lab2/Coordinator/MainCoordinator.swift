@@ -44,10 +44,17 @@ final class MainCoordinator: Coordinator {
     }
     
     func goToAuthorizationScreen() {
-        UserDataManager().clearAllData()
+        GarbageManager.shared.clearAllData()
         let appCoordinator = parentCoordinator as! AppCoordinator
         appCoordinator.goToAuth()
         parentCoordinator?.childDidFinish(self)
+    }
+    
+    func goToExerciseSceren(trainingInfo: TrainingInfoModel) {
+        let myExerciseCoordinator = CoordinatorFactory().createExercisesCoordinator(navigationController: navigationController)
+        myExerciseCoordinator.parentCoordinator = self
+        children.append(myExerciseCoordinator)
+        myExerciseCoordinator.start(trainingInfo: trainingInfo)
     }
     
     func reauthenticateUser() {

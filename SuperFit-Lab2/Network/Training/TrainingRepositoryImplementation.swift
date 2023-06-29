@@ -34,31 +34,6 @@ final class TrainingRepositoryImplementation: TrainingRepository {
         }
     }
     
-//    func saveTraining(training: TrainingModel, completion: @escaping (Result<Void, AppError>) -> Void) {
-//        let url = baseURL + "api/trainings"
-//        let httpParameters: TrainingParametersModel = TrainingParametersModel(date: training.date, exercise: training.exercise.rawValue, repeatCount: training.repeatCount)
-//        AF.request(url, method: .post, parameters: httpParameters, encoder: JSONParameterEncoder.default, interceptor: self.interceptor).validate().responseData { response in
-//            if let requestStatusCode = response.response?.statusCode {
-//                print("Save training status code:", requestStatusCode)
-//            }
-//            switch response.result {
-//            case .success:
-//                completion(.success(()))
-//            case .failure(_):
-//                if let requestStatusCode = response.response?.statusCode {
-//                    switch requestStatusCode {
-//                    case 400:
-//                        completion(.failure(.trainingError(.problemWithExecuting)))
-//                    case 401:
-//                        completion(.failure(.trainingError(.unauthorized)))
-//                    default:
-//                        completion(.failure(.trainingError(.serverError)))
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     func saveTraining(training: TrainingModel) async throws -> TrainingModel {
         let url = baseURL + "api/trainings"
         let httpParameters: TrainingParametersModel = TrainingParametersModel(date: training.date, exercise: training.exercise.rawValue, repeatCount: training.repeatCount)

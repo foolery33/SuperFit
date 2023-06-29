@@ -207,7 +207,7 @@ class MyBodyCardView: UIView {
     // MARK: - DetailsLabel setup
     private lazy var detailsLabel: UILabel = {
         let myLabel = UILabel()
-        myLabel.text = "Details"
+        myLabel.text = R.string.mainScreenStrings.details()
         myLabel.textColor = R.color.gray()
         myLabel.font = R.font.montserratRegular(size: 12)
         return myLabel

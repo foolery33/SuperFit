@@ -23,7 +23,9 @@ final class LastExercisesRepositoryImplementation: LastExercisesRepository {
     func saveLastExercise(trainingType: TrainingTypeModel) {
         // Устанавливаем предпоследнее значение
         let currentLastExerciseName = getTrainingTypeModelByTrainingNameUseCase.getTrainingTypeModel(by: fetchLastExercise())?.rawValue
-        UserDefaults.standard.set(currentLastExerciseName ?? "", forKey: CodingKeys.preLastExercise)
+        if trainingType.rawValue != currentLastExerciseName {
+            UserDefaults.standard.set(currentLastExerciseName ?? "", forKey: CodingKeys.preLastExercise)
+        }
         
         // Устанавливаем последнее значение
         UserDefaults.standard.set(trainingType.rawValue, forKey: CodingKeys.lastExercise)
@@ -61,6 +63,11 @@ final class LastExercisesRepositoryImplementation: LastExercisesRepository {
             exercises.append(preLastExercise)
         }
         return exercises
+    }
+    
+    func clearAllData() {
+        UserDefaults.standard.removeObject(forKey: CodingKeys.preLastExercise)
+        UserDefaults.standard.removeObject(forKey: CodingKeys.lastExercise)
     }
     
 }

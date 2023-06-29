@@ -30,7 +30,7 @@ final class MyBodyCoordinator: Coordinator {
     }
     
     func reauthenticateUser() {
-        UserDataManager().clearAllData()
+        UserDataManagerRepositoryImplementation().clearAllData()
         if let mainCoordinator = parentCoordinator as? MainCoordinator {
             mainCoordinator.reauthenticateUser()
         }
@@ -56,6 +56,12 @@ final class MyBodyCoordinator: Coordinator {
         let trainProgressComponent = componentFactory.getTrainProgressComponent()
         trainProgressComponent.trainProgressViewModel.coordinator = self
         navigationController.pushViewController(trainProgressComponent.trainProgressViewController, animated: true)
+    }
+    
+    func goToStatisticsScreen() {
+        let statisticsComponent = componentFactory.getStatisticsComponent()
+        statisticsComponent.statisticsViewModel.coordinator = self
+        navigationController.pushViewController(statisticsComponent.statisticsViewController, animated: true)
     }
     
 }

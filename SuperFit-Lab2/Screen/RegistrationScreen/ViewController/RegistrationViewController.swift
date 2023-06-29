@@ -37,9 +37,6 @@ class RegistrationViewController: UIViewController {
     
     private func setupSubviews() {
         setupBackgroundImageView()
-        setupAppNameLabel()
-        setupSignInButton()
-        setupSignUpButton()
         setupScrollView()
     }
     
@@ -57,6 +54,39 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    // MARK: - ScrollView setup
+    private lazy var scrollView: UIScrollView = {
+        let myScrollView = UIScrollView()
+        myScrollView.showsVerticalScrollIndicator = false
+        return myScrollView
+    }()
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+        setupContentView()
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+    }
+    
+    // MARK: - ContentView setup
+    private lazy var contentView: UIView = {
+        let myView = UIView()
+        return myView
+    }()
+    private func setupContentView() {
+        scrollView.addSubview(contentView)
+        setupAppNameLabel()
+        setupUserInfoStack()
+        setupSignUpButton()
+        setupSignInButton()
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().priority(.low)
+        }
+    }
+    
     // MARK: - AppNameLabel setup
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -66,27 +96,10 @@ class RegistrationViewController: UIViewController {
         return myLabel
     }()
     private func setupAppNameLabel() {
-        view.addSubview(appNameLabel)
+        contentView.addSubview(appNameLabel)
         appNameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(68)
             make.centerX.equalToSuperview()
-        }
-    }
-    
-    // MARK: - ScrollView setup
-    private lazy var scrollView: UIScrollView = {
-        let myScrollView = UIScrollView()
-        myScrollView.showsVerticalScrollIndicator = false
-        return myScrollView
-    }()
-    private func setupScrollView() {
-        view.addSubview(scrollView)
-        setupUserInfoStack()
-        scrollView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview()
-            make.top.equalTo(appNameLabel.snp.bottom).offset(131)
-            make.bottom.greaterThanOrEqualTo(signUpButton.snp.top).offset(-40)
-            make.width.equalToSuperview()
         }
     }
     
@@ -102,10 +115,12 @@ class RegistrationViewController: UIViewController {
         return myStackView
     }()
     private func setupUserInfoStack() {
-        scrollView.addSubview(userInfoStack)
+        contentView.addSubview(userInfoStack)
         userInfoStack.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(68)
+//            make.top.equalTo(appNameLabel.snp.bottom).offset(131)
+//            make.horizontalEdges.equalToSuperview().inset(68)
+            make.top.greaterThanOrEqualTo(appNameLabel.snp.bottom).offset(20)
+            make.center.equalToSuperview()
             make.width.equalToSuperview().inset(68)
         }
     }
@@ -119,11 +134,7 @@ class RegistrationViewController: UIViewController {
         register()
     }
     private func setupSignUpButton() {
-        view.addSubview(signUpButton)
-        signUpButton.snp.makeConstraints { make in
-            make.bottom.equalTo(signInButton.snp.top).offset(-110)
-            make.centerX.equalToSuperview().inset(40)
-        }
+        contentView.addSubview(signUpButton)
     }
     
     // MARK: - SignInButton setup
@@ -135,10 +146,18 @@ class RegistrationViewController: UIViewController {
         self.viewModel.goToAuthorizationScreen()
     }
     private func setupSignInButton() {
-        view.addSubview(signInButton)
+        contentView.addSubview(signInButton)
+        
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(userInfoStack.snp.bottom).offset(40)
+            make.centerX.equalToSuperview()
+            make.bottom.lessThanOrEqualTo(signInButton.snp.top).offset(-37)
+        }
+        
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-70)
+            make.bottom.equalToSuperview().offset(-view.safeAreaInsets.bottom).offset(-36)
+            make.top.greaterThanOrEqualTo(signUpButton.snp.bottom).offset(37)
         }
     }
 

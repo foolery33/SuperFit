@@ -1,0 +1,15 @@
+/* 
+  StatisticsScreen.strings
+  SuperFit-Lab2
+
+  Created by Nikita Usov on 27.06.2023.
+  
+*/
+
+"weight" = "Weight";
+"training" = "Training";
+"crunch" = "Crunch";
+"squats" = "Squats";
+"push_ups" = "Push-Ups";
+"plank" = "Plank";
+"running" = "Running";

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class MyBodyViewController: UIViewController {
 
@@ -29,7 +30,7 @@ class MyBodyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = R.color.darkGray()
-        sendRequests()
+        getProfilePhotos()
     }
 
     private func setupSubviews() {
@@ -360,7 +361,7 @@ class MyBodyViewController: UIViewController {
         return myButton
     }()
     private func onStatisticsButtonTapped() {
-        
+        viewModel.goToStatisticsScreen()
     }
     private func setupStatisticsButton() {
         buttonsStackView.addArrangedSubview(statisticsButton)
@@ -370,37 +371,52 @@ class MyBodyViewController: UIViewController {
 
 extension MyBodyViewController {
     
-    private func sendRequests() {
-//        Task {
-//            await getBodyParameters()
-//        }
-        Task {
-            await getUserPhotos()
-            if viewModel.beforePhotoData != nil {
-                beforeImageView.image = UIImage(data: viewModel.beforePhotoData!)
-                beforeDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded)
-            }
-            if viewModel.afterPhotoData != nil {
-                afterImageView.image = UIImage(data: viewModel.afterPhotoData!)
-                afterDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded)
-            }
+    private func getProfilePhotos() {
+        let beforePhoto = viewModel.getBeforePhotoWithDate()
+        let afterPhoto = viewModel.getAfterPhotoWithDate()
+        if beforePhoto.0 != nil && afterPhoto.0 != nil {
+            beforeImageView.image = beforePhoto.0!
+            beforeDateView.date = beforePhoto.1 ?? ""
+            
+            afterImageView.image = afterPhoto.0!
+            afterDateView.date = afterPhoto.1 ?? ""
         }
-    }
-    
-//    private func getBodyParameters() async {
-//        weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
-//        heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
-//    }
-    
-    private func getUserPhotos() async {
-        if await viewModel.getProfilePhotos() {
+        else {
+            Task {
+                await viewModel.getProfilePhotos()
+                if viewModel.beforePhotoData != nil {
+                    if UIImage(data: viewModel.beforePhotoData!) != nil {
+                        beforeImageView.image = UIImage(data: viewModel.beforePhotoData!)
+                        beforeDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded)
+                        viewModel.cacheBeforePhotoWithDate(data: viewModel.beforePhotoData!, dateOfPhoto: viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded))
+                    }
+                }
+                if viewModel.afterPhotoData != nil {
+                    if UIImage(data: viewModel.afterPhotoData!) != nil {
+                        afterImageView.image = UIImage(data: viewModel.afterPhotoData!)
+                        afterDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded)
+                        viewModel.cacheAfterPhotoWithDate(data: viewModel.afterPhotoData!, dateOfPhoto: viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded))
+                    }
+                }
+            }
         }
     }
     
     func uploadPhoto(imageData: Data, image: UIImage) {
         viewModel.uploadPhoto(imageData: imageData) { success in
             if(success) {
-                self.afterImageView.image = image
+                // Если нет ни одной фотографии, то устанавливаем её как "до"
+                if self.viewModel.getBeforePhotoWithDate().0 == nil {
+                    self.beforeImageView.image = image
+                    self.beforeDateView.date = self.viewModel.convertTimestampToDdMmYyyy(self.viewModel.profilePhotos[0].uploaded)
+                    self.viewModel.cacheAfterPhotoWithDate(data: imageData, dateOfPhoto: self.viewModel.convertTimestampToDdMmYyyy(TimeInterval()))
+                }
+                else {
+                    // Иначе устанавливаем её как "после"
+                    self.afterImageView.image = image
+                    self.afterDateView.date = self.viewModel.convertTimestampToDdMmYyyy(self.viewModel.profilePhotos[self.viewModel.profilePhotos.count - 1].uploaded)
+                    self.viewModel.cacheAfterPhotoWithDate(data: imageData, dateOfPhoto: self.viewModel.convertTimestampToDdMmYyyy(TimeInterval()))
+                }
             }
         }
     }

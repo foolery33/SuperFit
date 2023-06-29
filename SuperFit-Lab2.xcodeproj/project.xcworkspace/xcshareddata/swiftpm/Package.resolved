@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "charts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielgindi/Charts.git",
+      "state" : {
+        "revision" : "0a229f8c914b0ec93798cee058cf75b339297513",
+        "version" : "5.0.0"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "c1f60c63f356d364f4284ba82961acbe7de79bcc"
+      }
+    },
+    {
       "identity" : "needle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uber/needle.git",

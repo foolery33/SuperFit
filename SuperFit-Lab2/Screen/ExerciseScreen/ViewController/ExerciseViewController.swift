@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import CoreMotion
 import CoreLocation
+import AudioToolbox
 
 class ExerciseViewController: UIViewController {
     
@@ -20,26 +21,24 @@ class ExerciseViewController: UIViewController {
     private lazy var wentDown = false
     private lazy var startLocation: CLLocation? = nil
     
-    private var repsLeft = 0 {
+    private var initialReps: Int = 100
+    
+    private var repsCount = 0 {
         willSet {
-            if newValue <= 0 {
-                saveTrainingResult()
+            if newValue >= initialReps {
+                saveTrainingResult(repsCount: initialReps, isCompleted: true)
             }
             else {
-                exerciseRepeatLabel.text = "\(newValue)"
+                exerciseRepeatLabel.text = "\(initialReps - newValue)"
             }
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        setupCircleLayer()
     }
     
     init(viewModel: ExerciseViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         viewModel.errorHandlingDelegate = self
-        repsLeft = viewModel.getRepsCount()
+        initialReps = viewModel.getRepsCount()
     }
     
     required init?(coder: NSCoder) {
@@ -52,11 +51,13 @@ class ExerciseViewController: UIViewController {
         setupSubviews()
     }
     
+    override func viewDidLayoutSubviews() {
+        setupCircleLayer()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        motionManager.stopAccelerometerUpdates()
-        locationManager.stopUpdatingLocation()
-        plankTimer.invalidate()
+        invalidateAllUpdaters()
     }
     
     private func setupSubviews() {
@@ -198,16 +199,24 @@ class ExerciseViewController: UIViewController {
     
     // MARK: - FinishButton setup
     private lazy var finishButton: FilledButton = {
-        let myButton = FilledButton(label: "Finish", backColor: R.color.purple()!, textColor: R.color.white()!)
+        let myButton = FilledButton(label: R.string.exerciseScreen.finish(), backColor: R.color.purple()!, textColor: R.color.white()!)
         myButton.addTarget(self, action: #selector(onFinishButtonTapped), for: .touchUpInside)
         return myButton
     }()
     @objc private func onFinishButtonTapped() {
+        invalidateAllUpdaters()
         if viewModel.getTrainingType() == .crunch {
-            saveTrainingResult()
+            saveTrainingResult(repsCount: initialReps, isCompleted: true)
         }
         else {
-            viewModel.goToExerciseResultScreen(result: .failure, repsLeft: repsLeft)
+            if (viewModel.getTrainingType() == .pushUps || viewModel.getTrainingType() == .running || viewModel.getTrainingType() == .plank) && repsCount != 0 {
+                plankTimer.invalidate()
+                saveTrainingResult(repsCount: repsCount, isCompleted: false)
+            }
+            else {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                viewModel.goToExerciseResultScreen(result: .failure, repsLeft: initialReps - repsCount)
+            }
         }
     }
     private func setupFinishButton() {
@@ -216,6 +225,12 @@ class ExerciseViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.horizontalEdges.equalToSuperview().inset(25)
         }
+    }
+    
+    private func invalidateAllUpdaters() {
+        motionManager.stopAccelerometerUpdates()
+        locationManager.stopUpdatingLocation()
+        plankTimer.invalidate()
     }
     
     private lazy var motionManager: CMMotionManager = {
@@ -241,41 +256,46 @@ private extension ExerciseViewController {
         setupExerciseLabel()
         setupCircleView()
         setupFinishButton()
-        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(repsLeft)", toDoLabelText: R.string.exerciseScreen.times_left())
+        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(initialReps)", toDoLabelText: R.string.exerciseScreen.times_left())
     }
     func setupPlank() {
         setupExerciseLabel()
         setupCircleView()
         setupFinishButton()
-        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(repsLeft)", toDoLabelText: R.string.exerciseScreen.seconds_left())
+        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(initialReps)", toDoLabelText: R.string.exerciseScreen.seconds_left())
     }
     func setupSquats() {
         setupExerciseLabel()
         setupCircleView()
         setupBackArrowButton()
-        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(repsLeft)", toDoLabelText: R.string.exerciseScreen.times_left())
+        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(initialReps)", toDoLabelText: R.string.exerciseScreen.times_left())
     }
     func setupCrunch() {
         setupExerciseLabel()
         setupCircleView()
         setupFinishButton()
-        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(repsLeft)", toDoLabelText: R.string.exerciseScreen.need_to_do())
+        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(initialReps)", toDoLabelText: R.string.exerciseScreen.need_to_do())
     }
     func setupRunning() {
         setupExerciseLabel()
         setupCircleView()
         setupFinishButton()
-        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(repsLeft)", toDoLabelText: R.string.exerciseScreen.meters_passed())
+        configureExercise(exerciseName: viewModel.exercise?.name ?? "", repeatLabelText: "\(initialReps)", toDoLabelText: R.string.exerciseScreen.meters_passed())
     }
 }
 
 // MARK: - Network requests
 private extension ExerciseViewController {
-    func saveTrainingResult() {
+    func saveTrainingResult(repsCount: Int, isCompleted: Bool) {
         Task {
-            if await viewModel.saveTrainingResult() {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            if isCompleted {
                 viewModel.goToExerciseResultScreen(result: .success)
             }
+            else {
+                viewModel.goToExerciseResultScreen(result: .failure, repsLeft: initialReps - repsCount)
+            }
+            await viewModel.saveTrainingResult(repsCount: repsCount, isCompleted: isCompleted)
         }
     }
 }
@@ -290,9 +310,10 @@ private extension ExerciseViewController {
         
         motionManager.accelerometerUpdateInterval = 0.1  // Интервал обновления данных акселерометра (в секундах)
         
+        var lastPushUpTimestamp = Date()
+        
         motionManager.startAccelerometerUpdates(to: .main) { [weak self] (data, error) in
             guard let acceleration = data?.acceleration else { return }
-//            print(acceleration.z)
             let threshold = -0.8
             
             if (self?.wentDown ?? false) == false && acceleration.z > threshold + 0.03 {
@@ -303,10 +324,17 @@ private extension ExerciseViewController {
             }
             
             if (self?.wentDown ?? false) && (self?.wentUp ?? false) {
-                self?.repsLeft -= 1
-                print("Push-up count decreased: \(self?.repsLeft ?? 0)")
-                self?.wentUp = false
-                self?.wentDown = false
+                let currentTimestamp = Date()
+                let timeSinceLastPushUp = currentTimestamp.timeIntervalSince(lastPushUpTimestamp)
+                
+                if timeSinceLastPushUp >= 0.5 {  // Проверяем, прошло ли уже 0.5 секунды с предыдущего отжимания
+                    self?.repsCount += 1
+                    print("Push-up count increased: \(self?.repsCount ?? 0)")
+                    self?.wentUp = false
+                    self?.wentDown = false
+                    
+                    lastPushUpTimestamp = currentTimestamp  // Обновляем время последнего отжимания
+                }
             }
         }
     }
@@ -322,9 +350,10 @@ private extension ExerciseViewController {
         
         motionManager.accelerometerUpdateInterval = 0.1  // Интервал обновления данных акселерометра (в секундах)
         
+        var lastSquatTimestamp = Date()
+        
         motionManager.startAccelerometerUpdates(to: .main) { [weak self] (data, error) in
             guard let acceleration = data?.acceleration else { return }
-//            print(acceleration.z)
             let threshold = 0.0
             
             if (self?.wentDown ?? false) == false && acceleration.y > threshold {
@@ -335,10 +364,17 @@ private extension ExerciseViewController {
             }
             
             if (self?.wentDown ?? false) && (self?.wentUp ?? false) {
-                self?.repsLeft -= 1
-                print("Squat count decreased: \(self?.repsLeft ?? 0)")
-                self?.wentUp = false
-                self?.wentDown = false
+                let currentTimestamp = Date()
+                let timeSinceLastSquat = currentTimestamp.timeIntervalSince(lastSquatTimestamp)
+                
+                if timeSinceLastSquat >= 0.5 {  // Проверяем, прошло ли уже 0.5 секунды с предыдущего приседания
+                    self?.repsCount += 1
+                    print("Squat count increased: \(self?.repsCount ?? 0)")
+                    self?.wentUp = false
+                    self?.wentDown = false
+                    
+                    lastSquatTimestamp = currentTimestamp  // Обновляем время последнего приседания
+                }
             }
         }
     }
@@ -347,7 +383,7 @@ private extension ExerciseViewController {
 // MARK: - Plank
 private extension ExerciseViewController {
     func showPlankAlert() {
-        showPlankAlert(seconds: 40, onLaterButtonTapped: onLaterButtonTapped, onGoButtonTapped: onGoButtonTapped)
+        showPlankAlert(seconds: initialReps, onLaterButtonTapped: onLaterButtonTapped, onGoButtonTapped: onGoButtonTapped)
     }
     
     var onLaterButtonTapped: (() -> ()) {
@@ -359,15 +395,15 @@ private extension ExerciseViewController {
     }
     
     func startTimer() {
-        startFillingCircleAnimation(to: 1, duration: TimeInterval(repsLeft))
+        startFillingCircleAnimation(to: 1, duration: TimeInterval(initialReps))
         plankTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
     }
     
     @objc func timerTick() {
-        repsLeft -= 1 // Уменьшаем количество секунд на 1
-        print(repsLeft)
+        repsCount += 1 // Уменьшаем количество секунд на 1
+        print(repsCount)
         // Проверяем, достигнуто ли значение 0
-        if repsLeft <= 0 {
+        if repsCount >= initialReps {
             plankTimer.invalidate() // Останавливаем таймер
         }
     }
@@ -400,8 +436,8 @@ extension ExerciseViewController: CLLocationManagerDelegate {
     
     private func updateDistanceTraveled(_ distance: CLLocationDistance) {
         // Обновление счетчика пройденного расстояния и выполнение соответствующих действий
-        repsLeft -= Int(distance)
-        print("Distance left: \(repsLeft) meters")
+        repsCount += Int(distance)
+        print("Distance in path: \(repsCount) meters")
         
         // Другие действия, связанные с обновлением интерфейса и т.д.
     }

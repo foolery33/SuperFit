@@ -43,8 +43,12 @@ final class ExerciseViewModel {
         exerciseManagerRepository.getRepsCount(for: getTrainingType())
     }
     
-    func saveTraining() {
+    func saveCompletedTraining() {
         exerciseManagerRepository.saveTraining(trainingType: getTrainingType())
+        lastExercisesRepository.saveLastExercise(trainingType: getTrainingType())
+    }
+    
+    func saveIncomplededTraining() {
         lastExercisesRepository.saveLastExercise(trainingType: getTrainingType())
     }
     
@@ -67,17 +71,21 @@ extension ExerciseViewModel {
 
 // MARK: - Network requests
 extension ExerciseViewModel {
-    func saveTrainingResult() async -> Bool {
+    func saveTrainingResult(repsCount: Int, isCompleted: Bool) async {
         do {
             _ = try await trainingRepository.saveTraining(
                 training: TrainingModel(
                     date: convertDateToYyyyMmDdUseCase.convert(Date()),
                     exercise: getTrainingType(),
-                    repeatCount: getRepsCount()
+                    repeatCount: repsCount
                 )
             )
-            saveTraining()
-            return true
+            if isCompleted {
+                saveCompletedTraining()
+            }
+            else {
+                saveIncomplededTraining()
+            }
         } catch(let error) {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
@@ -85,7 +93,6 @@ extension ExerciseViewModel {
             else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
-            return false
         }
     }
 }

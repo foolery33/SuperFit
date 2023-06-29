@@ -11,7 +11,7 @@ final class AuthorizationViewModel {
     
     weak var coordinator: AuthCoordinator?
     var emptyValidationUseCase: EmptyValidationUseCase
-    var email = UserDataManager().fetchEmail()
+    var email = UserDataManagerRepositoryImplementation().fetchEmail()
     
     var error: String = ""
     

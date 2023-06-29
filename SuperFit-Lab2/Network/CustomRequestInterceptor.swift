@@ -18,8 +18,8 @@ class CustomRequestInterceptor: RequestInterceptor {
                completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
         if withHeaders {
-            if !UserDataManager().fetchAccessToken().isEmpty {
-                urlRequest.setValue("Bearer \(UserDataManager().fetchAccessToken())", forHTTPHeaderField: "Authorization")
+            if !UserDataManagerRepositoryImplementation().fetchAccessToken().isEmpty {
+                urlRequest.setValue("Bearer \(UserDataManagerRepositoryImplementation().fetchAccessToken())", forHTTPHeaderField: "Authorization")
             }
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
@@ -55,7 +55,7 @@ class CustomRequestInterceptor: RequestInterceptor {
     
     private func refreshToken(completion: @escaping (() -> Void)) {
         let body = [
-            "refresh_token": UserDataManager().fetchRefreshToken()
+            "refresh_token": UserDataManagerRepositoryImplementation().fetchRefreshToken()
         ]
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -69,8 +69,8 @@ class CustomRequestInterceptor: RequestInterceptor {
             case .success(let data):
                 do {
                     let decodedData = try JSONDecoder().decode(AccessTokenModel.self, from: data)
-                    UserDataManager().saveAccessToken(accessToken: decodedData.accessToken)
-                    print(UserDataManager().fetchAccessToken())
+                    UserDataManagerRepositoryImplementation().saveAccessToken(accessToken: decodedData.accessToken)
+                    print(UserDataManagerRepositoryImplementation().fetchAccessToken())
                     completion()
                 } catch {
                     completion()

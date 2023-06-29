@@ -97,7 +97,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
     func uploadPhoto(imageData: Data, completion: @escaping (Result<ProfilePhotoModel, AppError>) -> Void) {
         let url = baseURL + "api/profile/photos"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(UserDataManager().fetchAccessToken())",
+            "Authorization": "Bearer \(UserDataManagerRepositoryImplementation().fetchAccessToken())",
             "Content-type": "multipart/form-data",
             "Accept": "application/json"
         ]

@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class ExercisesCoordinator: Coordinator {
+protocol ExerciseProtocol: AnyObject {
+    func goToExerciseScreen(exercise: TrainingInfoModel)
+}
+
+final class ExercisesCoordinator: Coordinator, ExerciseProtocol {
     
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
@@ -21,6 +25,9 @@ final class ExercisesCoordinator: Coordinator {
     
     func start() {
         goToExercisesScreen()
+    }
+    func start(trainingInfo: TrainingInfoModel) {
+        goToExerciseScreen(exercise: trainingInfo)
     }
     
     private func goToExercisesScreen() {
@@ -46,10 +53,17 @@ final class ExercisesCoordinator: Coordinator {
     }
     
     func reauthenticateUser() {
-        UserDataManager().clearAllData()
+        UserDataManagerRepositoryImplementation().clearAllData()
         parentCoordinator?.childDidFinish(self)
         let authorizationComponent = componentFactory.getAuthorizationComponent()
         navigationController.pushViewController(authorizationComponent.authorizationViewController, animated: false)
+    }
+    
+    func goToMainScreen() {
+        parentCoordinator?.childDidFinish(self)
+        if let mainViewController = self.navigationController.viewControllers.first(where: { $0 is MainViewController }) {
+            self.navigationController.popToViewController(mainViewController, animated: true)
+        }
     }
      
 }

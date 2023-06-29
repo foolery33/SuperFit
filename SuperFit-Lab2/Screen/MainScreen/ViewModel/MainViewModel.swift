@@ -51,8 +51,10 @@ final class MainViewModel {
     
     func saveLastBodyParameters(from bodyParameters: [BodyParametersModel]) {
         let lastBodyParameters = getLastBodyParametersUseCase.getParameters(from: bodyParameters)
-        userBodyParametersRepository.saveHeight(lastBodyParameters?.height ?? -1)
-        userBodyParametersRepository.saveWeight(lastBodyParameters?.weight ?? -1)
+        if lastBodyParameters?.height != nil {
+            userBodyParametersRepository.saveHeight(lastBodyParameters!.height)
+            userBodyParametersRepository.saveWeight(lastBodyParameters!.weight)
+        }
     }
     
     func getWeight() -> Int? {
@@ -82,6 +84,10 @@ extension MainViewModel {
     func goToMyBodyScreen() {
         coordinator?.goToMyBodyScreen()
     }
+    
+    func goToExerciseScreen(trainingInfo: TrainingInfoModel) {
+        coordinator?.goToExerciseSceren(trainingInfo: trainingInfo)
+    }
 }
 
 // MARK: - Network requests
@@ -108,14 +114,14 @@ extension MainViewModel {
             if lastExercisesRepository.isThereSavedExercises() {
                 let lastExercisesInMemory = lastExercisesRepository.getLastExercises()
                 self.lastExercises = lastExercisesInMemory
-                if lastExercisesInMemory.count == 1 {
-                    let lastExercisesInServer = try await trainingRepository.getTrainingList()
-                    if lastExercisesInServer.count > 1 {
-                        if let newExercise = lastExercisesInServer.first(where: { $0.exercise != lastExercisesInMemory[0] }) {
-                            self.lastExercises.append(newExercise.exercise)
-                        }
-                    }
-                }
+//                if lastExercisesInMemory.count == 1 {
+//                    let lastExercisesInServer = try await trainingRepository.getTrainingList()
+//                    if lastExercisesInServer.count > 1 {
+//                        if let newExercise = lastExercisesInServer.first(where: { $0.exercise != lastExercisesInMemory[0] }) {
+//                            self.lastExercises.append(newExercise.exercise)
+//                        }
+//                    }
+//                }
             }
             else {
                 let lastExercises = try await trainingRepository.getTrainingList()

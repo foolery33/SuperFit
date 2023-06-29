@@ -39,6 +39,6 @@ final class ExerciseResultViewModel {
 // MARK: - Navigation
 extension ExerciseResultViewModel {
     func goToMainScreen() {
-        coordinator?.navigationController.popToRootViewController(animated: true)
+        coordinator?.goToMainScreen()
     }
 }

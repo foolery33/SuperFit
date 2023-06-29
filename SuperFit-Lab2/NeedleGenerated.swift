@@ -39,14 +39,14 @@ private class MyBodyComponentDependencyfdb26a7106a090fd9b66Provider: MyBodyCompo
     var userBodyParametersRepository: UserBodyParametersRepository {
         return mainComponent.userBodyParametersRepository
     }
+    var profilePhotosRepository: ProfilePhotosRepository {
+        return mainComponent.profilePhotosRepository
+    }
     var getMostRecentPhotoUseCase: GetMostRecentPhotoUseCase {
         return mainComponent.getMostRecentPhotoUseCase
     }
     var getLastestPhotoUseCase: GetLatestPhotoUseCase {
         return mainComponent.getLastestPhotoUseCase
-    }
-    var getLastBodyParametersUseCase: GetLastBodyParametersUseCase {
-        return mainComponent.getLastBodyParametersUseCase
     }
     var getBodyParametersValidationErrorUseCase: GetBodyParametersValidationErrorUseCase {
         return mainComponent.getBodyParametersValidationErrorUseCase
@@ -236,6 +236,37 @@ private class AuthorizationComponentDependency01c300e9208281b9a593Provider: Auth
 private func factory36d2db3a6303047193540ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
     return AuthorizationComponentDependency01c300e9208281b9a593Provider(mainComponent: parent1(component) as! MainComponent)
 }
+private class StatisticsComponentDependencya91911856f2911c7e472Provider: StatisticsComponentDependency {
+    var profileRepository: ProfileRepository {
+        return mainComponent.profileRepository
+    }
+    var trainingRepository: TrainingRepository {
+        return mainComponent.trainingRepository
+    }
+    var getSortedTrainingDatesUseCase: GetSortedTrainingDatesUseCase {
+        return mainComponent.getSortedTrainingDatesUseCase
+    }
+    var getSortedWeightChangesDatesUseCase: GetSortedWeightChangesDatesUseCase {
+        return mainComponent.getSortedWeightChangesDatesUseCase
+    }
+    var getTrainingResultsUseCase: GetTrainingResultsUseCase {
+        return mainComponent.getTrainingResultsUseCase
+    }
+    var getWeightChangesUseCase: GetWeightChangesUseCase {
+        return mainComponent.getWeightChangesUseCase
+    }
+    var getNearestMultipleOfTenUseCase: GetNearestMultipleOfTenUseCase {
+        return mainComponent.getNearestMultipleOfTenUseCase
+    }
+    private let mainComponent: MainComponent
+    init(mainComponent: MainComponent) {
+        self.mainComponent = mainComponent
+    }
+}
+/// ^->MainComponent->StatisticsComponent
+private func factory93fd75db9bb408e1dac50ae93e637f014511a119(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return StatisticsComponentDependencya91911856f2911c7e472Provider(mainComponent: parent1(component) as! MainComponent)
+}
 
 #else
 extension TrainProgressComponent: Registration {
@@ -248,9 +279,9 @@ extension MyBodyComponent: Registration {
     public func registerItems() {
         keyPathToName[\MyBodyComponentDependency.profileRepository] = "profileRepository-ProfileRepository"
         keyPathToName[\MyBodyComponentDependency.userBodyParametersRepository] = "userBodyParametersRepository-UserBodyParametersRepository"
+        keyPathToName[\MyBodyComponentDependency.profilePhotosRepository] = "profilePhotosRepository-ProfilePhotosRepository"
         keyPathToName[\MyBodyComponentDependency.getMostRecentPhotoUseCase] = "getMostRecentPhotoUseCase-GetMostRecentPhotoUseCase"
         keyPathToName[\MyBodyComponentDependency.getLastestPhotoUseCase] = "getLastestPhotoUseCase-GetLatestPhotoUseCase"
-        keyPathToName[\MyBodyComponentDependency.getLastBodyParametersUseCase] = "getLastBodyParametersUseCase-GetLastBodyParametersUseCase"
         keyPathToName[\MyBodyComponentDependency.getBodyParametersValidationErrorUseCase] = "getBodyParametersValidationErrorUseCase-GetBodyParametersValidationErrorUseCase"
         keyPathToName[\MyBodyComponentDependency.convertDateToYyyyMmDdUseCase] = "convertDateToYyyyMmDdUseCase-ConvertDateToYyyyMmDdUseCase"
         keyPathToName[\MyBodyComponentDependency.convertTimestampToDdMmYyyyUseCase] = "convertTimestampToDdMmYyyyUseCase-ConvertTimestampToDdMmYyyyUseCase"
@@ -326,6 +357,17 @@ extension AuthorizationComponent: Registration {
         keyPathToName[\AuthorizationComponentDependency.emptyValidationUseCase] = "emptyValidationUseCase-EmptyValidationUseCase"
     }
 }
+extension StatisticsComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\StatisticsComponentDependency.profileRepository] = "profileRepository-ProfileRepository"
+        keyPathToName[\StatisticsComponentDependency.trainingRepository] = "trainingRepository-TrainingRepository"
+        keyPathToName[\StatisticsComponentDependency.getSortedTrainingDatesUseCase] = "getSortedTrainingDatesUseCase-GetSortedTrainingDatesUseCase"
+        keyPathToName[\StatisticsComponentDependency.getSortedWeightChangesDatesUseCase] = "getSortedWeightChangesDatesUseCase-GetSortedWeightChangesDatesUseCase"
+        keyPathToName[\StatisticsComponentDependency.getTrainingResultsUseCase] = "getTrainingResultsUseCase-GetTrainingResultsUseCase"
+        keyPathToName[\StatisticsComponentDependency.getWeightChangesUseCase] = "getWeightChangesUseCase-GetWeightChangesUseCase"
+        keyPathToName[\StatisticsComponentDependency.getNearestMultipleOfTenUseCase] = "getNearestMultipleOfTenUseCase-GetNearestMultipleOfTenUseCase"
+    }
+}
 
 
 #endif
@@ -354,6 +396,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->MainComponent->ImageComponent", factory10dba4ff650751a88113e3b0c44298fc1c149afb)
     registerProviderFactory("^->MainComponent->AuthorizationPinPanelComponent", factory3d9df8e0a52c98f96a490ae93e637f014511a119)
     registerProviderFactory("^->MainComponent->AuthorizationComponent", factory36d2db3a6303047193540ae93e637f014511a119)
+    registerProviderFactory("^->MainComponent->StatisticsComponent", factory93fd75db9bb408e1dac50ae93e637f014511a119)
 }
 #endif
 

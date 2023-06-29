@@ -43,6 +43,28 @@ final class MainComponent: BootstrapComponent {
             )
         }
     }
+    var profilePhotosRepository: ProfilePhotosRepository {
+        shared {
+            ProfilePhotosRepositoryImplementation()
+        }
+    }
+    var userDataManagerRepository: UserDataManagerRepository {
+        shared {
+            UserDataManagerRepositoryImplementation()
+        }
+    }
+    
+    // MARK: - Managers
+    var garbageManager: GarbageManager {
+        shared {
+            GarbageManager(
+                userDataManager: userDataManagerRepository,
+                profilePhotosRepository: profilePhotosRepository,
+                lastExercisesRepository: lastExercisesRepository,
+                userBodyParametersRepository: userBodyParametersRepository
+            )
+        }
+    }
     
     // MARK: - UseCases
     var saveUserEmailUseCase: SaveUserEmailUseCase {
@@ -179,6 +201,31 @@ final class MainComponent: BootstrapComponent {
             GetTrainingTypeModelByTrainingNameUseCase()
         }
     }
+    var getSortedTrainingDatesUseCase: GetSortedTrainingDatesUseCase {
+        shared {
+            GetSortedTrainingDatesUseCase()
+        }
+    }
+    var getTrainingResultsUseCase: GetTrainingResultsUseCase {
+        shared {
+            GetTrainingResultsUseCase()
+        }
+    }
+    var getWeightChangesUseCase: GetWeightChangesUseCase {
+        shared {
+            GetWeightChangesUseCase()
+        }
+    }
+    var getNearestMultipleOfTenUseCase: GetNearestMultipleOfTenUseCase {
+        shared {
+            GetNearestMultipleOfTenUseCase()
+        }
+    }
+    var getSortedWeightChangesDatesUseCase: GetSortedWeightChangesDatesUseCase {
+        shared {
+            GetSortedWeightChangesDatesUseCase()
+        }
+    }
     
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
@@ -234,6 +281,11 @@ final class MainComponent: BootstrapComponent {
     var trainProgressComponent: TrainProgressComponent {
         shared {
             TrainProgressComponent(parent: self)
+        }
+    }
+    var statisticsComponent: StatisticsComponent {
+        shared {
+            StatisticsComponent(parent: self)
         }
     }
     

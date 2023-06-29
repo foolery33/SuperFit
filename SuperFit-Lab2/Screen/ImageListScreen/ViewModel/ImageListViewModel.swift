@@ -33,7 +33,9 @@ final class ImageListViewModel {
     
     func setProfilePhotos(_ profilePhotos: [ProfilePhotoModel]) {
         self.profilePhotos = profilePhotos
-        self.profilePhotos![0].uploaded = 1559347200
+        if profilePhotos.count > 0 {
+            self.profilePhotos![0].uploaded = 1559347200
+        }
         groupedProfilePhotos = groupPhotosByMonthUseCase.group(self.profilePhotos ?? [])
         groupedProfilePhotosData = []
     }

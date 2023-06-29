@@ -44,5 +44,8 @@ final class ComponentFactory {
     func getTrainProgressComponent() -> TrainProgressComponent {
         return mainComponent.trainProgressComponent
     }
+    func getStatisticsComponent() -> StatisticsComponent {
+        return mainComponent.statisticsComponent
+    }
     
 }

@@ -202,10 +202,18 @@ class MainViewController: UIViewController {
     }()
     private func setupLastExerciseView(with trainingType: TrainingTypeModel) {
         lastExercisesStackView.addArrangedSubview(lastExerciseView)
+        
+        let myGestureRecognizer = ExerciseTapGestureRecognizer(target: self, action: #selector(onExerciseViewTapped(_:)))
+        myGestureRecognizer.trainingInfo = viewModel.getTrainingInfoModel(from: trainingType)
+        lastExerciseView.addGestureRecognizer(myGestureRecognizer)
+        
         lastExerciseView.setup(with: viewModel.getTrainingInfoModel(from: trainingType))
         lastExerciseView.snp.makeConstraints { make in
             make.height.equalTo(114)
         }
+    }
+    @objc private func onExerciseViewTapped(_ sender: ExerciseTapGestureRecognizer) {
+        viewModel.goToExerciseScreen(trainingInfo: sender.trainingInfo)
     }
     
     // MARK: - PreLastExerciseView setup
@@ -215,6 +223,11 @@ class MainViewController: UIViewController {
     }()
     private func setupPreLastExerciseView(with trainingType: TrainingTypeModel) {
         lastExercisesStackView.addArrangedSubview(preLastExerciseView)
+        
+        let myGestureRecognizer = ExerciseTapGestureRecognizer(target: self, action: #selector(onExerciseViewTapped(_:)))
+        myGestureRecognizer.trainingInfo = viewModel.getTrainingInfoModel(from: trainingType)
+        preLastExerciseView.addGestureRecognizer(myGestureRecognizer)
+        
         preLastExerciseView.setup(with: viewModel.getTrainingInfoModel(from: trainingType))
         preLastExerciseView.snp.makeConstraints { make in
             make.height.equalTo(114)
@@ -267,6 +280,10 @@ class MainViewController: UIViewController {
         signOutStackView.addArrangedSubview(signOutLabel)
     }
     
+}
+
+final class ExerciseTapGestureRecognizer: UITapGestureRecognizer {
+    var trainingInfo: TrainingInfoModel = TrainingInfoModel(name: "", description: "", image: UIImage())
 }
 
 extension MainViewController {
