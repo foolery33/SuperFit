@@ -14,14 +14,14 @@ final class GetTrainProgressByTrainingTypeModelUseCase {
         trainingList: [TrainingModel]
     ) -> TrainingProgressModel? {
 
-        guard var latestTrainingDate: String = trainingList
+        guard let latestTrainingDate: String = trainingList
             .filter({ $0.exercise == trainingType })
             .sorted(by: { $0.date >= $1.date })
             .first?.date else {
                 return nil
             }
 
-        guard var latestTraining = trainingList
+        guard let latestTraining = trainingList
             .filter({ $0.exercise == trainingType && $0.date == latestTrainingDate })
             .sorted(by: { $0.repeatCount > $1.repeatCount })
             .first else {
