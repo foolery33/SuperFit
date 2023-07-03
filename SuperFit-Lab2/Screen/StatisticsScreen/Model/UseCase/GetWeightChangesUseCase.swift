@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetWeightChangesUseCase {
-    
+
     func getChanges(bodyParameters: [BodyParametersModel]) -> [Int] {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -21,5 +21,5 @@ final class GetWeightChangesUseCase {
         }
         return sortedBodyParameters.map({ $0.weight })
     }
-    
+
 }

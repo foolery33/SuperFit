@@ -13,17 +13,14 @@ final class CodeValueChangeUseCase {
         if code.isEmpty == false {
             if code.count > 4 {
                 return String(code.prefix(4))
-            }
-            else {
+            } else {
                 if numbers.contains(code.last!) == false {
                     return String(code.prefix(code.count - 1))
-                }
-                else {
+                } else {
                     return code
                 }
             }
-        }
-        else {
+        } else {
             return code
         }
     }

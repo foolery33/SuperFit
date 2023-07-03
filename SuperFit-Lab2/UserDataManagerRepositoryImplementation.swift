@@ -15,18 +15,18 @@ protocol UserDataManagerRepository {
     func saveAccessToken(accessToken: String)
     func saveRefreshToken(refreshToken: String)
     func saveEmail(email: String)
-    
+
     func clearAllData()
 }
 
 final class UserDataManagerRepositoryImplementation: UserDataManagerRepository {
-    
+
     private enum KeysName {
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
         static let email = "email"
     }
-    
+
     func fetchAccessToken() -> String {
         KeychainWrapper.standard.string(forKey: KeysName.accessToken) ?? ""
     }
@@ -45,9 +45,9 @@ final class UserDataManagerRepositoryImplementation: UserDataManagerRepository {
     func saveEmail(email: String) {
         KeychainWrapper.standard.set(email, forKey: KeysName.email)
     }
-    
+
     func clearAllData() {
         KeychainWrapper.standard.removeAllKeys()
     }
-    
+
 }

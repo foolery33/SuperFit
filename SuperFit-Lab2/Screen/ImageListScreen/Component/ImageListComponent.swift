@@ -24,7 +24,7 @@ final class ImageListComponent: Component<ImageListComponentDependency> {
             )
         }
     }
-    
+
     var imageListViewController: ImageListViewController {
         return ImageListViewController(viewModel: imageListViewModel)
     }

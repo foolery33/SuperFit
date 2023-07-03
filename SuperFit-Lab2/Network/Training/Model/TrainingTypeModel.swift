@@ -30,7 +30,10 @@ enum TrainingTypeModel: String, Decodable {
         case TrainingTypeModel.running.rawValue:
             self = .running
         default:
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid training type: \(rawValue)")
+            throw DecodingError.dataCorruptedError(
+                in: container,
+                debugDescription: "Invalid training type: \(rawValue)"
+            )
         }
     }
 }

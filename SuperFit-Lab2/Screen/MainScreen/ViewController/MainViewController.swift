@@ -11,33 +11,33 @@ import SnapKit
 class MainViewController: UIViewController {
 
     var viewModel: MainViewModel
-    
+
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         viewModel.errorHandlingDelegate = self
         setupSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadLastExercises()
         getUserParameters()
     }
-    
+
     private func setupSubviews() {
         setupTopImageView()
         setupScrollView()
     }
-    
+
     // MARK: - TopImageView setup
     private lazy var topImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -53,7 +53,7 @@ class MainViewController: UIViewController {
             make.height.equalTo(168)
         }
     }
-    
+
     // MARK: - AppNameLabel setup
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
             make.center.equalToSuperview()
         }
     }
-    
+
     // MARK: - ScrollView setup
     private lazy var scrollView: UIScrollView = {
         let myScrollView = UIScrollView()
@@ -86,7 +86,7 @@ class MainViewController: UIViewController {
             make.bottom.horizontalEdges.equalToSuperview()
         }
     }
-    
+
     // MARK: - ContentView setup
     private lazy var contentView: UIView = {
         let myView = UIView()
@@ -104,7 +104,7 @@ class MainViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - MyBodyStackView setup
     private lazy var myBodyStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -121,7 +121,7 @@ class MainViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16)
         }
     }
-    
+
     // MARK: - MyBodyLabel setup
     private lazy var myBodyLabel: UILabel = {
         let myLabel = UILabel()
@@ -133,11 +133,15 @@ class MainViewController: UIViewController {
     private func setupMyBodyLabel() {
         myBodyStackView.addArrangedSubview(myBodyLabel)
     }
-    
+
     // MARK: - MyBodyCardView setup
     private lazy var myBodyCardView: MyBodyCardView = {
-        let myBodyCardView = MyBodyCardView(weight: R.string.mainScreenStrings.undefined(), height: R.string.mainScreenStrings.undefined())
+        let myBodyCardView = MyBodyCardView(
+            weight: R.string.mainScreenStrings.undefined(),
+            height: R.string.mainScreenStrings.undefined()
+        )
         myBodyCardView.goToMyBodyScreen = goToMyBodyScreen
+        myBodyCardView.isSkeletonable = true
         return myBodyCardView
     }()
     private func goToMyBodyScreen() {
@@ -146,7 +150,7 @@ class MainViewController: UIViewController {
     private func setupMyBodyCardView() {
         myBodyStackView.addArrangedSubview(myBodyCardView)
     }
-    
+
     // MARK: - LastExercisesStackView setup
     private lazy var lastExercisesStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -162,7 +166,7 @@ class MainViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16)
         }
     }
-    
+
     // MARK: - LastExercisesLabel setup
     private lazy var lastExercisesLabel: UILabel = {
         let myLabel = UILabel()
@@ -174,7 +178,7 @@ class MainViewController: UIViewController {
     private func setupLastExercisesLabel() {
         lastExercisesStackView.addArrangedSubview(lastExercisesLabel)
     }
-    
+
     // MARK: - SeeAllButton setup
     private lazy var seeAllButton: UIButton = {
         let myButton = UIButton()
@@ -194,7 +198,7 @@ class MainViewController: UIViewController {
             make.centerY.equalTo(lastExercisesLabel.snp.centerY)
         }
     }
-    
+
     // MARK: - LastExerciseView setup
     private lazy var lastExerciseView: LastExerciseView = {
         let myView = LastExerciseView()
@@ -202,11 +206,14 @@ class MainViewController: UIViewController {
     }()
     private func setupLastExerciseView(with trainingType: TrainingTypeModel) {
         lastExercisesStackView.addArrangedSubview(lastExerciseView)
-        
-        let myGestureRecognizer = ExerciseTapGestureRecognizer(target: self, action: #selector(onExerciseViewTapped(_:)))
+
+        let myGestureRecognizer = ExerciseTapGestureRecognizer(
+            target: self,
+            action: #selector(onExerciseViewTapped(_:))
+        )
         myGestureRecognizer.trainingInfo = viewModel.getTrainingInfoModel(from: trainingType)
         lastExerciseView.addGestureRecognizer(myGestureRecognizer)
-        
+
         lastExerciseView.setup(with: viewModel.getTrainingInfoModel(from: trainingType))
         lastExerciseView.snp.makeConstraints { make in
             make.height.equalTo(114)
@@ -215,7 +222,7 @@ class MainViewController: UIViewController {
     @objc private func onExerciseViewTapped(_ sender: ExerciseTapGestureRecognizer) {
         viewModel.goToExerciseScreen(trainingInfo: sender.trainingInfo)
     }
-    
+
     // MARK: - PreLastExerciseView setup
     private lazy var preLastExerciseView: LastExerciseView = {
         let myView = LastExerciseView()
@@ -223,17 +230,19 @@ class MainViewController: UIViewController {
     }()
     private func setupPreLastExerciseView(with trainingType: TrainingTypeModel) {
         lastExercisesStackView.addArrangedSubview(preLastExerciseView)
-        
-        let myGestureRecognizer = ExerciseTapGestureRecognizer(target: self, action: #selector(onExerciseViewTapped(_:)))
+
+        let myGestureRecognizer = ExerciseTapGestureRecognizer(
+            target: self, action: #selector(onExerciseViewTapped(_:))
+        )
         myGestureRecognizer.trainingInfo = viewModel.getTrainingInfoModel(from: trainingType)
         preLastExerciseView.addGestureRecognizer(myGestureRecognizer)
-        
+
         preLastExerciseView.setup(with: viewModel.getTrainingInfoModel(from: trainingType))
         preLastExerciseView.snp.makeConstraints { make in
             make.height.equalTo(114)
         }
     }
-    
+
     // MARK: - SignOutStackView setup
     private lazy var signOutStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -255,7 +264,7 @@ class MainViewController: UIViewController {
             make.top.greaterThanOrEqualTo(lastExercisesStackView.snp.bottom).offset(16)
         }
     }
-    
+
     // MARK: - SignOutArrowImageView setup
     private lazy var signOutArrowImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -267,7 +276,7 @@ class MainViewController: UIViewController {
     private func setupSignOutArrowImageView() {
         signOutStackView.addArrangedSubview(signOutArrowImageView)
     }
-    
+
     // MARK: - SignOutLabel setup
     private lazy var signOutLabel: UILabel = {
         let myLabel = UILabel()
@@ -279,7 +288,7 @@ class MainViewController: UIViewController {
     private func setupSignOutLabel() {
         signOutStackView.addArrangedSubview(signOutLabel)
     }
-    
+
 }
 
 final class ExerciseTapGestureRecognizer: UITapGestureRecognizer {
@@ -316,7 +325,7 @@ extension MainViewController: ErrorHandlingDelegate {
             }
         }
     }
-    
+
     func reauthorizeUser() {
         viewModel.reauthenticateUser()
     }

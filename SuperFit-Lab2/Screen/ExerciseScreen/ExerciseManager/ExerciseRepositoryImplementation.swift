@@ -8,7 +8,7 @@
 import Foundation
 
 final class ExerciseRepositoryImplementation: ExerciseRepository {
-    
+
     func saveTraining(trainingType: TrainingTypeModel) {
         switch trainingType {
         case .squats, .crunch, .pushUps:
@@ -19,7 +19,7 @@ final class ExerciseRepositoryImplementation: ExerciseRepository {
             UserDefaults.standard.set(getRepsCount(for: trainingType) + 5, forKey: trainingType.rawValue)
         }
     }
-    
+
     func getRepsCount(for trainingType: TrainingTypeModel) -> Int {
         let repsCount = UserDefaults.standard.integer(forKey: trainingType.rawValue)
         if repsCount == 0 {
@@ -34,5 +34,5 @@ final class ExerciseRepositoryImplementation: ExerciseRepository {
         }
         return UserDefaults.standard.integer(forKey: trainingType.rawValue)
     }
-    
+
 }

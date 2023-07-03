@@ -8,9 +8,9 @@
 import Foundation
 
 final class SaveUserEmailUseCase {
-    
+
     func save(_ email: String) {
         UserDataManagerRepositoryImplementation().saveEmail(email: email)
     }
-    
+
 }

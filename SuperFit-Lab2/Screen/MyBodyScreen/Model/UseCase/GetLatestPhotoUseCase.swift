@@ -8,9 +8,9 @@
 import Foundation
 
 final class GetLatestPhotoUseCase {
-    
+
     func getPhoto(from photos: [ProfilePhotoModel]) -> ProfilePhotoModel? {
         return photos.sorted { $0.uploaded > $1.uploaded }.first
     }
-    
+
 }

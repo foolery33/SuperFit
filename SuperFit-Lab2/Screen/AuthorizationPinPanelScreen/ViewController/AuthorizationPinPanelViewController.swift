@@ -11,17 +11,17 @@ import SnapKit
 final class AuthorizationPinPanelViewController: UIViewController {
 
     var viewModel: AuthorizationPinPanelViewModel
-    
+
     init(viewModel: AuthorizationPinPanelViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         viewModel.errorHandlingDelegate = self
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
@@ -32,7 +32,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
         setupBackArrowButton()
         setupContentStackView()
     }
-    
+
     // MARK: - BackgroundImageView setup
     private lazy var backgroundImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -46,12 +46,13 @@ final class AuthorizationPinPanelViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - BackArrowButton setup
     private lazy var backArrowButton: UIButton = {
         let myButton = UIButton(type: .custom)
         myButton.setImage(R.image.backwardArrow(), for: .normal)
         myButton.addTarget(self, action: #selector(goBackToAuthorizationScreen), for: .touchUpInside)
+        myButton.tintColor = R.color.white()
         return myButton
     }()
     @objc private func goBackToAuthorizationScreen() {
@@ -64,7 +65,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
             make.leading.equalToSuperview().inset(25)
         }
     }
-    
+
     // MARK: - ContentStackView setup
     private lazy var contentStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -83,7 +84,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-73)
         }
     }
-    
+
     // MARK: - AppNameLabel setup
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -98,7 +99,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - UserNameLabel setup
     private lazy var userNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -112,7 +113,7 @@ final class AuthorizationPinPanelViewController: UIViewController {
     private func setupUserNameLabel() {
         contentStackView.addArrangedSubview(userNameLabel)
     }
-    
+
     // MARK: - PinPanelView setup
     private lazy var pinPanelView: PinPanelView = {
         let myPinPanelView = PinPanelView()
@@ -126,12 +127,13 @@ final class AuthorizationPinPanelViewController: UIViewController {
             make.height.equalTo(78 + 78 + 78 + 21 + 21)
         }
     }
-    
+
 }
 
 // MARK: - PinPanelDelegate
 extension AuthorizationPinPanelViewController: PinPanelDelegate {
     var pinValue: String {
+        // swiftlint:disable:next implicit_getter
         get {
             viewModel.code
         }
@@ -158,14 +160,13 @@ extension AuthorizationPinPanelViewController: ErrorHandlingDelegate {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage) {
                     self.reauthorizeUser()
                 }
-            }
-            else {
+            } else {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage)
             }
         }
     }
-    
+
     func reauthorizeUser() {
-        
+
     }
 }

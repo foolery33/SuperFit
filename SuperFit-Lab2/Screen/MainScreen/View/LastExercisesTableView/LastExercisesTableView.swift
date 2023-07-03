@@ -10,7 +10,7 @@ import UIKit
 class LastExercisesTableView: UITableView {
 
     var viewModel: MainViewModel
-    
+
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero, style: .plain)
@@ -20,9 +20,8 @@ class LastExercisesTableView: UITableView {
         delegate = self
         separatorStyle = .none
         self.register(LastExercisesTableViewCell.self, forCellReuseIdentifier: LastExercisesTableViewCell.identifier)
-//        self.isSkeletonable = true
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -30,29 +29,29 @@ class LastExercisesTableView: UITableView {
 }
 
 extension LastExercisesTableView: UITableViewDataSource {
-    
-//    // MARK: - SkeletonCollectionViewDataSource
-//
-//    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
-//        return EpisodesTableViewCell.identifier
-//    }
-//    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 2
-//    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.lastExercises.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LastExercisesTableViewCell.identifier, for: indexPath) as! LastExercisesTableViewCell
-        cell.selectionStyle = .none
-        
-        let trainingInfoModel = self.viewModel.getTrainingInfoModel(from: viewModel.lastExercises[indexPath.row])
-        cell.setup(with: trainingInfoModel)
-        return cell
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: LastExercisesTableViewCell.identifier,
+            for: indexPath
+        ) as? LastExercisesTableViewCell {
+            cell.selectionStyle = .none
+
+            let trainingInfoModel = self.viewModel.getTrainingInfoModel(from: viewModel.lastExercises[indexPath.row])
+            cell.setup(with: trainingInfoModel)
+            return cell
+        } else {
+            return tableView.dequeueReusableCell(
+                withIdentifier: LastExercisesTableViewCell.identifier,
+                for: indexPath
+            )
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
     }
 }
 

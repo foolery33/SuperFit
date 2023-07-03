@@ -12,20 +12,23 @@ class CustomRequestInterceptor: RequestInterceptor {
     private let retryLimit = 2
     private let retryDelay: TimeInterval = 1
     var withHeaders: Bool = true
-    
+
     func adapt(_ urlRequest: URLRequest,
                for session: Session,
                completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
         if withHeaders {
             if !UserDataManagerRepositoryImplementation().fetchAccessToken().isEmpty {
-                urlRequest.setValue("Bearer \(UserDataManagerRepositoryImplementation().fetchAccessToken())", forHTTPHeaderField: "Authorization")
+                urlRequest.setValue(
+                    "Bearer \(UserDataManagerRepositoryImplementation().fetchAccessToken())",
+                    forHTTPHeaderField: "Authorization"
+                )
             }
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         completion(.success(urlRequest))
     }
-    
+
     func retry(_ request: Request,
                for session: Session,
                dueTo error: Error,
@@ -52,7 +55,7 @@ class CustomRequestInterceptor: RequestInterceptor {
             completion(.doNotRetry)
         }
     }
-    
+
     private func refreshToken(completion: @escaping (() -> Void)) {
         let body = [
             "refresh_token": UserDataManagerRepositoryImplementation().fetchRefreshToken()
@@ -61,7 +64,13 @@ class CustomRequestInterceptor: RequestInterceptor {
             "Content-Type": "application/json"
         ]
         let url = "http://fitness.wsmob.xyz:22169/api/auth/token/refresh"
-        AF.request(url, method: .post, parameters: body, encoder: JSONParameterEncoder.default, headers: headers).responseData { response in
+        AF.request(
+            url,
+            method: .post,
+            parameters: body,
+            encoder: JSONParameterEncoder.default,
+            headers: headers
+        ).responseData { response in
             if let statusCode = response.response?.statusCode {
                 print("Refresh Status Code:", statusCode)
             }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetEmptyBodyParametersErrorUseCase {
-    
+
     func getError(weight: Int?, height: Int?) -> String? {
         if weight == nil {
             return R.string.errors.empty_weight()
@@ -18,5 +18,5 @@ final class GetEmptyBodyParametersErrorUseCase {
         }
         return nil
     }
-    
+
 }

@@ -18,27 +18,27 @@ class LastExercisesTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
-        
+
     }
-    
+
     func setup(with trainingInfoModel: TrainingInfoModel) {
         self.exerciseNameLabel.text = trainingInfoModel.name
         self.exerciseDescriptionLabel.text = trainingInfoModel.description
         self.cardImageView.image = trainingInfoModel.image
-        
+
     }
-    
+
     private func setupSubviews() {
         setupExerciseCardView()
         setupEmptyView()
     }
-    
+
     // MARK: - ExerciseCardView setup
     private lazy var exerciseCardView: UIView = {
         let myView = UIView()
@@ -55,10 +55,17 @@ class LastExercisesTableViewCell: UITableViewCell {
             make.height.equalTo(114)
         }
     }
-    
+
     // MARK: - CardImageView setup
     private lazy var cardImageView: UIImageView = {
-        let myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width / 2 - 16, height: 114))
+        let myImageView = UIImageView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: UIScreen.main.bounds.width / 2 - 16,
+                height: 114
+            )
+        )
         myImageView.contentMode = .scaleAspectFill
         myImageView.clipsToBounds = true
         return myImageView
@@ -71,7 +78,7 @@ class LastExercisesTableViewCell: UITableViewCell {
             make.height.equalTo(114)
         }
     }
-    
+
     // MARK: - CardDescriptionView setup
     private lazy var cardDescriptionView: UIView = {
         let myView = UIView()
@@ -86,7 +93,7 @@ class LastExercisesTableViewCell: UITableViewCell {
             make.leading.equalTo(cardImageView.snp.trailing)
         }
     }
-    
+
     // MARK: - DescriptionStackView setup
     private lazy var descriptionStackView: UIView = {
         let myView = UIView()
@@ -100,7 +107,7 @@ class LastExercisesTableViewCell: UITableViewCell {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - ExerciseNameLabel setup
     private lazy var exerciseNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -116,9 +123,9 @@ class LastExercisesTableViewCell: UITableViewCell {
             make.top.equalToSuperview().inset(8)
             make.horizontalEdges.equalToSuperview().inset(16)
         }
-        
+
     }
-    
+
     // MARK: - ExerciseDescriptionLabel setup
     private lazy var exerciseDescriptionLabel: UILabel = {
         let myLabel = UILabel()
@@ -137,7 +144,7 @@ class LastExercisesTableViewCell: UITableViewCell {
 //            make.bottom.equalToSuperview().offset(-8)
         }
     }
-    
+
     // MARK: - EmptyView setup
     private lazy var emptyView: UIView = {
         let myView = UIView()

@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 
 final class AuthRepositoryImplementation: AuthRepository {
-    
+
     let baseURL = "http://fitness.wsmob.xyz:22169/"
     let interceptor = CustomRequestInterceptor()
-    
+
     func register(login: String, password: String) async throws -> SimpleMessageModel {
         let url = baseURL + "api/auth/register"
         let httpParameters = [
@@ -46,7 +46,7 @@ final class AuthRepositoryImplementation: AuthRepository {
             }
         }
     }
-    
+
     func login(login: String, password: String) async throws -> AuthResponseModel {
         let url = baseURL + "api/auth/token"
         let httpParameters = [
@@ -80,7 +80,7 @@ final class AuthRepositoryImplementation: AuthRepository {
             }
         }
     }
-    
+
     enum AuthError: Error, LocalizedError, Identifiable {
         case invalidCredentials
         case serverError
@@ -102,5 +102,5 @@ final class AuthRepositoryImplementation: AuthRepository {
             }
         }
     }
-    
+
 }

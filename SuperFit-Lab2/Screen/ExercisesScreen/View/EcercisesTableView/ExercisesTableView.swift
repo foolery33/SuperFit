@@ -10,7 +10,6 @@ import UIKit
 class ExercisesTableView: UITableView {
 
     var viewModel: ExercisesViewModel
-    
     init(viewModel: ExercisesViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero, style: .plain)
@@ -20,9 +19,7 @@ class ExercisesTableView: UITableView {
         delegate = self
         separatorStyle = .none
         self.register(LastExercisesTableViewCell.self, forCellReuseIdentifier: LastExercisesTableViewCell.identifier)
-//        self.isSkeletonable = true
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -30,26 +27,21 @@ class ExercisesTableView: UITableView {
 }
 
 extension ExercisesTableView: UITableViewDataSource {
-    
-//    // MARK: - SkeletonCollectionViewDataSource
-//
-//    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
-//        return EpisodesTableViewCell.identifier
-//    }
-//    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 2
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.exercises.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LastExercisesTableViewCell.identifier, for: indexPath) as! LastExercisesTableViewCell
-        cell.selectionStyle = .none
-        
-        let exercise = viewModel.exercises[indexPath.row]
-        cell.setup(with: exercise)
-        return cell
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: LastExercisesTableViewCell.identifier,
+            for: indexPath
+        ) as? LastExercisesTableViewCell {
+            cell.selectionStyle = .none
+            let exercise = viewModel.exercises[indexPath.row]
+            cell.setup(with: exercise)
+            return cell
+        } else {
+            return tableView.dequeueReusableCell(withIdentifier: LastExercisesTableViewCell.identifier, for: indexPath)
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.goToExerciseScreen(exercise: viewModel.exercises[indexPath.row])

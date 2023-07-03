@@ -8,7 +8,7 @@
 import UIKit
 
 final class TrainingTagView: UIView {
-    
+
     private var trainingName: String
     private(set) var trainingType: TrainingTypeModel
     var trainingTagState: TrainingTagState {
@@ -18,7 +18,7 @@ final class TrainingTagView: UIView {
             }
         }
     }
-    
+
     init(trainingName: String, trainingType: TrainingTypeModel, trainingTagState: TrainingTagState) {
         self.trainingName = trainingName
         self.trainingType = trainingType
@@ -32,16 +32,16 @@ final class TrainingTagView: UIView {
         layer.masksToBounds = true
         backgroundColor = R.color.darkGray()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configureAppearance() {
         tagViewLabel.textColor = trainingTagState.textColor
         layer.borderColor = trainingTagState.borderColor.cgColor
     }
-    
+
     // MARK: - TagViewLabel setup
     private lazy var tagViewLabel: UILabel = {
         let myLabel = UILabel()

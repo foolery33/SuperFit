@@ -7,35 +7,36 @@
 
 import UIKit
 
-class DateView: UIStackView {
+final class DateView: UIStackView {
 
-    var date: String {
-        willSet {
-            beforeDateLabel.text = newValue
-        }
-    }
-    
-    init(date: String) {
-        self.date = date
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
-    
+
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func setupView() {
-        self.backgroundColor = R.color.purple()
-        self.layer.cornerRadius = 12
-        setupBeforeDateLabel()
+
+    func configure(with date: String) {
+        beforeDateLabel.text = date
+        hideSkeleton()
     }
-    
+
+    private func setupView() {
+        backgroundColor = R.color.purple()
+        layer.cornerRadius = 12
+        isSkeletonable = true
+        setupBeforeDateLabel()
+        showAnimatedSkeleton(usingColor: R.color.skeletonViewColor()!)
+    }
+
     private lazy var beforeDateLabel: UILabel = {
         let myLabel = UILabel()
         myLabel.textColor = R.color.white()
-        myLabel.text = date
         myLabel.font = R.font.montserratRegular(size: 12)
+        myLabel.text = "03.05.2003"
+        myLabel.isSkeletonable = true
         return myLabel
     }()
     private func setupBeforeDateLabel() {

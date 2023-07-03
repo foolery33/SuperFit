@@ -18,7 +18,7 @@ protocol RegistrationTextFieldsChangeProtocol {
 class RegistrationViewController: UIViewController {
 
     var viewModel: RegistrationViewModel
-    
+
     init(viewModel: RegistrationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -26,20 +26,20 @@ class RegistrationViewController: UIViewController {
         setupSubviews()
         view.addKeyboardDismiss()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     private func setupSubviews() {
         setupBackgroundImageView()
         setupScrollView()
     }
-    
+
     // MARK: - BackgroundImageView setup
     private lazy var backgroundImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -53,7 +53,7 @@ class RegistrationViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - ScrollView setup
     private lazy var scrollView: UIScrollView = {
         let myScrollView = UIScrollView()
@@ -68,7 +68,7 @@ class RegistrationViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - ContentView setup
     private lazy var contentView: UIView = {
         let myView = UIView()
@@ -86,7 +86,7 @@ class RegistrationViewController: UIViewController {
             make.height.equalToSuperview().priority(.low)
         }
     }
-    
+
     // MARK: - AppNameLabel setup
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -102,7 +102,7 @@ class RegistrationViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     // MARK: - UserInfoStack setup
     private lazy var userInfoStack: UserInfoStackView = {
         let myStackView = UserInfoStackView(
@@ -124,10 +124,14 @@ class RegistrationViewController: UIViewController {
             make.width.equalToSuperview().inset(68)
         }
     }
-    
+
     // MARK: - SignUpButton setup
     private lazy var signUpButton: ButtonWithArrowStackView = {
-        let myButton = ButtonWithArrowStackView(labelText: R.string.registerScreenStrings.sign_up(), arrowImage: R.image.forwardArrow()!, action: onSignUpButtonClicked)
+        let myButton = ButtonWithArrowStackView(
+            labelText: R.string.registerScreenStrings.sign_up(),
+            arrowImage: R.image.forwardArrow()!,
+            action: onSignUpButtonClicked
+        )
         return myButton
     }()
     @objc private func onSignUpButtonClicked() {
@@ -136,10 +140,14 @@ class RegistrationViewController: UIViewController {
     private func setupSignUpButton() {
         contentView.addSubview(signUpButton)
     }
-    
+
     // MARK: - SignInButton setup
     private lazy var signInButton: ButtonWithArrowStackView = {
-        let myButton = ButtonWithArrowStackView(labelText: R.string.registerScreenStrings.sign_in(), arrowImage: R.image.backwardArrow()!, action: onSignInButtonTapped)
+        let myButton = ButtonWithArrowStackView(
+            labelText: R.string.registerScreenStrings.sign_in(),
+            arrowImage: R.image.backwardArrow()!,
+            action: onSignInButtonTapped
+        )
         return myButton
     }()
     @objc private func onSignInButtonTapped() {
@@ -147,13 +155,13 @@ class RegistrationViewController: UIViewController {
     }
     private func setupSignInButton() {
         contentView.addSubview(signInButton)
-        
+
         signUpButton.snp.makeConstraints { make in
             make.top.equalTo(userInfoStack.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
             make.bottom.lessThanOrEqualTo(signInButton.snp.top).offset(-37)
         }
-        
+
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-view.safeAreaInsets.bottom).offset(-36)
@@ -169,17 +177,17 @@ extension RegistrationViewController: RegistrationTextFieldsChangeProtocol {
         self.viewModel.updateUserName(with: textField.text ?? "")
         textField.text = self.viewModel.userName
     }
-    
+
     func onEmailValueChanged(_ textField: UITextField) {
         self.viewModel.updateEmail(with: textField.text ?? "")
         textField.text = self.viewModel.email
     }
-    
+
     func onCodeValueChanged(_ textField: UITextField) {
         self.viewModel.updateCode(with: textField.text ?? "")
         textField.text = self.viewModel.code
     }
-    
+
     func onRepeatCodeValueChanged(_ textField: UITextField) {
         self.viewModel.updateRepeatCode(with: textField.text ?? "")
         textField.text = self.viewModel.repeatCode
@@ -194,15 +202,14 @@ extension RegistrationViewController: ErrorHandlingDelegate {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage) {
                     self.reauthorizeUser()
                 }
-            }
-            else {
+            } else {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage)
             }
         }
     }
-    
+
     func reauthorizeUser() {
-        
+
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetHeightValidationErrorUseCase {
-    
+
     func getError(_ height: String) -> String? {
         let heightNumber = Int(height) ?? -1
         if Int(height) == -1 || heightNumber < 10 || heightNumber > 300 {
@@ -16,5 +16,5 @@ final class GetHeightValidationErrorUseCase {
         }
         return nil
     }
-    
+
 }

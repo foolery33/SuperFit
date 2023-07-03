@@ -12,6 +12,6 @@ protocol UserBodyParametersRepository {
     func fetchHeight() -> Int?
     func saveWeight(_ weight: Int)
     func saveHeight(_ height: Int)
-    
+
     func clearAllData()
 }

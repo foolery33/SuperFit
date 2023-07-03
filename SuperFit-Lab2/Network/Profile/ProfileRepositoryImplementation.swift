@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 
 final class ProfileRepositoryImplementation: ProfileRepository {
-    
+
     let baseURL = "http://fitness.wsmob.xyz:22169/"
     let interceptor = CustomRequestInterceptor()
-    
+
     func getUserParameters() async throws -> [BodyParametersModel] {
         let url = baseURL + "api/profile/params/history"
         let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([BodyParametersModel].self)
@@ -32,10 +32,16 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             }
         }
     }
-    
+
     func updateUserParameters(newParameters: BodyParametersModel) async throws -> SimpleMessageModel {
         let url = baseURL + "api/profile/params"
-        let dataTask = AF.request(url, method: .post, parameters: newParameters, encoder: JSONParameterEncoder.default, interceptor: interceptor).serializingDecodable(SimpleMessageModel.self)
+        let dataTask = AF.request(
+            url,
+            method: .post,
+            parameters: newParameters,
+            encoder: JSONParameterEncoder.default,
+            interceptor: interceptor
+        ).serializingDecodable(SimpleMessageModel.self)
         do {
             print("Update user parameters status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
@@ -53,7 +59,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             }
         }
     }
-    
+
     func getProfilePhotos() async throws -> [ProfilePhotoModel] {
         let url = baseURL + "api/profile/photos"
         let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([ProfilePhotoModel].self)
@@ -72,7 +78,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             }
         }
     }
-    
+
     func downloadUserPhoto(photoId: UUID) async throws -> Data {
         let url = baseURL + "api/profile/photos/\(photoId)"
         let dataTask = AF.request(url, interceptor: interceptor).serializingData()
@@ -93,7 +99,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             }
         }
     }
-    
+
     func uploadPhoto(imageData: Data, completion: @escaping (Result<ProfilePhotoModel, AppError>) -> Void) {
         let url = baseURL + "api/profile/photos"
         let headers: HTTPHeaders = [
@@ -129,7 +135,7 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             }
         }
     }
-    
+
     enum ProfileError: Error, LocalizedError, Identifiable {
         case unauthorized
         case problemWithExecuting
@@ -154,5 +160,5 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             }
         }
     }
-    
+
 }

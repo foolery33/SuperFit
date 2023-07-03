@@ -8,12 +8,12 @@
 import Foundation
 
 final class ConvertTimestampToDdMmYyyyUseCase {
-    
+
     func convert(_ timestamp: TimeInterval) -> String {
         let date = Date(timeIntervalSince1970: timestamp)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter.string(from: date)
     }
-    
+
 }

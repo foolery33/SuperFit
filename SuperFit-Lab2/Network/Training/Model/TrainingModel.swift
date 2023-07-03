@@ -8,18 +8,7 @@
 import Foundation
 
 struct TrainingModel: Decodable {
-    enum CodingKeys: String, CodingKey {
-        case date = "date"
-        case exercise = "exercise"
-        case repeatCount = "repeatCount"
-    }
-    
-    init(date: String, exercise: TrainingTypeModel, repeatCount: Int) {
-        self.date = date
-        self.exercise = exercise
-        self.repeatCount = repeatCount
-    }
-    
+
     var date: String
     var exercise: TrainingTypeModel
     var repeatCount: Int

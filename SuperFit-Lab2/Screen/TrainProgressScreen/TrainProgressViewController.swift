@@ -10,10 +10,10 @@ import UIKit
 final class TrainProgressViewController: UIViewController {
 
     private let viewModel: TrainProgressViewModel
-    
+
     private let bottomAreaHeight: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
     private let topAreaHeight: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
-    
+
     init(viewModel: TrainProgressViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -21,21 +21,21 @@ final class TrainProgressViewController: UIViewController {
         setupSubviews()
         getTrainingList()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = R.color.darkGray()
     }
-    
+
     private func setupSubviews() {
         setupTrainProgress()
         setupTitle()
     }
-    
+
     private func setupTrainProgress() {
         setupBackgroundImage()
         setupRunningProgressInfo()
@@ -44,12 +44,12 @@ final class TrainProgressViewController: UIViewController {
         setupPlankProgressInfo()
         setupPushUpsProgressInfo()
     }
-    
+
     private func setupTitle() {
         setupTrainProgressLabel()
         setupBackArrowButton()
     }
-    
+
     // MARK: - TrainProgressLabel setup
     private lazy var trainProgressLabel: UILabel = {
         let myLabel = UILabel()
@@ -65,7 +65,7 @@ final class TrainProgressViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     // MARK: - BackArrowButton setup
     private lazy var backArrowButton: UIButton = {
         let myButton = UIButton()
@@ -84,7 +84,7 @@ final class TrainProgressViewController: UIViewController {
             make.centerY.equalTo(trainProgressLabel.snp.centerY)
         }
     }
-    
+
     // MARK: - BackgroundImage setup
     private lazy var backgroundImage: UIImageView = {
         let myImageView = UIImageView()
@@ -100,9 +100,12 @@ final class TrainProgressViewController: UIViewController {
             make.height.equalToSuperview()
         }
     }
-    
+
     private lazy var runningProgressInfo: ProgressInfoView = {
-        let startPoint = CGPoint(x: UIScreen.main.bounds.width / 2.7, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height / 12)
+        let startPoint = CGPoint(
+            x: UIScreen.main.bounds.width / 2.7,
+            y: UIScreen.main.bounds.height - UIScreen.main.bounds.height / 12
+        )
         let myProgressInfoView = ProgressInfoView(
             startPoint: startPoint,
             middlePoint: CGPoint(x: startPoint.x + 50, y: startPoint.y - 40),
@@ -120,9 +123,12 @@ final class TrainProgressViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     private lazy var squatsProgressInfo: ProgressInfoView = {
-        let startPoint = CGPoint(x: UIScreen.main.bounds.width / 3, y: UIScreen.main.bounds.height / 2 + UIScreen.main.bounds.height / 6 - bottomAreaHeight - topAreaHeight)
+        let startPoint = CGPoint(
+            x: UIScreen.main.bounds.width / 3,
+            y: UIScreen.main.bounds.height / 2 + UIScreen.main.bounds.height / 6 - bottomAreaHeight - topAreaHeight
+        )
         let myProgressInfoView = ProgressInfoView(
             startPoint: startPoint,
             middlePoint: CGPoint(x: startPoint.x + 50, y: startPoint.y + 40),
@@ -142,9 +148,12 @@ final class TrainProgressViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     private lazy var crunchProgressInfo: ProgressInfoView = {
-        let startPoint = CGPoint(x: UIScreen.main.bounds.width / 4, y: UIScreen.main.bounds.height / 2 - UIScreen.main.bounds.height / 8)
+        let startPoint = CGPoint(
+            x: UIScreen.main.bounds.width / 4,
+            y: UIScreen.main.bounds.height / 2 - UIScreen.main.bounds.height / 8
+        )
         let myProgressInfoView = ProgressInfoView(
             startPoint: startPoint,
             middlePoint: CGPoint(x: startPoint.x + 60, y: UIScreen.main.bounds.height / 2 - 30),
@@ -162,7 +171,7 @@ final class TrainProgressViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     private lazy var plankProgressInfo: ProgressInfoView = {
         let startPoint = CGPoint(x: UIScreen.main.bounds.width / 2.7, y: UIScreen.main.bounds.height / 4)
         let myProgressInfoView = ProgressInfoView(
@@ -182,7 +191,7 @@ final class TrainProgressViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     private lazy var pushUpsProgressInfo: ProgressInfoView = {
         let startPoint = CGPoint(x: UIScreen.main.bounds.width / 2.5, y: UIScreen.main.bounds.height / 6)
         let myProgressInfoView = ProgressInfoView(
@@ -213,13 +222,12 @@ extension TrainProgressViewController: ErrorHandlingDelegate {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage) {
                     self.reauthorizeUser()
                 }
-            }
-            else {
+            } else {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage)
             }
         }
     }
-    
+
     func reauthorizeUser() {
         viewModel.reauthenticateUser()
     }

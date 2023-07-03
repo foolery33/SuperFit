@@ -9,7 +9,7 @@ import NeedleFoundation
 import UIKit
 
 protocol ImageComponentDependency: Dependency {
-    
+
 }
 
 final class ImageComponent: Component<ImageComponentDependency> {
@@ -18,7 +18,7 @@ final class ImageComponent: Component<ImageComponentDependency> {
             ImageViewModel()
         }
     }
-    
+
     var imageViewController: ImageViewController {
         return ImageViewController(viewModel: imageViewModel)
     }

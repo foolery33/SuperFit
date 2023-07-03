@@ -8,9 +8,9 @@
 import Foundation
 
 final class SaveRefreshTokenUseCase {
-    
+
     func save(_ refreshToken: String) {
         UserDataManagerRepositoryImplementation().saveRefreshToken(refreshToken: refreshToken)
     }
-    
+
 }

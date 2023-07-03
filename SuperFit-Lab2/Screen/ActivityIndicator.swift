@@ -11,7 +11,7 @@ import SnapKit
 class ActivityIndicator: UIView {
 
     var withBackground: Bool
-    
+
     init(withBackground: Bool) {
         self.withBackground = withBackground
         super.init(frame: .zero)
@@ -21,11 +21,11 @@ class ActivityIndicator: UIView {
         }
         setupIndicator()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     lazy var background: UIView = {
         let background = UIView()
         background.backgroundColor = UIColor.black.withAlphaComponent(0.4)
@@ -37,7 +37,7 @@ class ActivityIndicator: UIView {
             make.edges.equalToSuperview()
         }
     }
-    
+
     private lazy var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.color = .white
@@ -57,7 +57,7 @@ class ActivityIndicator: UIView {
             self.alpha = 1.0
         }
     }
-    
+
 }
 
 extension ActivityIndicator {

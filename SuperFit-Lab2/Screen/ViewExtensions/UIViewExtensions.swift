@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-    
+
     // MARK: Keyboard dismiss
     func addKeyboardDismiss() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -17,7 +17,7 @@ extension UIView {
     @objc private func dismissKeyboard() {
         self.endEditing(true)
     }
-    
+
 }
 
 extension UIView {
@@ -46,9 +46,8 @@ extension UIView {
         activityIndicator.setupAnimation()
     }
     func stopActivityIndicator() {
-        for subview in self.subviews {
-            if subview is ActivityIndicator {
-                let activityIndicator = subview as! ActivityIndicator
+        for subview in self.subviews where subview is ActivityIndicator {
+            if let activityIndicator = subview as? ActivityIndicator {
                 activityIndicator.stopAnimation()
             }
         }

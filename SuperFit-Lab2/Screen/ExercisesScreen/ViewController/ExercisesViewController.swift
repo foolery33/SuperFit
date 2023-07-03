@@ -11,21 +11,21 @@ import SnapKit
 class ExercisesViewController: UIViewController {
 
     private let viewModel: ExercisesViewModel
-    
+
     init(viewModel: ExercisesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     private func setupSubviews() {
         setupTopImageView()
         setupAppNameLabel()
@@ -48,7 +48,7 @@ class ExercisesViewController: UIViewController {
             make.height.equalTo(168)
         }
     }
-    
+
     // MARK: - AppNameLabel setup
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -63,7 +63,7 @@ class ExercisesViewController: UIViewController {
             make.center.equalToSuperview()
         }
     }
-    
+
     // MARK: - BackArrowButton setup
     private lazy var backArrowButton: UIButton = {
         let myButton = UIButton()
@@ -82,7 +82,7 @@ class ExercisesViewController: UIViewController {
             make.leading.equalToSuperview().inset(25)
         }
     }
-    
+
     // MARK: - ScrollView setup
     private lazy var scrollView: UIScrollView = {
         let myScrollView = UIScrollView()
@@ -100,7 +100,7 @@ class ExercisesViewController: UIViewController {
             make.bottom.horizontalEdges.equalToSuperview()
         }
     }
-    
+
     // MARK: - ContentView setup
     private lazy var contentView: UIView = {
         let myView = UIView()
@@ -114,7 +114,7 @@ class ExercisesViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - ExercisesStackView setup
     private lazy var exercisesStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -132,7 +132,7 @@ class ExercisesViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
     }
-    
+
     // MARK: - ExercisesLabel setup
     private lazy var exercisesLabel: UILabel = {
         let myLabel = UILabel()
@@ -144,7 +144,7 @@ class ExercisesViewController: UIViewController {
     private func setupExercisesLabel() {
         exercisesStackView.addArrangedSubview(exercisesLabel)
     }
-    
+
     // MARK: - ExercisesTableView setup
     private lazy var exercisesTableView: ExercisesTableView = {
         let myTableView = ExercisesTableView(viewModel: viewModel)
@@ -156,5 +156,5 @@ class ExercisesViewController: UIViewController {
             make.height.equalTo(exercisesTableView.calculateHeight())
         }
     }
-    
+
 }

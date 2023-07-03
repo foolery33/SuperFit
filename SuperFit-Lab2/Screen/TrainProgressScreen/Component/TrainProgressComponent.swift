@@ -22,7 +22,7 @@ final class TrainProgressComponent: Component<TrainProgressComponentDependency> 
             )
         }
     }
-    
+
     var trainProgressViewController: TrainProgressViewController {
         return TrainProgressViewController(viewModel: trainProgressViewModel)
     }

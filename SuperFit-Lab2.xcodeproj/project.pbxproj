@@ -128,10 +128,15 @@
 		84C83E8529FE28C100BC027D /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */; };
 		84C83E8729FE293E00BC027D /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8629FE293E00BC027D /* MainComponent.swift */; };
 		84C83E8A29FE2CC400BC027D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */; };
+		84CBB1C02A4EA6F800BC2859 /* EmailValidationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBB1BF2A4EA6F800BC2859 /* EmailValidationUseCaseTests.swift */; };
+		84CBB1C62A4EB88000BC2859 /* GetTrainProgressByTrainingTypeModelUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBB1C52A4EB88000BC2859 /* GetTrainProgressByTrainingTypeModelUseCaseTests.swift */; };
+		84CBB1D02A4EC89E00BC2859 /* UserBodyParametersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBB1CF2A4EC89D00BC2859 /* UserBodyParametersRepositoryTests.swift */; };
+		84CBB1D22A4ECAA700BC2859 /* GetNearestMultipleOfTenUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBB1D12A4ECAA700BC2859 /* GetNearestMultipleOfTenUseCaseTests.swift */; };
+		84CBB1D52A4ECE1700BC2859 /* AuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBB1D42A4ECE1700BC2859 /* AuthRepositoryTests.swift */; };
+		84CBB1D92A4ED7C300BC2859 /* MockAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBB1D82A4ED7C300BC2859 /* MockAuthRepository.swift */; };
 		84CBC9332A0129B20071F1FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9322A0129B20071F1FB /* MainViewController.swift */; };
 		84CBC9352A0129E50071F1FB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9342A0129E50071F1FB /* MainViewModel.swift */; };
 		84CBC9382A0132A10071F1FB /* MainScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9372A0132A10071F1FB /* MainScreenComponent.swift */; };
-		84CBC9442A0136C30071F1FB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84CBC9432A0136C30071F1FB /* RealmSwift */; };
 		84CBC9472A0136E10071F1FB /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 84CBC9462A0136E10071F1FB /* RswiftLibrary */; };
 		84CBC94E2A013D200071F1FB /* TrainingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC94D2A013D200071F1FB /* TrainingRepository.swift */; };
 		84CBC9522A013D530071F1FB /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC9512A013D530071F1FB /* TrainingModel.swift */; };
@@ -151,11 +156,11 @@
 		84CF989E29F9840700E04115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF989D29F9840700E04115 /* SceneDelegate.swift */; };
 		84CF98A529F9840800E04115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98A429F9840800E04115 /* Assets.xcassets */; };
 		84CF98A829F9840800E04115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98A629F9840800E04115 /* LaunchScreen.storyboard */; };
-		84CF98B329F9840900E04115 /* SuperFit_Lab2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98B229F9840900E04115 /* SuperFit_Lab2Tests.swift */; };
 		84CF98BD29F9840900E04115 /* SuperFit_Lab2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BC29F9840900E04115 /* SuperFit_Lab2UITests.swift */; };
 		84CF98BF29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */; };
 		84CF98FC29F989DE00E04115 /* LoginScreenStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CF98FE29F989DE00E04115 /* LoginScreenStrings.strings */; };
 		84D32E7E29FECA0B00F2937D /* PinDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D32E7D29FECA0B00F2937D /* PinDigitView.swift */; };
+		84D43AA62A4DFE0D00454541 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 84D43AA52A4DFE0D00454541 /* SkeletonView */; };
 		84F4694429FE3C34005E83C3 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694329FE3C34005E83C3 /* ComponentFactory.swift */; };
 		84F4694729FE3E69005E83C3 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4694629FE3E69005E83C3 /* UIImageExtensions.swift */; };
 		84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F4694A29FE3F77005E83C3 /* SnapKit */; };
@@ -310,6 +315,12 @@
 		84C83E8429FE28C100BC027D /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		84C83E8629FE293E00BC027D /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		84C83E8929FE2CC400BC027D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		84CBB1BF2A4EA6F800BC2859 /* EmailValidationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidationUseCaseTests.swift; sourceTree = "<group>"; };
+		84CBB1C52A4EB88000BC2859 /* GetTrainProgressByTrainingTypeModelUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainProgressByTrainingTypeModelUseCaseTests.swift; sourceTree = "<group>"; };
+		84CBB1CF2A4EC89D00BC2859 /* UserBodyParametersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBodyParametersRepositoryTests.swift; sourceTree = "<group>"; };
+		84CBB1D12A4ECAA700BC2859 /* GetNearestMultipleOfTenUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearestMultipleOfTenUseCaseTests.swift; sourceTree = "<group>"; };
+		84CBB1D42A4ECE1700BC2859 /* AuthRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryTests.swift; sourceTree = "<group>"; };
+		84CBB1D82A4ED7C300BC2859 /* MockAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthRepository.swift; sourceTree = "<group>"; };
 		84CBC9322A0129B20071F1FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84CBC9342A0129E50071F1FB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		84CBC9372A0132A10071F1FB /* MainScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComponent.swift; sourceTree = "<group>"; };
@@ -334,7 +345,6 @@
 		84CF98A729F9840800E04115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CF98A929F9840800E04115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CF98AE29F9840900E04115 /* SuperFit-Lab2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SuperFit-Lab2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84CF98B229F9840900E04115 /* SuperFit_Lab2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2Tests.swift; sourceTree = "<group>"; };
 		84CF98B829F9840900E04115 /* SuperFit-Lab2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SuperFit-Lab2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CF98BC29F9840900E04115 /* SuperFit_Lab2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2UITests.swift; sourceTree = "<group>"; };
 		84CF98BE29F9840900E04115 /* SuperFit_Lab2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFit_Lab2UITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -360,10 +370,10 @@
 				84F4694B29FE3F77005E83C3 /* SnapKit in Frameworks */,
 				84608B1F29FFB91F00F06A8B /* Alamofire in Frameworks */,
 				84608B2729FFBB8400F06A8B /* SwiftKeychainWrapper in Frameworks */,
-				84CBC9442A0136C30071F1FB /* RealmSwift in Frameworks */,
 				843084C02A4ABF4E00DEC6CC /* Kingfisher in Frameworks */,
 				84C83E7D29FE24D700BC027D /* NeedleFoundation in Frameworks */,
 				84B5212B2A49BF1300335619 /* DGCharts in Frameworks */,
+				84D43AA62A4DFE0D00454541 /* SkeletonView in Frameworks */,
 				84CBC9472A0136E10071F1FB /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1141,6 +1151,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84CBB1D72A4ED69300BC2859 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				84CBB1D82A4ED7C300BC2859 /* MockAuthRepository.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		84CBC92C2A0128DE0071F1FB /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1333,7 +1351,12 @@
 		84CF98B129F9840900E04115 /* SuperFit-Lab2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				84CF98B229F9840900E04115 /* SuperFit_Lab2Tests.swift */,
+				84CBB1D72A4ED69300BC2859 /* Mocks */,
+				84CBB1BF2A4EA6F800BC2859 /* EmailValidationUseCaseTests.swift */,
+				84CBB1C52A4EB88000BC2859 /* GetTrainProgressByTrainingTypeModelUseCaseTests.swift */,
+				84CBB1CF2A4EC89D00BC2859 /* UserBodyParametersRepositoryTests.swift */,
+				84CBB1D12A4ECAA700BC2859 /* GetNearestMultipleOfTenUseCaseTests.swift */,
+				84CBB1D42A4ECE1700BC2859 /* AuthRepositoryTests.swift */,
 			);
 			path = "SuperFit-Lab2Tests";
 			sourceTree = "<group>";
@@ -1473,7 +1496,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84CF98C229F9840900E04115 /* Build configuration list for PBXNativeTarget "SuperFit-Lab2" */;
 			buildPhases = (
-				84C83E8B29FE2E6B00BC027D /* Run Script */,
+				84C83E8B29FE2E6B00BC027D /* Needle */,
+				84ED2C142A5030B200A6B09B /* SwiftLint */,
 				84CF989429F9840700E04115 /* Sources */,
 				84CF989529F9840700E04115 /* Frameworks */,
 				84CF989629F9840700E04115 /* Resources */,
@@ -1489,10 +1513,10 @@
 				84F4694A29FE3F77005E83C3 /* SnapKit */,
 				84608B1E29FFB91F00F06A8B /* Alamofire */,
 				84608B2629FFBB8400F06A8B /* SwiftKeychainWrapper */,
-				84CBC9432A0136C30071F1FB /* RealmSwift */,
 				84CBC9462A0136E10071F1FB /* RswiftLibrary */,
 				84B5212A2A49BF1300335619 /* DGCharts */,
 				843084BF2A4ABF4E00DEC6CC /* Kingfisher */,
+				84D43AA52A4DFE0D00454541 /* SkeletonView */,
 			);
 			productName = "SuperFit-Lab2";
 			productReference = 84CF989829F9840700E04115 /* SuperFit-Lab2.app */;
@@ -1573,9 +1597,9 @@
 				84F4694929FE3F76005E83C3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				84608B1D29FFB91F00F06A8B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				84608B2529FFBB8400F06A8B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
-				84CBC9422A0136C30071F1FB /* XCRemoteSwiftPackageReference "realm-swift" */,
 				84B521292A49BF1300335619 /* XCRemoteSwiftPackageReference "Charts" */,
 				843084BE2A4ABF4E00DEC6CC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				84D43AA42A4DFE0D00454541 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 84CF989929F9840700E04115 /* Products */;
 			projectDirPath = "";
@@ -1631,7 +1655,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84C83E8B29FE2E6B00BC027D /* Run Script */ = {
+		84C83E8B29FE2E6B00BC027D /* Needle */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -1641,7 +1665,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
+			name = Needle;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -1649,6 +1673,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which needle; then\n    SOURCEKIT_LOGGING=0 && needle generate SuperFit-Lab2/NeedleGenerated.swift SuperFit-Lab2/\nelse\n  echo \"warning: Needle not installed, download from https://github.com/uber/needle using Homebrew\"\nfi\n";
+		};
+		84ED2C142A5030B200A6B09B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1794,7 +1837,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CF98B329F9840900E04115 /* SuperFit_Lab2Tests.swift in Sources */,
+				84CBB1D52A4ECE1700BC2859 /* AuthRepositoryTests.swift in Sources */,
+				84CBB1D92A4ED7C300BC2859 /* MockAuthRepository.swift in Sources */,
+				84CBB1C02A4EA6F800BC2859 /* EmailValidationUseCaseTests.swift in Sources */,
+				84CBB1D02A4EC89E00BC2859 /* UserBodyParametersRepositoryTests.swift in Sources */,
+				84CBB1D22A4ECAA700BC2859 /* GetNearestMultipleOfTenUseCaseTests.swift in Sources */,
+				84CBB1C62A4EB88000BC2859 /* GetTrainProgressByTrainingTypeModelUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2100,8 +2148,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H29F6RLPN8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "foolery.SuperFit-Lab2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2119,8 +2168,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H29F6RLPN8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "foolery.SuperFit-Lab2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2255,11 +2305,11 @@
 				kind = branch;
 			};
 		};
-		84CBC9422A0136C30071F1FB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		84D43AA42A4DFE0D00454541 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -2303,15 +2353,15 @@
 			package = 84C83E7B29FE24D700BC027D /* XCRemoteSwiftPackageReference "needle" */;
 			productName = NeedleFoundation;
 		};
-		84CBC9432A0136C30071F1FB /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84CBC9422A0136C30071F1FB /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
 		84CBC9462A0136E10071F1FB /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84C83E6729FE1E3900BC027D /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = RswiftLibrary;
+		};
+		84D43AA52A4DFE0D00454541 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84D43AA42A4DFE0D00454541 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		84F4694A29FE3F77005E83C3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

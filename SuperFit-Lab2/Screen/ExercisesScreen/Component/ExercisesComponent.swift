@@ -9,7 +9,7 @@ import UIKit
 import NeedleFoundation
 
 protocol ExercisesComponentDependency: Dependency {
-    
+
 }
 
 final class ExercisesComponent: Component<ExercisesComponentDependency> {
@@ -18,9 +18,9 @@ final class ExercisesComponent: Component<ExercisesComponentDependency> {
             ExercisesViewModel()
         }
     }
-    
+
     var exercisesViewController: UIViewController {
         return ExercisesViewController(viewModel: exercisesViewModel)
     }
-    
+
 }

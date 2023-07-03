@@ -8,8 +8,8 @@
 import Foundation
 
 protocol ExerciseRepository {
-    
+
     func saveTraining(trainingType: TrainingTypeModel)
     func getRepsCount(for trainingType: TrainingTypeModel) -> Int
-    
+
 }

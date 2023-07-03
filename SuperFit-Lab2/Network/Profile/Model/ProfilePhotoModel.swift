@@ -8,17 +8,8 @@
 import Foundation
 
 struct ProfilePhotoModel: Decodable, Equatable {
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case uploaded = "uploaded"
-    }
-    
-    init(id: UUID, uploaded: TimeInterval) {
-        self.id = id
-        self.uploaded = uploaded
-    }
-    
+
     var id: UUID
     var uploaded: TimeInterval
-    
+
 }

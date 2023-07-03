@@ -9,24 +9,24 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class MyBodyViewController: UIViewController {
+final class MyBodyViewController: UIViewController {
 
     var viewModel: MyBodyViewModel
-    
+
     private let galleryButtonScale: CGFloat = 30.0
     private let betweenImagesSpacing: CGFloat = 4.0
-    
+
     init(viewModel: MyBodyViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
         viewModel.errorHandlingDelegate = self
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = R.color.darkGray()
@@ -36,7 +36,7 @@ class MyBodyViewController: UIViewController {
     private func setupSubviews() {
         setupScrollView()
     }
-    
+
     // MARK: - ScrollView setup
     private lazy var scrollView: UIScrollView = {
         let myScrollView = UIScrollView()
@@ -50,7 +50,7 @@ class MyBodyViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - ContentView setup
     private lazy var contentView: UIView = {
         let myView = UIView()
@@ -67,7 +67,7 @@ class MyBodyViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - MyBodyLabel setup
     private lazy var myBodyLabel: UILabel = {
         let myLabel = UILabel()
@@ -83,7 +83,7 @@ class MyBodyViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     // MARK: - BackArrowButton setup
     private lazy var backArrowButton: UIButton = {
         let myButton = UIButton()
@@ -102,7 +102,7 @@ class MyBodyViewController: UIViewController {
             make.centerY.equalTo(myBodyLabel.snp.centerY)
         }
     }
-    
+
     // MARK: - BodyParametersStackView setup
     private lazy var bodyParametersStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -120,7 +120,7 @@ class MyBodyViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     // MARK: - WeightStackView setup
     private lazy var weightStackView: BodyParameterStackView = {
         let weightValue = (viewModel.getWeight() == "-1") ? "N/A" : viewModel.getWeight()
@@ -130,21 +130,28 @@ class MyBodyViewController: UIViewController {
         return myStackView
     }()
     @objc private func showChangeWeightAlert() {
-        showTextFieldAlert(title: R.string.myBodyScreenStrings.change_your_weight(), onChangeButtonTapped: changeWeightValue(_:))
+        showTextFieldAlert(
+            title: R.string.myBodyScreenStrings.change_your_weight(),
+            onChangeButtonTapped: changeWeightValue(_:)
+        )
     }
     private func changeWeightValue(_ weight: String) {
         viewModel.updateWeight(with: weight)
         Task {
             if await viewModel.updateUserParameters() {
-                weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
-                heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
+                weightStackView.configureBodyParameter(
+                    set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())"
+                )
+                heightStackView.configureBodyParameter(
+                    set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())"
+                )
             }
         }
     }
     private func setupWeightStackView() {
         bodyParametersStackView.addArrangedSubview(weightStackView)
     }
-    
+
     // MARK: - HeightStackView setup
     private lazy var heightStackView: BodyParameterStackView = {
         let heightValue = (viewModel.getHeight() == "-1") ? "N/A" : viewModel.getHeight()
@@ -154,14 +161,21 @@ class MyBodyViewController: UIViewController {
         return myStackView
     }()
     @objc private func showChangeHeightAlert() {
-        showTextFieldAlert(title: R.string.myBodyScreenStrings.change_your_height(), onChangeButtonTapped: changeHeightValue(_:))
+        showTextFieldAlert(
+            title: R.string.myBodyScreenStrings.change_your_height(),
+            onChangeButtonTapped: changeHeightValue(_:)
+        )
     }
     private func changeHeightValue(_ height: String) {
         viewModel.updateHeight(with: height)
         Task {
             if await viewModel.updateUserParameters() {
-                weightStackView.configureBodyParameter(set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())")
-                heightStackView.configureBodyParameter(set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())")
+                weightStackView.configureBodyParameter(
+                    set: "\(viewModel.getWeight()) \(R.string.myBodyScreenStrings.kg())"
+                )
+                heightStackView.configureBodyParameter(
+                    set: "\(viewModel.getHeight()) \(R.string.myBodyScreenStrings.cm())"
+                )
             }
         }
     }
@@ -187,7 +201,7 @@ class MyBodyViewController: UIViewController {
             make.top.equalTo(bodyParametersStackView.snp.bottom).offset(36)
         }
     }
-    
+
     // MARK: - MyProgressLabel setup
     private lazy var myProgressLabel: UILabel = {
         let myLabel = UILabel()
@@ -199,7 +213,7 @@ class MyBodyViewController: UIViewController {
     private func setupMyProgressLabel() {
         myProgressStackView.addArrangedSubview(myProgressLabel)
     }
-    
+
     // MARK: - SeeAllButton setup
     private lazy var seeAllButton: UIButton = {
         let myButton = UIButton()
@@ -219,7 +233,7 @@ class MyBodyViewController: UIViewController {
             make.centerY.equalTo(myProgressLabel.snp.centerY)
         }
     }
-    
+
     // MARK: - MyProgressImagesStackView setup
     private lazy var myProgressImagesStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -239,13 +253,13 @@ class MyBodyViewController: UIViewController {
             make.width.equalToSuperview()
         }
     }
-    
+
     // MARK: - BeforeImageView setup
     private lazy var beforeImageView: UIImageView = {
         let myImageView = UIImageView()
-        myImageView.image = R.image.myProgress1()
         myImageView.contentMode = .scaleAspectFill
         myImageView.clipsToBounds = true
+        myImageView.isSkeletonable = true
         return myImageView
     }()
     private func setupBeforeImageView() {
@@ -255,10 +269,10 @@ class MyBodyViewController: UIViewController {
             make.width.equalTo(UIScreen.main.bounds.width / 2 - 16 - betweenImagesSpacing / 2)
         }
     }
-    
+
     // MARK: - BeforeDateView setup
     private lazy var beforeDateView: DateView = {
-        let myDateView = DateView(date: "21.04.2019")
+        let myDateView = DateView()
         return myDateView
     }()
     private func setupBeforeDateView() {
@@ -267,14 +281,14 @@ class MyBodyViewController: UIViewController {
             make.leading.bottom.equalToSuperview().inset(8)
         }
     }
-    
+
     // MARK: - AfterImageView setup
     private lazy var afterImageView: UIImageView = {
         let myImageView = UIImageView()
-        myImageView.image = R.image.myProgress2()
         myImageView.contentMode = .scaleAspectFill
         myImageView.isUserInteractionEnabled = true
         myImageView.clipsToBounds = true
+        myImageView.isSkeletonable = true
         return myImageView
     }()
     private func setupAfterImageView() {
@@ -282,10 +296,10 @@ class MyBodyViewController: UIViewController {
         setupAfterDateView()
         setupAddPhotoButton()
     }
-    
+
     // MARK: - AfterDateView setup
     private lazy var afterDateView: DateView = {
-        let myDateView = DateView(date: "03.01.2020")
+        let myDateView = DateView()
         return myDateView
     }()
     private func setupAfterDateView() {
@@ -294,7 +308,7 @@ class MyBodyViewController: UIViewController {
             make.leading.bottom.equalToSuperview().inset(8)
         }
     }
-    
+
     // MARK: - AddPhotoButton setup
     private lazy var addPhotoButton: UIButton = {
         let myButton = UIButton()
@@ -306,14 +320,14 @@ class MyBodyViewController: UIViewController {
         return myButton
     }()
     private func setupAddPhotoButton() {
-        afterImageView.addSubview(addPhotoButton)
+        contentView.addSubview(addPhotoButton)
         addPhotoButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(8)
+            make.trailing.equalTo(afterImageView.snp.trailing).inset(8)
             make.centerY.equalTo(afterDateView.snp.centerY)
             make.width.height.equalTo(galleryButtonScale)
         }
     }
-    
+
     // MARK: - ImagePicker setup
     private lazy var imagePicker: UIImagePickerController = {
         let vc = UIImagePickerController()
@@ -324,7 +338,7 @@ class MyBodyViewController: UIViewController {
     @objc private func showImagePicker() {
         showAlertWithChoice()
     }
-    
+
     // ButtonsStackView setup
     private lazy var buttonsStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -342,10 +356,14 @@ class MyBodyViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
     }
-    
+
     // MARK: - TrainProgressButton setup
     private lazy var trainProgressButton: ButtonWithArrowStackView = {
-        let myButton = ButtonWithArrowStackView(labelText: R.string.myBodyScreenStrings.train_progress(), arrowImage: R.image.forwardArrow()!, action: onTrainProgressButtonTapped)
+        let myButton = ButtonWithArrowStackView(
+            labelText: R.string.myBodyScreenStrings.train_progress(),
+            arrowImage: R.image.forwardArrow()!,
+            action: onTrainProgressButtonTapped
+        )
         return myButton
     }()
     private func onTrainProgressButtonTapped() {
@@ -354,10 +372,14 @@ class MyBodyViewController: UIViewController {
     private func setupTrainProgressButton() {
         buttonsStackView.addArrangedSubview(trainProgressButton)
     }
-    
+
     // MARK: - StatisticsButton setup
     private lazy var statisticsButton: ButtonWithArrowStackView = {
-        let myButton = ButtonWithArrowStackView(labelText: R.string.myBodyScreenStrings.statistics(), arrowImage: R.image.forwardArrow()!, action: onStatisticsButtonTapped)
+        let myButton = ButtonWithArrowStackView(
+            labelText: R.string.myBodyScreenStrings.statistics(),
+            arrowImage: R.image.forwardArrow()!,
+            action: onStatisticsButtonTapped
+        )
         return myButton
     }()
     private func onStatisticsButtonTapped() {
@@ -366,61 +388,91 @@ class MyBodyViewController: UIViewController {
     private func setupStatisticsButton() {
         buttonsStackView.addArrangedSubview(statisticsButton)
     }
-    
+
 }
 
 extension MyBodyViewController {
-    
+
     private func getProfilePhotos() {
         let beforePhoto = viewModel.getBeforePhotoWithDate()
         let afterPhoto = viewModel.getAfterPhotoWithDate()
         if beforePhoto.0 != nil && afterPhoto.0 != nil {
             beforeImageView.image = beforePhoto.0!
-            beforeDateView.date = beforePhoto.1 ?? ""
-            
+            beforeDateView.configure(with: beforePhoto.1 ?? "")
+
             afterImageView.image = afterPhoto.0!
-            afterDateView.date = afterPhoto.1 ?? ""
-        }
-        else {
+            afterDateView.configure(with: afterPhoto.1 ?? "")
+        } else {
+            beforeImageView.showAnimatedSkeleton(usingColor: R.color.skeletonViewColor()!)
+            afterImageView.showAnimatedSkeleton(usingColor: R.color.skeletonViewColor()!)
             Task {
                 await viewModel.getProfilePhotos()
                 if viewModel.beforePhotoData != nil {
                     if UIImage(data: viewModel.beforePhotoData!) != nil {
                         beforeImageView.image = UIImage(data: viewModel.beforePhotoData!)
-                        beforeDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded)
-                        viewModel.cacheBeforePhotoWithDate(data: viewModel.beforePhotoData!, dateOfPhoto: viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded))
+                        beforeDateView.configure(
+                            with: viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded)
+                        )
+                        viewModel.cacheBeforePhotoWithDate(
+                            data: viewModel.beforePhotoData!,
+                            dateOfPhoto: viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[0].uploaded)
+                        )
+                        beforeImageView.hideSkeleton()
                     }
                 }
                 if viewModel.afterPhotoData != nil {
                     if UIImage(data: viewModel.afterPhotoData!) != nil {
                         afterImageView.image = UIImage(data: viewModel.afterPhotoData!)
-                        afterDateView.date = viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded)
-                        viewModel.cacheAfterPhotoWithDate(data: viewModel.afterPhotoData!, dateOfPhoto: viewModel.convertTimestampToDdMmYyyy(viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded))
+                        afterDateView.configure(
+                            with: viewModel.convertTimestampToDdMmYyyy(
+                                viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded
+                            )
+                        )
+                        viewModel.cacheAfterPhotoWithDate(
+                            data: viewModel.afterPhotoData!,
+                            dateOfPhoto: viewModel.convertTimestampToDdMmYyyy(
+                                viewModel.profilePhotos[viewModel.profilePhotos.count - 1].uploaded
+                            )
+                        )
+                        afterImageView.hideSkeleton()
                     }
                 }
             }
         }
     }
-    
+
     func uploadPhoto(imageData: Data, image: UIImage) {
         viewModel.uploadPhoto(imageData: imageData) { success in
-            if(success) {
+            if success {
                 // Если нет ни одной фотографии, то устанавливаем её как "до"
                 if self.viewModel.getBeforePhotoWithDate().0 == nil {
                     self.beforeImageView.image = image
-                    self.beforeDateView.date = self.viewModel.convertTimestampToDdMmYyyy(self.viewModel.profilePhotos[0].uploaded)
-                    self.viewModel.cacheAfterPhotoWithDate(data: imageData, dateOfPhoto: self.viewModel.convertTimestampToDdMmYyyy(TimeInterval()))
-                }
-                else {
+                    self.beforeDateView.configure(
+                        with: self.viewModel.convertTimestampToDdMmYyyy(
+                            self.viewModel.profilePhotos[0].uploaded
+                        )
+                    )
+                    self.viewModel.cacheAfterPhotoWithDate(
+                        data: imageData,
+                        dateOfPhoto: self.viewModel.convertTimestampToDdMmYyyy(TimeInterval())
+                    )
+                } else {
                     // Иначе устанавливаем её как "после"
                     self.afterImageView.image = image
-                    self.afterDateView.date = self.viewModel.convertTimestampToDdMmYyyy(self.viewModel.profilePhotos[self.viewModel.profilePhotos.count - 1].uploaded)
-                    self.viewModel.cacheAfterPhotoWithDate(data: imageData, dateOfPhoto: self.viewModel.convertTimestampToDdMmYyyy(TimeInterval()))
+                    self.afterDateView.configure(
+                        with: self.viewModel.convertTimestampToDdMmYyyy(
+                            self.viewModel.profilePhotos[self.viewModel.profilePhotos.count - 1].uploaded
+                        )
+                    )
+                    self.viewModel.cacheAfterPhotoWithDate(
+                        data: imageData,
+                        dateOfPhoto: self.viewModel.convertTimestampToDdMmYyyy(TimeInterval())
+                    )
                 }
             }
         }
     }
-    
+
 }
 
 // MARK: - ErrorHandlingDelegate
@@ -431,57 +483,62 @@ extension MyBodyViewController: ErrorHandlingDelegate {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage) {
                     self.reauthorizeUser()
                 }
-            }
-            else {
+            } else {
                 self.showAlert(title: R.string.errors.error(), message: errorMessage)
             }
         }
     }
-    
+
     func reauthorizeUser() {
         viewModel.reauthenticateUser()
     }
 }
 
 extension MyBodyViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
-        
+
         if let imageData = image.jpegData(compressionQuality: 0.1) {
             print(imageData)
-            if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            if let image =
+                info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
                 self.uploadPhoto(imageData: imageData, image: image)
-            }
-            else {
+            } else {
                 self.showAlert(title: R.string.errors.avatar_setting_error(), message: R.string.errors.corrupted_file())
             }
         }
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    
+
     func showAlertWithChoice() {
-        let alert = UIAlertController(title: R.string.myBodyScreenStrings.choose_image_source(), message: nil, preferredStyle: .alert)
-        
+        let alert = UIAlertController(
+            title: R.string.myBodyScreenStrings.choose_image_source(),
+            message: nil,
+            preferredStyle: .alert
+        )
+
         alert.addAction(UIAlertAction(title: R.string.myBodyScreenStrings.camera(), style: .default, handler: { _ in
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker, animated: true)
         }))
-        
+
         alert.addAction(UIAlertAction(title: R.string.myBodyScreenStrings.photo(), style: .default, handler: { _ in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true)
         }))
-        
+
         alert.addAction(UIAlertAction(title: R.string.myBodyScreenStrings.cancel(), style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
 }

@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 final class MyBodyViewModel {
-    
+
     weak var coordinator: MyBodyCoordinator?
     weak var errorHandlingDelegate: ErrorHandlingDelegate?
-    
+
     private let profileRepository: ProfileRepository
     private let userBodyParametersRepository: UserBodyParametersRepository
     private let profilePhotosRepository: ProfilePhotosRepository
@@ -21,15 +21,15 @@ final class MyBodyViewModel {
     private let getBodyParametersValidationErrorUseCase: GetBodyParametersValidationErrorUseCase
     private let convertDateToYyyyMmDdUseCase: ConvertDateToYyyyMmDdUseCase
     private let convertTimestampToDdMmYyyyUseCase: ConvertTimestampToDdMmYyyyUseCase
-    
+
     private(set) var beforePhotoData: Data?
     private(set) var afterPhotoData: Data?
-    
+
     var weight: Int?
     var height: Int?
-    
+
     var profilePhotos: [ProfilePhotoModel] = []
-    
+
     init(profileRepository: ProfileRepository,
          userBodyParametersRepository: UserBodyParametersRepository,
          profilePhotosRepository: ProfilePhotosRepository,
@@ -46,11 +46,11 @@ final class MyBodyViewModel {
         self.getBodyParametersValidationErrorUseCase = getBodyParametersValidationErrorUseCase
         self.convertDateToYyyyMmDdUseCase = convertDateToYyyyMmDdUseCase
         self.convertTimestampToDdMmYyyyUseCase = convertTimestampToDdMmYyyyUseCase
-        
+
         self.weight = userBodyParametersRepository.fetchWeight()
         self.height = userBodyParametersRepository.fetchHeight()
     }
-    
+
     func updateWeight(with weight: String) {
         print(weight)
         self.weight = Int(weight) ?? -1
@@ -67,25 +67,25 @@ final class MyBodyViewModel {
         print(String(userBodyParametersRepository.fetchHeight() ?? -1))
         return String(userBodyParametersRepository.fetchHeight() ?? -1)
     }
-    
+
     func convertTimestampToDdMmYyyy(_ timestamp: TimeInterval) -> String {
         convertTimestampToDdMmYyyyUseCase.convert(timestamp)
     }
-    
+
     func getBeforePhotoWithDate() -> (UIImage?, String?) {
         return profilePhotosRepository.loadBeforePhotoWithDate()
     }
     func getAfterPhotoWithDate() -> (UIImage?, String?) {
         return profilePhotosRepository.loadAfterPhotoWithDate()
     }
-    
+
     func cacheBeforePhotoWithDate(data: Data, dateOfPhoto: String) {
         profilePhotosRepository.cacheBeforePhotoWithDate(data: data, dateOfPhoto: dateOfPhoto)
     }
     func cacheAfterPhotoWithDate(data: Data, dateOfPhoto: String) {
         profilePhotosRepository.cacheAfterPhotoWithDate(data: data, dateOfPhoto: dateOfPhoto)
     }
-    
+
 }
 
 // MARK: - Navigation
@@ -93,19 +93,19 @@ extension MyBodyViewModel {
     func reauthenticateUser() {
         coordinator?.reauthenticateUser()
     }
-    
+
     func goToPreviousScreen() {
         coordinator?.navigationController.popViewController(animated: true)
     }
-    
+
     func goToImageListScreen() {
         coordinator?.goToImageListScreen(profilePhotos: profilePhotos)
     }
-    
+
     func goToTrainProgressScreen() {
         coordinator?.goToTrainProgressScreen()
     }
-    
+
     func goToStatisticsScreen() {
         coordinator?.goToStatisticsScreen()
     }
@@ -117,32 +117,38 @@ extension MyBodyViewModel {
     func getProfilePhotos() async {
         do {
             profilePhotos = try await profileRepository.getProfilePhotos()
-            beforePhotoData = await downloadUserPhoto(photoId: getMostRecentPhotoUseCase.getPhoto(from: profilePhotos)?.id ?? UUID())
-            afterPhotoData = await downloadUserPhoto(photoId: getLatestPhotoUseCase.getPhoto(from: profilePhotos)?.id ?? UUID())
-        } catch(let error) {
+            beforePhotoData = await downloadUserPhoto(
+                photoId: getMostRecentPhotoUseCase.getPhoto(
+                    from: profilePhotos
+                )?.id ?? UUID()
+            )
+            afterPhotoData = await downloadUserPhoto(
+                photoId: getLatestPhotoUseCase.getPhoto(
+                    from: profilePhotos
+                )?.id ?? UUID()
+            )
+        } catch let error {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
+            } else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
         }
     }
-    
+
     func downloadUserPhoto(photoId: UUID) async -> Data? {
         do {
             return try await profileRepository.downloadUserPhoto(photoId: photoId)
-        } catch(let error) {
+        } catch let error {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
+            } else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
             return nil
         }
     }
-    
+
     func updateUserParameters() async -> Bool {
         if let bodyParametersError = getBodyParametersValidationErrorUseCase.getError(
             weight: weight,
@@ -151,19 +157,22 @@ extension MyBodyViewModel {
             errorHandlingDelegate?.handleErrorMessage(bodyParametersError)
             // Если пользователь ввёл невалидные данные, то сохраняем изначальные данные (до нажатия на ОК в поле ввода)
             if weight == -1 || weight == nil {
-                weight = (userBodyParametersRepository.fetchWeight() == nil) ? -1 : userBodyParametersRepository.fetchWeight()
+                weight = (
+                    userBodyParametersRepository.fetchWeight() == nil
+                ) ? -1 : userBodyParametersRepository.fetchWeight()
             }
             if height == -1 || height == nil {
-                height = (userBodyParametersRepository.fetchHeight() == nil) ? -1 : userBodyParametersRepository.fetchHeight()
+                height = (
+                    userBodyParametersRepository.fetchHeight() == nil
+                ) ? -1 : userBodyParametersRepository.fetchHeight()
             }
             return false
-        }
-        else {
+        } else {
             userBodyParametersRepository.saveWeight(weight ?? -1)
             userBodyParametersRepository.saveHeight(height ?? -1)
         }
         do {
-            let _ = try await profileRepository.updateUserParameters(
+            _ = try await profileRepository.updateUserParameters(
                 newParameters: BodyParametersModel(
                     weight: userBodyParametersRepository.fetchWeight()!,
                     height: userBodyParametersRepository.fetchHeight()!,
@@ -171,18 +180,17 @@ extension MyBodyViewModel {
                 )
             )
             return true
-            
-        } catch(let error) {
+
+        } catch let error {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
+            } else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
             return false
         }
     }
-    
+
     func uploadPhoto(imageData: Data, completion: @escaping (Bool) -> Void) {
         profileRepository.uploadPhoto(imageData: imageData) { [weak self] result in
             switch result {

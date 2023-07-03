@@ -8,17 +8,17 @@
 import Foundation
 
 protocol LastExercisesRepository {
-    
+
     func saveLastExercise(trainingType: TrainingTypeModel)
     func savePreLastExercise(trainingType: TrainingTypeModel)
-    
+
     func fetchLastExercise() -> String
     func fetchPreLastExercise() -> String
-    
+
     func isThereSavedExercises() -> Bool
-    
+
     func getLastExercises() -> [TrainingTypeModel]
-    
+
     func clearAllData()
-    
+
 }

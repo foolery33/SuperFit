@@ -11,20 +11,20 @@ class ButtonWithArrowStackView: UIStackView {
 
     var labelText: String
     var arrowImage: UIImage
-    var action: () -> ()
-    
-    init(labelText: String, arrowImage: UIImage, action: @escaping () -> ()) {
+    var action: () -> Void
+
+    init(labelText: String, arrowImage: UIImage, action: @escaping () -> Void) {
         self.labelText = labelText
         self.arrowImage = arrowImage
         self.action = action
         super.init(frame: .zero)
         setupStackView()
     }
-    
+
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupStackView() {
         self.axis = .horizontal
         self.spacing = 8
@@ -32,7 +32,7 @@ class ButtonWithArrowStackView: UIStackView {
         setupSubStackView()
         self.addArrangedSubview(spacerView)
     }
-    
+
     private lazy var subStackView: UIStackView = {
         let myStackView = UIStackView()
         myStackView.addPressedEffect()
@@ -52,7 +52,7 @@ class ButtonWithArrowStackView: UIStackView {
         subStackView.addArrangedSubview(buttonLabel)
         subStackView.addArrangedSubview(arrowImageView)
     }
-    
+
     // MARK: - ButtonLabel setup
     private lazy var buttonLabel: UILabel = {
         let myLabel = UILabel()
@@ -67,7 +67,7 @@ class ButtonWithArrowStackView: UIStackView {
             make.leading.verticalEdges.equalToSuperview()
         }
     }
-    
+
     // MARK: - ArrowImageView setup
     private lazy var arrowImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -76,11 +76,11 @@ class ButtonWithArrowStackView: UIStackView {
         myImageView.tintColor = R.color.white()
         return myImageView
     }()
-    
+
     // MARK: - SpacerView setup
     private lazy var spacerView: UIView = {
         let myView = UIView()
         return myView
     }()
-    
+
 }

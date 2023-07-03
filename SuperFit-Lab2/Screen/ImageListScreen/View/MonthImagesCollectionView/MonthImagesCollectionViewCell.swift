@@ -12,7 +12,6 @@ final class MonthImagesCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupMonthImageView()
-        backgroundColor = .purple
     }
 
     // MARK: - MonthImageView setup
@@ -24,6 +23,9 @@ final class MonthImagesCollectionViewCell: UICollectionViewCell {
     private func setupMonthImageView() {
         contentView.clipsToBounds = true
         contentView.addSubview(monthImageView)
+        isSkeletonable = true
+        contentView.isSkeletonable = true
+        showAnimatedSkeleton(usingColor: R.color.skeletonViewColor()!)
         monthImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -36,6 +38,7 @@ final class MonthImagesCollectionViewCell: UICollectionViewCell {
 
     func setup(with profilePhotoData: Data) {
         monthImageView.image = UIImage(data: profilePhotoData)
+        hideSkeleton()
     }
 }
 

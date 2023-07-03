@@ -8,21 +8,21 @@
 import Foundation
 
 final class RegistrationViewModel {
-    
+
     weak var coordinator: AuthCoordinator?
     weak var errorHandlingDelegate: ErrorHandlingDelegate?
-    
+
     private let authRepository: AuthRepository
     private let saveRefreshTokenUseCase: SaveRefreshTokenUseCase
     private let saveUserEmailUseCase: SaveUserEmailUseCase
     private let getRegisterValidationErrorUseCase: GetRegisterValidationErrorUseCase
     private let codeValueChangeUseCase: CodeValueChangeUseCase
-    
+
     var userName: String = ""
     var email: String = ""
     var code: String = ""
     var repeatCode: String = ""
-    
+
     init(authRepository: AuthRepository,
          saveRefreshTokenUseCase: SaveRefreshTokenUseCase,
          saveUserEmailUseCase: SaveUserEmailUseCase,
@@ -34,7 +34,7 @@ final class RegistrationViewModel {
         self.getRegisterValidationErrorUseCase = getRegisterValidationErrorUseCase
         self.codeValueChangeUseCase = codeValueChangeUseCase
     }
-    
+
     func updateUserName(with string: String) {
         self.userName = string
     }
@@ -47,7 +47,7 @@ final class RegistrationViewModel {
     func updateRepeatCode(with string: String) {
         self.repeatCode = self.codeValueChangeUseCase.getCorrectCode(from: string)
     }
-    
+
 }
 
 // MARK: - Navigation
@@ -55,7 +55,7 @@ extension RegistrationViewModel {
     func goToAuthorizationScreen() {
         coordinator?.navigationController.popViewController(animated: true)
     }
-    
+
     func goToMainScreen() {
         coordinator?.goToMainScreen()
     }
@@ -73,32 +73,30 @@ extension RegistrationViewModel {
             errorHandlingDelegate?.handleErrorMessage(error)
             return false
         }
-        
+
         do {
             _ = try await authRepository.register(login: email, password: code)
             return true
-        } catch(let error) {
+        } catch let error {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
+            } else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
             return false
         }
     }
-    
+
     func login() async -> Bool {
         do {
             let token = try await authRepository.login(login: email, password: code)
             saveRefreshTokenUseCase.save(token.refreshToken)
             saveUserEmailUseCase.save(email)
             return true
-        } catch(let error) {
+        } catch let error {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
+            } else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
             return false

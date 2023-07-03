@@ -10,21 +10,21 @@ import UIKit
 class BodyParameterStackView: UIStackView {
 
     private let parameterText: String
-    
+
     init(parameterText: String) {
         self.parameterText = parameterText
         super.init(frame: .zero)
         setupStackView()
     }
-    
+
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configureBodyParameter(set value: String) {
         parameterLabel.text = value
     }
-    
+
     private func setupStackView() {
         self.axis = .vertical
         self.spacing = 13
@@ -32,7 +32,7 @@ class BodyParameterStackView: UIStackView {
         setupParameterLabel()
         setupParameterEditLabel()
     }
-    
+
     // MARK: - HeightLabel setup
     private lazy var parameterLabel: UILabel = {
         let myLabel = UILabel()
@@ -44,7 +44,7 @@ class BodyParameterStackView: UIStackView {
     private func setupParameterLabel() {
         self.addArrangedSubview(parameterLabel)
     }
-    
+
     // MARK: - WeightEditLabel setup
     private lazy var parameterEditLabel: UILabel = {
         let myLabel = UILabel()

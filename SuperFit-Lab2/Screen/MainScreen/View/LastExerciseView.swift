@@ -13,23 +13,23 @@ class LastExerciseView: UIView {
         super.init(frame: frame)
         setupSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setup(with trainingInfoModel: TrainingInfoModel) {
         self.exerciseNameLabel.text = trainingInfoModel.name
         self.exerciseDescriptionLabel.text = trainingInfoModel.description
         self.cardImageView.image = trainingInfoModel.image
-        
+
     }
-    
+
     private func setupSubviews() {
         setupExerciseCardView()
 //        setupEmptyView()
     }
-    
+
     // MARK: - ExerciseCardView setup
     private lazy var exerciseCardView: UIView = {
         let myView = UIView()
@@ -46,10 +46,17 @@ class LastExerciseView: UIView {
             make.height.equalTo(114)
         }
     }
-    
+
     // MARK: - CardImageView setup
     private lazy var cardImageView: UIImageView = {
-        let myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width / 2 - 16, height: 114))
+        let myImageView = UIImageView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: UIScreen.main.bounds.width / 2 - 16,
+                height: 114
+            )
+        )
         myImageView.contentMode = .scaleAspectFill
         myImageView.clipsToBounds = true
         return myImageView
@@ -62,7 +69,7 @@ class LastExerciseView: UIView {
             make.height.equalTo(114)
         }
     }
-    
+
     // MARK: - CardDescriptionView setup
     private lazy var cardDescriptionView: UIView = {
         let myView = UIView()
@@ -77,7 +84,7 @@ class LastExerciseView: UIView {
             make.leading.equalTo(cardImageView.snp.trailing)
         }
     }
-    
+
     // MARK: - DescriptionStackView setup
     private lazy var descriptionStackView: UIView = {
         let myView = UIView()
@@ -91,7 +98,7 @@ class LastExerciseView: UIView {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - ExerciseNameLabel setup
     private lazy var exerciseNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -107,9 +114,9 @@ class LastExerciseView: UIView {
             make.top.equalToSuperview().inset(8)
             make.horizontalEdges.equalToSuperview().inset(16)
         }
-        
+
     }
-    
+
     // MARK: - ExerciseDescriptionLabel setup
     private lazy var exerciseDescriptionLabel: UILabel = {
         let myLabel = UILabel()
@@ -127,7 +134,7 @@ class LastExerciseView: UIView {
             make.top.equalTo(exerciseNameLabel.snp.bottom).offset(4)
         }
     }
-    
+
     // MARK: - EmptyView setup
     private lazy var emptyView: UIView = {
         let myView = UIView()

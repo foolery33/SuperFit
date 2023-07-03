@@ -8,9 +8,9 @@
 import Foundation
 
 final class ComponentFactory {
-    
+
     private let mainComponent = MainComponent()
-    
+
     func getAuthorizationComponent() -> AuthorizationComponent {
         return mainComponent.authorizationComponent
     }
@@ -47,5 +47,5 @@ final class ComponentFactory {
     func getStatisticsComponent() -> StatisticsComponent {
         return mainComponent.statisticsComponent
     }
-    
+
 }

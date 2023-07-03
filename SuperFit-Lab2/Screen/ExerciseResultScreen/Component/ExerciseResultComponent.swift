@@ -22,7 +22,7 @@ final class ExerciseResultComponent: Component<ExerciseResultComponentDependency
             )
         }
     }
-    
+
     var exerciseResultViewController: UIViewController {
         ExerciseResultViewController(viewModel: exerciseResultViewModel)
     }

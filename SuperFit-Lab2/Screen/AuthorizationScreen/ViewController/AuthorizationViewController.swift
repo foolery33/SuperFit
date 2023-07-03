@@ -11,29 +11,29 @@ import SnapKit
 class AuthorizationViewController: UIViewController {
 
     var viewModel: AuthorizationViewModel
-    
+
     init(viewModel: AuthorizationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
         view.addKeyboardDismiss()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     private func setupSubviews() {
         setupBackgroundImageView()
         setupAppNameLabel()
         setupSignInStackView()
         setupSignUpButton()
     }
-    
+
     // MARK: - BackgroundImageView setup
     private lazy var backgroundImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -47,7 +47,7 @@ class AuthorizationViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - AppNameLabel setup
     private lazy var appNameLabel: UILabel = {
         let myLabel = UILabel()
@@ -63,7 +63,7 @@ class AuthorizationViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     // MARK: - SignInStackView setup
     private lazy var signInStackView: UIStackView = {
         let myStackView = UIStackView()
@@ -80,10 +80,14 @@ class AuthorizationViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(60)
         }
     }
-    
+
     // MARK: - UnderlinedTextField setup
     private lazy var underlinedTextField: UnderlinedTextField = {
-        let myTextField = UnderlinedTextField(currentText: self.viewModel.email, placeholderText: R.string.loginScreenStrings.username(), isSecured: false)
+        let myTextField = UnderlinedTextField(
+            currentText: self.viewModel.email,
+            placeholderText: R.string.loginScreenStrings.username(),
+            isSecured: false
+        )
         myTextField.addTarget(self, action: #selector(onEmailTextFieldValueChanged(_:)), for: .editingChanged)
         return myTextField
     }()
@@ -93,10 +97,14 @@ class AuthorizationViewController: UIViewController {
     private func setupUnderlinedTextField() {
         signInStackView.addArrangedSubview(underlinedTextField)
     }
-    
+
     // MARK: - SignInButton setup
     private lazy var signInButton: ButtonWithArrowStackView = {
-        let myStackView = ButtonWithArrowStackView(labelText: R.string.loginScreenStrings.sign_in(), arrowImage: R.image.forwardArrow()!, action: onSignInButtonClicked)
+        let myStackView = ButtonWithArrowStackView(
+            labelText: R.string.loginScreenStrings.sign_in(),
+            arrowImage: R.image.forwardArrow()!,
+            action: onSignInButtonClicked
+        )
         myStackView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         myStackView.isLayoutMarginsRelativeArrangement = true
         return myStackView
@@ -105,8 +113,7 @@ class AuthorizationViewController: UIViewController {
         self.viewModel.onSignInButtonClicked { success in
             if success {
                 self.viewModel.goToAuthorizationPinPanelScreen()
-            }
-            else {
+            } else {
                 self.showAlert(title: R.string.loginScreenStrings.login_error(), message: self.viewModel.error)
             }
         }
@@ -114,10 +121,14 @@ class AuthorizationViewController: UIViewController {
     private func setupSignInButton() {
         signInStackView.addArrangedSubview(signInButton)
     }
-    
+
     // MARK: - SignUpButton setup
     private lazy var signUpButton: ButtonWithArrowStackView = {
-        let myStackView = ButtonWithArrowStackView(labelText: R.string.loginScreenStrings.sign_up(), arrowImage: R.image.forwardArrow()!, action: onSignUpButtonClicked)
+        let myStackView = ButtonWithArrowStackView(
+            labelText: R.string.loginScreenStrings.sign_up(),
+            arrowImage: R.image.forwardArrow()!,
+            action: onSignUpButtonClicked
+        )
         myStackView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         myStackView.isLayoutMarginsRelativeArrangement = true
         return myStackView

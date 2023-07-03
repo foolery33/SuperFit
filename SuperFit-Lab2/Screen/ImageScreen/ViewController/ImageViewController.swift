@@ -8,30 +8,30 @@
 import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
-    
+
     private let viewModel: ImageViewModel
-    
+
     init(viewModel: ImageViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
         setupImageView()
         setupBackArrowButton()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 //        updateZoomScale()
     }
-    
+
     private lazy var scrollView: UIScrollView = {
         let myScrollView = UIScrollView()
         myScrollView.delegate = self
@@ -50,7 +50,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             make.height.equalToSuperview()
         }
     }
-    
+
     private lazy var imageView: UIImageView = {
         let myImageView = UIImageView()
         myImageView.image = image
@@ -70,23 +70,23 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             make.height.equalToSuperview()
         }
     }
-    
+
     private lazy var image: UIImage = {
         let myImage = UIImage(data: viewModel.imageData ?? Data())
         return myImage ?? R.image.myProgress1()!
     }()
-    
+
     private func updateZoomScale() {
         let scrollViewSize = scrollView.bounds.size
         let imageSize = image.size
         let widthScale = scrollViewSize.width / imageSize.width
         let heightScale = scrollViewSize.height / imageSize.height
         let minScale = min(widthScale, heightScale)
-        
+
         scrollView.minimumZoomScale = minScale
         scrollView.zoomScale = minScale
     }
-    
+
     // MARK: - BackArrowButton setup
     private lazy var backArrowButton: UIButton = {
         let myButton = UIButton()
@@ -105,7 +105,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(9)
         }
     }
-    
+
     @objc private func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
         if scrollView.zoomScale == scrollView.minimumZoomScale {
             // Приближение в точку, по которой было выполнено двойное нажатие
@@ -117,14 +117,14 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             let x = pointInView.x - (w / 2.0)
             let y = pointInView.y - (h / 2.0)
             let rectToZoomTo = CGRect(x: x, y: y, width: w, height: h)
-            
+
             scrollView.zoom(to: rectToZoomTo, animated: true)
         } else {
             // Возврат к минимальному зуму
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
         }
     }
-    
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }

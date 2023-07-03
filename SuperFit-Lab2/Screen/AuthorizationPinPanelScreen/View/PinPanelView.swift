@@ -8,24 +8,24 @@
 import UIKit
 import SnapKit
 
-protocol PinPanelDelegate {
+protocol PinPanelDelegate: AnyObject {
     func onChangePinValue(newDigit: String)
     var pinValue: String { get }
 }
 
 class PinPanelView: UIView {
 
-    var delegate: PinPanelDelegate?
-    
+    weak var delegate: PinPanelDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupSubviews() {
         setupFirstDigit()
         setupSecondDigit()
@@ -37,11 +37,11 @@ class PinPanelView: UIView {
         setupEightDight()
         setupNinthDigit()
     }
-    
+
     func addDigitToPin(digit: String) {
         delegate?.onChangePinValue(newDigit: digit)
     }
-    
+
     // MARK: - FirstDigit setup
     private lazy var firstDigit: PinDigitView = {
         let myDigit = PinDigitView(digit: "1", coordinates: (0, 0), changePositions: self.changePositions(_:))
@@ -51,7 +51,7 @@ class PinPanelView: UIView {
         addSubview(firstDigit)
         makeNewConstraints(pinDigit: firstDigit)
     }
-    
+
     // MARK: - SecondDigit setup
     private lazy var secondDigit: PinDigitView = {
         return PinDigitView(digit: "2", coordinates: (0, 1), changePositions: self.changePositions(_:))
@@ -60,7 +60,7 @@ class PinPanelView: UIView {
         addSubview(secondDigit)
         makeNewConstraints(pinDigit: secondDigit)
     }
-    
+
     // MARK: - ThirdDigit setup
     private lazy var thirdDigit: PinDigitView = {
         return PinDigitView(digit: "3", coordinates: (0, 2), changePositions: self.changePositions(_:))
@@ -69,7 +69,7 @@ class PinPanelView: UIView {
         addSubview(thirdDigit)
         makeNewConstraints(pinDigit: thirdDigit)
     }
-    
+
     // MARK: - FourthDigit setup
     private lazy var fourthDigit: PinDigitView = {
         return PinDigitView(digit: "4", coordinates: (1, 0), changePositions: self.changePositions(_:))
@@ -78,7 +78,7 @@ class PinPanelView: UIView {
         addSubview(fourthDigit)
         makeNewConstraints(pinDigit: fourthDigit)
     }
-    
+
     // MARK: - FifthDigit setup
     private lazy var fifthDigit: PinDigitView = {
         return PinDigitView(digit: "5", coordinates: (1, 1), changePositions: self.changePositions(_:))
@@ -87,7 +87,7 @@ class PinPanelView: UIView {
         addSubview(fifthDigit)
         makeNewConstraints(pinDigit: fifthDigit)
     }
-    
+
     // MARK: - SixthDigit setup
     private lazy var sixthDigit: PinDigitView = {
         return PinDigitView(digit: "6", coordinates: (1, 2), changePositions: self.changePositions(_:))
@@ -96,7 +96,7 @@ class PinPanelView: UIView {
         addSubview(sixthDigit)
         makeNewConstraints(pinDigit: sixthDigit)
     }
-    
+
     // MARK: - SeventhDigit setup
     private lazy var seventhDigit: PinDigitView = {
         return PinDigitView(digit: "7", coordinates: (2, 0), changePositions: self.changePositions(_:))
@@ -105,7 +105,7 @@ class PinPanelView: UIView {
         addSubview(seventhDigit)
         makeNewConstraints(pinDigit: seventhDigit)
     }
-    
+
     // MARK: - EightDight setup
     private lazy var eightDight: PinDigitView = {
         return PinDigitView(digit: "8", coordinates: (2, 1), changePositions: self.changePositions(_:))
@@ -114,7 +114,7 @@ class PinPanelView: UIView {
         addSubview(eightDight)
         makeNewConstraints(pinDigit: eightDight)
     }
-    
+
     // MARK: - NinthDigit setup
     private lazy var ninthDigit: PinDigitView = {
         return PinDigitView(digit: "9", coordinates: (2, 2), changePositions: self.changePositions(_:))
@@ -138,11 +138,11 @@ class PinPanelView: UIView {
             make.height.width.equalTo(78)
         }
     }
-    
+
 }
 
 extension PinPanelView {
-    
+
     @objc func changePositions(_ digit: String) {
         self.addDigitToPin(digit: digit)
         if self.delegate?.pinValue.count ?? 0 < 4 {
@@ -166,7 +166,7 @@ extension PinPanelView {
             })
         }
     }
-    
+
     func generateUniqueTuples() -> [(Int, Int)] {
         var tuples: [(Int, Int)] = []
         while tuples.count < 9 {

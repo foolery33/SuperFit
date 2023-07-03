@@ -8,11 +8,11 @@
 import Foundation
 
 enum AppError: Error, LocalizedError, Identifiable, Equatable {
-    
+
     case authError(AuthRepositoryImplementation.AuthError)
     case trainingError(TrainingRepositoryImplementation.TrainingError)
     case profileError(ProfileRepositoryImplementation.ProfileError)
-    
+
     var id: String {
         self.errorDescription
     }
@@ -26,5 +26,5 @@ enum AppError: Error, LocalizedError, Identifiable, Equatable {
             return error.errorDescription
         }
     }
-    
+
 }

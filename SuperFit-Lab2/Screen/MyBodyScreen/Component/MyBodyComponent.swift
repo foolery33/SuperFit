@@ -34,7 +34,7 @@ final class MyBodyComponent: Component<MyBodyComponentDependency> {
             )
         }
     }
-    
+
     var myBodyViewController: UIViewController {
         return MyBodyViewController(viewModel: myBodyViewModel)
     }

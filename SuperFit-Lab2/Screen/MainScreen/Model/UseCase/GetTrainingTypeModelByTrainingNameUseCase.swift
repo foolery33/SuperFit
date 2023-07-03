@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetTrainingTypeModelByTrainingNameUseCase {
-    
+
     private enum TrainingNames: String {
         case pushUps = "PUSH_UP"
         case plank = "PLANK"
@@ -16,24 +16,20 @@ final class GetTrainingTypeModelByTrainingNameUseCase {
         case crunch = "CRUNCH"
         case running = "RUNNING"
     }
-    
+
     func getTrainingTypeModel(by trainingName: String) -> TrainingTypeModel? {
         if trainingName == TrainingNames.pushUps.rawValue {
             return TrainingTypeModel.pushUps
-        }
-        else if trainingName == TrainingNames.plank.rawValue {
+        } else if trainingName == TrainingNames.plank.rawValue {
             return TrainingTypeModel.plank
-        }
-        else if trainingName == TrainingNames.squats.rawValue {
+        } else if trainingName == TrainingNames.squats.rawValue {
             return TrainingTypeModel.squats
-        }
-        else if trainingName == TrainingNames.crunch.rawValue {
+        } else if trainingName == TrainingNames.crunch.rawValue {
             return TrainingTypeModel.crunch
-        }
-        else if trainingName == TrainingNames.running.rawValue {
+        } else if trainingName == TrainingNames.running.rawValue {
             return TrainingTypeModel.running
         }
         return nil
     }
-    
+
 }

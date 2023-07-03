@@ -24,7 +24,7 @@ final class AuthorizationPinPanelComponent: Component<AuthorizationPinPanelCompo
             )
         }
     }
-    
+
     var authorizationPinPanelViewController: UIViewController {
         return AuthorizationPinPanelViewController(viewModel: authorizationPinPanelViewModel)
     }

@@ -32,7 +32,7 @@ final class StatisticsComponent: Component<StatisticsComponentDependency> {
             )
         }
     }
-    
+
     var statisticsViewController: StatisticsViewController {
         return StatisticsViewController(viewModel: statisticsViewModel)
     }

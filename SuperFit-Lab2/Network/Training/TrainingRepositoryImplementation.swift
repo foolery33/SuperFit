@@ -9,10 +9,10 @@ import Alamofire
 import Foundation
 
 final class TrainingRepositoryImplementation: TrainingRepository {
-    
+
     let baseURL = "http://fitness.wsmob.xyz:22169/"
     let interceptor = CustomRequestInterceptor()
-    
+
     func getTrainingList() async throws -> [TrainingModel] {
         let url = baseURL + "api/trainings"
         let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([TrainingModel].self)
@@ -33,11 +33,21 @@ final class TrainingRepositoryImplementation: TrainingRepository {
             }
         }
     }
-    
+
     func saveTraining(training: TrainingModel) async throws -> TrainingModel {
         let url = baseURL + "api/trainings"
-        let httpParameters: TrainingParametersModel = TrainingParametersModel(date: training.date, exercise: training.exercise.rawValue, repeatCount: training.repeatCount)
-        let dataTask =  AF.request(url, method: .post, parameters: httpParameters, encoder: JSONParameterEncoder.default, interceptor: self.interceptor).serializingDecodable(TrainingModel.self)
+        let httpParameters: TrainingParametersModel = TrainingParametersModel(
+            date: training.date,
+            exercise: training.exercise.rawValue,
+            repeatCount: training.repeatCount
+        )
+        let dataTask = AF.request(
+            url,
+            method: .post,
+            parameters: httpParameters,
+            encoder: JSONParameterEncoder.default,
+            interceptor: self.interceptor
+        ).serializingDecodable(TrainingModel.self)
         do {
             print("Save training status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
@@ -55,13 +65,13 @@ final class TrainingRepositoryImplementation: TrainingRepository {
             }
         }
     }
-    
+
     enum TrainingError: Error, LocalizedError, Identifiable {
         case unauthorized
         case problemWithExecuting
         case serverError
         case modelError
-        
+
         var id: String {
             self.errorDescription
         }
@@ -78,5 +88,5 @@ final class TrainingRepositoryImplementation: TrainingRepository {
             }
         }
     }
-    
+
 }

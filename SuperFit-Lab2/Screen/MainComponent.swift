@@ -9,7 +9,7 @@ import NeedleFoundation
 import UIKit
 
 final class MainComponent: BootstrapComponent {
-    
+
     // MARK: - Repositories
     var authRepository: AuthRepository {
         shared {
@@ -53,7 +53,7 @@ final class MainComponent: BootstrapComponent {
             UserDataManagerRepositoryImplementation()
         }
     }
-    
+
     // MARK: - Managers
     var garbageManager: GarbageManager {
         shared {
@@ -65,7 +65,7 @@ final class MainComponent: BootstrapComponent {
             )
         }
     }
-    
+
     // MARK: - UseCases
     var saveUserEmailUseCase: SaveUserEmailUseCase {
         shared {
@@ -226,7 +226,7 @@ final class MainComponent: BootstrapComponent {
             GetSortedWeightChangesDatesUseCase()
         }
     }
-    
+
     // MARK: - Components
     var authorizationComponent: AuthorizationComponent {
         shared {
@@ -288,5 +288,5 @@ final class MainComponent: BootstrapComponent {
             StatisticsComponent(parent: self)
         }
     }
-    
+
 }

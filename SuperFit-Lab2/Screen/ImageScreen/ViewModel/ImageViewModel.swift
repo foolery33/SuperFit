@@ -8,12 +8,12 @@
 import Foundation
 
 final class ImageViewModel {
-    
+
     weak var coordinator: MyBodyCoordinator?
     var imageData: Data?
-    
+
     func goBackToImageListScreen() {
         coordinator?.navigationController.popViewController(animated: false)
     }
-    
+
 }

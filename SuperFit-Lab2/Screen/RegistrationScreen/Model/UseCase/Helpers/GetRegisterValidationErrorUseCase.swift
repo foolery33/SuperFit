@@ -8,19 +8,24 @@
 import Foundation
 
 final class GetRegisterValidationErrorUseCase {
-    
+
     var emptyValidationUseCase: EmptyValidationUseCase
     var emailValidationUseCase: EmailValidationUseCase
     var codesEqualityValidationUseCase: CodesEqualityValidationUseCase
     var codeValidationUseCase: CodeValidationUseCase
-    
-    init(emptyValidationUseCase: EmptyValidationUseCase, emailValidationUseCase: EmailValidationUseCase, codesEqualityValidationUseCase: CodesEqualityValidationUseCase, codeValidationUseCase: CodeValidationUseCase) {
+
+    init(
+        emptyValidationUseCase: EmptyValidationUseCase,
+        emailValidationUseCase: EmailValidationUseCase,
+        codesEqualityValidationUseCase: CodesEqualityValidationUseCase,
+        codeValidationUseCase: CodeValidationUseCase
+    ) {
         self.emptyValidationUseCase = emptyValidationUseCase
         self.emailValidationUseCase = emailValidationUseCase
         self.codesEqualityValidationUseCase = codesEqualityValidationUseCase
         self.codeValidationUseCase = codeValidationUseCase
     }
-    
+
     func getValidationError(userName: String, email: String, password: String, confirmPassword: String) -> String? {
         if emptyValidationUseCase.isEmptyField(userName) {
             return R.string.errors.empty_username()

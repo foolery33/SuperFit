@@ -26,13 +26,14 @@ final class MainScreenComponent: Component<MainScreenComponentDependency> {
                 userBodyParametersRepository: dependency.userBodyParametersRepository,
                 trainingRepository: dependency.trainingRepository,
                 lastExercisesRepository: dependency.lastExercisesRepository,
-                getTrainingInfoModelByTrainingTypeModelUseCase: dependency.getTrainingInfoModelByTrainingTypeModelUseCase,
+                getTrainingInfoModelByTrainingTypeModelUseCase:
+                    dependency.getTrainingInfoModelByTrainingTypeModelUseCase,
                 getTwoLastExercisesUseCase: dependency.getTwoLastExercisesUseCase,
                 getLastBodyParametersUseCase: dependency.getLastBodyParametersUseCase
             )
         }
     }
-    
+
     var mainViewController: UIViewController {
         MainViewController(viewModel: mainViewModel)
     }

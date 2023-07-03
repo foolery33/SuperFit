@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetWeightValidationErrorUseCase {
-    
+
     func getError(_ weight: String) -> String? {
         let weightNumber = Int(weight) ?? -1
         if Int(weight) == -1 || weightNumber < 10 || weightNumber > 300 {
@@ -16,5 +16,5 @@ final class GetWeightValidationErrorUseCase {
         }
         return nil
     }
-    
+
 }

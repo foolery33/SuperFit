@@ -8,17 +8,7 @@
 import Foundation
 
 struct SimpleMessageModel: Decodable {
-    
-    
-    enum CodingKeys: String, CodingKey {
-        case message = "message"
-    }
-    
-    init(message: String) {
-        self.message = message
-    }
-    
+
     var message: String
-    
-    
+
 }

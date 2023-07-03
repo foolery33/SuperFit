@@ -8,8 +8,8 @@
 import Foundation
 
 struct MyBodyModel {
-    
+
     var bodyParameters: [BodyParametersModel] = []
     var profilePhotos: [ProfilePhotoModel] = []
-    
+
 }

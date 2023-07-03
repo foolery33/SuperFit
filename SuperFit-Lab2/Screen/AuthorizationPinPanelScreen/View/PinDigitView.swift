@@ -12,9 +12,9 @@ final class PinDigitView: UIView {
 
     var digit: String
     var coordinates: (Int, Int)
-    var changePositions: (String) -> ()
-    
-    init(digit: String, coordinates: (Int, Int), changePositions: @escaping (String) -> ()) {
+    var changePositions: (String) -> Void
+
+    init(digit: String, coordinates: (Int, Int), changePositions: @escaping (String) -> Void) {
         self.digit = digit
         self.coordinates = coordinates
         self.changePositions = changePositions
@@ -23,19 +23,19 @@ final class PinDigitView: UIView {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSquareClicked)))
         self.isUserInteractionEnabled = true
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupSubviews() {
         setupSquareView()
     }
-    
+
     @objc private func onSquareClicked() {
         changePositions(digit)
     }
-    
+
     // MARK: - SquareView setup
     private lazy var squareView: UIView = {
         let myView = UIView(frame: CGRect(x: 0, y: 0, width: 78, height: 78))
@@ -48,7 +48,7 @@ final class PinDigitView: UIView {
         addSubview(squareView)
         setupDigitLabel()
     }
-    
+
     // MARK: - DigitLabel setup
     private lazy var digitLabel: UILabel = {
         let myLabel = UILabel()
@@ -63,5 +63,5 @@ final class PinDigitView: UIView {
             make.center.equalToSuperview()
         }
     }
-    
+
 }

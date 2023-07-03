@@ -18,7 +18,7 @@ final class AuthorizationComponent: Component<AuthorizationComponentDependency> 
             AuthorizationViewModel(emptyValidationUseCase: dependency.emptyValidationUseCase)
         }
     }
-    
+
     var authorizationViewController: UIViewController {
         return AuthorizationViewController(viewModel: authorizationViewModel)
     }

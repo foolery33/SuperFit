@@ -8,15 +8,15 @@
 import Foundation
 
 final class TrainProgressViewModel {
-    
+
     weak var coordinator: MyBodyCoordinator?
     weak var errorHandlingDelegate: ErrorHandlingDelegate?
-    
+
     private let trainingRepository: TrainingRepository
     private let getTrainProgressByTrainingTypeModelUseCase: GetTrainProgressByTrainingTypeModelUseCase
-    
+
     var trainingList: [TrainingModel] = []
-    
+
     init(
         trainingRepository: TrainingRepository,
         getTrainProgressByTrainingTypeModelUseCase: GetTrainProgressByTrainingTypeModelUseCase
@@ -24,11 +24,14 @@ final class TrainProgressViewModel {
         self.trainingRepository = trainingRepository
         self.getTrainProgressByTrainingTypeModelUseCase = getTrainProgressByTrainingTypeModelUseCase
     }
-    
+
     func getTrainProgressByTrainingTypeModel(_ trainingType: TrainingTypeModel) -> TrainingProgressModel? {
-        getTrainProgressByTrainingTypeModelUseCase.calculateTrainingProgress(trainingType: trainingType, trainingList: trainingList)
+        getTrainProgressByTrainingTypeModelUseCase.calculateTrainingProgress(
+            trainingType: trainingType,
+            trainingList: trainingList
+        )
     }
-    
+
 }
 
 // MARK: - Navigation
@@ -47,11 +50,10 @@ extension TrainProgressViewModel {
         do {
             trainingList = try await trainingRepository.getTrainingList()
             return true
-        } catch(let error) {
+        } catch let error {
             if let appError = error as? AppError {
                 errorHandlingDelegate?.handleErrorMessage(appError.errorDescription)
-            }
-            else {
+            } else {
                 errorHandlingDelegate?.handleErrorMessage(error.localizedDescription)
             }
             return false

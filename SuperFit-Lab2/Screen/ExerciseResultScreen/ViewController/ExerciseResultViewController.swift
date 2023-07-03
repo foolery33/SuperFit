@@ -15,19 +15,19 @@ enum ExerciseResult {
 class ExerciseResultViewController: UIViewController {
 
     var viewModel: ExerciseResultViewModel
-    
+
     private let circleScale: CGFloat = UIScreen.main.bounds.width - 2 * 72
-    
+
     init(viewModel: ExerciseResultViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = R.color.darkGray()
@@ -41,7 +41,7 @@ class ExerciseResultViewController: UIViewController {
             setupFailure()
         }
     }
-    
+
     // MARK: - ExerciseLabel setup
     private lazy var exerciseLabel: UILabel = {
         let myLabel = UILabel()
@@ -57,7 +57,7 @@ class ExerciseResultViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     // MARK: CircleView setup
     private lazy var circleView: UIView = {
         let myView = UIView()
@@ -74,7 +74,7 @@ class ExerciseResultViewController: UIViewController {
             make.height.width.equalTo(circleScale)
         }
     }
-    
+
     // MARK: - SuccessImageView setup
     private lazy var successImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -87,7 +87,7 @@ class ExerciseResultViewController: UIViewController {
             make.center.equalToSuperview()
         }
     }
-    
+
     // MARK: - FailureLabel setup
     private lazy var failureLabel: UILabel = {
         let myLabel = UILabel()
@@ -105,10 +105,13 @@ class ExerciseResultViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(38)
         }
     }
-    
+
     // MARK: - GoHomeButton setup
     private lazy var goHomeButton: FilledButton = {
-        let myButton = FilledButton(label: R.string.exerciseResultScreen.go_home(), backColor: R.color.purple()!, textColor: R.color.white()!)
+        let myButton = FilledButton(
+            label: R.string.exerciseResultScreen.go_home(),
+            backColor: R.color.purple()!, textColor: R.color.white()!
+        )
         myButton.addTarget(self, action: #selector(onGoHomeButtonTapped), for: .touchUpInside)
         return myButton
     }()
@@ -122,7 +125,7 @@ class ExerciseResultViewController: UIViewController {
     @objc private func onGoHomeButtonTapped() {
         viewModel.goToMainScreen()
     }
-    
+
 }
 
 extension ExerciseResultViewController {

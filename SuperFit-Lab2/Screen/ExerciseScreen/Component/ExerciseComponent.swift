@@ -28,7 +28,7 @@ final class ExerciseComponent: Component<ExerciseComponentDependency> {
             )
         }
     }
-    
+
     var exerciseViewController: UIViewController {
         return ExerciseViewController(viewModel: exerciseViewModel)
     }

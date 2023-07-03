@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetTwoLastExercisesUseCase {
-    
+
     func getExercises(from trainingModels: [TrainingModel]) -> [TrainingModel] {
         // Сортировка по убыванию даты
         let dateFormatter = DateFormatter()
@@ -20,25 +20,25 @@ final class GetTwoLastExercisesUseCase {
             }
             return date1 > date2
         }
-        
+
         // Поиск 2-х последних моделей с разными упражнениями
         var latestModels: [TrainingModel] = []
         var uniqueExercises: Set<TrainingTypeModel> = []
-        
+
         for model in sortedModels {
             if uniqueExercises.contains(model.exercise) {
                 continue
             }
-            
+
             latestModels.append(model)
             uniqueExercises.insert(model.exercise)
-            
+
             if latestModels.count == 2 {
                 break
             }
         }
-        
+
         return latestModels
     }
-    
+
 }

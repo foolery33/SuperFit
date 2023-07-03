@@ -8,7 +8,7 @@
 import Foundation
 
 final class GroupPhotosByMonthUseCase {
-    
+
     func group(_ photos: [ProfilePhotoModel]) -> [[ProfilePhotoModel]] {
         // Создаем словарь для группировки фотографий по месяцу и году
         var groupedPhotos = [String: [ProfilePhotoModel]]()
@@ -19,7 +19,7 @@ final class GroupPhotosByMonthUseCase {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM"
             let monthYear = dateFormatter.string(from: date)
-            
+
             if var group = groupedPhotos[monthYear] {
                 group.append(photo)
                 groupedPhotos[monthYear] = group
@@ -36,5 +36,5 @@ final class GroupPhotosByMonthUseCase {
 
         return sortedPhotos
     }
-    
+
 }

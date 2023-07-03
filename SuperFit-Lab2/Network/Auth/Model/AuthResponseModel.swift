@@ -8,15 +8,11 @@
 import Foundation
 
 struct AuthResponseModel: Decodable {
-    
+
     enum CodingKeys: String, CodingKey {
         case refreshToken = "refresh_token"
     }
-    
-    init(refreshToken: String) {
-        self.refreshToken = refreshToken
-    }
-    
+
     var refreshToken: String
-    
+
 }

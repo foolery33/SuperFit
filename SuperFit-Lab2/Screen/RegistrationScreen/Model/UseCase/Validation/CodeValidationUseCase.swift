@@ -9,6 +9,6 @@ import Foundation
 
 final class CodeValidationUseCase {
     func isValidCode(_ password: String) -> Bool {
-        return password != "0000"
+        return password.contains("0") == false
     }
 }

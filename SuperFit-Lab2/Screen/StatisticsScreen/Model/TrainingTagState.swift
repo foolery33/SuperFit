@@ -8,9 +8,10 @@
 import UIKit
 
 enum TrainingTagState {
+
     case selected
     case normal
-    
+
     var textColor: UIColor {
         switch self {
         case .normal:
@@ -19,7 +20,7 @@ enum TrainingTagState {
             return R.color.softPurple()!
         }
     }
-    
+
     var borderColor: UIColor {
         switch self {
         case .normal:
@@ -28,4 +29,5 @@ enum TrainingTagState {
             return R.color.softPurple()!
         }
     }
+
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class GetTrainingTypeByTrainingInfoModelUseCase {
-    
+
     func getTrainingType(by trainingInfoModel: TrainingInfoModel) -> TrainingTypeModel {
         switch trainingInfoModel.name {
         case R.string.mainScreenStrings.push_ups():
@@ -25,5 +25,5 @@ final class GetTrainingTypeByTrainingInfoModelUseCase {
             return TrainingTypeModel.pushUps
         }
     }
-    
+
 }
