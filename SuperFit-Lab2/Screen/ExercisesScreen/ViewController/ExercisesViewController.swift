@@ -138,7 +138,7 @@ class ExercisesViewController: UIViewController {
         let myLabel = UILabel()
         myLabel.font = R.font.montserratBold(size: 24)
         myLabel.textColor = R.color.black()
-        myLabel.text = "Exercises"
+        myLabel.text = R.string.exercisesScreen.exercises()
         return myLabel
     }()
     private func setupExercisesLabel() {

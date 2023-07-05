@@ -20,6 +20,7 @@ final class MyBodyViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupSubviews()
+        setupActionHandlers()
         viewModel.errorHandlingDelegate = self
     }
 
@@ -361,14 +362,10 @@ final class MyBodyViewController: UIViewController {
     private lazy var trainProgressButton: ButtonWithArrowStackView = {
         let myButton = ButtonWithArrowStackView(
             labelText: R.string.myBodyScreenStrings.train_progress(),
-            arrowImage: R.image.forwardArrow()!,
-            action: onTrainProgressButtonTapped
+            arrowImage: R.image.forwardArrow()!
         )
         return myButton
     }()
-    private func onTrainProgressButtonTapped() {
-        viewModel.goToTrainProgressScreen()
-    }
     private func setupTrainProgressButton() {
         buttonsStackView.addArrangedSubview(trainProgressButton)
     }
@@ -377,23 +374,33 @@ final class MyBodyViewController: UIViewController {
     private lazy var statisticsButton: ButtonWithArrowStackView = {
         let myButton = ButtonWithArrowStackView(
             labelText: R.string.myBodyScreenStrings.statistics(),
-            arrowImage: R.image.forwardArrow()!,
-            action: onStatisticsButtonTapped
+            arrowImage: R.image.forwardArrow()!
         )
         return myButton
     }()
-    private func onStatisticsButtonTapped() {
-        viewModel.goToStatisticsScreen()
-    }
     private func setupStatisticsButton() {
         buttonsStackView.addArrangedSubview(statisticsButton)
     }
 
 }
 
-extension MyBodyViewController {
+// MARK: - Action handlers
+private extension MyBodyViewController {
+    func setupActionHandlers() {
+        trainProgressButton.action = { [weak self] in
+            self?.viewModel.goToTrainProgressScreen()
+        }
 
-    private func getProfilePhotos() {
+        statisticsButton.action = { [weak self] in
+            self?.viewModel.goToStatisticsScreen()
+        }
+    }
+}
+
+// MARK: - Network requests
+private extension MyBodyViewController {
+
+    func getProfilePhotos() {
         let beforePhoto = viewModel.getBeforePhotoWithDate()
         let afterPhoto = viewModel.getAfterPhotoWithDate()
         if beforePhoto.0 != nil && afterPhoto.0 != nil {
@@ -505,7 +512,6 @@ extension MyBodyViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
 
         if let imageData = image.jpegData(compressionQuality: 0.1) {
-            print(imageData)
             if let image =
                 info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
                 self.uploadPhoto(imageData: imageData, image: image)

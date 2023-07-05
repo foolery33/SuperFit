@@ -54,7 +54,6 @@ class ImageListViewController: UIViewController {
         myStackView.spacing = 24
         myStackView.layoutMargins = UIEdgeInsets(top: 36, left: 16, bottom: 0, right: 16)
         myStackView.isLayoutMarginsRelativeArrangement = true
-        print(UIScreen.main.bounds.width)
         return myStackView
     }()
     private func setupContentStackView() {

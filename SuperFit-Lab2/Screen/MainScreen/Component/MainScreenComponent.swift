@@ -13,6 +13,7 @@ protocol MainScreenComponentDependency: Dependency {
     var userBodyParametersRepository: UserBodyParametersRepository { get }
     var trainingRepository: TrainingRepository { get }
     var lastExercisesRepository: LastExercisesRepository { get }
+    var garbageManager: GarbageManager { get }
     var getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase { get }
     var getTwoLastExercisesUseCase: GetTwoLastExercisesUseCase { get }
     var getLastBodyParametersUseCase: GetLastBodyParametersUseCase { get }
@@ -26,6 +27,7 @@ final class MainScreenComponent: Component<MainScreenComponentDependency> {
                 userBodyParametersRepository: dependency.userBodyParametersRepository,
                 trainingRepository: dependency.trainingRepository,
                 lastExercisesRepository: dependency.lastExercisesRepository,
+                garbageManager: dependency.garbageManager,
                 getTrainingInfoModelByTrainingTypeModelUseCase:
                     dependency.getTrainingInfoModelByTrainingTypeModelUseCase,
                 getTwoLastExercisesUseCase: dependency.getTwoLastExercisesUseCase,

@@ -12,23 +12,6 @@ final class GarbageManager {
     private let lastExercisesRepository: LastExercisesRepository
     private let userBodyParametersRepository: UserBodyParametersRepository
 
-    static var shared: GarbageManager = {
-        let userDataManager = UserDataManagerRepositoryImplementation()
-        let profilePhotosRepository = ProfilePhotosRepositoryImplementation()
-        let lastExercisesRepository = LastExercisesRepositoryImplementation(
-            getTrainingTypeModelByTrainingNameUseCase:
-                GetTrainingTypeModelByTrainingNameUseCase()
-        )
-        let userBodyParametersRepository = UserBodyParametersRepositoryImplementation()
-
-        return GarbageManager(
-            userDataManager: userDataManager,
-            profilePhotosRepository: profilePhotosRepository,
-            lastExercisesRepository: lastExercisesRepository,
-            userBodyParametersRepository: userBodyParametersRepository
-        )
-    }()
-
     init(
         userDataManager: UserDataManagerRepository,
         profilePhotosRepository: ProfilePhotosRepository,

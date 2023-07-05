@@ -52,19 +52,15 @@ final class MyBodyViewModel {
     }
 
     func updateWeight(with weight: String) {
-        print(weight)
         self.weight = Int(weight) ?? -1
     }
     func getWeight() -> String {
-        print(String(userBodyParametersRepository.fetchWeight() ?? -1))
         return String(userBodyParametersRepository.fetchWeight() ?? -1)
     }
     func updateHeight(with height: String) {
-        print(height)
         self.height = Int(height) ?? -1
     }
     func getHeight() -> String {
-        print(String(userBodyParametersRepository.fetchHeight() ?? -1))
         return String(userBodyParametersRepository.fetchHeight() ?? -1)
     }
 

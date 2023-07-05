@@ -334,7 +334,6 @@ private extension ExerciseViewController {
 private extension ExerciseViewController {
     func startPushUpsUpdates() {
         guard motionManager.isAccelerometerAvailable else {
-            print("Accelerometer is not available")
             return
         }
 
@@ -360,7 +359,6 @@ private extension ExerciseViewController {
 
                 if timeSinceLastPushUp >= 0.5 {  // Проверяем, прошло ли уже 0.5 секунды с предыдущего отжимания
                     self?.repsCount += 1
-                    print("Push-up count increased: \(self?.repsCount ?? 0)")
                     self?.wentUp = false
                     self?.wentDown = false
 
@@ -375,7 +373,6 @@ private extension ExerciseViewController {
 private extension ExerciseViewController {
     func startCountingSquats() {
         guard motionManager.isAccelerometerAvailable else {
-            print("Accelerometer is not available")
             return
         }
 
@@ -401,7 +398,6 @@ private extension ExerciseViewController {
 
                 if timeSinceLastSquat >= 0.5 {  // Проверяем, прошло ли уже 0.5 секунды с предыдущего приседания
                     self?.repsCount += 1
-                    print("Squat count increased: \(self?.repsCount ?? 0)")
                     self?.wentUp = false
                     self?.wentDown = false
 
@@ -443,7 +439,6 @@ private extension ExerciseViewController {
 
     @objc func timerTick() {
         repsCount += 1 // Уменьшаем количество секунд на 1
-        print(repsCount)
         // Проверяем, достигнуто ли значение 0
         if repsCount >= initialReps {
             plankTimer.invalidate() // Останавливаем таймер
@@ -479,7 +474,6 @@ extension ExerciseViewController: CLLocationManagerDelegate {
     private func updateDistanceTraveled(_ distance: CLLocationDistance) {
         // Обновление счетчика пройденного расстояния и выполнение соответствующих действий
         repsCount += Int(distance)
-        print("Distance in path: \(repsCount) meters")
 
         // Другие действия, связанные с обновлением интерфейса и т.д.
     }

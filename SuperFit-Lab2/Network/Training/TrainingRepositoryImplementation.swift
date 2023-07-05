@@ -17,7 +17,6 @@ final class TrainingRepositoryImplementation: TrainingRepository {
         let url = baseURL + "api/trainings"
         let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([TrainingModel].self)
         do {
-            print("Get training list status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -49,7 +48,6 @@ final class TrainingRepositoryImplementation: TrainingRepository {
             interceptor: self.interceptor
         ).serializingDecodable(TrainingModel.self)
         do {
-            print("Save training status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode

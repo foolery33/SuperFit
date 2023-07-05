@@ -9,13 +9,17 @@ import NeedleFoundation
 import UIKit
 
 protocol AuthorizationComponentDependency: Dependency {
+    var userDataManagerRepository: UserDataManagerRepository { get }
     var emptyValidationUseCase: EmptyValidationUseCase { get }
 }
 
 final class AuthorizationComponent: Component<AuthorizationComponentDependency> {
     var authorizationViewModel: AuthorizationViewModel {
         shared {
-            AuthorizationViewModel(emptyValidationUseCase: dependency.emptyValidationUseCase)
+            AuthorizationViewModel(
+                userDataManagerRepository: dependency.userDataManagerRepository,
+                emptyValidationUseCase: dependency.emptyValidationUseCase
+            )
         }
     }
 

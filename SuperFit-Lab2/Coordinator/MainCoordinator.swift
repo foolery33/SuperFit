@@ -46,7 +46,6 @@ final class MainCoordinator: Coordinator {
     }
 
     func goToAuthorizationScreen() {
-        GarbageManager.shared.clearAllData()
         if let appCoordinator = parentCoordinator as? AppCoordinator {
             appCoordinator.goToAuth()
             parentCoordinator?.childDidFinish(self)

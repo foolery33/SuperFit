@@ -45,7 +45,7 @@ function_body_length:
 custom_rules:
   no_direct_standard_out_logs:
     name: "Writing log messages directly to standard out is disallowed"
-    regex: "(\\bpring|\\bdebugPring|\\bdump|Swift\\.print|Swift\\.debugPrint|Swift\\.dump)\\s*\\("
+    regex: "(\\bprint|\\bdebugPrint|\\bdump|Swift\\.print|Swift\\.debugPrint|Swift\\.dump)\\s*\\("
     match_kinds:
       - identifier
     message: "Don't ommit `print(_)`, `debugPrint(_)`, or `dump(_)` as they write to standard out in release"

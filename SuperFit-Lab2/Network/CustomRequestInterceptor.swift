@@ -71,15 +71,11 @@ class CustomRequestInterceptor: RequestInterceptor {
             encoder: JSONParameterEncoder.default,
             headers: headers
         ).responseData { response in
-            if let statusCode = response.response?.statusCode {
-                print("Refresh Status Code:", statusCode)
-            }
             switch response.result {
             case .success(let data):
                 do {
                     let decodedData = try JSONDecoder().decode(AccessTokenModel.self, from: data)
                     UserDataManagerRepositoryImplementation().saveAccessToken(accessToken: decodedData.accessToken)
-                    print(UserDataManagerRepositoryImplementation().fetchAccessToken())
                     completion()
                 } catch {
                     completion()

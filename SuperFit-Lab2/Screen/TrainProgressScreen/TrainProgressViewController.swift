@@ -138,8 +138,6 @@ final class TrainProgressViewController: UIViewController {
             progressInfo: "N/A%"
         )
         myProgressInfoView.backgroundColor = R.color.clear()
-        print("top area height", topAreaHeight)
-        print("bottom area height", bottomAreaHeight)
         return myProgressInfoView
     }()
     private func setupSquatsProgressInfo() {

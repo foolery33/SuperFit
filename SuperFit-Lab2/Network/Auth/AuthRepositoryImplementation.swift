@@ -30,7 +30,6 @@ final class AuthRepositoryImplementation: AuthRepository {
             headers: headers
         ).serializingDecodable(SimpleMessageModel.self)
         do {
-            print("Register status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -64,7 +63,6 @@ final class AuthRepositoryImplementation: AuthRepository {
             headers: headers
         ).serializingDecodable(AuthResponseModel.self)
         do {
-            print("Login status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode

@@ -49,7 +49,7 @@ class BodyParameterStackView: UIStackView {
     private lazy var parameterEditLabel: UILabel = {
         let myLabel = UILabel()
         myLabel.font = R.font.montserratRegular(size: 12)
-        myLabel.text = "Edit"
+        myLabel.text = R.string.myBodyScreenStrings.edit()
         myLabel.textColor = R.color.gray()
         return myLabel
     }()

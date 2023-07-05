@@ -20,6 +20,7 @@ final class MainViewModel {
     private let userBodyParametersRepository: UserBodyParametersRepository
     private let trainingRepository: TrainingRepository
     private let lastExercisesRepository: LastExercisesRepository
+    private let garbageManager: GarbageManager
 
     private let getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase
     private let getTwoLastExercisesUseCase: GetTwoLastExercisesUseCase
@@ -32,6 +33,7 @@ final class MainViewModel {
         userBodyParametersRepository: UserBodyParametersRepository,
         trainingRepository: TrainingRepository,
         lastExercisesRepository: LastExercisesRepository,
+        garbageManager: GarbageManager,
         getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase,
         getTwoLastExercisesUseCase: GetTwoLastExercisesUseCase,
         getLastBodyParametersUseCase: GetLastBodyParametersUseCase
@@ -40,6 +42,7 @@ final class MainViewModel {
         self.userBodyParametersRepository = userBodyParametersRepository
         self.trainingRepository = trainingRepository
         self.lastExercisesRepository = lastExercisesRepository
+        self.garbageManager = garbageManager
         self.getTrainingInfoModelByTrainingTypeModelUseCase = getTrainingInfoModelByTrainingTypeModelUseCase
         self.getTwoLastExercisesUseCase = getTwoLastExercisesUseCase
         self.getLastBodyParametersUseCase = getLastBodyParametersUseCase
@@ -70,6 +73,7 @@ final class MainViewModel {
 // MARK: - Navigation
 extension MainViewModel {
     func goToAuthorizationScreen() {
+        garbageManager.clearAllData()
         coordinator?.goToAuthorizationScreen()
     }
 

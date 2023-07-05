@@ -15,7 +15,9 @@ class AuthorizationViewController: UIViewController {
     init(viewModel: AuthorizationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.errorHandlingDelegate = self
         setupSubviews()
+        setupActionHandlers()
         view.addKeyboardDismiss()
     }
 
@@ -92,7 +94,7 @@ class AuthorizationViewController: UIViewController {
         return myTextField
     }()
     @objc private func onEmailTextFieldValueChanged(_ textField: UITextField) {
-        self.viewModel.email = textField.text ?? ""
+        viewModel.updateEmail(to: textField.text ?? "")
     }
     private func setupUnderlinedTextField() {
         signInStackView.addArrangedSubview(underlinedTextField)
@@ -102,22 +104,12 @@ class AuthorizationViewController: UIViewController {
     private lazy var signInButton: ButtonWithArrowStackView = {
         let myStackView = ButtonWithArrowStackView(
             labelText: R.string.loginScreenStrings.sign_in(),
-            arrowImage: R.image.forwardArrow()!,
-            action: onSignInButtonClicked
+            arrowImage: R.image.forwardArrow()!
         )
         myStackView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         myStackView.isLayoutMarginsRelativeArrangement = true
         return myStackView
     }()
-    private func onSignInButtonClicked() {
-        self.viewModel.onSignInButtonClicked { success in
-            if success {
-                self.viewModel.goToAuthorizationPinPanelScreen()
-            } else {
-                self.showAlert(title: R.string.loginScreenStrings.login_error(), message: self.viewModel.error)
-            }
-        }
-    }
     private func setupSignInButton() {
         signInStackView.addArrangedSubview(signInButton)
     }
@@ -126,16 +118,12 @@ class AuthorizationViewController: UIViewController {
     private lazy var signUpButton: ButtonWithArrowStackView = {
         let myStackView = ButtonWithArrowStackView(
             labelText: R.string.loginScreenStrings.sign_up(),
-            arrowImage: R.image.forwardArrow()!,
-            action: onSignUpButtonClicked
+            arrowImage: R.image.forwardArrow()!
         )
         myStackView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         myStackView.isLayoutMarginsRelativeArrangement = true
         return myStackView
     }()
-    private func onSignUpButtonClicked() {
-        self.viewModel.goToRegistrationScreen()
-    }
     private func setupSignUpButton() {
         view.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
@@ -144,4 +132,38 @@ class AuthorizationViewController: UIViewController {
         }
     }
 
+}
+
+// MARK: - Action handlers
+private extension AuthorizationViewController {
+    func setupActionHandlers() {
+        signInButton.action = { [weak self] in
+            if self?.viewModel.onSignInButtonClicked() ?? false {
+                self?.viewModel.goToAuthorizationPinPanelScreen()
+            }
+        }
+
+        signUpButton.action = { [weak self] in
+            self?.viewModel.goToRegistrationScreen()
+        }
+    }
+}
+
+// MARK: - ErrorHandlingDelegate
+extension AuthorizationViewController: ErrorHandlingDelegate {
+    func handleErrorMessage(_ errorMessage: String) {
+        DispatchQueue.main.async {
+            if errorMessage == R.string.errors.unauthorized() {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage) {
+                    self.reauthorizeUser()
+                }
+            } else {
+                self.showAlert(title: R.string.errors.error(), message: errorMessage)
+            }
+        }
+    }
+
+    func reauthorizeUser() {
+
+    }
 }

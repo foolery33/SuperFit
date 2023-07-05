@@ -11,12 +11,11 @@ class ButtonWithArrowStackView: UIStackView {
 
     var labelText: String
     var arrowImage: UIImage
-    var action: () -> Void
+    var action: (() -> Void)?
 
-    init(labelText: String, arrowImage: UIImage, action: @escaping () -> Void) {
+    init(labelText: String, arrowImage: UIImage) {
         self.labelText = labelText
         self.arrowImage = arrowImage
-        self.action = action
         super.init(frame: .zero)
         setupStackView()
     }
@@ -44,7 +43,7 @@ class ButtonWithArrowStackView: UIStackView {
         return myStackView
     }()
     @objc private func onStackViewClicked() {
-        action()
+        action?()
         self.viewPressed()
     }
     private func setupSubStackView() {

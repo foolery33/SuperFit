@@ -24,6 +24,7 @@ class RegistrationViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         viewModel.errorHandlingDelegate = self
         setupSubviews()
+        setupActionHandlers()
         view.addKeyboardDismiss()
     }
 
@@ -129,14 +130,10 @@ class RegistrationViewController: UIViewController {
     private lazy var signUpButton: ButtonWithArrowStackView = {
         let myButton = ButtonWithArrowStackView(
             labelText: R.string.registerScreenStrings.sign_up(),
-            arrowImage: R.image.forwardArrow()!,
-            action: onSignUpButtonClicked
+            arrowImage: R.image.forwardArrow()!
         )
         return myButton
     }()
-    @objc private func onSignUpButtonClicked() {
-        register()
-    }
     private func setupSignUpButton() {
         contentView.addSubview(signUpButton)
     }
@@ -145,14 +142,10 @@ class RegistrationViewController: UIViewController {
     private lazy var signInButton: ButtonWithArrowStackView = {
         let myButton = ButtonWithArrowStackView(
             labelText: R.string.registerScreenStrings.sign_in(),
-            arrowImage: R.image.backwardArrow()!,
-            action: onSignInButtonTapped
+            arrowImage: R.image.backwardArrow()!
         )
         return myButton
     }()
-    @objc private func onSignInButtonTapped() {
-        self.viewModel.goToAuthorizationScreen()
-    }
     private func setupSignInButton() {
         contentView.addSubview(signInButton)
 
@@ -194,6 +187,34 @@ extension RegistrationViewController: RegistrationTextFieldsChangeProtocol {
     }
 }
 
+// MARK: - Network requests
+private extension RegistrationViewController {
+    func register() {
+        view.setupActivityIndicator()
+        Task {
+            if await viewModel.register() {
+                if await viewModel.login() {
+                    viewModel.goToMainScreen()
+                }
+            }
+            view.stopActivityIndicator()
+        }
+    }
+}
+
+// MARK: - Action handlers
+private extension RegistrationViewController {
+    func setupActionHandlers() {
+        signInButton.action = { [weak self] in
+            self?.viewModel.goToAuthorizationScreen()
+        }
+
+        signUpButton.action = { [weak self] in
+            self?.register()
+        }
+    }
+}
+
 // MARK: - ErrorHandlingDelegate
 extension RegistrationViewController: ErrorHandlingDelegate {
     func handleErrorMessage(_ errorMessage: String) {
@@ -210,20 +231,5 @@ extension RegistrationViewController: ErrorHandlingDelegate {
 
     func reauthorizeUser() {
 
-    }
-}
-
-// MARK: - Network requests
-extension RegistrationViewController {
-    func register() {
-        view.setupActivityIndicator()
-        Task {
-            if await viewModel.register() {
-                if await viewModel.login() {
-                    viewModel.goToMainScreen()
-                }
-            }
-            view.stopActivityIndicator()
-        }
     }
 }

@@ -90,6 +90,9 @@ private class MainScreenComponentDependencyf7fb8b48e001394384acProvider: MainScr
     var lastExercisesRepository: LastExercisesRepository {
         return mainComponent.lastExercisesRepository
     }
+    var garbageManager: GarbageManager {
+        return mainComponent.garbageManager
+    }
     var getTrainingInfoModelByTrainingTypeModelUseCase: GetTrainingInfoModelByTrainingTypeModelUseCase {
         return mainComponent.getTrainingInfoModelByTrainingTypeModelUseCase
     }
@@ -224,6 +227,9 @@ private func factory3d9df8e0a52c98f96a490ae93e637f014511a119(_ component: Needle
     return AuthorizationPinPanelComponentDependencyc9ab79be377ddba2eabeProvider(mainComponent: parent1(component) as! MainComponent)
 }
 private class AuthorizationComponentDependency01c300e9208281b9a593Provider: AuthorizationComponentDependency {
+    var userDataManagerRepository: UserDataManagerRepository {
+        return mainComponent.userDataManagerRepository
+    }
     var emptyValidationUseCase: EmptyValidationUseCase {
         return mainComponent.emptyValidationUseCase
     }
@@ -298,6 +304,7 @@ extension MainScreenComponent: Registration {
         keyPathToName[\MainScreenComponentDependency.userBodyParametersRepository] = "userBodyParametersRepository-UserBodyParametersRepository"
         keyPathToName[\MainScreenComponentDependency.trainingRepository] = "trainingRepository-TrainingRepository"
         keyPathToName[\MainScreenComponentDependency.lastExercisesRepository] = "lastExercisesRepository-LastExercisesRepository"
+        keyPathToName[\MainScreenComponentDependency.garbageManager] = "garbageManager-GarbageManager"
         keyPathToName[\MainScreenComponentDependency.getTrainingInfoModelByTrainingTypeModelUseCase] = "getTrainingInfoModelByTrainingTypeModelUseCase-GetTrainingInfoModelByTrainingTypeModelUseCase"
         keyPathToName[\MainScreenComponentDependency.getTwoLastExercisesUseCase] = "getTwoLastExercisesUseCase-GetTwoLastExercisesUseCase"
         keyPathToName[\MainScreenComponentDependency.getLastBodyParametersUseCase] = "getLastBodyParametersUseCase-GetLastBodyParametersUseCase"
@@ -354,6 +361,7 @@ extension AuthorizationPinPanelComponent: Registration {
 }
 extension AuthorizationComponent: Registration {
     public func registerItems() {
+        keyPathToName[\AuthorizationComponentDependency.userDataManagerRepository] = "userDataManagerRepository-UserDataManagerRepository"
         keyPathToName[\AuthorizationComponentDependency.emptyValidationUseCase] = "emptyValidationUseCase-EmptyValidationUseCase"
     }
 }

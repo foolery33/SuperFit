@@ -43,7 +43,6 @@ final class ProfileRepositoryImplementation: ProfileRepository {
             interceptor: interceptor
         ).serializingDecodable(SimpleMessageModel.self)
         do {
-            print("Update user parameters status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -64,7 +63,6 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         let url = baseURL + "api/profile/photos"
         let dataTask = AF.request(url, interceptor: interceptor).serializingDecodable([ProfilePhotoModel].self)
         do {
-            print("Get profile photos status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -83,7 +81,6 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         let url = baseURL + "api/profile/photos/\(photoId)"
         let dataTask = AF.request(url, interceptor: interceptor).serializingData()
         do {
-            print("Download user photo status code:", await dataTask.response.response?.statusCode ?? 0)
             return try await dataTask.value
         } catch {
             let requestStatusCode = await dataTask.response.response?.statusCode
@@ -111,7 +108,6 @@ final class ProfileRepositoryImplementation: ProfileRepository {
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "image/jpeg")
         }, to: url, method: .post, headers: headers, interceptor: interceptor).validate().response { response in
-            print("Upload photo status code:", response.response?.statusCode ?? 0)
             self.interceptor.withHeaders = true
             switch response.result {
             case .success(let data):
